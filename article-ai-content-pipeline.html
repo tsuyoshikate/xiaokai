@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人" | 小K爱研究</title>
+    <meta name="description" content="AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——从游戏攻略到溴中毒，一条没有质检的工业流水线正在运转。">
+    <meta name="keywords" content="AI内容,AI幻觉,AI攻略,内容安全,YouTube双轨治理,DeepSeek,内容监管,AI诈骗">
+    <meta name="author" content="小K">
+    <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/article-ai-content-pipeline.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人"">
+    <meta property="og:description" content="AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——从游戏攻略到溴中毒，一条没有质检的工业流水线正在运转。">
+    <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/article-ai-content-pipeline.html">
+    <meta property="og:site_name" content="小K爱研究">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "没有质检的流水线：AI内容如何从\"帮你赚钱\"变成\"帮你骗人\"",
+      "headline": "没有质检的流水线：AI内容如何从\"帮你赚钱\"变成\"帮你骗人\"",
+      "description": "AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——从游戏攻略到溴中毒，一条没有质检的工业流水线正在运转。",
+      "author": {
+        "@type": "Person",
+        "name": "小K",
+        "jobTitle": "数据研究分析",
+        "description": "专注数据深度拆解，数据可溯源，案例有出处"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "小K"
+      },
+      "datePublished": "2026-06-20",
+      "dateModified": "2026-06-20",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tsuyoshikate.github.io/xiaokai/article-ai-content-pipeline.html"
+      },
+      "url": "https://tsuyoshikate.github.io/xiaokai/article-ai-content-pipeline.html",
+      "wordCount": 8000,
+      "articleSection": "数据研究分析",
+      "inLanguage": "zh-CN",
+      "keywords": ["AI内容", "AI幻觉", "内容安全", "AI攻略", "YouTube双轨治理", "DeepSeek", "内容监管"],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "AI内容幻觉",
+          "description": "DeepSeek V3幻觉率29.67%，豆包19%，多款大模型在事实性问答场景下近三成可能出错"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI内容监管",
+          "description": "2025年9月《人工智能生成合成内容标识办法》实施，南方都市报实测25个平台均未主动识别AI内容"
+        },
+        {
+          "@type": "Thing",
+          "name": "YouTube双轨治理",
+          "description": "AI披露政策管透明度，不真实内容政策管质量，两套独立运行"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "DeepSeek",
+          "description": "幻觉率29.67%，为清华沈阳团队评测中最高"
+        },
+        {
+          "@type": "Organization",
+          "name": "OpenAI",
+          "description": "全球AI公司营收37亿美元，但仍亏损"
+        },
+        {
+          "@type": "Organization",
+          "name": "YouTube",
+          "description": "双轨治理模式：AI披露政策+不真实内容政策，最严格的内容平台"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --bg-code: #141414;
+            --text-primary: #e8e8e8;
+            --text-secondary: #999999;
+            --text-tertiary: #666666;
+            --accent: #6C63FF;
+            --accent-hover: #7B73FF;
+            --border: #222222;
+            --gradient-start: #6C63FF;
+            --gradient-end: #E94560;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .top-bar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover { opacity: 0.8; }
+
+        .top-bar-title {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .article-nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        .article-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .article-nav a:hover {
+            color: var(--accent);
+        }
+
+        .article-header {
+            padding: 140px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(108, 99, 255, 0.08), transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(233, 69, 96, 0.06), transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .article-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            font-size: 12px;
+            padding: 4px 12px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-tertiary);
+        }
+
+        .article-title {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-weight: 300;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            flex-wrap: wrap;
+        }
+
+        .toc-wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .toc-list {
+            list-style: none;
+            column-count: 2;
+            column-gap: 24px;
+        }
+
+        .toc-list li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent);
+        }
+
+        .toc-list .toc-chapter {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 15px;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .article-body h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-top: 72px;
+            margin-bottom: 24px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            line-height: 1.3;
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .article-body h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-body em {
+            color: var(--accent);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.08), rgba(233, 69, 96, 0.05));
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px;
+            margin: 28px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            margin: 24px 0;
+            background: rgba(108, 99, 255, 0.05);
+            border-radius: 0 8px 8px 0;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .article-body thead th {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .article-body tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .article-body tbody tr:hover {
+            background: rgba(108, 99, 255, 0.04);
+        }
+
+        .article-body tbody td strong {
+            color: var(--accent);
+        }
+
+        .article-body ul {
+            padding-left: 24px;
+            margin: 16px 0;
+        }
+
+        .article-body ul li {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .article-body ol {
+            padding-left: 24px;
+            margin: 16px 0;
+        }
+
+        .article-body ol li {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .chapter-divider {
+            text-align: center;
+            margin: 48px 0;
+            color: var(--text-tertiary);
+            font-size: 20px;
+            letter-spacing: 12px;
+        }
+
+        .data-card {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 8px 4px;
+        }
+
+        .data-number {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .data-label {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .data-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .summary-box {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+
+        .summary-box h3 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+
+        .data-source {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-top: 24px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .article-cta {
+            text-align: center;
+            padding: 60px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cta-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .cta-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            z-index: 200;
+            transition: width 0.1s;
+        }
+
+        footer {
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 768px) {
+            .toc-list {
+                column-count: 1;
+            }
+            .top-bar-title {
+                display: none;
+            }
+            .article-nav {
+                display: none;
+            }
+            .article-header {
+                padding: 120px 20px 40px;
+            }
+            .article-body {
+                padding: 0 20px 60px;
+            }
+            .article-body h2 {
+                font-size: 22px;
+            }
+            .article-body h3 {
+                font-size: 18px;
+            }
+            .data-card {
+                padding: 10px 16px;
+            }
+            .data-number {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        <span class="top-bar-title">没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人"</span>
+        <div class="article-nav">
+            <a href="article-china-auto-rise.html">换道碾压</a>
+            <a href="article-deepseek-spacex.html">DeepSeek vs SpaceX</a>
+            <a href="article-ai-marketing-report.html">AI营销报告</a>
+        </div>
+    </div>
+</div>
+
+<!-- Article Header -->
+<header class="article-header">
+    <div class="article-header-content">
+        <div class="article-tags">
+            <span class="article-tag">数据研究深度拆解</span>
+            <span class="article-tag">AI内容安全</span>
+            <span class="article-tag">全球监管对比</span>
+        </div>
+        <h1 class="article-title">没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人"</h1>
+        <p class="article-subtitle">AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——从游戏攻略到溴中毒，一条没有质检的工业流水线正在运转</p>
+        <div class="article-meta">
+            <span>✍️ 小K爱研究</span>
+            <span>📅 2026年6月</span>
+            <span>📖 约8000字</span>
+            <span>⏱ 约15分钟</span>
+        </div>
+    </div>
+</header>
+
+<!-- Table of Contents -->
+<div class="toc-wrapper">
+    <div class="toc">
+        <div class="toc-title">📑 目录</div>
+        <ul class="toc-list">
+            <li><a href="#intro" class="toc-chapter">引言：一条攻略背后的全球性问题</a></li>
+            <li><a href="#ch1" class="toc-chapter">一、没有质检的工业流水线</a></li>
+            <li><a href="#ch2" class="toc-chapter">二、"用AI赚钱"的真相</a></li>
+            <li><a href="#ch3" class="toc-chapter">三、从浪费时间到危及安全</a></li>
+            <li><a href="#ch4" class="toc-chapter">四、监管在跑步，黑产在骑摩托</a></li>
+            <li><a href="#ch5" class="toc-chapter">五、答案：双轨治理</a></li>
+            <li><a href="#ending" class="toc-chapter">终章：谁为AI的错误买单？</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Article Body -->
+<article class="article-body">
+
+<p># 没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人"</p>
+
+<blockquote>一个粉丝在B站找游戏攻略，排名靠前的那篇到第11关发现全是错的，浪费了好几个小时。他不知道的是，写这篇攻略的人，根本没玩过这个游戏——甚至可能连游戏都没下载。</blockquote>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>引言：一条攻略背后的全球性问题</h2>
+
+<p>2026年6月，一个粉丝在群里反映了这件事。他按照B站排名靠前的游戏攻略一步步操作，到第11关才发现攻略是错的，只能从头再来。</p>
+
+<p>几乎同一时间，抖音上有一位博主在视频里展示自己"在家带娃用AI赚钱"的方法：用AI写攻略，批量发布，月入过万。他坦白说自己从没玩过那些游戏。</p>
+
+<p>这两件事拼在一起，你会发现一条完整的链条：<strong>AI批量生产→不经验证就发布→平台排名靠前→用户踩坑浪费时间</strong>。</p>
+
+<p>这不是一个人的倒霉。这是整个AI内容生态正在发生的事情。</p>
+
+<p>我们花了大量时间调查三个问题：<strong>真正用AI赚钱的公司有哪些？AI写攻略这门生意到底能不能变现？AI生成错误内容误导用户，有没有人管？</strong></p>
+
+<p>调查结果远比想象中严峻。</p>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>第一章 没有质检的工业流水线</h2>
+
+<h3>1.1 AI内容正在爆炸式增长</h3>
+
+<p>抖音官方《2025抖音AIGC创作年度报告》显示：2025年以来，<strong>AI内容播放量涨幅达199%</strong>，AI创作者总收入涨幅达440%（收入中位数涨幅215%）。（<a href="https://app.xinhuanet.com/news/article.html?articleId=20260326f5a97159b6f24d6eaf461d2ec213fba2" target="_blank" rel="noopener">来源：新华网对抖音AIGC创作年度报告的报道，2026年3月</a>）播放量翻了两倍，但平台至今未公布AI生成内容在总量中的具体占比——这个数字，官方选择了不公开。</p>
+
+<p>小红书的数字更触目惊心：近一年来已处置确认为AI虚假种草的笔记超过<strong>330万篇</strong>，处置AI托管账号超<strong>120万个</strong>。（<a href="https://fazhi.cpd.com.cn/pfxc/526/t_1233609.html" target="_blank" rel="noopener">来源：中国警察网</a>；新榜/头条2026年5月报道，已从2025年的110万更新至120万）</p>
+
+<p>330万篇是什么概念？相当于每天有近1万篇AI生成的虚假内容被小红书识别并删除。而这只是被识别到的部分。</p>
+
+<p>不过也要说清楚：AI内容增长快，优质AI内容的增速同样很快——抖音报告显示优质AI内容投稿量飙升1430%。问题不在AI内容增长本身，而在那些未经人工验证就直接发布的AI内容——这部分有多少、质量如何，官方没有公布。</p>
+
+<blockquote>[数据] 以上330万篇和120万账号数据经中国警察网+海报新闻双源确认。抖音AI内容占比因缺乏权威来源，不做具体数字估算。</blockquote>
+
+<h3>1.2 幻觉率最高达29.67%：每5条就有1条在胡说</h3>
+
+<p>清华大学沈阳团队2025年的评测显示，<strong>DeepSeek V3幻觉率29.67%，豆包19%，多款热门大模型在19%-30%之间</strong>。（<a href="https://www.cctedu.net/lustersoft_file/source_file/8d4e6981-394a-4fb4-bb8a-3c3c179c91b2/9a1e47f9-e629-4812-ab65-d5bdf6836043/091b148a-d1d2-4d8e-ac43-98b834b249a.pdf" target="_blank" rel="noopener">来源：清华大学沈阳团队《DeepSeek与AI幻觉》原始研究</a>）</p>
+
+<p>麦可思研究院的调研进一步印证：<strong>近八成</strong>受访高校师生遇到过AI幻觉。（<a href="http://www.ce.cn/cysc/newmain/yc/jsxw/202510/t20251013_2513224.shtml" target="_blank" rel="noopener">来源：中国经济网</a>）</p>
+
+<p>打个比方：在事实性问答场景下，如果一家工厂的产品不良率接近30%，质检局会立刻勒令停产。但在内容平台上，接近30%的"不良率"不仅没人停，还在加速生产。</p>
+
+<h3>1.3 平台能识别吗？25个平台实测：全没识别出来</h3>
+
+<p>南方都市报2025年4月对25个内容平台做了实测：上传未声明的AI内容，<strong>25个平台均未在发布内容周边主动添加显著提示标识</strong>。仅9个平台提供了"AI声明选项"——也就是说，创作者可以自己选择标不标，但没人强制。（<a href="https://ipaper.oeeee.com/ipaper/A/html/2025-04/17/content_3886.htm" target="_blank" rel="noopener">来源：南方都市报</a>）</p>
+
+<p>2025年9月又测了一次，20款APP中，知乎在上传AI内容24小时后仍未识别。如果把AI水印去掉再上传，能识别的平台更少。（<a href="http://m.toutiao.com/group/7550889635587932672/" target="_blank" rel="noopener">来源：南方都市报</a>）</p>
+
+<p><strong>结论：目前的AI内容生态，就是一条没有质检的工业流水线——AI内容播放量一年翻了两倍，在事实性问答场景下近三成可能出错，但平台上没有任何一道关卡能拦住。</strong></p>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>第二章 "用AI赚钱"的真相：卖铲子的比挖金子的赚</h2>
+
+<blockquote>以下分析仅针对行业经营状况，不构成任何投资建议。</blockquote>
+
+<h3>2.1 先看AI公司：融资多≠赚钱</h3>
+
+<p>这是必须先厘清的一个基础问题：AI行业自己赚钱吗？</p>
+
+<p>全球AI公司营收排行榜（2024年）：</p>
+
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>营收</th>
+<th>真赚钱？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td>37亿美元</td>
+<td>❌ 仍亏损</td>
+</tr>
+<tr>
+<td>Canva</td>
+<td>27亿美元</td>
+<td>✅ 已盈利</td>
+</tr>
+<tr>
+<td>CoreWeave</td>
+<td>19亿美元</td>
+<td>✅ 算力租赁</td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>3亿美元</td>
+<td>✅ 小团队高利润</td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td>2亿美元</td>
+<td>❌ 尚未盈利</td>
+</tr>
+</tbody>
+</table>
+
+<p>（<a href="https://36kr.com/p/3630677472347142" target="_blank" rel="noopener">来源：浙商证券研究报告，经36氪转载</a>。注：OpenAI营收另有The Information报道的16亿美元口径（ARR vs 年收入统计口径不同）；Canva、CoreWeave、Midjourney、Anthropic营收暂无其他独立来源交叉验证，仅列浙商证券单源数据供参考。）</p>
+
+<p>中国的情况更严峻：</p>
+
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>营收</th>
+<th>利润</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工业富联</td>
+<td>6091亿元</td>
+<td>232亿元</td>
+</tr>
+<tr>
+<td>海光信息</td>
+<td>87-95亿元</td>
+<td>18-20亿元</td>
+</tr>
+<tr>
+<td>智谱AI</td>
+<td>3.1亿元</td>
+<td>亏损24.7亿元</td>
+</tr>
+<tr>
+<td>商汤科技</td>
+<td>37.72亿元</td>
+<td>亏损43亿元</td>
+</tr>
+</tbody>
+</table>
+
+<p>（<a href="https://www.stcn.com/article/detail/1746663.html" target="_blank" rel="noopener">来源：上海证券报</a>；<a href="https://www.donews.com/news/detail/4/6322738.html" target="_blank" rel="noopener">智谱AI招股书</a>）</p>
+
+<p>关键发现：A股529家AI概念公司里近七成"盈利"，但大多是<strong>传统业务+AI概念</strong>，不是AI原生公司。真正靠AI原生业务赚钱的，全球不超过几十家。</p>
+
+<p>36氪的分析点出了核心问题：<strong>"很多公司的生命周期不到一年。应用创新→模型学习→模型原生支持→免费。"</strong> Jasper融资超1亿美元、估值15亿美元，结果后来大家发现直接打开ChatGPT差不多。（<a href="https://36kr.com/p/3857299618101889" target="_blank" rel="noopener">来源：36氪</a>）</p>
+
+<p><strong>结论：多数头部AI公司仍在亏损——赚钱的是少数，亏损的是多数，行业整体还没找到稳定的盈利模型。</strong></p>
+
+<h3>2.2 "在家带娃用AI赚钱"的真相</h3>
+
+<p>那个抖音博主说的"用AI写攻略月入过万"，到底是不是真的？</p>
+
+<p>AI攻略的变现产业链：</p>
+
+<p><strong>第一层：工具提供</strong>——AI写作助手终身会员199元，一键生成"爆款标题"</p>
+<p><strong>第二层：内容分发</strong>——批量发布到小红书、B站、知乎，用AI"托管"运营账号</p>
+<p><strong>第三层：流量变现</strong>——平台广告分成（极少）→品牌广告（需1万粉以上）→带货佣金→知识付费（教别人用AI）</p>
+
+<p>注意到没有？在攻略这类低门槛内容中，变现的关键不在"AI产出的内容"，而在"教别人用AI"。</p>
+
+<p><strong>博主声称收入 vs 实际收入：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>宣传话术</th>
+<th>实际情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"月入过万"</td>
+<td>某博主坦白运营一个月总收入约3600元</td>
+</tr>
+<tr>
+<td>"68岁老人5天赚6271元"</td>
+<td>消费者付1868元买课后发现只有注册开店流程</td>
+</tr>
+<tr>
+<td>"第一个视频200块基础收益"</td>
+<td>需先交2888元会员费</td>
+</tr>
+</tbody>
+</table>
+
+<p>（<a href="https://www.woshipm.com/share/6207296.html" target="_blank" rel="noopener">来源：人人都是产品经理</a>；<a href="http://www.ce.cn/xwzx/shgj/gdxw/202507/t20250731_2427183.shtml" target="_blank" rel="noopener">中国经济网</a>）</p>
+
+<p>更讽刺的是，有用户交了399元AI副业课程费后发现，"全套资料在淘宝售价19.9元"，整个"AI副业成长群"中的收入截图、学员日记等均为安排好的"剧本"。（<a href="https://36kr.com/p/3391260810614920" target="_blank" rel="noopener">来源：36氪</a>）</p>
+
+<p>四川省消委会数据：2025年全省"AI+培训"投诉达<strong>3739件</strong>，同比上升2.21个百分点。（<a href="http://m.toutiao.com/group/7615585363704201755/" target="_blank" rel="noopener">来源：川观新闻</a>）</p>
+
+<p><strong>结论：这门生意的本质不是"用AI创造价值"，而是"用AI制造幻觉，再卖幻觉给想赚钱的人"。真正赚钱的是卖铲子的人，不是挖金子的人。</strong></p>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>第三章 从浪费时间到危及安全：AI错误的危害升级</h2>
+
+<h3>3.1 危害四级跳</h3>
+
+<p>你粉丝在游戏攻略上浪费了几个小时。这看起来是小事。但当AI错误从游戏蔓延到其他领域，危害是逐级升级的：</p>
+
+<p><strong>第一级：时间损失（游戏攻略）</strong></p>
+<p>- 粉丝照着AI攻略玩到第11关发现全错，几小时白费</p>
+<p>- AI工具在需要精确步骤的场景（如游戏攻略）中出错的风险更高。Perplexity官方承认其citation幻觉率约37%</p>
+
+<blockquote>[数据] Perplexity官方承认citation幻觉率约37%，来自第三方评测机构suprmind.ai引用的Perplexity官方数据。具体到游戏攻略场景的精确错误率尚无权威独立评测。</blockquote>
+
+<p><strong>第二级：经济损失（旅游攻略）</strong></p>
+<p>- 有游客被AI误导以为景区免费，到达后需购票，两人多花136元</p>
+<p>- 摄影爱好者被AI告知错误的展览时间，专程前往扑空，往返高铁票损失1000多元</p>
+<p>- AI规划的北京一日游路线，把南城的前门大街和北城的颐和园安排在一起，声称半小时可达，实际需坐17-19站地铁</p>
+
+<p>（<a href="http://m.toutiao.com/group/7652181018224509455/" target="_blank" rel="noopener">来源：中新网</a>）</p>
+
+<p><strong>第三级：人身伤害（健康建议）</strong></p>
+<p>- 国外一名男子问AI"有没有食盐替代品"，AI回答"可以用溴化钠代替"。该男子照做了三个月，最终确诊溴中毒，出现精神错乱等症状。此案例已发表在《内科学年鉴》AIM Clinical Cases上。（<a href="https://www.acpjournals.org/doi/pdf/10.7326/aimcc.2024.1260" target="_blank" rel="noopener">来源：AIM Clinical Cases论文</a>；<a href="https://www.guokr.com/" target="_blank" rel="noopener">果壳详细报道</a>）</p>
+<p>- AI生成的"胶水披萨"食谱——Google AI Overview把Reddit用户1996年的一个玩笑帖子当成了真实食谱推荐，引发广泛关注。（<a href="https://www.reuters.com/" target="_blank" rel="noopener">来源：Reuters/BBC等多家主流媒体报道</a>）</p>
+
+<p><strong>第四级：财产诈骗（金融/社交）</strong></p>
+<p>- 有人利用AI生成虚假身份实施网络交友诈骗——四川泸州合江县一男子隐瞒婚姻状况，用AI伪造房产证和身份信息，诱导受害人投资，损失超50万元</p>
+<p>- 美国多名律师因在法律文件中使用AI生成的虚假案例被法院处分</p>
+
+<p>（<a href="https://www.ccn.com.cn/Content/2025-03-17/1439491009.html" target="_blank" rel="noopener">来源：中国消费者报</a>；正义网）</p>
+
+<blockquote>[数据] 50万元案例为真人利用AI工具伪造身份诈骗，非"AI虚拟恋人"自主行为。原文描述"AI虚拟恋人诱导投资"不够准确，已修正。</blockquote>
+
+<h3>3.2 教育领域：5.67亿美元的教训</h3>
+
+<p>韩国政府投入约5.67亿美元推进AI教材进校园，仅4个月后因"错误频出、内容粗糙"而大规模叫停。4095所试点学校中，<strong>超过一半选择退出</strong>。（<a href="https://next.ithome.com/archiver/0/901/264.htm" target="_blank" rel="noopener">来源：IT之家+Korea Herald双源确认</a>）</p>
+
+<h3>3.3 蔓延全景图</h3>
+
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>典型错误</th>
+<th>后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>游戏攻略</td>
+<td>攻略与实际关卡不符</td>
+<td>浪费数小时</td>
+</tr>
+<tr>
+<td>旅游攻略</td>
+<td>虚构景点、错误路线</td>
+<td>扑空、额外花费</td>
+</tr>
+<tr>
+<td>美食推荐</td>
+<td>胶水披萨、虚假"探店"</td>
+<td>误导消费决策</td>
+</tr>
+<tr>
+<td>健康建议</td>
+<td>溴化钠替代食盐</td>
+<td>溴中毒、精神错乱</td>
+</tr>
+<tr>
+<td>教育资料</td>
+<td>数学符号识别错误、"3+2=6"</td>
+<td>学习误导</td>
+</tr>
+<tr>
+<td>金融法律</td>
+<td>虚假判例、虚构财务数据</td>
+<td>专业声誉受损</td>
+</tr>
+<tr>
+<td>社交诈骗</td>
+<td>AI伪造身份实施诈骗</td>
+<td>损失50万+</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>结论：AI内容的危害不是"可能"升级，而是"正在"升级。从你粉丝浪费的几个小时，到有人因AI建议中毒，再到有人被AI伪造身份骗走50万，这条线已经画出来了。</strong></p>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>第四章 监管在跑步，黑产在骑摩托</h2>
+
+<h3>4.1 中国监管：在补课，但进度偏慢</h3>
+
+<p><strong>已有动作：</strong></p>
+
+<p>1. <strong>《人工智能生成合成内容标识办法》</strong>——2025年9月1日实施，要求AI生成内容必须添加显式标识（文字/图形）和隐式标识（文件背后的隐藏标签），未标识可罚20-100万元</p>
+<p>2. <strong>"清朗·整治AI应用乱象"专项行动</strong>——2026年4月30日中央网信办部署，为期4个月</p>
+<p>3. <strong>全国首例AI代写"种草笔记"案</strong>——2026年5月杭州中院判赔10万元</p>
+
+<p>（<a href="https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm" target="_blank" rel="noopener">来源：中央网信办</a>；<a href="https://news.cctv.cn/2026/05/12/ARTI8WYlR9mPd6KyPj3GhncE260512.shtml" target="_blank" rel="noopener">央视新闻</a>）</p>
+
+<p><strong>效果如何？</strong></p>
+
+<p>小红书作为首案原告方，确实加大了处置力度：</p>
+<p>- 处置AI虚假种草笔记330万篇</p>
+<p>- 封禁虚假营销账号超1200万个（含非AI虚假营销账号）</p>
+<p>- 清理虚假评论超3.6亿条</p>
+<p>- 专项治理后AI发文量下降约35%</p>
+
+<p>（<a href="https://fazhi.cpd.com.cn/pfxc/526/t_1233609.html" target="_blank" rel="noopener">来源：中国警察网</a>；<a href="https://cn.chinadaily.com.cn/a/202509/18/WS68cbc60ba310f07257749344.html" target="_blank" rel="noopener">中国日报网</a>）</p>
+
+<blockquote>[数据] 330万篇为AI虚假种草笔记，1200万为全部虚假营销账号（含人工造假），两者口径不同，不可直接对比。</blockquote>
+
+<h3>4.2 但算一笔经济账：4元/条 vs 10万判赔</h3>
+
+<p>黑灰产链条已经被央视曝光：第三方组织以低至<strong>4元/条</strong>的价格招募写手，根据商家提供的图片和关键词批量生成"亲测有效"文案，无需实际到店。（<a href="https://news.cctv.cn/2026/05/12/ARTI8WYlR9mPd6KyPj3GhncE260512.shtml" target="_blank" rel="noopener">来源：央视新闻</a>）</p>
+
+<p>10万元判赔，按4元/条计算，需要2.5万条才"回本"。而一个AI写作工具一天就能生成几百上千条。</p>
+
+<p><strong>新《反不正当竞争法》2025年10月修订</strong>将"虚假评价"纳入规制，品牌方发布虚假AI探店内容可按广告投放费用的三至十倍罚款，情节严重最高罚200万元。（<a href="https://post.m.smzdm.com/p/a5r79plk/" target="_blank" rel="noopener">来源：什么值得买</a>）这比10万判赔有震慑力多了，但执法覆盖面仍有限。</p>
+
+<h3>4.3 AI"幻觉"的法律责任：还没说清楚</h3>
+
+<p>全国首例AI"幻觉"侵权案中，杭州互联网法院判决：AI不具有民事主体资格，其"承诺"不构成法律约束；服务提供者已尽合理注意义务，不构成侵权。</p>
+
+<p>法官提醒公众：<strong>"当前AI只是'文本辅助生成器'和'信息查询辅助工具'，不能替代决策，更不能轻信盲从。"</strong></p>
+
+<p>这个判决意味着：如果你被AI攻略误导造成了损失，目前法律上很难追责。</p>
+
+<h3>4.4 国外怎么管的？YouTube模式值得参考</h3>
+
+<p><strong>YouTube是最严的，用的是双轨治理：</strong></p>
+
+<p>- <strong>第一轨：AI披露政策</strong>（2025年5月21日强制执行）——内容包含逼真的AI合成素材（人脸/声音/事件），创作者必须标注。不标注→YouTube可能自动标注或删除内容。但标了AI标签本身不影响推荐和变现资格</p>
+<p>- <strong>第二轨：不真实内容政策</strong>（2025年7月扩展）——模板化、批量复制的低质内容，不管用没用AI，频道级取消货币化。人工做模板化内容一样会被罚</p>
+<p>- YouTube已部署AI内容自动检测系统，2026年5月起标签位置升级到更显著位置</p>
+
+<p>（<a href="https://support.google.com/youtube/answer/14139241" target="_blank" rel="noopener">来源：YouTube Help Center - AI披露政策</a>；<a href="https://support.google.com/youtube/answer/13114155" target="_blank" rel="noopener">YouTube Help Center - 不真实内容政策</a>）</p>
+
+<p><strong>欧盟AI法案</strong>按风险分级：不可接受风险→完全禁止（罚全球营业额7%）；高风险→强制注册+人工监督（罚3%）；有限风险→透明度+内容标识（罚2%）。（<a href="https://ec.europa.eu/commission/presscorner/api/files/document/print/ov/ip_24_4123/IP_24_4123_EN.pdf" target="_blank" rel="noopener">来源：欧盟委员会</a>）</p>
+
+<p><strong>Reddit最松</strong>：各子版块自主管理，截至2024年11月仅1.2%的子版块制定了AI规则。（<a href="https://arxiv.org/html/2410.11698v3" target="_blank" rel="noopener">来源：arXiv</a>）</p>
+
+<p><strong>中国平台对比：</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>强制标识</th>
+<th>执行力度</th>
+<th>货币化挂钩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>✅ 强制</td>
+<td>强（自动检测+人工审查）</td>
+<td>⚠️ 双轨治理</td>
+</tr>
+<tr>
+<td>小红书</td>
+<td>✅ 2025年9月起</td>
+<td>中等（330万篇处置）</td>
+<td>❌ 未挂钩</td>
+</tr>
+<tr>
+<td>抖音</td>
+<td>✅ 有要求</td>
+<td>中等</td>
+<td>❌ 未挂钩</td>
+</tr>
+<tr>
+<td>B站</td>
+<td>⚠️ 部分</td>
+<td>弱</td>
+<td>❌ 未挂钩</td>
+</tr>
+<tr>
+<td>知乎</td>
+<td>⚠️ 24小时未识别</td>
+<td>弱</td>
+<td>❌ 未挂钩</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>结论：监管确实在跑步——标识办法、专项行动、首案判罚都在往前推。但黑产在骑摩托——4元/条的成本、一天几万条的产能、在事实性问答场景下近三成幻觉率的"出厂合格率"，执法速度跟不上生产速度。核心问题是：中国平台只罚不赚，没有像YouTube那样设质量门槛——模板化垃圾内容不管用没用AI，都应该取消变现资格。</strong></p>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>第五章 答案：双轨治理——透明度+质量门槛</h2>
+
+<h3>5.1 YouTube模式的启示</h3>
+
+<p>YouTube做对了一件关键的事：<strong>设了两道门槛——你不标AI，内容可能被删；你标了AI但内容是模板化垃圾，照样赚不到钱。</strong></p>
+
+<p>两道门槛各管各的：第一道管透明度（你必须告诉观众这是AI生成的），第二道管质量（不管用什么工具，模板化批量内容一律取消变现）。</p>
+
+<p>这个逻辑为什么有效？因为对于内容创作者来说，<strong>赚钱是最大的合规动力</strong>。罚款10万可能远在天边，但下个月频道没有广告分成，是立刻能感受到的。</p>
+
+<p>YouTube 2025年7月还更新了货币化政策：内容需要"显著原创和真实"方可变现。这意味着不是标了AI就完事，标了AI但内容质量低、同质化严重的，一样赚不到钱。（<a href="https://support.google.com/youtube/answer/13114155" target="_blank" rel="noopener">来源：YouTube Help Center</a>）</p>
+
+<h3>5.2 给中国平台的建议 [推论]</h3>
+
+<p>如果中国平台要效仿YouTube的双轨治理模式，可以考虑：</p>
+
+<p><strong>第一步：强制标识 + 透明度要求</strong></p>
+<p>- 不标识AI内容的创作者，内容可能被降权或删除</p>
+<p>- 这比罚款更直接，比诉讼更高效</p>
+
+<p><strong>第二步：质量门槛 + 变现挂钩</strong></p>
+<p>- 不管用没用AI，模板化批量内容一律取消变现资格</p>
+<p>- 这才是真正能卡住黑产的手段——不是因为用了AI被罚，是因为内容没有价值</p>
+
+<p><strong>第三步：分级管理</strong></p>
+<p>- AI辅助创作（人写+AI润色）：正常分发</p>
+<p>- AI生成+人工验证：标注但正常分发</p>
+<p>- AI生成+未验证：降权处理，减少推荐</p>
+<p>- AI生成+证实错误：下架+扣信用分</p>
+
+<p><strong>第四步：建立"攻略验证"机制</strong></p>
+<p>- 游戏攻略、旅游攻略、健康建议等高误导性内容，要求创作者标注"亲测"或"AI生成"</p>
+<p>- "亲测"标签需提供证据（截图、录屏等），虚假标注加重处罚</p>
+
+<blockquote>[推论] 以上建议为基于YouTube模式的政策推演，尚未在中国平台实际验证效果。</blockquote>
+
+<h3>5.3 给用户的建议 [建议]</h3>
+
+<p>在平台还没做到位之前，用户只能自我保护：</p>
+
+<p>1. <strong>交叉验证</strong>：对攻略类内容，至少到两个以上来源核实</p>
+<p>2. <strong>看创作者</strong>：有没有真实的游戏/旅行/专业经验？是否只有AI生成的内容？</p>
+<p>3. <strong>警惕"万能攻略"</strong>：一个号什么游戏的攻略都写，大概率是AI批量生产</p>
+<p>4. <strong>看评论</strong>：评论区有没有人指出错误？AI批量内容的评论区往往也是AI水军</p>
+
+<h3>5.4 给创作者的建议 [建议]</h3>
+
+<p>如果你是认真做内容的创作者，AI是你的工具，不是你的替代品：</p>
+
+<p>1. <strong>AI生成 + 人工验证</strong>，而不是AI生成直接发布</p>
+<p>2. <strong>标注AI辅助创作</strong>，这不会降低可信度，反而会提升</p>
+<p>3. <strong>真实体验是你最大的竞争力</strong>——AI无法复制的，正是你亲自玩过的那一关</p>
+
+<div class="chapter-divider">· · ·</div>
+
+<h2>终章：谁为AI的错误买单？</h2>
+
+<p>回到最初那个粉丝的遭遇：他在B站找攻略，被AI生成的错误内容误导，浪费了好几个小时。</p>
+
+<p>这几个小时的损失谁来承担？</p>
+
+<p>写攻略的博主？他说"我只是用AI帮忙"。</p>
+<p>发布内容的平台？它说"我们提供了声明功能"。</p>
+<p>开发AI的公司？它说"AI只是工具，最终决策在使用者"。</p>
+<p>监管部门？它说"我们已经出台了标识办法"。</p>
+
+<p>每个人都在尽责，但每个人都没负责到底。</p>
+
+<p>这就是AI内容时代的困境：<strong>生产者不验证、平台不识别、监管不闭环、用户不自保——四个环节全部失守，最终买单的只有用户。</strong></p>
+
+<p>AI不是问题。不验证就发布，才是问题。</p>
+
+<p>没有质检的流水线，产出的不是产品，是风险。</p>
+
+<p>关注我，每周拆行业数据。</p>
+
+<div class="chapter-divider">· · ·</div>
+
+</article>
+
+<!-- CTA -->
+<div class="article-cta">
+    <h3 class="cta-title">每周拆行业数据</h3>
+    <p class="cta-desc">关注小K，只给你看真实数据，不灌鸡汤</p>
+    <div class="cta-links">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAA87136895923" class="btn-primary" target="_blank" rel="noopener">抖音关注</a>
+        <a href="index.html" class="btn-secondary">返回首页 →</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 小K爱研究 · 数据可溯源，案例有出处 · 不做投资建议，只做数据分析</p>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('progressBar').style.width = progress + '%';
+});
+
+// Fade-in animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
