@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI的散热账单：风冷已死，液冷上位 | 小K爱研究</title>
+    <meta name="description" content="散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。风冷散不掉，水不够用，两条路堵死只剩液冷。">
+    <meta name="keywords" content="AI散热,液冷,数据中心,水危机,GPU功耗,东数西算,风冷,冷却液">
+    <meta name="author" content="小K">
+    <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/article-ai-cooling-bill.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI的散热账单：风冷已死，液冷上位">
+    <meta property="og:description" content="散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。风冷散不掉，水不够用，两条路堵死只剩液冷。">
+    <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/article-ai-cooling-bill.html">
+    <meta property="og:site_name" content="小K爱研究">
+    <meta property="og:locale" content="zh_CN">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "AI的散热账单：风冷已死，液冷上位",
+      "headline": "AI的散热账单：风冷已死，液冷上位",
+      "description": "散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。风冷散不掉，水不够用，两条路堵死只剩液冷。",
+      "author": {
+        "@type": "Person",
+        "name": "小K",
+        "jobTitle": "数据研究分析",
+        "description": "专注数据深度拆解，数据可溯源，案例有出处"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "小K"
+      },
+      "datePublished": "2026-06-27",
+      "dateModified": "2026-06-27",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tsuyoshikate.github.io/xiaokai/article-ai-cooling-bill.html"
+      },
+      "url": "https://tsuyoshikate.github.io/xiaokai/article-ai-cooling-bill.html",
+      "wordCount": 8000,
+      "articleSection": "数据研究分析",
+      "inLanguage": "zh-CN",
+      "keywords": [
+        "AI散热",
+        "液冷",
+        "数据中心",
+        "水危机",
+        "GPU功耗",
+        "东数西算",
+        "风冷",
+        "冷却液"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "AI散热账单",
+          "description": "散热设备占数据中心建设投资的20%，每花100块有20块是散热，是电费的4倍"
+        },
+        {
+          "@type": "Thing",
+          "name": "GPU功耗爆炸",
+          "description": "H100 700W→B200 1000W→Rubin 2300W/3700W，三年翻三倍，风冷物理上散不掉"
+        },
+        {
+          "@type": "Thing",
+          "name": "水约束",
+          "description": "数据中心冷却水80%蒸发不可回收，间接用水最高是直接用水的12倍"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "NVIDIA",
+          "description": "Rubin全面液冷，英伟达官方液冷合作伙伴Vertiv订单暴增252%"
+        },
+        {
+          "@type": "Organization",
+          "name": "Microsoft",
+          "description": "花10亿美元把建好的风冷机房拆了改液冷"
+        },
+        {
+          "@type": "Organization",
+          "name": "3M",
+          "description": "因PFAS环保诉讼2025年底全面停产氟化液，国产厂商补位"
+        },
+        {
+          "@type": "Organization",
+          "name": "Vertiv",
+          "description": "英伟达官方液冷合作伙伴，Q4订单暴增252%"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --bg-code: #141414;
+            --text-primary: #e8e8e8;
+            --text-secondary: #999999;
+            --text-tertiary: #666666;
+            --accent: #6C63FF;
+            --accent-hover: #7B73FF;
+            --border: #222222;
+            --gradient-start: #6C63FF;
+            --gradient-end: #E94560;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.85;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .top-bar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover { opacity: 0.8; }
+
+        .top-bar-title {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .article-header {
+            padding: 140px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(108, 99, 255, 0.08), transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(233, 69, 96, 0.06), transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .article-header-content { position: relative; z-index: 1; }
+
+        .article-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            font-size: 12px;
+            padding: 4px 12px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-tertiary);
+        }
+
+        .article-title {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-weight: 300;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            flex-wrap: wrap;
+        }
+
+        .toc-wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .toc-list {
+            list-style: none;
+            column-count: 2;
+            column-gap: 24px;
+        }
+
+        .toc-list li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover { color: var(--accent); }
+
+        .toc-list .toc-chapter {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 15px;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .article-body h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .article-body h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-primary);
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 6px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .article-body blockquote {
+            margin: 24px 0;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .article-body blockquote p { margin-bottom: 8px; }
+
+        .article-body a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(108, 99, 255, 0.3);
+            transition: border-color 0.2s;
+        }
+
+        .article-body a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .article-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .article-body th {
+            background: var(--bg-card);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--accent);
+            border-bottom: 2px solid var(--border);
+            font-size: 13px;
+        }
+
+        .article-body td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .article-body tr:hover td {
+            background: rgba(108, 99, 255, 0.04);
+        }
+
+        .article-body img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            margin: 20px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.08), rgba(233, 69, 96, 0.05));
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 28px 0;
+        }
+
+        .highlight-box .highlight-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p { margin-bottom: 8px; }
+
+        .source-note {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            background: var(--bg-code);
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+
+        .source-note a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: none;
+        }
+
+        .source-note a:hover { opacity: 0.8; }
+
+        .data-impact {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.15);
+            color: #E94560;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .data-good {
+            display: inline-block;
+            background: rgba(76, 175, 80, 0.15);
+            color: #4CAF50;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .data-warning {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.15);
+            color: #FFC107;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 28px; }
+            .toc-list { column-count: 1; }
+            .top-bar-title { display: none; }
+        }
+    </style>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        <span class="top-bar-title">AI的散热账单：风冷已死，液冷上位</span>
+    </div>
+</div>
+
+<!-- Article Header -->
+<div class="article-header">
+    <div class="article-header-content">
+        <div class="article-tags">
+            <span class="article-tag">AI散热</span>
+            <span class="article-tag">液冷</span>
+            <span class="article-tag">数据中心</span>
+            <span class="article-tag">水危机</span>
+            <span class="article-tag">东数西算</span>
+        </div>
+        <h1 class="article-title">AI的散热账单<br>风冷已死，液冷上位</h1>
+        <p class="article-subtitle">
+            散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。<br>
+            风冷散不掉，水不够用，两条路堵死只剩液冷。
+        </p>
+        <div class="article-meta">
+            <span>📅 2026.06</span>
+            <span>📊 16+数据源</span>
+            <span>🏢 AI基础设施</span>
+        </div>
+    </div>
+</div>
+
+<!-- TOC -->
+<div class="toc-wrapper">
+    <div class="toc">
+        <div class="toc-title">// 目录</div>
+        <ul class="toc-list">
+            <li><a href="#sec1" class="toc-chapter">一、散热——AI行业最被忽略的账单</a></li>
+            <li><a href="#sec2" class="toc-chapter">二、GPU功耗三年翻三倍，风冷的天花板到了</a></li>
+            <li><a href="#sec3" class="toc-chapter">三、散热占建设投资20%，比电费高4倍</a></li>
+            <li><a href="#sec4" class="toc-chapter">四、水才是真正的硬约束</a></li>
+            <li><a href="#sec5" class="toc-chapter">五、南水北调能调，数据中心的水不能调</a></li>
+            <li><a href="#sec6" class="toc-chapter">六、东数西算：中国解法</a></li>
+            <li><a href="#sec7" class="toc-chapter">七、液冷市场一年翻倍，国产替代加速</a></li>
+            <li><a href="#sec8" class="toc-chapter">八、结论：两条路堵死，只剩液冷</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Article Body -->
+<div class="article-body">
+
+<!-- 一、散热——AI行业最被忽略的账单 -->
+<h2 id="sec1">一、散热——AI行业最被忽略的账单</h2>
+
+<p>你跟AI聊5分钟，大概用掉一瓶矿泉水的散热用水。不是电，是水。</p>
+
+<p>所有人都在盯着AI算力够不够、电力跟不跟得上，但有一条账单几乎没人算过——散热。这可不是一笔小账：散热设备占数据中心建设投资的<span class="data-impact">20%</span>。什么概念？建一个数据中心，每花100块，有20块是散热。电费呢？运营成本里只占5%左右。也就是说，一次性投入里散热是电费的4倍。</p>
+
+<p>这不是一个比例问题，是一个认知偏差问题。行业关注度的分布和实际成本的分布完全倒挂——所有人盯着电费，但真正砸大钱的是散热。而且散热最贵的不是设备，是水。</p>
+
+<p>为什么散热会被忽略？因为电是显性成本——每月电费单写得很清楚，千瓦时，一度多少钱，算得明明白白。散热是隐性成本——建设期一次性砸进去，藏在"基础设施投资"这个大筐里，很少有人单独拆出来看。水更是隐性中的隐性——取水许可、蒸发损耗、间接用水，这些数字分散在不同维度的报告里，没人把它们拼在一起。</p>
+
+<p>但当你把这些数据拼在一起的时候，这张"散热账单"的规模会让人倒吸一口凉气。</p>
+
+<p>本报告从芯片功耗、散热投资、水资源约束、政策调控、市场机会五个维度，拆解AI行业最被忽略的这笔账。</p>
+
+<p><img src="imgs/AI散热账单_数据图/chart1_投资构成.png" alt="图1：数据中心投资构成"></p>
+
+<p><img src="imgs/AI散热账单_表格/table1.png" alt="表1：数据中心建设投资构成"></p>
+
+<p class="source-note">来源：<a href="https://www.weforum.org/stories/2026/01/enhancing-value-of-digital-infrastructure/" target="_blank">WEF</a> 2026.01 | <a href="https://uptimeinstitute.com/" target="_blank">Uptime Institute</a> 行业基准数据</p>
+
+<!-- 二、GPU功耗三年翻三倍 -->
+<h2 id="sec2">二、GPU功耗三年翻三倍，风冷的天花板到了</h2>
+
+<p>GPU功耗正在以摩尔定律都无法解释的速度飙升。</p>
+
+<p>英伟达H100是<span class="data-impact">700瓦</span>。B200是<span class="data-impact">1000瓦</span>。下一代Rubin直接飙到<span class="data-impact">2300瓦</span>——最高配<span class="data-impact">3700瓦</span>。3700瓦什么概念？一个家用电磁炉开最大档是2200瓦，Rubin比电磁炉还热70%。而这块芯片的面积只有一张信用卡大小，热密度达到了传统CPU的5-8倍。</p>
+
+<p><img src="imgs/AI散热账单_数据图/chart2_GPU功耗.png" alt="图2：GPU功耗演进"></p>
+
+<p><img src="imgs/AI散热账单_表格/table2.png" alt="表2：GPU功耗演进与散热方案"></p>
+
+<p class="source-note">来源：<a href="http://m.toutiao.com/group/7655238955592139270/" target="_blank">老五测评</a> 2026.06 | GTC 2026.03</p>
+
+<p>这个功耗曲线不是线性的，是指数级的。从H100到B200，功耗增长43%；从B200到Rubin，功耗增长130%。三年时间，GPU功耗翻了三倍还多。这意味着什么？意味着风冷已经散不掉了。</p>
+
+<p>风冷的物理极限很清楚：空气的比热容是水的1/4000，传热效率天生就有天花板。当前最先进的风冷方案——行级空调+封闭冷通道+变频风机——在单机柜功耗15kW以下还能应对，超过20kW就开始力不从心，30kW以上基本无解。而一台搭载8颗Rubin的服务器，单机功耗就接近20kW。一个42U机柜塞4-6台，整机柜功耗轻松突破80-120kW。</p>
+
+<p>2026年3月，英伟达在GTC大会上宣布Rubin全面采用液冷方案，不再提供风冷选项——<span class="data-impact">全球最大的GPU厂商亲自给风冷判了死刑</span>。这不是选配，是强制。</p>
+
+<p>微软的案例更具冲击力：花<span class="data-impact">10亿美元</span>把已经建好的风冷机房拆了改液冷。不是因为想改，是因为风冷已经压不住发热，不改机器就跑不了。10亿美元是沉没成本——建了、拆了、重建了，全部因为散热方案选错了。</p>
+
+<p class="source-note">来源：<a href="https://introl.com/zh/blog/liquid-vs-air-cooling-ai-data-centers" target="_blank">Introl</a> 2025.12</p>
+
+<p>风冷的黄昏已经到了。不是"可能不行"，是"物理上散不掉"。</p>
+
+<!-- 三、散热占建设投资20% -->
+<h2 id="sec3">三、散热占建设投资20%，比电费高4倍</h2>
+
+<p>拆开数据中心的账本，你会发现一个反直觉的事实：散热是建设期最大的单项支出之一。</p>
+
+<p>根据世界经济论坛（WEF）2026年1月的报告，散热设备占数据中心建设总投资的<span class="data-impact">20%</span>。而Uptime Institute的行业基准数据显示，电费只占运营成本的5%左右。如果把建设投资和运营成本做一个总账——每花100块建设费，有20块是散热；每花100块运营费，只有5块是电费。散热的一次性投入是电费持续支出的4倍。</p>
+
+<p><img src="imgs/AI散热账单_表格/table1.png" alt="表1：数据中心建设投资构成"></p>
+
+<p>这还只是设备成本。如果算上散热相关的配套——冷却塔、冷水机组、水泵、管道、水处理系统——实际占比可能超过25%。为什么这么贵？因为散热是一个系统工程，不是装几台风扇就完了：</p>
+
+<ul>
+    <li><strong>冷却塔</strong>：大型数据中心需要多台横流式冷却塔，单台造价数百万</li>
+    <li><strong>冷水机组</strong>：制冷的核心，能效比COP决定运营成本</li>
+    <li><strong>水泵和管道</strong>：循环系统的"血管"，管径、流量、扬程都要精确设计</li>
+    <li><strong>水处理系统</strong>：冷却水需要软化、杀菌、防垢，否则结垢会急剧降低散热效率</li>
+</ul>
+
+<p>但液冷比风冷更贵——初始投资是风冷的1.5到2倍。这似乎是个悖论：散热已经够贵了，换液冷更贵，为什么还要换？</p>
+
+<p>答案在TCO（全生命周期成本）。液冷虽然初始投资高，但散热效率更高，PUE（电源使用效率）更低。一个典型的对比：风冷机房PUE 1.4-1.5，液冷机房PUE 1.1-1.2。PUE每降低0.1，意味着每年省下约7%的电费。<span class="data-good">3到5年，省下的电费就把初始投资差价覆盖回来了</span>。</p>
+
+<p>所以液冷不是更贵，是"先贵后省"。但这个逻辑有一个前提：你得有足够的水来支撑液冷系统运转。而这个前提，正在变得越来越不确定。</p>
+
+<p class="source-note">来源：<a href="https://www.weforum.org/stories/2026/01/enhancing-value-of-digital-infrastructure/" target="_blank">WEF</a> 2026.01 | <a href="https://introl.com/zh/blog/liquid-vs-air-cooling-ai-data-centers" target="_blank">Introl</a> 2025.12</p>
+
+<!-- 四、水才是真正的硬约束 -->
+<h2 id="sec4">四、水才是真正的硬约束</h2>
+
+<p>散热最贵的不是设备，是水。</p>
+
+<p>这听起来很反直觉。水不是拧开水龙头就有吗？我家的蓄水池不是够用吗？不一样。你家用水，洗完澡水进下水道，处理一下还能循环利用。但数据中心用的冷却水，<span class="data-impact">80%直接蒸发到空气里了</span>——变成蒸汽，回不来了。不是脏了不能用的那种"废水"，是物理上消失了，变成云了。你家蓄水池再大，水蒸发完就空了，还得重新灌。</p>
+
+<p><img src="imgs/AI散热账单_数据图/chart3_水去哪了.png" alt="图3：数据中心水去哪了"></p>
+
+<p><img src="imgs/AI散热账单_表格/table3.png" alt="表3：数据中心用水类型对比"></p>
+
+<p class="source-note">来源：<a href="https://engineeringjunkies.com/why-ai-data-centers-use-so-much-water/" target="_blank">Engineering Junkies</a> 2026.06 | <a href="https://liveinthefuture.org/stories/ai-water-crisis" target="_blank">LBNL</a> 2024</p>
+
+<p>对比一下就明白了：居民用水只有约10%通过蒸发消耗，90%可以处理后循环；而数据中心冷却水80%蒸发掉，只有20%回流。这意味着数据中心的每一滴冷却水，基本都是"一次性"的——用了就没了。</p>
+
+<p>那到底要多少水？大连有一座中型AI算力中心，2025年全年用水3000吨。2026年上半年算力需求涨了60%，结果半年用水量就追平了去年全年——当地水务部门直接下达了用水限额整改通知。一个中型数据中心就这样了，那些超大型呢？</p>
+
+<p>全球的案例更加触目惊心：</p>
+
+<ul>
+    <li><strong>Google Oregon数据中心</strong>：占了所在城市The Dalles <span class="data-impact">29%</span>的用水量——一家公司用掉了一个城镇近三分之一的水</li>
+    <li><strong>智利6座数据中心</strong>：从当地湿地抽水，而智利正经历千年一遇的干旱</li>
+    <li><strong>内华达州</strong>：直接立法禁止数据中心使用蒸发冷却，因为水太缺了</li>
+</ul>
+
+<p class="source-note">来源：<a href="https://dcpulse.com/article/data-centers-water-scarcity-digital-growth" target="_blank">DC Pulse</a> 2026 | <a href="https://www.ithome.com/0/956/210.htm" target="_blank">IT之家</a> 2026.05 | <a href="https://www.spglobal.com/sustainable1/en/insights/special-editorial/beneath-the-surface-water-stress-in-data-centers" target="_blank">S&amp;P Global</a> 2025.09</p>
+
+<p>还有一个更隐蔽的账：发电厂为数据中心供电消耗的间接用水。根据劳伦斯伯克利国家实验室（LBNL）的研究，间接用水最高是数据中心直接用水的<span class="data-impact">12倍</span>。也就是说，你只看到数据中心在喝水，没看到给它发电的火电厂也在疯狂烧水。AI的全生命周期用水量，比你看到的大一个数量级。</p>
+
+<p>而且有一个关键区分：训练用水和推理用水。AI推理用水占AI总用水量的<span class="data-impact">80%到90%</span>——训练一次就结束了，但推理是7×24小时持续的。越多人用AI，水就越蒸发，回不来。</p>
+
+<p class="source-note">来源：<a href="https://cj.sina.cn/articles/view/7880068204/1d5b04c6c068019x2e" target="_blank">新浪财经</a> 2026.06 | <a href="https://liveinthefuture.org/stories/ai-water-crisis" target="_blank">LBNL</a> 2024</p>
+
+<!-- 五、南水北调能调，数据中心的水不能调 -->
+<h2 id="sec5">五、南水北调能调，数据中心的水不能调</h2>
+
+<p>你肯定要问：南水北调都能搞，水怎么就不能调到数据中心了？</p>
+
+<p>能调，但代价完全不一样。</p>
+
+<p>南水北调，规划50年，投资5000亿，调的是4亿人的喝水和种地用水——这是保命的。数据中心的冷却水是工业用水，每吨水的蒸发都是净损失，调过去蒸发掉还要再调，是个无底洞。</p>
+
+<p>更关键的是物理约束：输水管道的建造成本是同距离输电的<span class="data-impact">10倍以上</span>。每多调一公里，水就在管道里蒸发损耗一部分。电送1000公里损耗6%，水送1000公里光蒸发和渗漏就丢一大截。</p>
+
+<p><img src="imgs/AI散热账单_表格/table3.png" alt="表3：数据中心用水类型对比"></p>
+
+<p>这不是一个意愿问题，是一个热力学问题。水在管道里流动就会蒸发，就会渗漏，就会与管壁发生化学反应——这些都是不可逆的物理损耗。电在导线里传输也有损耗，但至少不会"凭空消失"。</p>
+
+<p>S&amp;P Global 2025年9月的报告指出，全球<span class="data-impact">43%</span>的数据中心位于高水压区域——也就是水资源已经紧张的地方。这些数据中心不是因为不知道缺水才建在那的，是因为那里靠近用户、靠近网络枢纽、靠近现有的电力基础设施。但现在，水资源的约束正在把这些优势变成劣势。</p>
+
+<p>内华达州已经立法禁止新建数据中心使用蒸发冷却。智利的6座数据中心被调查从湿地抽水。爱尔兰的都柏林因为数据中心用水激增，开始限制新数据中心的建设许可。全球范围内，"水"正在成为数据中心选址的第一否决项。</p>
+
+<p class="source-note">来源：<a href="https://www.spglobal.com/sustainable1/en/insights/special-editorial/beneath-the-surface-water-stress-in-data-centers" target="_blank">S&amp;P Global</a> 2025.09 | <a href="https://www.ithome.com/0/956/210.htm" target="_blank">IT之家</a> 2026.05</p>
+
+<p>所以，南水北调能调，数据中心的水不能调——不是因为技术上做不到，而是因为经济上不可行、物理上不划算。水不能搬，那只能搬数据中心。</p>
+
+<!-- 六、东数西算：中国解法 -->
+<h2 id="sec6">六、东数西算：中国解法</h2>
+
+<p>水不能搬到数据中心旁边，那就把数据中心搬到水够用、气温低的地方。这就是中国的"东数西算"。</p>
+
+<p><img src="imgs/AI散热账单_表格/table4.png" alt="表4：东数西算核心节点布局"></p>
+
+<p>东数西算的核心逻辑：西部有三大优势——电便宜、气温低、有余水。内蒙古、宁夏、甘肃，一年有近10个月不用开水冷，靠自然风就能散热。内蒙古电价0.36元/度，上海0.8元/度，差了一倍多。散热成本更低——冬天零下20度，空气就是天然冷源。</p>
+
+<p>但这不是完美解法。西部有两个约束：</p>
+
+<h3>约束一：西部本身也缺水</h3>
+
+<p>某省会城市想落地一个超大型AI训练基地，取水评估没过，项目直接被调走。不是不想建，是当地水不够撑。西北地区的年均降水量只有200-400毫米，蒸发量却高达1500-2500毫米——入不敷出。数据中心虽然比蒸发冷却省水，但依然需要冷却液和补充水，在极端干旱地区，这些水从哪来？</p>
+
+<h3>约束二：网络延迟</h3>
+
+<p>训练对延迟不敏感——把大模型放在内蒙古训完再搬回来。但推理对延迟极度敏感——你问ChatGPT一个问题，等2秒可以，等10秒就关了。所以推理节点必须靠近用户，放在东部沿海。但东部恰恰是缺水又缺电的地方。</p>
+
+<p>中国的解法是"训推分离"——训练放西部，推理留东部。训练是集中式的大任务，延迟无所谓；推理是分布式的小任务，延迟决定体验。但这个解法的前提是：推理节点的散热问题得靠液冷解决，因为东部既缺水又缺电，不可能用传统的蒸发冷却。</p>
+
+<p><img src="imgs/AI散热账单_数据图/chart4_液冷市场.png" alt="图4：液冷市场"></p>
+
+<p>上海走得更远——把数据中心沉到海底。15度的海水循环散热，全程不消耗淡水。PUE低于<span class="data-good">1.15</span>，比最先进的陆地液冷还低。这不是概念，是已经在运行的项目。</p>
+
+<p class="source-note">来源：<a href="https://cj.sina.cn/articles/view/7880068204/1d5b04c6c068019x02" target="_blank">新浪财经/央视财经</a> 2026.06</p>
+
+<p>东数西算不是万能药，但它揭示了一个核心原则：AI基础设施的选址，第一约束不是电，不是网，而是水。谁先把水的问题解决——不管是搬到水多的地方，还是用不需要水的散热方案——谁就掌握了AI基础设施的主动权。</p>
+
+<!-- 七、液冷市场一年翻倍，国产替代加速 -->
+<h2 id="sec7">七、液冷市场一年翻倍，国产替代加速</h2>
+
+<p>散热这条赛道，需求不是预测出来的，是芯片发热和水不够这两件事同时逼出来的。</p>
+
+<p>英伟达Rubin今年秋季量产，直接拉动液冷需求。英伟达官方液冷合作伙伴Vertiv去年四季度订单暴增<span class="data-impact">252%</span>。全球AI服务器液冷市场从89亿美元飙到<span class="data-impact">170亿美元</span>——一年翻倍，这还是保守估计。</p>
+
+<p><img src="imgs/AI散热账单_表格/table5.png" alt="表5：液冷市场关键数据"></p>
+
+<p class="source-note">来源：<a href="http://m.toutiao.com/group/7654860583523435044/" target="_blank">摩根大通/茅小东</a> 2026.06 | <a href="https://reports.mklist.com/api/book/38362.pdf" target="_blank">国信证券</a> 2025.09</p>
+
+<p><img src="imgs/AI散热账单_数据图/chart4_液冷市场.png" alt="图4：液冷市场"></p>
+
+<p>液冷的核心材料是冷却液。传统的氟化液市场长期被3M垄断，但3M因为PFAS（全氟/多氟烷基物质）环保诉讼，2023年达成和解协议，2025年底到期全面停产氟化液。全球最大的氟化液供应商退出市场，留下一个巨大的真空。</p>
+
+<p>中国厂商直接补位。东阳光、巨化股份、新宙邦拿下了英伟达、台积电、阿里的冷却液认证。这不是低端替代——氟化液的技术门槛极高，纯度要求达到ppb（十亿分之一）级别，全球之前只有3M和少量日本厂商能做到。中国三家在3M退出后18个月内完成认证，速度超出预期。</p>
+
+<p>价格优势更明显：中国液冷设备单价约<span class="data-good">5000元/kW</span>，北美约7500元/kW，中国只有北美的三分之二。投资回收期3到4年——这意味着你今天投的液冷设备，3年后省下的电费就够回本了。</p>
+
+<p>政策也在全力推动。北上广深要求液冷机柜占比超过<span class="data-impact">50%</span>。上海更进一步——海底数据中心，全程不消耗淡水。工信部2025年发布的《新型数据中心发展指导意见》明确提出：新建大型数据中心PUE不得高于1.25，改造后不得高于1.3。要达到这个指标，液冷几乎成了唯一选项。</p>
+
+<p class="source-note">来源：<a href="https://www.3m.com/3M/en_US/pfas/" target="_blank">3M官方公告</a> | <a href="http://m.toutiao.com/group/7646338462324441606/" target="_blank">佰驰通信</a> | <a href="https://reports.mklist.com/api/book/38362.pdf" target="_blank">国信证券</a> 2025.09</p>
+
+<p><img src="imgs/AI散热账单_数据图/chart5_中国优势.png" alt="图5：中国液冷优势"></p>
+
+<!-- 八、结论 -->
+<h2 id="sec8">八、结论：两条路堵死，只剩液冷</h2>
+
+<p>这笔账算到最后，图景很清晰：</p>
+
+<ul>
+    <li><strong>算力贵在折旧</strong>——GPU三年基本归零，但花出去的钱要慢慢赚回来。</li>
+    <li><strong>电力贵在基建</strong>——不是电本身贵，是建电厂、拉电网、铺电缆贵。</li>
+    <li><strong>散热贵在水</strong>——而且水不能搬。</li>
+</ul>
+
+<p>风冷到液冷的切换不是选择，是必然。原因很简单：两条路都被堵死了。</p>
+
+<div class="highlight-box">
+    <div class="highlight-title">核心判断</div>
+    <p><strong>第一条路：继续用风冷。</strong>堵死了。芯片太热了，Rubin 3700瓦，单机柜轻松过百千瓦，风冷物理上散不掉。英伟达已经不给风冷选项了，微软花10亿改液冷——不是趋势预判，是生存刚需。</p>
+    <p><strong>第二条路：继续用蒸发冷却。</strong>堵死了。水太少了，80%蒸发回不来，Google用掉城镇29%的水，大连中型算力中心半年追平全年用水量。内华达州直接禁了，智利从湿地抽水被调查。水资源约束从"未来风险"变成了"当下红线"。</p>
+    <p><strong>两条路都走不通，只剩液冷。</strong>液冷散热效率是风冷的3-5倍，不需要大量蒸发用水（冷板式液冷几乎零耗水），PUE可以压到1.1以下——这是风冷和蒸发冷却都做不到的。</p>
+</div>
+
+<p>但液冷也有前提：冷却液供应。3M因环保退出了，国产三家已经补上了位。东阳光、巨化、新宙邦拿到英伟达和台积电认证，价格只有北美三分之二。供应链的安全，在这条赛道上，中国反而比美国更有保障。</p>
+
+<p>散热这条赛道，需求不是预测出来的，是芯片发热和水不够这两件事同时逼出来的——确定性比任何行业趋势都硬。芯片每年功耗翻倍，水每年更缺——这两个变量只会加强，不会减弱。</p>
+
+<p><img src="imgs/AI散热账单_表格/table5.png" alt="表5：液冷市场关键数据"></p>
+
+<p style="color: var(--text-tertiary); font-size: 14px; margin-top: 24px;"><strong>免责声明</strong>：本内容依据公开信息与研究报告数据，仅对产业经营层面梳理，不构成任何投资建议。</p>
+
+<!-- 延伸阅读 -->
+<div style="margin-top: 32px; padding: 20px 24px; background: var(--bg-secondary); border-radius: 12px; border-left: 4px solid var(--accent);">
+    <h3 style="margin: 0 0 12px 0; font-size: 16px; color: var(--accent);">延伸阅读</h3>
+    <p style="margin: 0; line-height: 1.8;">
+        本文聚焦AI散热的投资构成与水资源约束。如果你想了解AI算力底层的<strong>电力成本</strong>——ChatGPT一天85万度电，中美两条电力策略谁走得通，请看：<a href="article-ai-power-bill.html" style="color: var(--accent); text-decoration: underline;">《AI的电力账单：谁先搞定电，谁就赢了AI》</a>
+    </p>
+    <p style="margin: 12px 0 0 0; line-height: 1.8;">
+        关于7250亿资本支出的利润分布与泡沫风险，请看：<a href="article-ai-capex-bubble.html" style="color: var(--accent); text-decoration: underline;">《AI算力的钱流向哪里？7250亿资本支出拆解》</a>
+    </p>
+</div>
+
+<!-- 参考来源 -->
+<h2 id="sec9">参考来源</h2>
+
+<table>
+    <tr><th>数据点</th><th>来源</th></tr>
+    <tr><td>散热占数据中心建设投资20%</td><td><a href="https://www.weforum.org/stories/2026/01/enhancing-value-of-digital-infrastructure/" target="_blank">WEF</a></td></tr>
+    <tr><td>电费占运营成本5%</td><td><a href="https://uptimeinstitute.com/" target="_blank">Uptime Institute</a></td></tr>
+    <tr><td>GPU功耗演进H100→B200→Rubin</td><td><a href="http://m.toutiao.com/group/7655238955592139270/" target="_blank">老五测评</a></td></tr>
+    <tr><td>英伟达Rubin全面液冷</td><td>GTC 2026.03</td></tr>
+    <tr><td>微软10亿美元改液冷+液冷TCO</td><td><a href="https://introl.com/zh/blog/liquid-vs-air-cooling-ai-data-centers" target="_blank">Introl</a></td></tr>
+    <tr><td>间接用水是直接12倍</td><td><a href="https://liveinthefuture.org/stories/ai-water-crisis" target="_blank">LBNL</a></td></tr>
+    <tr><td>Google Oregon占城市29%用水</td><td><a href="https://dcpulse.com/article/data-centers-water-scarcity-digital-growth" target="_blank">DC Pulse</a></td></tr>
+    <tr><td>智利6座数据中心抽水+千年干旱</td><td><a href="https://www.ithome.com/0/956/210.htm" target="_blank">IT之家</a></td></tr>
+    <tr><td>内华达禁止蒸发冷却+43%DC高水压区</td><td><a href="https://www.spglobal.com/sustainable1/en/insights/special-editorial/beneath-the-surface-water-stress-in-data-centers" target="_blank">S&amp;P Global</a></td></tr>
+    <tr><td>AI推理用水占80-90%+大连案例</td><td><a href="https://cj.sina.cn/articles/view/7880068204/1d5b04c6c068019x2e" target="_blank">新浪财经</a></td></tr>
+    <tr><td>数据中心蒸发80%取用水</td><td><a href="https://engineeringjunkies.com/why-ai-data-centers-use-so-much-water/" target="_blank">Engineering Junkies</a></td></tr>
+    <tr><td>Vertiv订单+252%+全球液冷市场89→170亿美元</td><td><a href="http://m.toutiao.com/group/7654860583523435044/" target="_blank">摩根大通/茅小东</a></td></tr>
+    <tr><td>中国液冷单价5000元/kW+回收期3-4年</td><td><a href="https://reports.mklist.com/api/book/38362.pdf" target="_blank">国信证券</a></td></tr>
+    <tr><td>3M因PFAS环保诉讼被迫停产氟化液</td><td><a href="https://www.3m.com/3M/en_US/pfas/" target="_blank">3M官方公告</a></td></tr>
+    <tr><td>东阳光/巨化/新宙邦认证</td><td><a href="http://m.toutiao.com/group/7646338462324441606/" target="_blank">佰驰通信</a></td></tr>
+    <tr><td>上海海底数据中心PUE&lt;1.15+海水散热</td><td><a href="https://cj.sina.cn/articles/view/7880068204/1d5b04c6c068019x02" target="_blank">新浪财经/央视财经</a></td></tr>
+</table>
+
+<p style="font-size: 13px; color: var(--text-tertiary); margin-top: 16px;">本内容由 Coze AI 生成，请遵循相关法律法规及《人工智能生成合成内容标识办法》使用与传播。</p>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2026 小K | 爱研究 &middot; 数据说话，不吹不黑</p>
+    <p><a href="index.html">返回首页</a></p>
+</div>
+
+</body>
+</html>
