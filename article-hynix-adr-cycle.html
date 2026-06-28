@@ -15,28 +15,16 @@
     <meta property="og:locale" content="zh_CN">
     <style>
     :root {
-        --bg-primary: #0a0a0a;
-        --bg-secondary: #141414;
-        --bg-card: #1a1a1a;
-        --text-primary: #e8e8e8;
-        --text-secondary: #a0a0a0;
-        --text-muted: #666;
-        --accent: #4a9eff;
-        --accent-dim: #2a5a9a;
-        --border: #2a2a2a;
-        --red: #ff4a4a;
-        --green: #4aff4a;
-        --yellow: #ffcc4a;
+        --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-card: #1a1a1a;
+        --text-primary: #e8e8e8; --text-secondary: #a0a0a0; --text-muted: #666;
+        --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #2a2a2a;
+        --red: #ff4a4a; --green: #4aff4a; --yellow: #ffcc4a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        line-height: 1.8;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
+        background: var(--bg-primary); color: var(--text-primary);
+        line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px;
     }
     h1 { font-size: 2em; margin: 1.5em 0 0.5em; color: var(--text-primary); }
     h2 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
@@ -48,8 +36,6 @@
     th, td { border: 1px solid var(--border); padding: 0.6em 0.8em; text-align: left; }
     th { background: var(--bg-card); color: var(--text-primary); }
     td { color: var(--text-secondary); }
-    .highlight { color: var(--red); font-weight: bold; }
-    .accent { color: var(--accent); }
     .source { font-size: 0.85em; color: var(--text-muted); margin-top: 2em; border-top: 1px solid var(--border); padding-top: 1em; }
     .hero-stat { font-size: 3em; font-weight: bold; color: var(--accent); margin: 0.3em 0; }
     .hero-desc { font-size: 1.1em; color: var(--text-secondary); }
@@ -59,7 +45,7 @@
     .disclaimer { font-size: 0.85em; color: var(--text-muted); margin-top: 1em; padding: 0.8em; background: var(--bg-secondary); border-radius: 4px; }
     a.back { display: inline-block; margin: 1em 0; color: var(--accent); text-decoration: none; }
     hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
-    </style>
+</style>
 </head>
 <body>
     <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
@@ -69,22 +55,24 @@
         <div class="hero-stat">$294亿</div>
         <div class="hero-desc">SK海力士ADR追平沙特阿美——史上最大ADR，AI时代的顶点信号？</div>
     </div>
-<h2>第一层：294亿是什么量级，凭什么是海力士？</h2>
+    <h2>第一层：294亿是什么量级，凭什么是海力士？</h2>
     <p>SK海力士7月10号ADR在纳斯达克开始交易，7月29号正式挂牌，募资294亿美金。ADR让美国投资者不用换韩元、不用开韩国账户就能直接买。294亿这个数字，超过阿里巴巴2014年的218亿，是人类历史上最大的ADR发行。</p>
     <p>放到全球融资史里看：SpaceX的IPO是750亿，沙特阿美IPO是294亿，海力士ADR也是294亿，后面才是阿里218亿、软银213亿、Visa179亿。史上最大IPO和史上最大ADR，前后脚出现，说明全球资本正在用脚投票——从化石能源押注到AI算力。</p>
+    <figure class="chart-container"><img src="imgs/hynix_chart1_ipo_comparison.png" alt="图1：史上最大股权融资排名——海力士ADR追平沙特阿美"><figcaption>图1：史上最大股权融资排名——海力士ADR追平沙特阿美</figcaption></figure>
     <p>另外，海力士市值超越三星终结其25年韩国股市霸主的新闻——半真半假。只算普通股确实超过（2079万亿对2061万亿韩元），但算上三星优先股，三星还领先161万亿。</p>
     <blockquote><strong>凭什么是海力士？核心三个字：HBM。</strong></blockquote>
     <p>高带宽显存，AI大模型训练和推理的"专用口粮"。海力士HBM出货量占全球52%，营收份额58%，英伟达供应链里占60%-70%。2026年产能全部售罄，订单排到2027年，长协预付比例30%-40%。全球一半以上的AI算力，底层存储靠这家韩国公司。</p>
     <p>294亿募资用途：龙仁新建晶圆厂、清州建先进封测厂、买EUV光刻机。全砸产能，没有股东减持套现，一分钱不进高管口袋。</p>
     <p>V型反转有多猛——这是全文最冲击的一组数字：</p>
     <table>
-    <tr><th>时期</th><th>业绩</th></tr>
-    <tr><td>2023全年</td><td>亏损7.7万亿韩元</td></tr>
-    <tr><td>2024全年</td><td>赚23.5万亿</td></tr>
-    <tr><td>2025全年</td><td>赚47.2万亿（首超三星存储业务）</td></tr>
-    <tr><td>2026 Q1单季</td><td>营业利润37.6万亿，利润率72%</td></tr>
-    </table>
+<tr><th>时期</th><th>业绩</th></tr>
+<tr><td>2023全年</td><td>亏损7.7万亿韩元</td></tr>
+<tr><td>2024全年</td><td>赚23.5万亿</td></tr>
+<tr><td>2025全年</td><td>赚47.2万亿（首超三星存储业务）</td></tr>
+<tr><td>2026 Q1单季</td><td>营业利润37.6万亿，利润率72%</td></tr>
+</table>
     <p>两年时间，从全年亏7.7万亿到单季赚37.6万亿。营业利润率72%——台积电约58%，英伟达毛利率约65%。一家卖存储芯片的，营业利润率比芯片设计公司还高。</p>
+    <figure class="chart-container"><img src="imgs/hynix_chart2_profit_reversal.png" alt="图2：SK海力士利润V型反转——从亏损7.7万亿到单季37.6万亿"><figcaption>图2：SK海力士利润V型反转——从亏损7.7万亿到单季37.6万亿</figcaption></figure>
     <p>但这里有个反常识：HBM不如普通DRAM赚钱。2026年Q1，普通服务器DRAM的利润率已反超HBM。因为HBM签年度长协，价格一年一定；普通DRAM是季度议价，Q2单季又涨了58%-63%。HBM长协定死了价格，反而没吃到现货涨价红利。三大原厂正在谈2027年HBM新合同，伯恩斯坦预测涨2到2.5倍。</p>
     <h2>第二层：周期顶还是新范式？</h2>
     <blockquote><strong>正方：这次不一样。</strong></blockquote>
@@ -98,23 +86,21 @@
     <p>AI时代的存储产能，一定会过剩。因为全人类所有产业，只要是赚钱的，最后一定会产能过剩。区别只是：什么时候来，以及谁先撑不住。</p>
     <p>而散户这边，杠杆已经拉满了：</p>
     <table>
-    <tr><th>指标</th><th>数据</th></tr>
-    <tr><td>韩国30岁以下散户用3倍以上杠杆买存储股</td><td>占比40%</td></tr>
-    <tr><td>香港2倍杠杆海力士ETF规模</td><td>破1300亿港币</td></tr>
-    <tr><td>散户融资余额</td><td>38.5万亿韩元，历史新高</td></tr>
-    <tr><td>韩国股市年内熔断次数</td><td>5次</td></tr>
-    </table>
+<tr><th>指标</th><th>数据</th></tr>
+<tr><td>韩国30岁以下散户用3倍以上杠杆买存储股</td><td>占比40%</td></tr>
+<tr><td>香港2倍杠杆海力士ETF规模</td><td>破1300亿港币</td></tr>
+<tr><td>散户融资余额</td><td>38.5万亿韩元，历史新高</td></tr>
+<tr><td>韩国股市年内熔断次数</td><td>5次</td></tr>
+</table>
     <p>韩国40%的30岁以下散户用3倍以上杠杆买存储股，香港2倍杠杆海力士ETF规模破1300亿港币，散户融资余额38.5万亿韩元创历史新高，韩国股市年内已熔断5次。当散户用3倍杠杆追一只周期股的顶部——这不是投资，这是在给均值回归交学费。</p>
+    <figure class="chart-container"><img src="imgs/hynix_chart3_retail_leverage.png" alt="图3：散户杠杆预警——4个过热信号同步闪红"><figcaption>图3：散户杠杆预警——4个过热信号同步闪红</figcaption></figure>
     <h2>294亿美金的判词</h2>
     <p>294亿美金，可能是起点，也可能是终点。每次"史上最大"出现时，市场情绪都处于极致乐观，而极致乐观之后，往往跟着均值回归。AI会改变世界，但改变世界的路上，从来不缺周期。</p>
     <blockquote><strong>别听故事，看账本。账本上72%的利润率，是奇迹，也是墓碑。</strong></blockquote>
     <hr>
     <p>数据来源：SpaceX IPO数据：SK海力士官方公告、SEC F-1文件 | 财务数据：SK海力士2026 Q1官方财报 | HBM市场份额：TrendForce集邦咨询（出货量）、Counterpoint（营收） | 价格走势：TrendForce、伯恩斯坦研报 | 估值对比：彭博一致预期、各机构研报 | 杠杆/散户数据：韩国交易所、香港交易所、高盛 | 历史周期数据：美光历史财报 | 中国厂商动态：上交所公告、公开报道</p>
-    <figure class="chart-container"><img src="imgs/hynix_chart1_ipo_comparison.png" alt="图1：史上最大股权融资排名——海力士ADR追平沙特阿美"><figcaption>图1：史上最大股权融资排名——海力士ADR追平沙特阿美</figcaption></figure>
-    <figure class="chart-container"><img src="imgs/hynix_chart2_profit_reversal.png" alt="图2：SK海力士利润V型反转——从亏损7.7万亿到单季37.6万亿"><figcaption>图2：SK海力士利润V型反转——从亏损7.7万亿到单季37.6万亿</figcaption></figure>
-    <figure class="chart-container"><img src="imgs/hynix_chart3_retail_leverage.png" alt="图3：散户杠杆预警——4个过热信号同步闪红"><figcaption>图3：散户杠杆预警——4个过热信号同步闪红</figcaption></figure>
     <div class="source">
-        <p><strong>数据来源：</strong>详见各数据源原始报告。</p>
+        <p><strong>数据来源：</strong></p>
     </div>
     <div class="disclaimer">以上内容仅为产业分析与信息分享，不构成任何投资建议。数据均已标注来源，如有疑问请查阅原始资料。</div>
     <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
