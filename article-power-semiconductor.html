@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI数据中心最被低估的一层：没有它，GPU就是块废铁 | 小K爱研究</title>
-    <meta name="description" content="英伟达800V架构引爆功率半导体市场，SiC碳化硅成刚需。中国天岳先进衬底份额反超Wolfspeed全球第一。但器件和模块仍落后。">
-    <meta name="keywords" content="功率半导体,碳化硅,SiC,800V,英伟达,数据中心,天岳先进,Wolfspeed,功率器件">
+    <title>没有它，GPU就是块废铁 | 小K爱研究</title>
+    <meta name="description" content="英伟达800V架构引爆功率半导体市场，碳化硅成刚需。中国天岳先进衬底份额反超Wolfspeed全球第一，但器件和模块仍落后。">
+    <meta name="keywords" content="功率半导体,碳化硅,SiC,800V,英伟达,数据中心,天岳先进,Wolfspeed">
     <meta name="author" content="小K">
     <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="AI数据中心最被低估的一层：没有它，GPU就是块废铁">
-    <meta property="og:description" content="英伟达800V架构引爆功率半导体市场，SiC碳化硅成刚需。中国天岳先进衬底份额反超Wolfspeed全球第一。但器件和模块仍落后。">
+    <meta property="og:title" content="没有它，GPU就是块废铁">
+    <meta property="og:description" content="英伟达800V架构引爆功率半导体市场，中国天岳先进衬底反超美国。">
     <meta property="og:site_name" content="小K爱研究">
     <meta property="og:locale" content="zh_CN">
     <style>
     :root {
         --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-card: #1a1a1a;
         --text-primary: #e8e8e8; --text-secondary: #a0a0a0; --text-muted: #666;
-        --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #2a2a2a;
-        --red: #ff4a4a; --green: #4aff4a; --yellow: #ffcc4a;
+        --accent: #4a9eff; --border: #2a2a2a; --red: #ff4a4a; --green: #4aff4a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-        background: var(--bg-primary); color: var(--text-primary);
-        line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px;
-    }
-    h1 { font-size: 2em; margin: 1.5em 0 0.5em; color: var(--text-primary); }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { font-size: 2em; margin: 1.5em 0 0.5em; }
     h2 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
-    h3 { font-size: 1.2em; margin: 1.2em 0 0.4em; color: var(--text-primary); }
     p { margin: 0.8em 0; color: var(--text-secondary); }
     strong { color: var(--text-primary); }
     blockquote { border-left: 3px solid var(--accent); padding: 0.5em 1em; margin: 1em 0; background: var(--bg-secondary); }
@@ -49,83 +43,50 @@
 </head>
 <body>
     <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
-    <h1>AI数据中心最被低估的一层：没有它，GPU就是块废铁</h1>
+    <h1>没有它，GPU就是块废铁</h1>
     <p style="color:var(--text-muted);">小K·AI行业数据分析 | 2026-06-28</p>
     <div style="text-align:center; margin:1em 0;">
         <div class="hero-stat">800V</div>
-        <div class="hero-desc">英伟达下一代数据中心转向800V——能扛住这个压力的，只有碳化硅。</div>
+        <div class="hero-desc">英伟达下一代数据中心转向800V——能扛住的只有碳化硅。</div>
     </div>
-    <p>所有人盯着GPU、HBM、光刻机——但AI数据中心里有个东西，没有它GPU根本开不了机。它不是芯片，是芯片的"电源"。英伟达下一代数据中心转向800V供电，这个决定正在引爆一个99%的人不知道的市场。而中国在这个市场最上游的环节，已经反超美国。</p>
-    <h2>一、GPU是发动机，功率半导体是油路</h2>
-    <p>一台AI服务器，里面有GPU、有HBM内存、有网络芯片——但这些加起来只是"发动机"。要让发动机转起来，你需要"油路"——电源管理系统。</p>
-    <p>功率半导体就是油路的核心零件。它负责把电网里的交流电，转换成GPU能用的直流电，并且控制电压和电流。如果油路供不上油，发动机再好也是废铁。</p>
-    <p>AI服务器有多吃电？一台英伟达H100服务器，单台功耗10-12千瓦。一个标准机柜42U，满载功耗可达40-50千瓦。传统数据中心一个机柜才5-8千瓦——AI服务器直接把功耗翻了5-8倍。</p>
-    <p><strong>功率半导体是什么？</strong> 它不是某一种芯片，而是一大类元件的总称，包括MOSFET（金属氧化物半导体场效应管）、IGBT（绝缘栅双极型晶体管）、SiC（碳化硅）器件等。名字很拗口，你只需要知道：它们都是"电闸"——控制电流的开关。区别在于能扛多大电压、开关多快、损耗多少。</p>
-    <p>AI服务器功耗暴增，传统的"电闸"扛不住了。</p>
-    <h2>二、英伟达800V：一个决定引爆一个市场</h2>
-    <p>英伟达宣布下一代AI数据中心将转向800V直流供电架构。</p>
-    <p><strong>800V是什么概念？</strong> 现在的数据中心一般用48V或380V供电。800V相当于把电压翻了一倍多。为什么要升压？因为功率=电压×电流，输送同样的功率，电压越高电流越小，线路上损耗就越少。就像高速公路——同样运5000吨货，用大卡车（高压）比用小轿车（低压）效率高得多。</p>
-    <p>但800V有个致命问题：传统的硅基MOSFET在这么高的电压下会"击穿"——就像水管压力太大爆管了一样。能扛住800V的，只有两种材料：碳化硅（SiC）和氮化镓（GaN）。</p>
-    <p>这就是为什么功率半导体突然成了AI数据中心的关键。不是因为它们变强了，而是因为英伟达把供电标准从"普通汽油"升级到了"航空燃油"，能扛住这个压力的只有SiC和GaN。</p>
-    <h2>三、涨价潮：供需已经崩了</h2>
-    <p>功率半导体正在密集涨价。2026年5月，海内外厂商密集发出涨价通知，幅度10%-25%。</p>
+    <p>我是小K。所有人都盯着GPU、HBM、光刻机。但AI数据中心里有个东西，没有它GPU根本开不了机——而且中国在这个东西的最上游，反超了美国。</p>
+    <p>这东西叫功率半导体。别被名字吓到，它就是芯片的"电源"。</p>
+    <h2>一、GPU是发动机，它是油路</h2>
+    <p>一台AI服务器，GPU是发动机，功率半导体是油路。油供不上，发动机再好也是废铁。</p>
+    <p>AI服务器多费电？一台英伟达H100服务器功耗10-12千瓦。传统数据中心一个机柜才5-8千瓦——AI直接翻了5到8倍。</p>
+    <p>传统的"电闸"扛不住这个功耗了。英伟达宣布下一代数据中心转向800V供电。800V是什么概念？现在数据中心一般用48V，800V翻了十几倍。电压越高，输送同样功率的损耗越小——就像用大卡车运货比小轿车效率高。</p>
+    <p>但800V有个致命问题：传统材料在这个压力下会"爆管"。能扛住的只有两种材料：碳化硅和氮化镓。</p>
+    <h2>二、供需已经崩了</h2>
+    <p>2026年5月，功率半导体密集涨价，幅度10%到25%。供需紧张预计持续6到12个月。</p>
+    <p>原因很直接：功率半导体用的是成熟8英寸晶圆产线，不是最先进的3nm。这条产线本来给电动车和工业用，AI一挤，产能彻底不够了。</p>
+    <p>碳化硅市场2024年26亿美元，4年复合增长率45%——这不是温和增长，是爆发。到2030年，AI数据中心要吃掉近一半份额。</p>
+    <h2>三、中国反超了——但只反超了一半</h2>
+    <figure class="chart-container"><img src="imgs/sic_substrate_final.png" alt="图1：碳化硅衬底市场份额——天岳先进反超Wolfspeed"><figcaption>图1：碳化硅衬底市场份额——天岳先进反超Wolfspeed</figcaption></figure>
+    <p>碳化硅产业链分三层：衬底、器件、模块。打个比方：衬底是面粉，器件是面包，模块是蛋糕。</p>
+    <p>最上游的衬底，中国反超了。</p>
     <table>
-<tr><th>现象</th><th>数据</th><th>来源</th></tr>
-<tr><td>涨价幅度</td><td>10%-25%</td><td>财联社</td></tr>
-<tr><td>供需紧张持续时间</td><td>预计6-12个月</td><td>TrendForce</td></tr>
-<tr><td>AI服务器对高压MOSFET需求</td><td>暴增，挤占8英寸产能</td><td>财联社</td></tr>
-<tr><td>扬杰科技Q1利润预增</td><td>20%-40%</td><td>新浪财经</td></tr>
-<tr><td>英飞凌/意法半导体</td><td>率先调价，国内跟进</td><td>中国工业新闻网</td></tr>
+<tr><th>厂商</th><th>国家</th><th>2024份额</th><th>2025份额</th></tr>
+<tr><td>Wolfspeed</td><td>美国</td><td>33.7%</td><td>下降中</td></tr>
+<tr><td>天岳先进</td><td>中国</td><td>17.1%</td><td>27.6%（全球第一）</td></tr>
+<tr><td>天科合达</td><td>中国</td><td>17.3%</td><td>第二</td></tr>
 </table>
-    <p>原因很直接：AI数据中心的需求爆发式增长，把原来给电动车和工业用的8英寸晶圆产能全抢了。功率半导体用的不是最先进的3nm/5nm产线，而是成熟的8英寸产线——这条产线本来产能就紧张，AI一挤，彻底不够了。</p>
-    <h2>四、市场有多大</h2>
-    <table>
-<tr><th>指标</th><th>数据</th><th>来源</th></tr>
-<tr><td>全球功率半导体市场（2025）</td><td>557亿美元</td><td>Global Market Insights</td></tr>
-<tr><td>全球功率半导体市场（2030预计）</td><td>433亿美元（另一口径289亿→433亿）</td><td>知乎专栏/GMI</td></tr>
-<tr><td>碳化硅市场（2024）</td><td>26亿美元</td><td>东方财富研报</td></tr>
-<tr><td>碳化硅CAGR（2020-2024）</td><td>45.4%</td><td>东方财富研报</td></tr>
-<tr><td>AI数据中心相关功率半导体（2030）</td><td>106亿美元，占总市场近1/4</td><td>知乎专栏引机构数据</td></tr>
-</table>
-    <p>来源数据口径不完全一致，GMI的557亿美元和知乎专栏的289亿美元差异可能来自统计范围不同（是否含功率IC）。已标注，读者可自行判断。</p>
-    <p>碳化硅市场4年涨了45%复合增长率——这不是"温和增长"，是"爆发"。而AI数据中心在2024年还只占SiC市场很小一块，到2030年要吃掉近一半。</p>
-    <h2>五、中美对比：中国在衬底反超了</h2>
-    <p>碳化硅产业链分三层：</p>
-    <p>1. <strong>衬底</strong>（最上游，原材料）——这是最难的，也是价值量最高的</p>
-    <p>2. <strong>外延+器件</strong>（中游，把衬底做成芯片）</p>
-    <p>3. <strong>模块封装</strong>（下游，把芯片组装成功率模块）</p>
-    <blockquote><strong>最上游的衬底环节，中国反超了。</strong></blockquote>
-    <table>
-<tr><th>厂商</th><th>国家</th><th>2024份额</th><th>2025份额</th><th>变化</th></tr>
-<tr><td>Wolfspeed</td><td>美国</td><td>33.7%</td><td>下降中</td><td>↓</td></tr>
-<tr><td>天岳先进</td><td>中国</td><td>17.1%</td><td>27.6%（全球第一）</td><td>↑↑</td></tr>
-<tr><td>天科合达</td><td>中国</td><td>17.3%</td><td>第二</td><td>↑</td></tr>
-</table>
-    <p>来源：集邦咨询（2024数据）、富士经济社（2025数据）、财联社/新浪财经印证</p>
-    <p>天岳先进的8英寸SiC衬底全球市占率超过50%，把Wolfspeed从第一挤下来了。Wolfspeed甚至一度传出破产传闻。</p>
-    <p><strong>8英寸是什么意思？</strong> SiC衬底是圆片，尺寸越大单片能切的芯片越多，成本越低。从6英寸升到8英寸，单位成本降约35%。天岳先进在8英寸上领先，意味着它在成本上有优势。</p>
-    <p>但——衬底之外的两个环节，中国仍然落后：</p>
-    <table>
-<tr><th>环节</th><th>格局</th><th>中国位置</th></tr>
-<tr><td>衬底</td><td>中国反超</td><td>天岳先进全球第一</td></tr>
-<tr><td>器件（芯片）</td><td>英飞凌、意法半导体主导</td><td>追赶中，差距明显</td></tr>
-<tr><td>模块封装</td><td>海外巨头主导</td><td>追赶中</td></tr>
-</table>
-    <p><strong>中国在SiC产业链的处境：赢了最上游的原材料，输了中下游的加工。</strong> 就像卖面粉的赚了钱，但卖面包的钱被别人赚走了。</p>
-    <h2>六、为什么这层被低估</h2>
-    <p>功率半导体被忽视的原因很简单：它不够"性感"。</p>
-    <p>AI产业链12层里，第2层芯片有英伟达/华为的巨头对决，第4层大模型有OpenAI/DeepSeek的明星公司，第9层Agent有无数创业公司。但第1层能源和第3层基础设施的交叉地带——供电——没有明星公司，没有爆款产品，没有发布会。</p>
-    <p>但它不可或缺。没有功率半导体，GPU开不了机。没有SiC，800V架构建不起来。没有800V，下一代AI数据中心的功耗就扛不住。</p>
-    <blockquote><strong>AI产业链最被低估的一层，不是因为它不重要，而是因为它太底层了——就像没人会关心高速公路的地基，但地基塌了，路也没了。</strong></blockquote>
-    <h2>七、结论</h2>
-    <p>英伟达800V架构正在引爆功率半导体市场。SiC和GaN成为AI数据中心不可替代的材料。中国在天岳先进带领下的衬底环节反超美国，但器件和模块仍落后。</p>
-    <p>这是一个"隐藏赛道"——不在12层的任何一层里，而是第1层和第3层的缝隙中。但它可能是AI产业链里，中国唯一一个在最上游环节实现反超的领域。</p>
-    <blockquote><strong>所有人都在看发动机谁强，但决定比赛胜负的可能是油路。</strong></blockquote>
+    <p>天岳先进8英寸衬底全球市占率超50%，把美国Wolfspeed从第一挤下来了。8英寸比6英寸单片能切更多芯片，成本降约35%。</p>
+    <p>但——器件和模块，中国还落后。英飞凌、意法半导体主导器件，海外巨头主导模块封装。</p>
+    <p>什么意思？中国卖面粉赚了钱，但卖面包和蛋糕的钱被别人赚走了。赢了最上游的原材料，输了中下游的加工。</p>
+    <figure class="chart-container"><img src="imgs/sic_chain_final.png" alt="图2：SiC产业链——赢了面粉，输了面包"><figcaption>图2：SiC产业链——赢了面粉，输了面包</figcaption></figure>
+    <h2>四、为什么没人讲这个</h2>
+    <p>因为不够"性感"。AI产业链12层里，芯片层有英伟达华为对决，大模型层有OpenAI和DeepSeek，但供电这一层——没有明星公司，没有发布会，没有流量。</p>
+    <p>但没有它，GPU开不了机。没有碳化硅，800V架构建不起来。没有800V，下一代AI数据中心功耗扛不住。</p>
+    <p>就像没人关心高速公路的地基，但地基塌了，路也没了。</p>
+    <h2>五、收个尾</h2>
+    <p>这是AI产业链里最被低估的一层。不在12层的任何一层里，是第1层能源和第3层基础设施的缝隙。</p>
+    <p>但它可能是中国AI产业链里，唯一一个在最上游环节反超美国的领域。</p>
+    <p>上一篇我们讲了：美国卡光刻机，中国卡推理成本。这一篇补一块拼图：中国在碳化硅衬底上反超了，但只反超了最上游，中下游还在追。</p>
+    <p>所有人都在看发动机谁强，但决定比赛胜负的，可能是油路。</p>
+    <p>我是小K，数据可溯源，我们下期见。</p>
     <hr>
-    <figure class="chart-container"><img src="imgs/sic_substrate_share.png" alt="图1：碳化硅衬底市场份额——天岳先进反超Wolfspeed"><figcaption>图1：碳化硅衬底市场份额——天岳先进反超Wolfspeed</figcaption></figure>
-    <figure class="chart-container"><img src="imgs/sic_chain_compare.png" alt="图2：SiC产业链中美对比——赢了衬底，输了器件和模块"><figcaption>图2：SiC产业链中美对比——赢了衬底，输了器件和模块</figcaption></figure>
     <div class="source">
-        <p><strong>数据来源：</strong>财联社（涨价10%-25%/供需紧张6-12个月）、TrendForce（供需紧张预期）、新浪财经（扬杰科技利润预增）、中国工业新闻网（英飞凌/意法调价）、Global Market Insights（功率半导体557亿美元）、东方财富研报（SiC 26亿美元/CAGR 45.4%）、知乎专栏引机构数据（AI数据中心2030年106亿美元）、电子工程专辑（英伟达800V架构/SiC GaN需求）、集邦咨询（2024衬底份额Wolfspeed 33.7%/天科合达17.3%/天岳17.1%）、富士经济社/财联社（2025天岳27.6%全球第一）、新浪财经/证券时报（天岳8英寸市占率超50%）、东方财富研报引天科合达测算（6→8英寸成本降35%）</p>
+        <p><strong>数据来源：</strong>财联社（涨价10%-25%/供需紧张6-12个月）、TrendForce（供需预期）、新浪财经（扬杰科技利润预增）、中国工业新闻网（英飞凌/意法调价）、Global Market Insights（功率半导体557亿美元）、东方财富研报（SiC 26亿美元/CAGR 45.4%）、知乎专栏引机构数据（AI数据中心2030年106亿美元）、电子工程专辑（英伟达800V架构/SiC GaN需求）、集邦咨询（2024衬底份额）、富士经济社/财联社（2025天岳27.6%全球第一）、新浪财经/证券时报（天岳8英寸市占率超50%）、东方财富研报引天科合达测算（6→8英寸成本降35%）</p>
     </div>
     <div class="disclaimer">以上内容仅为产业分析与信息分享，不构成任何投资建议。数据均已标注来源，如有疑问请查阅原始资料。</div>
     <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
