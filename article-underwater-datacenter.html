@@ -15,28 +15,16 @@
     <meta property="og:locale" content="zh_CN">
     <style>
     :root {
-        --bg-primary: #0a0a0a;
-        --bg-secondary: #141414;
-        --bg-card: #1a1a1a;
-        --text-primary: #e8e8e8;
-        --text-secondary: #a0a0a0;
-        --text-muted: #666;
-        --accent: #4a9eff;
-        --accent-dim: #2a5a9a;
-        --border: #2a2a2a;
-        --red: #ff4a4a;
-        --green: #4aff4a;
-        --yellow: #ffcc4a;
+        --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-card: #1a1a1a;
+        --text-primary: #e8e8e8; --text-secondary: #a0a0a0; --text-muted: #666;
+        --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #2a2a2a;
+        --red: #ff4a4a; --green: #4aff4a; --yellow: #ffcc4a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        line-height: 1.8;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
+        background: var(--bg-primary); color: var(--text-primary);
+        line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px;
     }
     h1 { font-size: 2em; margin: 1.5em 0 0.5em; color: var(--text-primary); }
     h2 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
@@ -48,8 +36,6 @@
     th, td { border: 1px solid var(--border); padding: 0.6em 0.8em; text-align: left; }
     th { background: var(--bg-card); color: var(--text-primary); }
     td { color: var(--text-secondary); }
-    .highlight { color: var(--red); font-weight: bold; }
-    .accent { color: var(--accent); }
     .source { font-size: 0.85em; color: var(--text-muted); margin-top: 2em; border-top: 1px solid var(--border); padding-top: 1em; }
     .hero-stat { font-size: 3em; font-weight: bold; color: var(--accent); margin: 0.3em 0; }
     .hero-desc { font-size: 1.1em; color: var(--text-secondary); }
@@ -59,7 +45,7 @@
     .disclaimer { font-size: 0.85em; color: var(--text-muted); margin-top: 1em; padding: 0.8em; background: var(--bg-secondary); border-radius: 4px; }
     a.back { display: inline-block; margin: 1em 0; color: var(--accent); text-decoration: none; }
     hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
-    </style>
+</style>
 </head>
 <body>
     <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
@@ -69,7 +55,7 @@
         <div class="hero-stat">1/8</div>
         <div class="hero-desc">故障率仅陆地八分之一——然后微软把这个项目关了。</div>
     </div>
-<h2>第一层：微软做成了，但停了</h2>
+    <h2>第一层：微软做成了，但停了</h2>
     <p>2018年，微软把一个数据舱沉到苏格兰海底，叫Project Natick。864台服务器，泡了整整两年。结果技术上大获全胜——故障率仅为陆地对照组的八分之一（水下仅6台故障，陆地8台故障，注：陆地对照组仅135台，样本量不对称，1/8为近似比值）；PUE做到1.07，行业平均是1.48；省电30%。</p>
     <p>但2024年6月，微软正式宣布项目终止。负责人Noelle Walsh只丢了一句"我们不会在世界任何地方建海底数据中心"，至于为什么——没说。</p>
     <p>原因其实不复杂，三件事叠在一起：</p>
@@ -77,6 +63,7 @@
     <p><strong>扩展性太差。</strong> 海底数据舱是固定容量的罐子，放下去多少就是多少。陆地数据中心今天加100台，明天扩1000台。微软是云服务商，卖的就是弹性——固定容量的罐子根本没法满足。</p>
     <p><strong>战略重心转了。</strong> 微软的钱和人全扑在AI超算和模块化核反应堆上了。海底数据中心这个方向，优先级排不上号。</p>
     <p>所以微软不是"技术上做不成"，是商业上算不过账——维护贵、扩展难、优先级低，三件事一加，不干了。</p>
+    <figure class="chart-container"><img src="imgs/underwater_natick_timeline.png" alt="图1：微软Project Natick时间线——技术赢了，账本输了"><figcaption>图1：微软Project Natick时间线——技术赢了，账本输了</figcaption></figure>
     <h2>第二层：中国为什么能跑通</h2>
     <p>微软停了，中国商用了。靠的不是单点技术领先，是四件套同时到位——这是产业链的系统性碾压。</p>
     <p><strong>第一件：海上风电。</strong> 中国海上风电累计并网5204万千瓦，占全球56%。第二名到第十名加起来都没中国多。美国2025年几乎零新增，拍卖取消、项目推迟。海底数据中心最理想的模式是海风直供——连输电成本都省了。美国连海风配套都没有。</p>
@@ -88,22 +75,31 @@
     <h2>第三层：海底反而更便宜</h2>
     <p>最反常识的发现——海底数据中心，全算下来，比陆地还便宜。</p>
     <table>
-    <tr><th>维度</th><th>海底UDC</th><th>陆地IDC</th></tr>
-    <tr><td>建设成本</td><td>贵10-15%</td><td>基准</td></tr>
-    <tr><td>PUE（能效）</td><td>1.08</td><td>1.48</td></tr>
-    <tr><td>年运营成本</td><td>低30-40%</td><td>基准</td></tr>
-    <tr><td>淡水消耗</td><td>零</td><td>2.3MW年耗4万吨</td></tr>
-    <tr><td>占地面积</td><td>省90%+</td><td>基准</td></tr>
-    <tr><td>全生命周期总成本</td><td><strong>低15-20%</strong></td><td>基准</td></tr>
-    </table>
+<tr><th>维度</th><th>海底UDC</th><th>陆地IDC</th></tr>
+<tr><td>建设成本</td><td>贵10-15%</td><td>基准</td></tr>
+<tr><td>PUE（能效）</td><td>1.08</td><td>1.48</td></tr>
+<tr><td>年运营成本</td><td>低30-40%</td><td>基准</td></tr>
+<tr><td>淡水消耗</td><td>零</td><td>2.3MW年耗4万吨</td></tr>
+<tr><td>占地面积</td><td>省90%+</td><td>基准</td></tr>
+<tr><td>全生命周期总成本</td><td><strong>低15-20%</strong></td><td>基准</td></tr>
+</table>
     <p>建设确实更贵，但运营省——省电费、省水费、省土地、省人工，设备寿命还更长。20年算下来反而便宜15%-20%。贵的是建设，省的是一辈子。</p>
+    <figure class="chart-container"><img src="imgs/underwater_cost_comparison.png" alt="图2：海底vs陆地全生命周期成本——建设贵，但总低15-20%"><figcaption>图2：海底vs陆地全生命周期成本——建设贵，但总低15-20%</figcaption></figure>
     <h2>结尾</h2>
     <p>微软有技术，中国有产业链。技术能证明"做得到"，但只有产业链才能证明"划得来"。海底数据中心这个故事最大的教训不是谁做成了谁没做成——是<strong>别看谁先下水，看谁能留在水里</strong>。</p>
     <hr>
-    <figure class="chart-container"><img src="imgs/underwater_natick_timeline.png" alt="图1：微软Project Natick时间线——技术赢了，账本输了"><figcaption>图1：微软Project Natick时间线——技术赢了，账本输了</figcaption></figure>
-    <figure class="chart-container"><img src="imgs/underwater_cost_comparison.png" alt="图2：海底vs陆地全生命周期成本——建设贵，但总低15-20%"><figcaption>图2：海底vs陆地全生命周期成本——建设贵，但总低15-20%</figcaption></figure>
+    <p>- 微软Project Natick：微软官网技术白皮书、Nature合作论文（2020）</p>
+    <p>- 微软叫停：微软2024年6月官方声明、Noelle Walsh公开表态</p>
+    <p>- 故障率/855台对比：微软Natick项目最终报告（注：陆地对照组135台，样本量不对称，1/8为近似比值）</p>
+    <p>- PUE数据：海兰信陵水项目公开数据 + 微软Natick报告</p>
+    <p>- 海上风电装机：中国风能专委会《海上风电回顾与展望》2026（并网口径5204万千瓦）</p>
+    <p>- 美国海上风电停滞：GWEC全球海上风电报告2026</p>
+    <p>- 数据中心用电量：中国信通院《数据中心白皮书》2025</p>
+    <p>- 海兰信项目信息：公司公告、三亚崖州湾中标公示、陵水项目公开报道</p>
+    <p>- 实体清单时间：美国商务部BIS 2022年6月29日公告</p>
+    <p>- TCO/成本对比：海兰信公开路演材料 + 行业研报综合</p>
     <div class="source">
-        <p><strong>数据来源：</strong>- 微软Project Natick：微软官网技术白皮书、Nature合作论文（2020） - 微软叫停：微软2024年6月官方声明、Noelle Walsh公开表态 - 故障率/855台对比：微软Natick项目最终报告（注：陆地对照组135台，样本量不对称，1/8为近似比值） - PUE数据：海兰信陵水项目公开数据 + 微软Natick报告 - 海上风电装机：中国风能专委会《海上风电回顾与展望》2026（并网口径5204万千瓦） - 美国海上风电停滞：GWEC全球海上风电报告2026 - 数据中心用电量：中国信通院《数据中心白皮书》2025 - 海兰信项目信息：公司公告、三亚崖州湾中标公示、陵水项目公开报道 - 实体清单时间：美国商务部BIS 2022年6月29日公告 - TCO/成本对比：海兰信公开路演材料 + 行业研报综合</p>
+        <p><strong>数据来源：</strong></p>
     </div>
     <div class="disclaimer">以上内容仅为产业分析与信息分享，不构成任何投资建议。数据均已标注来源，如有疑问请查阅原始资料。</div>
     <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
