@@ -3,65 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小K | 爱研究 · 只给你看真实数据，不灌鸡汤</title>
-    <meta name="description" content="小K讲AI营销——抖音会员每周1份AI营销行业研报。数据可溯源，案例有出处。独创AI营销三层模型——搞错了层级，AI的钱白花了。">
-    <meta name="keywords" content="AI营销,小K讲AI营销,AI营销研报,AI营销行业分析,ROI,精准投放,百雀羚,戴森,豪士面包,名创优品,蓝色光标,易点天下,省广集团,浙文互联">
-    <meta name="google-site-verification" content="9o_Rcc87lPq64b3bhwFf3dH9IW-0JF6jNiTooxFy3xQ">
-    <meta name="msvalidate.01" content="111C8816F76DA0DB4369C7B74868B75F" />
+    <title>小K爱研究 · AI数据研算 | 真实数据，不灌鸡汤</title>
+    <meta name="description" content="小K的AI数据研究——中美AI产业链12层逐层对比。每篇都是硬核数据拆解，交叉验证，来源可查。">
+    <meta name="keywords" content="AI研究,AI数据分析,中美AI对比,AI产业链,深度报告">
     <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="小K | 爱研究 · 只给你看真实数据，不灌鸡汤">
-    <meta property="og:description" content="抖音会员每周1份AI营销行业研报。数据可溯源，案例有出处。独创AI营销三层模型——搞错了层级，AI的钱白花了。">
+    <meta property="og:title" content="小K爱研究 · AI数据研算">
+    <meta property="og:description" content="中美AI产业链12层逐层对比。每篇都是硬核数据拆解，交叉验证，来源可查。">
     <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/">
-    <meta property="og:site_name" content="小K讲AI营销">
+    <meta property="og:site_name" content="小K爱研究">
     <meta property="og:locale" content="zh_CN">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "name": "小K讲AI营销",
-          "description": "爱研究 · 只给你看真实数据，不灌鸡汤 · 抖音会员每周1份AI营销行业研报 · 数据可溯源，案例有出处",
-          "author": { "@id": "#xiaok" },
-          "inLanguage": "zh-CN"
-        },
-        {
-          "@type": "Person",
-          "@id": "#xiaok",
-          "name": "小K",
-          "jobTitle": "AI营销领域内容创作者",
-          "description": "10年营销实战，爱研究，只给你看真实数据，不灌鸡汤。抖音会员每周1份行业研报",
-          "knowsAbout": ["AI营销", "GEO", "ROI", "生成式引擎优化", "AIGC创意", "精准投放", "AI营销三层模型"]
-        }
-      ]
-    }
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-primary: #0a0a0a;
             --bg-secondary: #111111;
             --bg-card: #1a1a1a;
-            --text-primary: #ffffff;
+            --text-primary: #e8e8e8;
             --text-secondary: #999999;
-            --text-tertiary: #666666;
-            --accent: #6C63FF;
-            --accent-hover: #7B73FF;
+            --text-muted: #666666;
+            --accent: #4a9eff;
+            --accent-hover: #6ab0ff;
             --border: #222222;
-            --gradient-start: #6C63FF;
-            --gradient-end: #E94560;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --gradient-start: #4a9eff;
+            --gradient-end: #d97756;
         }
 
         body {
@@ -72,89 +40,65 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        /* Nav */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(10, 10, 10, 0.85);
+            background: rgba(10, 10, 10, 0.88);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
-
         .nav-inner {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .nav-logo {
             font-weight: 700;
             font-size: 18px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             text-decoration: none;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
+        .nav-links { display: flex; gap: 28px; list-style: none; }
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 400;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
+        .nav-links a:hover { color: var(--text-primary); }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        /* Hero Section */
+        /* Hero */
         #hero {
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 120px 24px 80px;
             position: relative;
-            overflow: hidden;
         }
-
         #hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(108, 99, 255, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(233, 69, 96, 0.06) 0%, transparent 50%);
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(74,158,255,0.07) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(217,119,86,0.05) 0%, transparent 50%);
             animation: bgFloat 20s ease-in-out infinite;
         }
-
         @keyframes bgFloat {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(-2%, 2%); }
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-        }
-
+        .hero-content { position: relative; z-index: 1; max-width: 640px; }
         .hero-tag {
             display: inline-block;
             padding: 6px 16px;
@@ -162,41 +106,30 @@
             border-radius: 20px;
             font-size: 13px;
             color: var(--accent);
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             letter-spacing: 1px;
         }
-
         .hero-title {
-            font-size: clamp(36px, 6vw, 56px);
+            font-size: clamp(32px, 5.5vw, 52px);
             font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 24px;
+            line-height: 1.15;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-
         .hero-subtitle {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-secondary);
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             font-weight: 300;
         }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         .btn-primary {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 28px;
+            padding: 13px 26px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: white;
             text-decoration: none;
@@ -205,576 +138,213 @@
             font-weight: 500;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
+            box-shadow: 0 8px 30px rgba(74,158,255,0.25);
         }
 
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--bg-card);
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 500;
-            border: 1px solid var(--border);
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-        }
-
-        /* Section Common */
-        section {
-            padding: 100px 24px;
-        }
-
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
+        /* Articles */
+        #articles { padding: 90px 24px; background: var(--bg-secondary); }
+        .section-inner { max-width: 900px; margin: 0 auto; }
         .section-label {
             font-size: 13px;
             color: var(--accent);
-            text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: clamp(24px, 3.5vw, 34px);
+            font-weight: 700;
             margin-bottom: 12px;
         }
-
-        .section-title {
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
         .section-desc {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-secondary);
-            max-width: 600px;
-            line-height: 1.8;
-            margin-bottom: 48px;
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 44px;
         }
-
-        /* Reports Section */
-        #reports {
-            background: var(--bg-secondary);
-        }
-
-        .reports-grid {
+        .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 24px;
+            gap: 22px;
         }
-
-        .report-card {
+        .article-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 32px;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
             text-decoration: none;
             color: inherit;
             display: block;
         }
-
-        .report-card:hover {
-            transform: translateY(-4px);
+        .article-card:hover {
+            transform: translateY(-3px);
             border-color: var(--accent);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.35);
         }
-
-        .report-badge {
+        .article-badge {
             display: inline-block;
-            padding: 4px 10px;
-            background: rgba(108, 99, 255, 0.15);
+            padding: 4px 12px;
+            background: rgba(74,158,255,0.12);
             color: var(--accent);
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 12px;
             font-weight: 500;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
-
-        .report-title {
-            font-size: 20px;
+        .article-title {
+            font-size: 19px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1.4;
         }
-
-        .report-desc {
+        .article-desc {
             font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
-
-        .report-meta {
+        .article-meta {
             display: flex;
-            gap: 16px;
+            gap: 18px;
             font-size: 13px;
-            color: var(--text-tertiary);
+            color: var(--text-muted);
         }
-
-        .report-meta span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .report-arrow {
+        .article-arrow {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--accent);
-            margin-top: 16px;
+            margin-top: 14px;
             font-weight: 500;
         }
 
-        /* Connect Section */
-        #connect {
-            background: var(--bg-primary);
-        }
-
-        .connect-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .connect-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px 32px;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .connect-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
-        }
-
-        .connect-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 24px;
-        }
-
-        .connect-icon.wechat {
-            background: rgba(7, 193, 96, 0.15);
-        }
-
-        .connect-icon.douyin {
-            background: rgba(255, 37, 76, 0.15);
-        }
-
-        .connect-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .connect-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .qr-placeholder {
-            width: 220px;
-            height: 220px;
-            margin: 0 auto 16px;
-            background: #ffffff;
-            border: none;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-tertiary);
-            font-size: 13px;
-            overflow: hidden;
-            padding: 10px;
-        }
-
-        .qr-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .connect-hint {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-
-        /* About Section */
-        #about {
-            background: var(--bg-secondary);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-        }
-
+        /* About */
+        #about { padding: 90px 24px; }
         .about-text p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-secondary);
-            line-height: 1.9;
-            margin-bottom: 20px;
+            line-height: 1.85;
+            margin-bottom: 16px;
+            max-width: 600px;
         }
-
-        .about-text p strong {
-            color: var(--text-primary);
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 32px;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: var(--text-tertiary);
-            margin-top: 4px;
-        }
+        .about-text strong { color: var(--text-primary); }
 
         /* Footer */
         footer {
-            padding: 40px 24px;
+            padding: 36px 24px;
             text-align: center;
             border-top: 1px solid var(--border);
         }
-
-        footer p {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
+        footer p { font-size: 13px; color: var(--text-muted); }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-            }
-
-            .reports-grid,
-            .connect-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 72px 20px;
-            }
-        }
-
-        /* Fade-in animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .nav-links { display: none; }
+            .hero-subtitle { font-size: 15px; }
+            section { padding: 64px 20px; }
+            .article-card { padding: 24px; }
         }
     </style>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
     <div class="nav-inner">
-        <a href="#hero" class="nav-logo">AI营销深度拆解</a>
+        <a href="#hero" class="nav-logo">小K爱研究</a>
         <ul class="nav-links">
-            <li><a href="#reports">深度报告</a></li>
-            <li><a href="#connect">找到我</a></li>
+            <li><a href="#articles">文章</a></li>
             <li><a href="#about">关于</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- Hero -->
 <section id="hero">
     <div class="hero-content">
-        <span class="hero-tag">真实数据 · 不灌鸡汤 · 研报级深度</span>
-        <h1 class="hero-title">只给你看真实数据<br>不灌鸡汤</h1>
+        <span class="hero-tag">真实数据 · 交叉验证 · 不灌鸡汤</span>
+        <h1 class="hero-title">AI产业链<br>逐层数据拆解</h1>
         <p class="hero-subtitle">
-            抖音会员每周1份AI营销行业研报。<br>
-            数据可溯源，案例有出处。
+            中美AI产业12层框架，每层都有硬核数据。<br>
+            每条数字至少两个独立来源交叉验证。<br>
+            查不到的不编不补，写"缺口"。
         </p>
-        <div class="hero-buttons">
-            <a href="#reports" class="btn-primary">
-                📄 看深度报告
-            </a>
-            <a href="#connect" class="btn-secondary">
-                🔗 关注我
-            </a>
-        </div>
+        <a href="#articles" class="btn-primary">📄 阅读文章 →</a>
     </div>
 </section>
 
-<!-- Reports -->
-<section id="reports">
+<section id="articles">
     <div class="section-inner">
-        <div class="section-label">// 深度报告</div>
-        <h2 class="section-title">写过的深度研究</h2>
-        <p class="section-desc">每一篇都是数万字级别的深度拆解，全部数据可溯源、案例可验证。不灌鸡汤。</p>
+        <div class="section-label">// 文章</div>
+        <h2 class="section-title">深度研究</h2>
+        <p class="section-desc">每篇围绕一个反常识发现展开，用数据说话，用图表佐证。</p>
 
-        <div class="reports-grid">
-            <!-- Report - AI散热账单 -->
-            
-        
-        <a href="article-hynix-adr-cycle.html" class="article-card">
-            <h3>史上最大ADR：294亿美金的周期信号</h3>
-            <p>SK海力士纳斯达克ADR上市募资294亿美金，史上最大ADR。HBM占全球52%出货量，单季利润率72%超英伟达。是AI新范式起点还是存储周期顶点？</p>
-            <span class="date">2026-06-28</span>
-        </a>
-<a href="article-underwater-datacenter.html" class="article-card">
-            <h3>美国8年没做成的海底数据中心，中国为什么商用了？</h3>
-            <p>微软Project Natick技术成功但商业失败，中国靠海上风电+海工装备+政策+需求四件套系统整合能力实现商用，是产业链的胜利而非单点技术突破。</p>
-            <span class="date">2026-06-28</span>
-        </a>
-<a href="article-ai-price-revolution.html" class="article-card">
-            <h3>中美AI大模型价格革命：性能差3%，价格差30倍</h3>
-            <p>中美AI大模型综合性能差距缩小到感知盲区，价格差30倍。推理侧中国领跑，训练侧美国领先5倍，开源赛道中国下载量占全球58%。</p>
-            <span class="date">2026-06-28</span>
-        </a>
-<a href="article-opc-profit-layer.html" class="article-card">
-            <h3>一人公司：1600万人冲进1%利润层</h3>
-            <p>全国1600万家一人公司冲进AI产业链利润仅1%的应用层。50%月入不到7000元，门槛归零≠利润归你。</p>
-            <span class="date">2026-06-27</span>
-        </a>
-<a href="article-ai-cooling-bill.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI散热</span>
-                <h3 class="report-title">AI的散热账单：风冷已死，液冷上位</h3>
-                <p class="report-desc">
-                    散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。风冷散不掉，水不够用，两条路堵死只剩液冷。
+        <div class="articles-grid">
+
+            <!-- Article 1 -->
+            <a href="article-hynix-adr-cycle.html" class="article-card">
+                <span class="article-badge">存储周期 · 资本市场</span>
+                <h3 class="article-title">294亿美金：SK海力士的里程碑，还是存储周期的墓碑？</h3>
+                <p class="article-desc">
+                    SK海力士ADR募资294亿美金追平沙特阿美，史上最大ADR。HBM占全球52%出货量，单季利润率72%超英伟达。是AI新范式还是周期顶点？散户杠杆、PE陷阱、三极格局全拆解。
                 </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 16+数据源</span>
-                    <span>🏢 AI基础设施</span>
+                <div class="article-meta">
+                    <span>📅 2026-06-28</span>
+                    <span>📊 10+ 数据源</span>
+                    <span>🖼️ 3 张图表</span>
                 </div>
-                <div class="report-arrow">阅读全文 →</div>
+                <div class="article-arrow">阅读全文 →</div>
             </a>
 
-            <!-- Report 1 -->
-            <a href="article-ai-marketing-report.html" class="report-card fade-in">
-                <span class="report-badge">5万字 · 全国内数据</span>
-                <h3 class="report-title">AI营销深度分析报告 2025-2026</h3>
-                <p class="report-desc">
-                    从AI赋能传统营销、GEO原生渠道、AI效率工具三层拆解AI营销真相。7大本土案例深度拆解，50个独立可验证数据来源，GEO指标体系（Visibility+Positioning+Performance）首次系统落地。
+            <!-- Article 2 -->
+            <a href="article-underwater-datacenter.html" class="article-card">
+                <span class="article-badge">基础设施 · 中美对比</span>
+                <h3 class="article-title">微软水下数据中心：技术赢了，账本输了</h3>
+                <p class="article-desc">
+                    微软Project Natick故障率仅陆地1/8，PUE做到1.07，却宣布终止。中国海兰信已商用落地。全生命周期成本海底低15-20%，但建设贵、维护难、政策卡——为什么中国能做成？
                 </p>
-            <!-- Report - SpaceX发债 -->
-            <a href="article-spacex-debt.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · 资本市场</span>
-                <h3 class="report-title">SpaceX千亿现金为什么还要借债？</h3>
-                <p class="report-desc">
-                    手握1008亿现金却发250亿债券，3.6倍超额认购。资本支出5336亿、算力合同90天可终止、发债不是缺钱是延长期限。拆一个人的账本，看AI烧钱时代的生存逻辑。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 10+数据源</span>
-                    <span>🏢 资本市场</span>
+                <div class="article-meta">
+                    <span>📅 2026-06-28</span>
+                    <span>📊 8+ 数据源</span>
+                    <span>🖼️ 2 张图表</span>
                 </div>
-                <div class="report-arrow">阅读全文 →</div>
+                <div class="article-arrow">阅读全文 →</div>
             </a>
 
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 50+数据源</span>
-                    <span>🏢 7大案例</span>
+            <!-- Article 3 -->
+            <a href="article-ai-price-revolution.html" class="article-card">
+                <span class="article-badge">大模型 · 中美对比</span>
+                <h3 class="article-title">性能差3%，价格差30倍——中美AI大模型的真实账本</h3>
+                <p class="article-desc">
+                    LMSYS竞技场中美旗舰差距仅1.9%，但价格差30倍。DeepSeek ¥6 vs Claude ¥181。李开复：中美AI是两条完全不同的线——闭源追上限 vs 开源拼落地。
+                </p>
+                <div class="article-meta">
+                    <span>📅 2026-06-28</span>
+                    <span>📊 7+ 数据源</span>
+                    <span>🖼️ 3 张图表</span>
                 </div>
-                <div class="report-arrow">阅读全文 →</div>
+                <div class="article-arrow">阅读全文 →</div>
             </a>
 
-            <!-- Report 2 -->
-            <a href="article-ai-marketing-truth.html" class="report-card fade-in">
-                <span class="report-badge">1.1万字 · 深入浅出版</span>
-                <h3 class="report-title">AI营销真相：1.87万亿的市场里，聪明人都在怎么玩？</h3>
-                <p class="report-desc">
-                    三层框架拆解AI营销真相：百雀羚CTR+71%、戴森场景化投放、科沃斯全域逆转。GEO新战场全解析，VPP指标体系首次落地。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 30+数据源</span>
-                    <span>🏢 3大案例</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-            <!-- Report 3 - AI营销产业链 -->
-            <a href="article-ai-marketing-industry.html" class="report-card fade-in">
-                <span class="report-badge">产业链深度拆解 · 4家A股核心</span>
-                <h3 class="report-title">AI营销产业链全景深度解析</h3>
-                <p class="report-desc">
-                    三阶段定位框架+4家A股核心公司深拆（蓝色光标/易点天下/浙文互联/省广集团），营收结构、毛利率、客户、AI产品进度逐一拆解，三个可复用分析工具。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 4家深拆</span>
-                    <span>🏢 全产业链</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-
-            <a href="article-deepseek-spacex.html" class="report-card fade-in">
-                <span class="report-badge">资本事件深度对比 · 前沿科技估值</span>
-                <h3 class="report-title">DeepSeek首轮融资与SpaceX IPO深度对比</h3>
-                <p class="report-desc">
-                    2026年6月两起引爆全球资本的事件：DeepSeek 500亿首融 vs SpaceX 750亿史上最大IPO。控制权设计、估值逻辑、风险收益逐一拆解，三个可复用分析框架。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 双案对比</span>
-                    <span>🏢 前沿科技</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-            <a href="article-china-auto-rise.html" class="report-card fade-in">
-                <span class="report-badge">产业数据深度拆解 · 全链自主</span>
-                <h3 class="report-title">换道碾压：中国汽车如何用33年改写百年格局</h3>
-                <p class="report-desc">
-                    从1992年钱学森的"疯信"到2025年全球登顶，33年战略定力、四重机缘叠加、日德美三线失守、全产业链拆解——比亚迪/奇瑞/吉利/上汽四大品牌做对了什么？
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 30+数据源</span>
-                    <span>🏢 4大品牌</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-            <a href="article-ai-content-pipeline.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI内容安全</span>
-                <h3 class="report-title">没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人"</h3>
-                <p class="report-desc">
-                    AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——从游戏攻略到溴中毒，一条没有质检的工业流水线正在运转。YouTube双轨治理模式深度拆解。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 24+数据源</span>
-                    <span>🏢 全球监管对比</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-            <a href="article-ai-storage-bottleneck.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI硬件供应链</span>
-                <h3 class="report-title">AI军备竞赛的真正瓶颈——从GPU转向存储芯片</h3>
-                <p class="report-desc">
-                    HBM占AI芯片BOM成本45%超越GPU核心，美光CEO坦言只能满足50%-67%需求，三巨头控制全球HBM市场——AI胜负手已从算力转向存储。DDR4一年涨超6倍，存储晶圆厂建设周期4年起步。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 30+数据源</span>
-                    <span>🏢 全球半导体</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-            <a href="article-ai-gpu-dual-chain.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI算力双链路</span>
-                <h3 class="report-title">AI算力双链路：谁在暴利，谁在血亏</h3>
-                <p class="report-desc">
-                    追踪一条钱流从零件到终端：B200拆解$6400显存占45%，4层加价英伟达毛利81%，投入1块收回8分——约2.1万亿云积压订单中41%是循环投资。中国没有循环但有饥荒，API便宜10-77倍。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 40+数据源</span>
-                    <span>🏢 全球AI供应链</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-            <a href="article-gpu-depreciation-cliff.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI算力金融</span>
-                <h3 class="report-title">GPU折旧悬崖：资产比债务先死的金融结构</h3>
-                <p class="report-desc">
-                    GPU 3年基本归零，但抵押GPU借的债要30年才还完。CoreWeave用2年过时的芯片做抵押品借了250亿美元，高盛测算全行业折旧缺口6年累计1.76万亿——最后谁接盘？养老金。
-                </p>
-                <div class="report-meta">
-                    <span>📅 2026.06</span>
-                    <span>📊 20+数据源</span>
-                    <span>🏢 AI算力金融</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-            <a href="article-ai-power-bill.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI能源</span>
-                <h3 class="report-title">AI的电力账单：谁先搞定电，谁就赢了AI</h3>
-                <p class="report-desc">
-                    ChatGPT一天用85万度电。美国花16亿重启核电站，中国把算力搬到西部用3毛6的电。两条路谁走得通？
-                </p>
-                <div class="report-meta">
-                    <span>2026.06</span>
-                    <span>15+数据源</span>
-                    <span>AI能源</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
-
-            <a href="article-ai-capex-bubble.html" class="report-card fade-in">
-                <span class="report-badge">数据研究深度拆解 · AI算力经济</span>
-                <h3 class="report-title">AI算力的钱流向哪里？7250亿资本支出拆解</h3>
-                <p class="report-desc">
-                    7250亿资本支出逐层拆解。英伟达毛利率75%，OpenAI亏损是营收3.7倍。上游吃肉，下游还没上桌。
-                </p>
-                <div class="report-meta">
-                    <span>2026.06</span>
-                    <span>17+数据源</span>
-                    <span>AI算力经济</span>
-                </div>
-                <div class="report-arrow">阅读全文 →</div>
-            </a>
         </div>
     </div>
 </section>
+
+<section id="about">
+    <div class="section-inner">
+        <div class="about-text">
+            <h2 style="font-size:24px;font-weight:700;margin-bottom:16px;">关于小K</h2>
+            <p>自媒体创作者，全网多平台分发。专注<strong>AI + 数据收集/研算</strong>方向。</p>
+            <p>所有内容基于<strong>AI产业链12层中美对比框架</strong>，从能源到AI原生经济逐层拆解。</p>
+            <p>数据原则：<strong>交叉验证、利益相关标注、缺口不补</strong>。专业术语必配大白话解释。</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 小K爱研究 · 数据可溯源，案例有出处</p>
+</footer>
+
+</body>
+</html>
