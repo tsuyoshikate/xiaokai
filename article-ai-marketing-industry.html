@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI营销产业链全景深度解析 | 小K讲AI营销</title>
+    <title>AI营销产业链全景深度解析 | 小K讲AI营销 | 小K爱研究</title>
     <meta name="description" content="三阶段定位框架+4家A股核心公司深拆（蓝色光标/易点天下/浙文互联/省广集团），营收结构、毛利率、客户、AI产品进度逐一拆解，三个可复用分析工具。">
     <meta name="keywords" content="AI营销产业链,蓝色光标,易点天下,浙文互联,省广集团,AI营销,A股,AIGC,程序化广告,数字人">
     <meta name="author" content="小K">
@@ -11,11 +11,8 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="AI营销产业链全景深度解析">
     <meta property="og:description" content="三阶段定位框架+4家A股核心公司深拆，营收结构、毛利率、客户、AI产品进度逐一拆解">
-    <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/article-ai-marketing-industry.html">
-    <meta property="og:site_name" content="小K讲AI营销">
+    <meta property="og:site_name" content="小K爱研究">
     <meta property="og:locale" content="zh_CN">
-
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -95,1004 +92,409 @@
       ]
     }
     </script>
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --bg-card: #1a1a1a;
-            --bg-code: #141414;
-            --text-primary: #e8e8e8;
-            --text-secondary: #999999;
-            --text-tertiary: #666666;
-            --accent: #6C63FF;
-            --accent-hover: #7B73FF;
-            --border: #222222;
-            --gradient-start: #6C63FF;
-            --gradient-end: #E94560;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.85;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .top-bar-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .back-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: opacity 0.2s;
-        }
-
-        .back-link:hover { opacity: 0.8; }
-
-        .top-bar-title {
-            font-size: 13px;
-            color: var(--text-tertiary);
-            max-width: 400px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .article-nav {
-            display: flex;
-            gap: 16px;
-        }
-
-        .article-nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.2s;
-        }
-
-        .article-nav a:hover {
-            color: var(--accent);
-        }
-
-        /* Article Header */
-        .article-header {
-            padding: 140px 24px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(108, 99, 255, 0.06) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(233, 69, 96, 0.04) 0%, transparent 50%);
-        }
-
-        .article-header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 760px;
-            margin: 0 auto;
-        }
-
-        .article-tags {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-
-        .article-tag {
-            padding: 4px 12px;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .article-title {
-            font-size: clamp(28px, 5vw, 42px);
-            font-weight: 900;
-            line-height: 1.3;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .article-subtitle {
-            font-size: 17px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 28px;
-            font-weight: 300;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            font-size: 13px;
-            color: var(--text-tertiary);
-            flex-wrap: wrap;
-        }
-
-        /* TOC */
-        .toc-wrapper {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 0 24px 60px;
-        }
-
-        .toc {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px 32px;
-        }
-
-        .toc-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-        }
-
-        .toc-list {
-            list-style: none;
-            column-count: 2;
-            column-gap: 24px;
-        }
-
-        .toc-list li {
-            margin-bottom: 8px;
-            break-inside: avoid;
-        }
-
-        .toc-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            line-height: 1.5;
-            transition: color 0.2s;
-        }
-
-        .toc-list a:hover {
-            color: var(--accent);
-        }
-
-        .toc-list .toc-chapter {
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 15px;
-        }
-
-        /* Article Body */
-        .article-body {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 0 24px 80px;
-        }
-
-        .article-body h2 {
-            font-size: 26px;
-            font-weight: 800;
-            margin-top: 72px;
-            margin-bottom: 24px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            line-height: 1.3;
-        }
-
-        .article-body h2:first-child {
-            margin-top: 0;
-            border-top: none;
-            padding-top: 0;
-        }
-
-        .article-body h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .article-body h4 {
-            font-size: 17px;
-            font-weight: 600;
-            margin-top: 28px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .article-body p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 18px;
-        }
-
-        .article-body strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .article-body em {
-            color: var(--accent);
-            font-style: normal;
-            font-weight: 500;
-        }
-
-        /* Highlight Box */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(108, 99, 255, 0.08), rgba(233, 69, 96, 0.05));
-            border-left: 3px solid var(--accent);
-            border-radius: 0 8px 8px 0;
-            padding: 20px 24px;
-            margin: 28px 0;
-        }
-
-        .highlight-box p {
-            color: var(--text-primary);
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .highlight-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Company Card */
-        .company-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
-            margin: 32px 0;
-        }
-
-        .company-card h4 {
-            margin-top: 0;
-            color: var(--accent);
-        }
-
-        .positioning-box {
-            background: rgba(108, 99, 255, 0.1);
-            border: 1px solid var(--accent);
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-top: 16px;
-        }
-
-        .positioning-box p {
-            margin: 0;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .positioning-box strong {
-            color: var(--accent);
-        }
-
-        /* Data Card */
-        .data-card {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 8px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px 20px;
-            margin: 8px 4px;
-        }
-
-        .data-number {
-            font-size: 24px;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .data-label {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-
-        .data-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 16px 0;
-        }
-
-        /* Comparison Table */
-        .article-body table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            font-size: 14px;
-        }
-
-        .article-body thead th {
-            background: var(--bg-card);
-            color: var(--text-primary);
-            font-weight: 600;
-            text-align: left;
-            padding: 12px 16px;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .article-body tbody td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        .article-body tbody tr:hover {
-            background: rgba(108, 99, 255, 0.04);
-        }
-
-        .article-body tbody td strong {
-            color: var(--accent);
-        }
-
-        /* Ordered List */
-        .article-body ol {
-            padding-left: 24px;
-            margin: 16px 0;
-        }
-
-        .article-body ol li {
-            color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        .article-body ul {
-            padding-left: 24px;
-            margin: 16px 0;
-        }
-
-        .article-body ul li {
-            color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-
-        /* Chapter Divider */
-        .chapter-divider {
-            text-align: center;
-            margin: 48px 0;
-            color: var(--text-tertiary);
-            font-size: 20px;
-            letter-spacing: 12px;
-        }
-
-        /* Summary Box */
-        .summary-box {
-            background: var(--bg-card);
-            border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 32px;
-            margin: 40px 0;
-        }
-
-        .summary-box h3 {
-            color: var(--accent);
-            margin-top: 0;
-        }
-
-        .tool-box {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px 24px;
-            margin: 24px 0;
-        }
-
-        .tool-box h4 {
-            color: var(--accent);
-            margin-top: 0;
-        }
-
-        /* CTA */
-        .article-cta {
-            text-align: center;
-            padding: 60px 24px;
-            border-top: 1px solid var(--border);
-        }
-
-        .cta-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .cta-desc {
-            font-size: 15px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .cta-links {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: var(--bg-card);
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            border: 1px solid var(--border);
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-        }
-
-        /* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            z-index: 200;
-            transition: width 0.1s;
-        }
-
-        /* Footer */
-        footer {
-            padding: 32px 24px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        footer p {
-            font-size: 13px;
-            color: var(--text-tertiary);
-        }
-
-        /* Data Source */
-        .data-source {
-            font-size: 13px;
-            color: var(--text-tertiary);
-            margin-top: 24px;
-            padding: 16px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .toc-list {
-                column-count: 1;
-            }
-            .top-bar-title {
-                display: none;
-            }
-            .article-nav {
-                display: none;
-            }
-            .article-header {
-                padding: 120px 20px 40px;
-            }
-            .article-body {
-                padding: 0 20px 60px;
-            }
-            .article-body h2 {
-                font-size: 22px;
-            }
-            .article-body h3 {
-                font-size: 18px;
-            }
-            .data-card {
-                padding: 10px 16px;
-            }
-            .data-number {
-                font-size: 20px;
-            }
-        }
+    :root {
+        --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-card: #1a1a1a;
+        --text-primary: #e8e8e8; --text-secondary: #a0a0a0; --text-muted: #666;
+        --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #2a2a2a;
+        --red: #ff4a4a; --green: #4aff4a; --yellow: #ffcc4a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: var(--bg-primary); color: var(--text-primary);
+        line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px;
+    }
+    h1 { font-size: 2em; margin: 1.5em 0 0.5em; color: var(--text-primary); }
+    h2 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+    h3 { font-size: 1.2em; margin: 1.2em 0 0.4em; color: var(--text-primary); }
+    p { margin: 0.8em 0; color: var(--text-secondary); }
+    strong { color: var(--text-primary); }
+    blockquote { border-left: 3px solid var(--accent); padding: 0.5em 1em; margin: 1em 0; background: var(--bg-secondary); }
+    table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+    th, td { border: 1px solid var(--border); padding: 0.6em 0.8em; text-align: left; }
+    th { background: var(--bg-card); color: var(--text-primary); }
+    td { color: var(--text-secondary); }
+    .source { font-size: 0.85em; color: var(--text-muted); margin-top: 2em; border-top: 1px solid var(--border); padding-top: 1em; }
+    .hero-stat { font-size: 3em; font-weight: bold; color: var(--accent); margin: 0.3em 0; }
+    .hero-desc { font-size: 1.1em; color: var(--text-secondary); }
+    .chart-container { max-width: 560px; margin: 1.5em auto; text-align: center; }
+    .chart-container img { width: 100%; height: auto; border-radius: 8px; }
+    .chart-container figcaption { font-size: 0.85em; color: var(--text-muted); margin-top: 0.5em; }
+    .disclaimer { font-size: 0.85em; color: var(--text-muted); margin-top: 1em; padding: 0.8em; background: var(--bg-secondary); border-radius: 4px; }
+    a.back { display: inline-block; margin: 1em 0; color: var(--accent); text-decoration: none; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
+    .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1em 1.2em; margin: 1.5em 0; }
+    .highlight-box .highlight-title { font-weight: bold; color: var(--accent); margin-bottom: 0.5em; }
+    .highlight-box p { margin: 0.3em 0; }
+    .source-note { font-size: 0.85em; color: var(--text-muted); background: var(--bg-secondary); padding: 0.8em 1em; border-radius: 4px; margin: 1em 0; }
+    .data-impact { color: #ff4a4a; font-weight: bold; }
+    .data-warning { color: #ffcc4a; font-weight: bold; }
+    .cycle-diagram { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1em; margin: 1.5em 0; font-family: monospace; font-size: 0.9em; color: var(--text-secondary); line-height: 1.6; white-space: pre-wrap; overflow-x: auto; }
+    .verified { color: var(--green); }
+    .exaggerated { color: var(--red); }
+    .step-number { display: inline-block; background: var(--accent); color: var(--bg-primary); font-weight: bold; border-radius: 50%; width: 2em; height: 2em; text-align: center; line-height: 2em; margin-right: 0.5em; }
     </style>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
 </head>
 <body>
+    <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
+    <h1>AI营销产业链全景深度解析 | 小K讲AI营销</h1>
+    <p style="color:#666;font-size:0.9em;">小K·AI行业数据分析 | 2026年6月</p>
+    <p><span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">产业链全景</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">4家A股深拆</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">三阶段定位框架</span></p>
+    <p style="color:#a0a0a0;font-size:1.1em;line-height:1.6;">三阶段定位+4家A股核心公司深拆+三个可复用分析工具</p>
+        开场
 
-<!-- Progress Bar -->
-<div class="progress-bar" id="progressBar"></div>
+    <h2 id="ch0">开场：三阶段定位+核心命题</h2>
 
-<!-- Top Bar -->
-<div class="top-bar">
-    <div class="top-bar-inner">
-        <a href="index.html" class="back-link">← 返回首页</a>
-        <span class="top-bar-title">AI营销产业链全景深度解析</span>
-        <div class="article-nav">
-            <a href="article-ai-marketing-report.html">深度报告</a>
-            <a href="article-ai-marketing-truth.html">真相解读</a>
-        </div>
+    <p>各位，今天我们来拆AI营销这条赛道。</p>
+
+    <p>在拆之前，先给大家一个框架——</p>
+
+    <p>任何新赛道，都逃不开三个阶段：<strong>概念验证→工具落地→工作流重构。</strong></p>
+
+    <p><strong>第一阶段概念验证</strong>，大家都在问"AI能不能用"——2023年ChatGPT引爆的时候就是这样，所有人都在试，但没人真拿它赚钱。</p>
+
+    <p><strong>第二阶段工具落地</strong>，AI工具已经能用了——帮你写文案、出图、做数字人。但大部分企业还停留在"帮我写写文案出出图"，就像买了跑步机在家吃灰——动了，没瘦。AI用了，但钱没多赚。</p>
+
+    <p><strong>第三阶段工作流重构</strong>，AI不是工具了，而是嵌入你的整个业务流程——从投放到分析到决策，AI帮你算清楚每一分钱的ROI。</p>
+
+    <p><strong>AI营销现在卡在哪？卡在第二到第三阶段之间。</strong></p>
+
+    <p>工具已经就位了，但大部分企业还没走到"让AI帮我算清ROI"这一步。</p>
+
+    <p>今天这期视频，我们做三件事：</p>
+
+    <ol>
+        <li>画一张AI营销产业链全景地图</li>
+        <li>4家A股核心公司逐家深拆——营收结构、毛利率、客户、AI产品进度</li>
+        <li>给你一个可复用的分析框架——以后遇到任何AI应用赛道，都能自己判断它处在哪个阶段</li>
+    </ol>
+
+    <p>建议先收藏，我们开始。</p>
+
+    · · ·
+
+    第一部分
+
+    <h2 id="ch1">第一部分 · 产业链全景</h2>
+
+    <h3 id="ch1-1">1.1 技术底座</h3>
+
+    <p>先说产业链的最底层——技术底座。</p>
+
+    <p>这里主要三股力量：大模型厂商、云计算厂商、数据与算力基建。</p>
+
+    <p><strong>大模型厂商：</strong>百度文心一言、阿里通义千问、腾讯混元、华为盘古、字节火山引擎、智谱AI、DeepSeek——它们提供底层AI能力，是整个AI营销的"发电厂"。</p>
+
+    <p><strong>云计算厂商：</strong>阿里云、腾讯云、华为云、亚马逊AWS、百度智能云——大模型跑在云上，云厂商是"输电线路"。</p>
+
+    <div class="highlight-box">
+        <p><strong>关键结论：</strong>底层技术已经相对成熟，但真正的竞争壁垒不在这里——而在于谁能把这些能力"落地"到营销场景。</p>
     </div>
-</div>
 
-<!-- Article Header -->
-<header class="article-header">
-    <div class="article-header-content">
-        <div class="article-tags">
-            <span class="article-tag">产业链全景</span>
-            <span class="article-tag">4家A股深拆</span>
-            <span class="article-tag">三阶段定位框架</span>
-        </div>
-        <h1 class="article-title">AI营销产业链全景深度解析</h1>
-        <p class="article-subtitle">三阶段定位+4家A股核心公司深拆+三个可复用分析工具</p>
-        <div class="article-meta">
-            <span>✍️ 小K讲AI营销</span>
-            <span>📅 2026年6月</span>
-            <span>📖 约8000字</span>
-            <span>⏱ 约15分钟</span>
-        </div>
+    <h3 id="ch1-2">1.2 AI营销工具/SaaS四个赛道</h3>
+
+    <p>中间层是AI营销工具和SaaS平台，分四个赛道：</p>
+
+    <h4>第一，AI投放/程序化广告</h4>
+
+    <p>这是市场规模最大的细分。2024年中国程序化广告市场约<strong>4200亿元</strong>，AI驱动的智能投放占比已超35%。</p>
+
+    <p>代表产品：字节巨量引擎、腾讯优量汇、蓝色光标BlueX、浙文互联好奇飞轮。</p>
+
+    <h4>第二，AI内容生成AIGC</h4>
+
+    <p>2024年市场规模约<strong>350亿元</strong>，预计2025年突破420亿。</p>
+
+    <p>代表产品：蓝色光标心影视频创作平台、易点天下KreadoAI、浙文互联好奇飞梭。</p>
+
+    <h4>第三，AI数字人直播</h4>
+
+    <p>增速最快。2024年市场规模<strong>41.2亿</strong>，同比暴涨85.3%。IDC预测2029年将达250亿，年复合增速43.5%。</p>
+
+    <p>代表：百度曦灵、商汤3D数字人、科大讯飞。</p>
+
+    <h4>第四，AI数据分析/ROI优化</h4>
+
+    <p>代表：省广灵犀AI覆盖8亿人群2500+标签，浙文好奇飞轮。</p>
+
+    <h3 id="ch1-3">1.3 应用层：品牌方和营销服务商</h3>
+
+    <p>应用层分两股力量：品牌方和营销服务商。A股这些上市公司的本质是"超级中介"——连接广告主和流量平台。</p>
+
+    <div class="highlight-box">
+        <p><strong>这就是为什么整个行业毛利率极低——因为平台的垄断地位决定了利润的天花板。</strong></p>
     </div>
-</header>
 
-<!-- Table of Contents -->
-<div class="toc-wrapper">
-    <div class="toc">
-        <div class="toc-title">📑 目录</div>
-        <ul class="toc-list">
-            <li><a href="#ch0" class="toc-chapter">开场：三阶段定位+核心命题</a></li>
-            <li><a href="#ch1" class="toc-chapter">第一部分 产业链全景</a></li>
-            <li><a href="#ch1-1">1.1 技术底座</a></li>
-            <li><a href="#ch1-2">1.2 AI营销工具/SaaS四个赛道</a></li>
-            <li><a href="#ch1-3">1.3 应用层：品牌方和营销服务商</a></li>
-            <li><a href="#ch2" class="toc-chapter">第二部分 核心公司深拆</a></li>
-            <li><a href="#ch2-1">2.1 蓝色光标：规模最大，AI进度最快</a></li>
-            <li><a href="#ch2-2">2.2 易点天下：Token消耗惊人</a></li>
-            <li><a href="#ch2-3">2.3 浙文互联：汽车AI渗透最深</a></li>
-            <li><a href="#ch2-4">2.4 省广集团：牌照为王</a></li>
-            <li><a href="#ch3" class="toc-chapter">第三部分 竞争格局与天花板</a></li>
-            <li><a href="#ch4" class="toc-chapter">第四部分 阶段判断</a></li>
-            <li><a href="#ch5" class="toc-chapter">总结：三个可复用分析工具</a></li>
-        </ul>
-    </div>
-</div>
+    <p>但请注意——谁先完成从"中介"到"技术平台"的转型，谁就能突破这个天花板。</p>
 
-<!-- Article Body -->
-<article class="article-body">
+    <p>海外已经有了标杆：<strong>AppLovin</strong>，毛利率88%，净利率58%，市值1375亿美元。这就是天花板。接下来我们看国内谁最有可能够到它。</p>
 
-<!-- 开场 -->
-<h2 id="ch0">开场：三阶段定位+核心命题</h2>
+    · · ·
 
-<p>各位，今天我们来拆AI营销这条赛道。</p>
+    第二部分
 
-<p>在拆之前，先给大家一个框架——</p>
+    <h2 id="ch2">第二部分 · 核心公司深拆</h2>
 
-<p>任何新赛道，都逃不开三个阶段：<strong>概念验证→工具落地→工作流重构。</strong></p>
+    <h3 id="ch2-1">2.1 蓝色光标（300058）——规模最大，AI进度最快，但盈利仍是谜</h3>
 
-<p><strong>第一阶段概念验证</strong>，大家都在问"AI能不能用"——2023年ChatGPT引爆的时候就是这样，所有人都在试，但没人真拿它赚钱。</p>
-
-<p><strong>第二阶段工具落地</strong>，AI工具已经能用了——帮你写文案、出图、做数字人。但大部分企业还停留在"帮我写写文案出出图"，就像买了跑步机在家吃灰——动了，没瘦。AI用了，但钱没多赚。</p>
-
-<p><strong>第三阶段工作流重构</strong>，AI不是工具了，而是嵌入你的整个业务流程——从投放到分析到决策，AI帮你算清楚每一分钱的ROI。</p>
-
-<p><strong>AI营销现在卡在哪？卡在第二到第三阶段之间。</strong></p>
-
-<p>工具已经就位了，但大部分企业还没走到"让AI帮我算清ROI"这一步。</p>
-
-<p>今天这期视频，我们做三件事：</p>
-
-<ol>
-<li>画一张AI营销产业链全景地图</li>
-<li>4家A股核心公司逐家深拆——营收结构、毛利率、客户、AI产品进度</li>
-<li>给你一个可复用的分析框架——以后遇到任何AI应用赛道，都能自己判断它处在哪个阶段</li>
-</ol>
-
-<p>建议先收藏，我们开始。</p>
-
-<div class="chapter-divider">· · ·</div>
-
-<!-- 第一部分 -->
-<h2 id="ch1">第一部分 · 产业链全景</h2>
-
-<h3 id="ch1-1">1.1 技术底座</h3>
-
-<p>先说产业链的最底层——技术底座。</p>
-
-<p>这里主要三股力量：大模型厂商、云计算厂商、数据与算力基建。</p>
-
-<p><strong>大模型厂商：</strong>百度文心一言、阿里通义千问、腾讯混元、华为盘古、字节火山引擎、智谱AI、DeepSeek——它们提供底层AI能力，是整个AI营销的"发电厂"。</p>
-
-<p><strong>云计算厂商：</strong>阿里云、腾讯云、华为云、亚马逊AWS、百度智能云——大模型跑在云上，云厂商是"输电线路"。</p>
-
-<div class="highlight-box">
-    <p><strong>关键结论：</strong>底层技术已经相对成熟，但真正的竞争壁垒不在这里——而在于谁能把这些能力"落地"到营销场景。</p>
-</div>
-
-<h3 id="ch1-2">1.2 AI营销工具/SaaS四个赛道</h3>
-
-<p>中间层是AI营销工具和SaaS平台，分四个赛道：</p>
-
-<h4>第一，AI投放/程序化广告</h4>
-
-<p>这是市场规模最大的细分。2024年中国程序化广告市场约<strong>4200亿元</strong>，AI驱动的智能投放占比已超35%。</p>
-
-<p>代表产品：字节巨量引擎、腾讯优量汇、蓝色光标BlueX、浙文互联好奇飞轮。</p>
-
-<h4>第二，AI内容生成AIGC</h4>
-
-<p>2024年市场规模约<strong>350亿元</strong>，预计2025年突破420亿。</p>
-
-<p>代表产品：蓝色光标心影视频创作平台、易点天下KreadoAI、浙文互联好奇飞梭。</p>
-
-<h4>第三，AI数字人直播</h4>
-
-<p>增速最快。2024年市场规模<strong>41.2亿</strong>，同比暴涨85.3%。IDC预测2029年将达250亿，年复合增速43.5%。</p>
-
-<p>代表：百度曦灵、商汤3D数字人、科大讯飞。</p>
-
-<h4>第四，AI数据分析/ROI优化</h4>
-
-<p>代表：省广灵犀AI覆盖8亿人群2500+标签，浙文好奇飞轮。</p>
-
-<h3 id="ch1-3">1.3 应用层：品牌方和营销服务商</h3>
-
-<p>应用层分两股力量：品牌方和营销服务商。A股这些上市公司的本质是"超级中介"——连接广告主和流量平台。</p>
-
-<div class="highlight-box">
-    <p><strong>这就是为什么整个行业毛利率极低——因为平台的垄断地位决定了利润的天花板。</strong></p>
-</div>
-
-<p>但请注意——谁先完成从"中介"到"技术平台"的转型，谁就能突破这个天花板。</p>
-
-<p>海外已经有了标杆：<strong>AppLovin</strong>，毛利率88%，净利率58%，市值1375亿美元。这就是天花板。接下来我们看国内谁最有可能够到它。</p>
-
-<div class="chapter-divider">· · ·</div>
-
-<!-- 第二部分 -->
-<h2 id="ch2">第二部分 · 核心公司深拆</h2>
-
-<h3 id="ch2-1">2.1 蓝色光标（300058）——规模最大，AI进度最快，但盈利仍是谜</h3>
-
-<div class="company-card">
     <h4>📊 财务数据</h4>
     <table>
-        <thead>
-            <tr>
-                <th>指标</th>
-                <th>2024年</th>
-                <th>2025年</th>
-                <th>趋势</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>营收</td>
-                <td>607.97亿</td>
-                <td><strong>686.93亿</strong></td>
-                <td>↑</td>
-            </tr>
-            <tr>
-                <td>净利润</td>
-                <td>亏损2.91亿</td>
-                <td><strong>盈利2.25亿</strong></td>
-                <td>扭亏</td>
-            </tr>
-            <tr>
-                <td>净利率</td>
-                <td>-</td>
-                <td><strong>&lt;0.5%</strong></td>
-                <td>极低</td>
-            </tr>
-        </tbody>
+    <thead>
+<tr>
+<th>指标</th>
+<th>2024年</th>
+<th>2025年</th>
+<th>趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营收</td>
+<td>607.97亿</td>
+<td><strong>686.93亿</strong></td>
+<td>↑</td>
+</tr>
+<tr>
+<td>净利润</td>
+<td>亏损2.91亿</td>
+<td><strong>盈利2.25亿</strong></td>
+<td>扭亏</td>
+</tr>
+<tr>
+<td>净利率</td>
+<td>-</td>
+<td><strong>&lt;0.5%</strong></td>
+<td>极低</td>
+</tr>
+</tbody>
     </table>
-</div>
 
-<p><strong>营收结构：</strong>出海广告投放564亿，占82%。AI驱动收入占比已达15%以上，约100亿元，2023年不到8%。</p>
+    <p><strong>营收结构：</strong>出海广告投放564亿，占82%。AI驱动收入占比已达15%以上，约100亿元，2023年不到8%。</p>
 
-<p><strong>AI产品：</strong>BlueAI平台、1.2亿+标注训练数据、100个内部智能体、和Adobe战略合作。</p>
+    <p><strong>AI产品：</strong>BlueAI平台、1.2亿+标注训练数据、100个内部智能体、和Adobe战略合作。</p>
 
-<div class="positioning-box">
     <p><strong>🎯 卡位点：82%出海+谷歌全球超级代理=AI营销全球化第一卡位。</strong></p>
     <p>营收A股第一，出海这条路上几乎没有对手。但千亿营收赚几亿，<strong>AI到底能不能把利润率拉起来，是核心命题。</strong></p>
-</div>
 
-<h3 id="ch2-2">2.2 易点天下（301171）——Token消耗量惊人，混合计费是最大看点</h3>
+    <h3 id="ch2-2">2.2 易点天下（301171）——Token消耗量惊人，混合计费是最大看点</h3>
 
-<div class="company-card">
     <h4>📊 财务数据</h4>
     <table>
-        <thead>
-            <tr>
-                <th>指标</th>
-                <th>2025年</th>
-                <th>备注</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>营收</td>
-                <td><strong>38.30亿</strong></td>
-                <td>同比+50.39%</td>
-            </tr>
-            <tr>
-                <td>净利润</td>
-                <td>1.58亿</td>
-                <td>同比-31.8%（增收不增利）</td>
-            </tr>
-            <tr>
-                <td>毛利率</td>
-                <td><strong>14.34%</strong></td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>2026年Q1</td>
-                <td>亏损6354万</td>
-                <td>-</td>
-            </tr>
-        </tbody>
+    <thead>
+<tr>
+<th>指标</th>
+<th>2025年</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营收</td>
+<td><strong>38.30亿</strong></td>
+<td>同比+50.39%</td>
+</tr>
+<tr>
+<td>净利润</td>
+<td>1.58亿</td>
+<td>同比-31.8%（增收不增利）</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td><strong>14.34%</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>2026年Q1</td>
+<td>亏损6354万</td>
+<td>-</td>
+</tr>
+</tbody>
     </table>
-</div>
 
-<p><strong>为什么增收不增利？</strong>研发投入同比增74.28%，加上股权激励摊销。</p>
+    <p><strong>为什么增收不增利？</strong>研发投入同比增74.28%，加上股权激励摊销。</p>
 
-<p><strong>最大亮点：</strong>电商领域11.43亿，同比暴增122.8%。</p>
+    <p><strong>最大亮点：</strong>电商领域11.43亿，同比暴增122.8%。</p>
 
-<p><strong>AI产品：</strong>KreadoAI、zMaticoo平台完成DeepSeek-R1私有化部署、<strong>日均Token消耗超40亿</strong>、EC MCP Server布局Agentic AI。</p>
+    <p><strong>AI产品：</strong>KreadoAI、zMaticoo平台完成DeepSeek-R1私有化部署、<strong>日均Token消耗超40亿</strong>、EC MCP Server布局Agentic AI。</p>
 
-<div class="positioning-box">
     <p><strong>🎯 卡位点：140种语言数字人+电商结构化数据=跨境AI营销数据壁垒。</strong></p>
     <p>它是Apple大中华区首家电商一级代理，zMaticoo积累了海量电商结构化数据。更关键的是，它正在从"按项目收费"向"<strong>按Token消耗+效果</strong>混合计费"转型——这是对标AppLovin的模式。如果跑通，估值逻辑彻底变。</p>
-</div>
 
-<h3 id="ch2-3">2.3 浙文互联（600986）——汽车营销AI渗透最深</h3>
+    <h3 id="ch2-3">2.3 浙文互联（600986）——汽车营销AI渗透最深</h3>
 
-<div class="company-card">
     <h4>📊 财务数据</h4>
     <table>
-        <thead>
-            <tr>
-                <th>指标</th>
-                <th>2024年</th>
-                <th>趋势</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>营收</td>
-                <td>77.03亿</td>
-                <td>同比-28.8%</td>
-            </tr>
-            <tr>
-                <td>净利润</td>
-                <td>1.58亿</td>
-                <td>同比-17.92%</td>
-            </tr>
-            <tr>
-                <td>毛利率</td>
-                <td><strong>8.6%</strong></td>
-                <td>较低</td>
-            </tr>
-        </tbody>
+    <thead>
+<tr>
+<th>指标</th>
+<th>2024年</th>
+<th>趋势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营收</td>
+<td>77.03亿</td>
+<td>同比-28.8%</td>
+</tr>
+<tr>
+<td>净利润</td>
+<td>1.58亿</td>
+<td>同比-17.92%</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td><strong>8.6%</strong></td>
+<td>较低</td>
+</tr>
+</tbody>
     </table>
-</div>
 
-<p><strong>为什么营收下滑？</strong>主动削减低效的效果营销业务，品牌营销反而同比增12.42%到34.21亿。</p>
+    <p><strong>为什么营收下滑？</strong>主动削减低效的效果营销业务，品牌营销反而同比增12.42%到34.21亿。</p>
 
-<p><strong>客户结构：</strong>服务超75%头部汽车品牌——一汽奥迪、上汽奥迪、理想、比亚迪都在。非车还有中国电信、海尔、科大讯飞。</p>
+    <p><strong>客户结构：</strong>服务超75%头部汽车品牌——一汽奥迪、上汽奥迪、理想、比亚迪都在。非车还有中国电信、海尔、科大讯飞。</p>
 
-<p><strong>AI产品：</strong>好奇系列AI Agents矩阵、与字节合作"灵动数字人"完成220款、算力布局近4800P。</p>
+    <p><strong>AI产品：</strong>好奇系列AI Agents矩阵、与字节合作"灵动数字人"完成220款、算力布局近4800P。</p>
 
-<div class="positioning-box">
     <p><strong>🎯 卡位点：汽车75%头部品牌+数字人降本50%=垂直行业AI渗透最深。</strong></p>
     <p>数字人成本比真人实拍下降50%，这意味着AI替代真人拍摄的临界点已经到来。汽车是第一个，后面快消、3C都会跟。谁先在一个行业跑通AI替代逻辑，谁就有可复制的模板。</p>
-</div>
 
-<h3 id="ch2-4">2.4 省广集团（002400）——牌照为王，AI+短视频流量入口唯一门票</h3>
+    <h3 id="ch2-4">2.4 省广集团（002400）——牌照为王，AI+短视频流量入口唯一门票</h3>
 
-<div class="company-card">
     <h4>📊 关键数据</h4>
     <table>
-        <thead>
-            <tr>
-                <th>指标</th>
-                <th>数据</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>2024年营收</td>
-                <td><strong>206.58亿</strong></td>
-            </tr>
-            <tr>
-                <td>成立时间</td>
-                <td>1979年</td>
-            </tr>
-            <tr>
-                <td>行业地位</td>
-                <td>"中国广告营销第一股"</td>
-            </tr>
-        </tbody>
+    <thead>
+<tr>
+<th>指标</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024年营收</td>
+<td><strong>206.58亿</strong></td>
+</tr>
+<tr>
+<td>成立时间</td>
+<td>1979年</td>
+</tr>
+<tr>
+<td>行业地位</td>
+<td>"中国广告营销第一股"</td>
+</tr>
+</tbody>
     </table>
-</div>
 
-<p><strong>核心壁垒：</strong></p>
+    <p><strong>核心壁垒：</strong></p>
 
-<ul>
-<li>A股唯一拥有TikTok全球代理权+谷歌双牌照</li>
-<li>业务覆盖150+国家</li>
-<li>巨量引擎全国最大综合代理商</li>
-<li>广东省国资委持股18.88%</li>
-</ul>
+    <ul>
+        <li>A股唯一拥有TikTok全球代理权+谷歌双牌照</li>
+        <li>业务覆盖150+国家</li>
+        <li>巨量引擎全国最大综合代理商</li>
+        <li>广东省国资委持股18.88%</li>
+    </ul>
 
-<p><strong>AI产品：</strong>灵犀AI渗透率58%，服务300+标杆客户，创意效率提升8倍。G-IN平台与豆包大模型协同，覆盖8亿人群2500+标签，推理成本降83%。虚拟人营销实验室与字节共建。</p>
+    <p><strong>AI产品：</strong>灵犀AI渗透率58%，服务300+标杆客户，创意效率提升8倍。G-IN平台与豆包大模型协同，覆盖8亿人群2500+标签，推理成本降83%。虚拟人营销实验室与字节共建。</p>
 
-<div class="positioning-box">
     <p><strong>🎯 卡位点：TikTok全球核心代理（A股唯一）=AI+短视频流量入口唯一门票。</strong></p>
     <p>这不是技术壁垒，是<strong>政策壁垒</strong>。技术可以被追赶，牌照不能。谁掌握流量入口，谁就掌握定价权。</p>
-</div>
 
-<div class="chapter-divider">· · ·</div>
+    · · ·
 
-<!-- 第三部分 -->
-<h2 id="ch3">第三部分 · 竞争格局与天花板</h2>
+    第三部分
 
-<h3>海外 vs 国内，差距在哪？</h3>
+    <h2 id="ch3">第三部分 · 竞争格局与天花板</h2>
 
-<table>
+    <h3>海外 vs 国内，差距在哪？</h3>
+
+    <table>
     <thead>
-        <tr>
-            <th>维度</th>
-            <th>海外标杆</th>
-            <th>国内现状</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>毛利率</td>
-            <td><strong>AppLovin 88%</strong></td>
-            <td>A股公司普遍&lt;15%</td>
-        </tr>
-        <tr>
-            <td>净利率</td>
-            <td><strong>AppLovin 58%</strong></td>
-            <td>A股公司普遍&lt;2%</td>
-        </tr>
-        <tr>
-            <td>市值</td>
-            <td><strong>AppLovin 1375亿美元</strong></td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>代表公司</td>
-            <td>AppLovin, The Trade Desk</td>
-            <td>蓝色光标, 易点天下, 浙文互联, 省广集团</td>
-        </tr>
-    </tbody>
-</table>
+<tr>
+<th>维度</th>
+<th>海外标杆</th>
+<th>国内现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>毛利率</td>
+<td><strong>AppLovin 88%</strong></td>
+<td>A股公司普遍&lt;15%</td>
+</tr>
+<tr>
+<td>净利率</td>
+<td><strong>AppLovin 58%</strong></td>
+<td>A股公司普遍&lt;2%</td>
+</tr>
+<tr>
+<td>市值</td>
+<td><strong>AppLovin 1375亿美元</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>代表公司</td>
+<td>AppLovin, The Trade Desk</td>
+<td>蓝色光标, 易点天下, 浙文互联, 省广集团</td>
+</tr>
+</tbody>
+    </table>
 
-<p><strong>关键差距两处：</strong></p>
+    <p><strong>关键差距两处：</strong></p>
 
-<ol>
-<li><strong>训练数据质量和规模</strong>——AppLovin的AXON 2.0引擎靠数据喂出来</li>
-<li><strong>商业化成熟度</strong>——国内还在从"按项目收费"往"按效果收费"的路上</li>
-</ol>
+    <ol>
+        <li><strong>训练数据质量和规模</strong>——AppLovin的AXON 2.0引擎靠数据喂出来</li>
+        <li><strong>商业化成熟度</strong>——国内还在从"按项目收费"往"按效果收费"的路上</li>
+    </ol>
 
-<p>但差距在缩小——<strong>DeepSeek R1性能已与GPT-4o1相当</strong>。</p>
+    <p>但差距在缩小——<strong>DeepSeek R1性能已与GPT-4o1相当</strong>。</p>
 
-<h3>市场空间</h3>
+    <h3>市场空间</h3>
 
-<p>2024年中国互联网广告<strong>6509亿</strong>，AI广告占比<strong>6.32%</strong>，412亿元。</p>
+    <p>2024年中国互联网广告<strong>6509亿</strong>，AI广告占比<strong>6.32%</strong>，412亿元。</p>
 
-<div class="highlight-box">
-    <p><strong>6.32%渗透率，还有93%的市场等着被AI吃掉。</strong></p>
-</div>
+    <div class="highlight-box">
+        <p><strong>6.32%渗透率，还有93%的市场等着被AI吃掉。</strong></p>
+    </div>
 
-<div class="chapter-divider">· · ·</div>
+    · · ·
 
-<!-- 第四部分 -->
-<h2 id="ch4">第四部分 · 阶段判断</h2>
+    第四部分
 
-<p>回到开头的三阶段框架——概念验证→工具落地→工作流重构。</p>
+    <h2 id="ch4">第四部分 · 阶段判断</h2>
 
-<p><strong>AI营销现在处于什么位置？</strong></p>
+    <p>回到开头的三阶段框架——概念验证→工具落地→工作流重构。</p>
 
-<p><strong>我的判断：工具落地后期，工作流重构初期。</strong></p>
+    <p><strong>AI营销现在处于什么位置？</strong></p>
 
-<h3>"工具落地"的证据</h3>
+    <p><strong>我的判断：工具落地后期，工作流重构初期。</strong></p>
 
-<ul>
-<li>AIGC工具已经可以用</li>
-<li>AI投放系统已经在跑</li>
-<li>省广灵犀AI渗透率58%</li>
-</ul>
+    <h3>"工具落地"的证据</h3>
 
-<h3>"还没到工作流重构"的证据</h3>
+    <ul>
+        <li>AIGC工具已经可以用</li>
+        <li>AI投放系统已经在跑</li>
+        <li>省广灵犀AI渗透率58%</li>
+    </ul>
 
-<ul>
-<li>蓝色光标686亿营收净利率不到0.5%</li>
-<li>易点天下营收增50%净利反降31%</li>
-<li>亚马逊白皮书数据：98%卖家在用AI工具但只有16%进阶到AI工作流</li>
-</ul>
+    <h3>"还没到工作流重构"的证据</h3>
 
-<div class="highlight-box">
-    <p><strong>结论：AI营销的工具已经就位，但"用AI帮你算清ROI"的工作流还没跑通。谁能先跑通这个工作流，谁就是下一阶段的赢家。</strong></p>
-</div>
+    <ul>
+        <li>蓝色光标686亿营收净利率不到0.5%</li>
+        <li>易点天下营收增50%净利反降31%</li>
+        <li>亚马逊白皮书数据：98%卖家在用AI工具但只有16%进阶到AI工作流</li>
+    </ul>
 
-<div class="chapter-divider">· · ·</div>
+    <div class="highlight-box">
+        <p><strong>结论：AI营销的工具已经就位，但"用AI帮你算清ROI"的工作流还没跑通。谁能先跑通这个工作流，谁就是下一阶段的赢家。</strong></p>
+    </div>
 
-<!-- 总结 -->
-<h2 id="ch5">总结：三个可复用的分析工具</h2>
+    · · ·
 
-<div class="tool-box">
+    总结
+
+    <h2 id="ch5">总结：三个可复用的分析工具</h2>
+
     <h4>🛠 工具一：新赛道三阶段判断框架</h4>
     <p>任何AI应用赛道，问三个问题：</p>
     <ol>
@@ -1101,9 +503,7 @@
         <li>AI是不是嵌进了业务流程？</li>
     </ol>
     <p><strong>AI营销目前：1✅ 2❌ 3❌——还在第二阶段。</strong></p>
-</div>
 
-<div class="tool-box">
     <h4>🛠 工具二：AI营销公司四维评估模型</h4>
     <p>判断一家公司，问四个问题：</p>
     <ol>
@@ -1112,65 +512,38 @@
         <li>商业模式是否可规模化？</li>
         <li>卡位点是什么？</li>
     </ol>
-</div>
 
-<div class="tool-box">
     <h4>🛠 工具三：天花板锚定法</h4>
     <p>看任何赛道，先找海外标杆。</p>
     <p><strong>AI营销的天花板是AppLovin——毛利率88%，市值1375亿美元。</strong></p>
     <p>国内公司离天花板还有多远，一目了然。</p>
-</div>
 
-<div class="chapter-divider">· · ·</div>
+    · · ·
 
-<!-- 结语 -->
-<h2>结语</h2>
+    结语
 
-<p>AI营销这条赛道，长期看是确定的——万亿级的营销市场，正在被AI重构。但短期看，兑现期还没有真正到来。</p>
+    <h2>结语</h2>
 
-<p>今天拆的四家公司，每家都有一个独特的卡位点：</p>
+    <p>AI营销这条赛道，长期看是确定的——万亿级的营销市场，正在被AI重构。但短期看，兑现期还没有真正到来。</p>
 
-<ul>
-<li><strong>蓝色光标</strong>——全球化第一卡位，规模最大，但AI还没帮它赚到钱</li>
-<li><strong>易点天下</strong>——跨境AI数据壁垒，混合计费如果跑通估值逻辑彻底变</li>
-<li><strong>浙文互联</strong>——汽车AI渗透最深，数字人替代真人的临界点已到来</li>
-<li><strong>省广集团</strong>——TikTok全球代理唯一门票，掌握流量入口就掌握定价权</li>
-</ul>
+    <p>今天拆的四家公司，每家都有一个独特的卡位点：</p>
 
-<p>回到开头的三阶段框架——<strong>谁先从"工具落地"走到"工作流重构"，谁就是下一个阶段的赢家。</strong></p>
+    <ul>
+        <li><strong>蓝色光标</strong>——全球化第一卡位，规模最大，但AI还没帮它赚到钱</li>
+        <li><strong>易点天下</strong>——跨境AI数据壁垒，混合计费如果跑通估值逻辑彻底变</li>
+        <li><strong>浙文互联</strong>——汽车AI渗透最深，数字人替代真人的临界点已到来</li>
+        <li><strong>省广集团</strong>——TikTok全球代理唯一门票，掌握流量入口就掌握定价权</li>
+    </ul>
 
-<p>如果这期视频对你有帮助，欢迎一键三连。我们下期见。</p>
+    <p>回到开头的三阶段框架——<strong>谁先从"工具落地"走到"工作流重构"，谁就是下一个阶段的赢家。</strong></p>
 
-<div class="data-source">
-    <strong>📚 数据来源：</strong>各公司2024年年报/2025年年报、IDC报告、博研咨询、艾瑞咨询、量子位智库、亚马逊《2026中国出口跨境电商发展趋势白皮书》
-</div>
+    <p>如果这期视频对你有帮助，欢迎一键三连。我们下期见。</p>
 
-</article>
-
-<!-- CTA -->
-<div class="article-cta">
-    <h2 class="cta-title">觉得有启发？关注我</h2>
-    <p class="cta-desc">数据可溯源，案例有出处。抖音会员每周1份AI营销行业研报。</p>
-    <div class="cta-links">
-        <a href="index.html" class="btn-primary">🏠 返回首页</a>
-        <a href="article-ai-marketing-report.html" class="btn-secondary">📊 深度报告</a>
-        <a href="article-ai-marketing-truth.html" class="btn-secondary">📖 真相解读</a>
-    </div>
-</div>
-
-<footer>
-    <p>© 2026 小K讲AI营销 · 数据说话，不吹不黑</p>
-</footer>
-
-<script>
-    // Reading progress bar
-    window.addEventListener('scroll', () => {
-        const scrollTop = document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById('progressBar').style.width = progress + '%';
-    });
-</script>
-
+    📚 数据来源：
+    各公司2024年年报/2025年年报、IDC报告、博研咨询、艾瑞咨询、量子位智库、亚马逊《2026中国出口跨境电商发展趋势白皮书》
+    <hr>
+    <div class="disclaimer">以上内容仅为产业分析与信息分享，不构成任何投资建议。数据均已标注来源，如有疑问请查阅原始资料。</div>
+    <p style="font-size:0.85em;color:#666;">本内容由 Coze AI 生成</p>
+    <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
 </body>
 </html>
