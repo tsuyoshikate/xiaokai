@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7250亿美元砸完现金流归零：全球AI股黑色48小时真相 | 小K研究</title>
+    <meta name="description" content="2026年7月1-2日，全球AI股遭遇黑色48小时。费城半导体-6.27%、韩国KOSPI熔断、A股科创50-7.7%。Meta卖算力引发恐慌，但GPU租赁价格暴涨94%揭示真相：不是算力过剩，是结构性错配。">
+    <meta name="keywords" content="AI算力,Meta卖算力,费城半导体,GPU租赁,英伟达,7250亿资本开支,现金流归零">
+    <link rel="canonical" href="https://xiaokaiyanjiu.cn/docs/ai-stock-crash-2026/">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #141414;
+            --border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-dim: #888;
+            --accent: #ff4444;
+            --accent2: #ffd700;
+            --green: #00c853;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        .header .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2em;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: var(--text-dim);
+        }
+        .abstract {
+            background: var(--card);
+            border-left: 3px solid var(--accent);
+            padding: 24px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .abstract h2 {
+            font-size: 0.9em;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .abstract p { font-size: 0.95em; color: var(--text-dim); }
+        h2 {
+            font-size: 1.5em;
+            margin: 50px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            color: #fff;
+        }
+        h3 {
+            font-size: 1.15em;
+            margin: 30px 0 12px;
+            color: var(--accent2);
+        }
+        p { margin-bottom: 16px; }
+        .highlight-box {
+            background: linear-gradient(135deg, #1a0a0a, #0a0a1a);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .highlight-box .number {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .highlight-box .label {
+            font-size: 0.9em;
+            color: var(--text-dim);
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .data-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .data-card .value {
+            font-size: 1.8em;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+        .data-card .value.red { color: var(--accent); }
+        .data-card .value.green { color: var(--green); }
+        .data-card .value.gold { color: var(--accent2); }
+        .data-card .desc {
+            font-size: 0.8em;
+            color: var(--text-dim);
+        }
+        .chart-container {
+            width: 100%;
+            height: 420px;
+            margin: 24px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--card);
+            color: var(--accent2);
+            font-weight: 700;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        td { color: var(--text); }
+        .neg { color: var(--accent); font-weight: 700; }
+        .pos { color: var(--green); font-weight: 700; }
+        .source {
+            font-size: 0.75em;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            margin-top: 50px;
+        }
+        .source a { color: var(--accent2); text-decoration: none; }
+        .source a:hover { text-decoration: underline; }
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 30px 0;
+        }
+        .toc h2 { border: none; margin: 0 0 12px; font-size: 1em; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin-bottom: 6px; font-size: 0.9em; }
+        .toc a { color: var(--accent2); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        .verdict {
+            background: linear-gradient(135deg, #1a1a0a, #0a1a0a);
+            border: 1px solid var(--accent2);
+            border-radius: 8px;
+            padding: 28px;
+            margin: 30px 0;
+        }
+        .verdict h3 {
+            color: var(--accent2);
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        blockquote {
+            border-left: 3px solid var(--accent2);
+            padding: 12px 20px;
+            margin: 20px 0;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 1.5em; }
+            .data-grid { grid-template-columns: repeat(2, 1fr); }
+            .chart-container { height: 320px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "7250亿美元砸完现金流归零：全球AI股黑色48小时真相",
+        "author": { "@type": "Person", "name": "小K" },
+        "datePublished": "2026-07-03",
+        "description": "2026年7月1-2日全球AI股遭遇黑色48小时的深度研究：从Meta卖算力引发恐慌，到GPU租赁价格暴涨94%揭示的供需真相",
+        "keywords": "AI算力,Meta卖算力,费城半导体,GPU租赁,英伟达,7250亿资本开支",
+        "publisher": { "@type": "Organization", "name": "小K研究" }
+    }
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <div class="tag">深度研究</div>
+    <h1>7250亿美元砸完现金流归零：<br>全球AI股黑色48小时真相</h1>
+    <div class="subtitle">Meta卖算力引发全球恐慌，但GPU租赁暴涨94%——这不是泡沫破裂，是结构性错配</div>
+    <div class="meta">
+        <span>小K研究</span>
+        <span>2026年7月3日</span>
+        <span>阅读约8分钟</span>
+    </div>
+</div>
+
+<div class="abstract">
+    <h2>摘要</h2>
+    <p>2026年7月1-2日，全球AI相关股票遭遇黑色48小时。费城半导体指数单日暴跌6.27%，韩国KOSPI触发熔断，A股科创50跌7.7%。导火索是Meta宣布对外出售闲置AI算力——市场将其解读为"算力过剩"信号。然而，同一周GPU租赁价格暴涨94%，全球供需比1:10，交付周期拉长至12-15个月。本文基于多源数据交叉验证，还原恐慌背后的真实供需逻辑：Meta闲置的是旧代际GPU的结构性错配，高端训练算力仍极度稀缺；四巨头7250亿美元资本开支换来自由现金流集体归零，是AI军备竞赛从"烧钱扩张"走向"精细化运营"的财务拐点。</p>
+</div>
+
+<div class="toc">
+    <h2>目录</h2>
+    <ol>
+        <li><a href="#crash">黑色48小时：全球AI股暴跌全景</a></li>
+        <li><a href="#meta">Meta卖算力：恐慌的导火索</a></li>
+        <li><a href="#truth">真相：不是过剩，是错配</a></li>
+        <li><a href="#fcf">7250亿的代价：自由现金流归零</a></li>
+        <li><a href="#nvidia">英伟达的赌注：用资产负债表撬动算力</a></li>
+        <li><a href="#conclusion">结论</a></li>
+        <li><a href="#sources">数据来源</a></li>
+    </ol>
+</div>
+
+<!-- 第一章 -->
+<h2 id="crash">一、黑色48小时：全球AI股暴跌全景</h2>
+
+<p>2026年7月1日（美东时间），一则消息引爆全球资本市场：Meta计划对外出售闲置AI算力。市场反应极端且分化——Meta自身股价大涨8.81%，市值单日增加约1270亿美元；而AI硬件产业链遭遇系统性抛售。</p>
+
+<div class="data-grid">
+    <div class="data-card">
+        <div class="value red">-6.27%</div>
+        <div class="desc">费城半导体指数<br>7月1日单日跌幅</div>
+    </div>
+    <div class="data-card">
+        <div class="value red">-14.57%</div>
+        <div class="desc">SK海力士<br>7月2日收盘跌幅</div>
+    </div>
+    <div class="data-card">
+        <div class="value red">-7.70%</div>
+        <div class="desc">A股科创50<br>7月2日跌幅</div>
+    </div>
+    <div class="data-card">
+        <div class="value green">+8.81%</div>
+        <div class="desc">Meta股价<br>7月1日涨幅</div>
+    </div>
+</div>
+
+<h3>美股：半导体板块系统性抛售</h3>
+<p>费城半导体指数30只成分股中仅2家上涨。美光科技跌10.57%，闪迪跌10.62%，英特尔跌9.03%，AMD跌6.89%，台积电跌近7%。算力租赁商跌幅最惨——CoreWeave -13.92%，Nebius -17.01%。<sup>[1]</sup></p>
+
+<h3>亚太：韩国熔断，A股重挫</h3>
+<p>7月2日，韩国KOSPI指数开盘跌4.5%，盘中一度跌破8000点，交易所启动程序化交易熔断机制。三星电子跌9.06%，SK海力士暴跌14.57%，单日市值蒸发约1600亿美元。三星与SK海力士合计占KOSPI指数权重近50%，一损俱损。<sup>[2]</sup></p>
+
+<p>A股同样未能幸免。科创50指数跌幅7.7%，成交3.45万亿，超3100只个股下跌，兆易创新、北方华创跌停。港股中芯国际跌超11%，华虹半导体跌14%。<sup>[3]</sup></p>
+
+<div class="chart-container">
+    <div class="chart-title">图1：全球主要AI股7月1-2日跌幅对比</div>
+    <div id="chart1" style="width:100%;height:380px;"></div>
+</div>
+
+<h3>极端分化：Meta独涨 vs 算力链崩盘</h3>
+<p>同一事件，截然相反的定价逻辑：Meta被视为"从成本中心转向收入中心"的利好，算力产业链则被定价为"需求见顶"的利空。这种极端分化本身就是信号——市场对AI供需的认知存在重大偏差。</p>
+
+<!-- 第二章 -->
+<h2 id="meta">二、Meta卖算力：恐慌的导火索</h2>
+
+<p>Meta计划推出的云基础设施业务代号"Meta Compute"，包含两类服务：一是开放Llama、Muse Spark等模型的API调用，按Token收费；二是对外出租GPU裸算力，按小时计费，模式对标CoreWeave。<sup>[4]</sup></p>
+
+<p>扎克伯格在5月股东大会上已明确表态："如果出现过剩容量，进入云业务绝对在考虑范围内。"外部企业愿意以高于采购成本的溢价购买其算力。<sup>[5]</sup></p>
+
+<h3>Meta到底有多少闲置？</h3>
+<p>根据公开行业数据，Meta当前训练集群MFU（模型浮点利用率）仅43%-46%，全硬件综合利用率约65%，距离满负荷仍有35%的提升空间。<sup>[6]</sup></p>
+
+<p>但"35%闲置"不等于"全行业过剩"。闲置的核心原因有两个：</p>
+<p><strong>第一，训练是脉冲式的峰值消耗。</strong>一个千亿参数级大模型的训练周期3-6个月，训练期内几万张GPU 100%满负荷；训练完成后进入推理阶段，利用率骤降至30%-50%。这是所有大模型厂商的共性问题。</p>
+<p><strong>第二，GPU代际切换。</strong>当前正处于H100向GB200换代的窗口期。Meta的策略非常清晰——新卡（GB200及以上）全部投入前沿模型训练，旧卡（H100/H200）用于日常推理，富余部分对外出租变现。<sup>[7]</sup></p>
+
+<div class="chart-container">
+    <div class="chart-title">图2：全球主要云厂商AI算力利用率对比</div>
+    <div id="chart2" style="width:100%;height:380px;"></div>
+</div>
+
+<h3>Meta卖算力的真实动机：一石三鸟</h3>
+<p><strong>财务端：</strong>Meta是四大科技巨头中唯一没有自有云业务的一家。微软有Azure、谷歌有GCP、亚马逊有AWS——它们的千亿capex都有云服务收入对冲，而Meta的算力投入全部是纯成本项。2026年近1400亿美元资本开支，对外出租算力相当于把成本中心变成收入项。<sup>[8]</sup></p>
+
+<p><strong>战略端：</strong>Meta的Llama虽然开源生态最广，但始终缺乏底层算力抓手。下场做算力服务，相当于把"开源模型+自有算力"打包成完整方案，直接与云厂商争夺开发者。</p>
+
+<p><strong>资本端：</strong>消息公布当日Meta股价大涨近9%，市场已验证了这套逻辑的认可度。闲置算力年化变现80-100亿美元，相当于2025年Meta净利润的15%-20%。<sup>[9]</sup></p>
+
+<!-- 第三章 -->
+<h2 id="truth">三、真相：不是过剩，是错配</h2>
+
+<div class="highlight-box">
+    <div class="number">1:10</div>
+    <div class="label">全球GPU供需比——每1单位供给对应10单位需求（Jefferies调研）</div>
+</div>
+
+<p>如果算力真的过剩，为什么GPU租赁价格还在暴涨？</p>
+
+<h3>租赁价格：还在涨，没松动</h3>
+<p>据BaseTen披露，其下游云服务商计划于2026年10月将B200租赁续约价格从2.63美元/小时上调至5.10美元/小时——<strong>涨幅94%</strong>。H100一年期租约从2025年10月的1.70美元/小时涨至2026年3月的2.35美元/小时，涨幅38%。<sup>[10]</sup></p>
+
+<p>SemiAnalysis数据更直观：截至2026年3月，所有GPU型号的按需实例已全线售罄，现货市场流动性几近枯竭。<sup>[11]</sup></p>
+
+<div class="chart-container">
+    <div class="chart-title">图3：主流GPU租赁价格走势（2025Q4-2026Q2，美元/小时）</div>
+    <div id="chart3" style="width:100%;height:380px;"></div>
+</div>
+
+<h3>交付周期：12-15个月</h3>
+<p>千卡级GPU采购订单交付周期已延长至2027年，等待时间长达12-15个月。H200交付订单排至2027年Q2，H100至少需等待至2027年Q1。Blackwell新架构集群部署交期延伸至2026年6-7月，且8-9月上线的全部产能已被提前预订。<sup>[12]</sup></p>
+
+<h3>内存才是新瓶颈</h3>
+<p>市场普遍将GPU紧缺归因于芯片产能，但2026年的实际情况显示，内存已成为新的供给瓶颈。LPDDR5与DDR5合同价格同比涨幅分别达到4倍和5倍。在H200整机成本结构中，内存成本占比已超越芯片。即便芯片供应缓解，整机价格亦难以显著回落。<sup>[13]</sup></p>
+
+<h3>关键判断</h3>
+<div class="verdict">
+    <h3>三个数据判断算力是否过剩</h3>
+    <p><strong>租赁价格在涨→不是过剩</strong></p>
+    <p><strong>供需比在扩大→不是过剩</strong></p>
+    <p><strong>交付周期在拉长→不是过剩</strong></p>
+    <p style="margin-top:12px;">三个同时在涨的时候，任何"过剩"叙事都需要警惕——Meta的35%闲置是结构性代际错配，不是全行业需求萎缩。</p>
+</div>
+
+<!-- 第四章 -->
+<h2 id="fcf">四、7250亿的代价：自由现金流集体归零</h2>
+
+<p>Meta卖算力的深层压力，来自一个更残酷的财务现实：2026年，四大科技巨头的AI资本开支合计约7250亿美元，但自由现金流（FCF）正在集体归零。</p>
+
+<div class="data-grid">
+    <div class="data-card">
+        <div class="value gold">7250亿</div>
+        <div class="desc">四巨头2026年AI资本开支<br>（美元，同比+77%）</div>
+    </div>
+    <div class="data-card">
+        <div class="value red">-170亿</div>
+        <div class="desc">亚马逊2025年FCF<br>（由正转负）</div>
+    </div>
+    <div class="data-card">
+        <div class="value red">-89%</div>
+        <div class="desc">谷歌FCF同比降幅<br>（733亿→82亿）</div>
+    </div>
+    <div class="data-card">
+        <div class="value red">-90%</div>
+        <div class="desc">Meta FCF同比降幅</div>
+    </div>
+</div>
+
+<div class="chart-container">
+    <div class="chart-title">图4：四巨头资本开支 vs 自由现金流变化（2024-2026E，十亿美元）</div>
+    <div id="chart4" style="width:100%;height:380px;"></div>
+</div>
+
+<p>轻资产巨头全变重资产。亚马逊FCF由正转负至-170亿美元，谷歌从733亿美元降至82亿美元，Meta FCF暴跌90%。只有微软凭借Azure的AI收入闭环，FCF降幅相对可控。<sup>[14]</sup></p>
+
+<p>这意味着：AI军备竞赛的财务代价正在兑现。过去两年"先烧钱再说"的粗放扩张模式已走到极限，2026年下半年开始，资本市场将要求每一美元capex都有明确的回报路径。</p>
+
+<p>Meta卖算力，不是主动选择，是财务倒逼——它是四巨头中唯一没有云业务对冲的，Q2自由现金流预计为负。不盘活存量资产，就没有增量投入的弹药。<sup>[15]</sup></p>
+
+<!-- 第五章 -->
+<h2 id="nvidia">五、英伟达的赌注：用资产负债表撬动算力</h2>
+
+<p>就在市场恐慌"算力过剩"的同一天，英伟达官宣"AI计算合伙人计划"——客户买GPU，英伟达提供信用兜底，算力空置它自己回租。<sup>[16]</sup></p>
+
+<p>英伟达在赌什么？赌算力还不够用，只是中小玩家买不起。</p>
+
+<h3>计划核心机制</h3>
+<table>
+    <thead>
+        <tr>
+            <th>机制</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>收入分成</td>
+            <td>合作伙伴向终端客户出租GPU算力，英伟达按比例分成云服务收入</td>
+        </tr>
+        <tr>
+            <td>信用兜底</td>
+            <td>英伟达为合作伙伴提供融资信用担保，降低GPU采购门槛</td>
+        </tr>
+        <tr>
+            <td>闲置算力回购</td>
+            <td>若合作伙伴算力空置，英伟达可回租用于自身云服务</td>
+        </tr>
+        <tr>
+            <td>合同期限</td>
+            <td>最长至2034年，锁定长期算力供给</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>首批落地项目</h3>
+<div class="data-grid">
+    <div class="data-card">
+        <div class="value gold">4万张</div>
+        <div class="desc">Sharon AI（澳洲）<br>GB300 GPU部署量</div>
+    </div>
+    <div class="data-card">
+        <div class="value gold">17万张</div>
+        <div class="desc">Firmus（印尼）<br>GPU部署量 / 360MW</div>
+    </div>
+    <div class="data-card">
+        <div class="value gold">21万张</div>
+        <div class="desc">首批合计<br>高端GPU投放量</div>
+    </div>
+</div>
+
+<p>英伟达从"卖芯片"进化到"卖算力+收分成"，本质是AI基础设施商业模式的关键演变。它不再是硬件商，而是算力的"央行"——用资产负债表撬动全球算力建设，把短期硬件收入转化为长期服务收入。<sup>[17]</sup></p>
+
+<p>这个策略成立的前提只有一个：算力需求持续增长。英伟达押注的，正是Meta"过剩"叙事的反面。</p>
+
+<!-- 第六章 -->
+<h2 id="conclusion">六、结论</h2>
+
+<blockquote>
+    判断算力是否过剩，不看股价，看三个数据：租赁价格、供需比、交付周期。三个在涨，就不是泡沫。
+</blockquote>
+
+<p><strong>1. Meta卖算力 ≠ 全行业过剩。</strong>Meta闲置的是旧代际GPU的结构性错配，高端训练算力仍极度稀缺。Meta一边出租旧算力，一边将2026年capex上调至1250-1450亿美元（+87%），还提前锁定了270亿美元外部算力采购——如果真的过剩，不需要千亿级加码。</p>
+
+<p><strong>2. 恐慌的本质是认知偏差。</strong>市场把"企业资产盘活"误读为"产业周期拐点"，把"旧卡用不完、新卡不够用"的代际错配误读为"全面过剩"。GPU租赁价格暴涨94%、供需比1:10、交付周期12-15个月——这三个硬数据与"过剩"叙事完全矛盾。</p>
+
+<p><strong>3. 7250亿资本开支换FCF归零是拐点信号。</strong>轻资产巨头全变重资产，AI军备竞赛从"烧钱扩张"进入"精细化运营"阶段。Meta卖算力、英伟达改收租，都是这个拐点的表现形式——不是需求见顶，是商业模式在进化。</p>
+
+<p><strong>4. 英伟达的赌注方向正确。</strong>用信用兜底+分成模式降低中小玩家入场门槛，本质是扩大算力需求侧。21万张GPU首批投放，规模远超Meta的闲置量。英伟达赌的是长期需求增长，而非短期情绪。</p>
+
+<p>当租赁价格、供需比、交付周期三个数据同时指向"紧缺"时，恐慌是最好的买入信号——不是买入股票，是买入认知差。</p>
+
+<!-- 数据来源 -->
+<h2 id="sources">数据来源</h2>
+
+<div class="source">
+    <p>[1] 费城半导体指数及成分股跌幅数据：据《韩股巨震跌至熔断，"存储双雄"暴跌》(<a href="https://finance.ifeng.com/c/8uQZl65vTBN">凤凰网/财联社</a>)、据《华尔街芯片股大跌行情蔓延》(<a href="https://finance.sina.com.cn/stock/usstock/c/2026-07-02/doc-inifmfcu5832189.shtml">新浪财经</a>)</p>
+    <p>[2] 韩国KOSPI熔断、三星/SK海力士跌幅：据《SK海力士这次暴跌会影响三星电子吗？》(<a href="http://app3.myzaker.com/news/article.php?pk=6a4644bf8e9f09212040bc9f">ZAKER新闻/新浪</a>)</p>
+    <p>[3] A股跌幅数据：据《淘理酷猫微博》(<a href="https://m.weibo.cn/detail/5316178714035716">微博</a>)</p>
+    <p>[4] Meta Compute业务：据《Meta"卖算力"震动AI市场》(<a href="https://finance.ifeng.com/c/8uS0KUK5ax5">凤凰网</a>)</p>
+    <p>[5] 扎克伯格表态：据《Meta卖算力的真相》(<a href="http://m.toutiao.com/group/7657920696785306122/">今日头条</a>)</p>
+    <p>[6] Meta算力利用率：据《Meta AI算力储备:43%利用率为何仍缺高端算力》(<a href="https://cj.sina.cn/articles/view/7879848900/1d5acf3c4068031vem">财经头条</a>)</p>
+    <p>[7] 代际分层策略：据《Meta为何要卖算力》(<a href="http://m.toutiao.com/group/7658080095191007744/">智核探索</a>)</p>
+    <p>[8] Meta无云业务对冲：据《Meta"卖算力"震动AI市场》(<a href="https://finance.ifeng.com/c/8uS0KUK5ax5">凤凰网</a>)</p>
+    <p>[9] 闲置算力年化变现估算：据《美国科技巨头Meta砸420亿建算力中心》(<a href="https://k.sina.cn/article_7880068204_1d5b04c6c06801ao0w.html">新浪财经</a>)</p>
+    <p>[10] GPU租赁价格涨幅：据Baseten/SemiAnalysis数据，引自《算力租赁的新变化会议要点》(<a href="http://m.toutiao.com/group/7656083030884368896/">今日头条</a>)</p>
+    <p>[11] 按需实例全线售罄：据《2026年第一季度GPU租赁市场深度研究报告》(<a href="https://blog.csdn.net/gpu321456/article/details/160114784">CSDN</a>)</p>
+    <p>[12] 交付周期数据：同[10][11]</p>
+    <p>[13] 内存成本分析：同[11]</p>
+    <p>[14] 四巨头FCF数据：据36氪、证券时报等综合</p>
+    <p>[15] Meta财务倒逼：同[4]</p>
+    <p>[16] 英伟达AI计算合伙人计划：据《The Information/财经头条》(<a href="https://cj.sina.cn/articles/view/5953740931/162dee08306703jis8">新浪财经</a>)、据《快科技/凤凰网》(<a href="https://tech.ifeng.com/c/8uR1fLgK8VR">凤凰网</a>)</p>
+    <p>[17] 英伟达从硬件商到算力"央行"：综合[16]及行业分析</p>
+    <p style="margin-top:16px;">本文由小K研究基于公开数据撰写，所有关键数据均经多源交叉验证。本文不构成任何投资建议。</p>
+</div>
+
+<script>
+// 图1：全球主要AI股跌幅
+var chart1 = echarts.init(document.getElementById('chart1'));
+chart1.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: '20%', right: '10%', top: '10%', bottom: '15%' },
+    xAxis: {
+        type: 'category',
+        data: ['Nebius', 'SK海力士', 'CoreWeave', '美光', '英特尔', '费半指数', 'AMD', '三星', '科创50', 'Meta'],
+        axisLabel: { color: '#888', fontSize: 11, rotate: 30 },
+        axisLine: { lineStyle: { color: '#333' } }
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: { color: '#888', formatter: '{value}%' },
+        splitLine: { lineStyle: { color: '#1a1a1a' } }
+    },
+    series: [{
+        type: 'bar',
+        data: [
+            { value: -17.01, itemStyle: { color: '#ff4444' } },
+            { value: -14.57, itemStyle: { color: '#ff4444' } },
+            { value: -13.92, itemStyle: { color: '#ff4444' } },
+            { value: -10.57, itemStyle: { color: '#ff6644' } },
+            { value: -9.03, itemStyle: { color: '#ff6644' } },
+            { value: -6.27, itemStyle: { color: '#ff8844' } },
+            { value: -6.89, itemStyle: { color: '#ff8844' } },
+            { value: -9.06, itemStyle: { color: '#ff6644' } },
+            { value: -7.70, itemStyle: { color: '#ff8844' } },
+            { value: 8.81, itemStyle: { color: '#00c853' } }
+        ],
+        barWidth: '50%',
+        label: {
+            show: true,
+            position: 'inside',
+            formatter: function(p) { return p.value > 0 ? '+' + p.value + '%' : p.value + '%'; },
+            color: '#fff',
+            fontSize: 11,
+            fontWeight: 'bold'
+        }
+    }]
+});
+
+// 图2：云厂商利用率
+var chart2 = echarts.init(document.getElementById('chart2'));
+chart2.setOption({
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['算力利用率', '闲置率'], textStyle: { color: '#888' }, top: 5 },
+    grid: { left: '12%', right: '10%', top: '15%', bottom: '10%' },
+    xAxis: {
+        type: 'category',
+        data: ['谷歌', '微软', 'Meta', 'xAI(Colossus1)'],
+        axisLabel: { color: '#888' },
+        axisLine: { lineStyle: { color: '#333' } }
+    },
+    yAxis: {
+        type: 'value',
+        max: 100,
+        axisLabel: { color: '#888', formatter: '{value}%' },
+        splitLine: { lineStyle: { color: '#1a1a1a' } }
+    },
+    series: [
+        {
+            name: '算力利用率',
+            type: 'bar',
+            stack: 'total',
+            data: [82, 78, 65, 11],
+            itemStyle: { color: '#00c853' },
+            barWidth: '40%',
+            label: { show: true, formatter: '{c}%', color: '#fff', position: 'inside' }
+        },
+        {
+            name: '闲置率',
+            type: 'bar',
+            stack: 'total',
+            data: [18, 22, 35, 89],
+            itemStyle: { color: '#ff4444' },
+            label: { show: true, formatter: '{c}%', color: '#fff', position: 'inside' }
+        }
+    ]
+});
+
+// 图3：GPU租赁价格
+var chart3 = echarts.init(document.getElementById('chart3'));
+chart3.setOption({
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['H100', 'H200', 'B200'], textStyle: { color: '#888' }, top: 5 },
+    grid: { left: '12%', right: '5%', top: '15%', bottom: '10%' },
+    xAxis: {
+        type: 'category',
+        data: ['2025Q4', '2026Q1', '2026Q2', '2026Q3(E)', '2026Q4(E)'],
+        axisLabel: { color: '#888' },
+        axisLine: { lineStyle: { color: '#333' } }
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: { color: '#888', formatter: '${value}' },
+        splitLine: { lineStyle: { color: '#1a1a1a' } }
+    },
+    series: [
+        {
+            name: 'H100',
+            type: 'line',
+            data: [1.70, 2.35, 2.58, 2.80, 3.00],
+            smooth: true,
+            lineStyle: { width: 3 },
+            itemStyle: { color: '#4fc3f7' },
+            symbol: 'circle',
+            symbolSize: 8
+        },
+        {
+            name: 'H200',
+            type: 'line',
+            data: [2.29, 3.50, 4.40, 4.00, 4.20],
+            smooth: true,
+            lineStyle: { width: 3 },
+            itemStyle: { color: '#ffd700' },
+            symbol: 'circle',
+            symbolSize: 8
+        },
+        {
+            name: 'B200',
+            type: 'line',
+            data: [2.63, 3.81, 5.10, 5.50, 5.80],
+            smooth: true,
+            lineStyle: { width: 3 },
+            itemStyle: { color: '#ff4444' },
+            symbol: 'circle',
+            symbolSize: 8
+        }
+    ]
+});
+
+// 图4：Capex vs FCF
+var chart4 = echarts.init(document.getElementById('chart4'));
+chart4.setOption({
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['资本开支', '自由现金流'], textStyle: { color: '#888' }, top: 5 },
+    grid: { left: '12%', right: '5%', top: '15%', bottom: '10%' },
+    xAxis: {
+        type: 'category',
+        data: ['亚马逊', '谷歌', 'Meta', '微软'],
+        axisLabel: { color: '#888' },
+        axisLine: { lineStyle: { color: '#333' } }
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: { color: '#888', formatter: '{value}B' },
+        splitLine: { lineStyle: { color: '#1a1a1a' } }
+    },
+    series: [
+        {
+            name: '资本开支',
+            type: 'bar',
+            data: [305, 220, 138, 162],
+            itemStyle: { color: '#ff4444' },
+            barWidth: '30%',
+            label: { show: true, formatter: '{c}B', color: '#fff', position: 'inside', fontSize: 11 }
+        },
+        {
+            name: '自由现金流',
+            type: 'bar',
+            data: [-17, 8.2, 5, 32],
+            itemStyle: { color: function(p) { return p.value >= 0 ? '#00c853' : '#ff6644'; } },
+            barWidth: '30%',
+            label: { show: true, formatter: '{c}B', color: '#fff', position: 'inside', fontSize: 11 }
+        }
+    ]
+});
+
+// 响应式
+window.addEventListener('resize', function() {
+    chart1.resize();
+    chart2.resize();
+    chart3.resize();
+    chart4.resize();
+});
+</script>
+
+</body>
+</html>
