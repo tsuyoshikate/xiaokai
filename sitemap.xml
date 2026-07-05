@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tsuyoshikate.github.io/xiaokai/</loc>
-    <lastmod>2026-06-13</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,32 +61,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tsuyoshikate.github.io/xiaokai/article-ai-cooling-bill.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://tsuyoshikate.github.io/xiaokai/article-ai-price-revolution.html</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tsuyoshikate.github.io/xiaokai/article-underwater-datacenter.html</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tsuyoshikate.github.io/xiaokai/article-hynix-adr-cycle.html</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://xiaokaiyanjiu.cn/article-ai-bubble-china-wins.html</loc>
+    <loc>https://tsuyoshikate.github.io/xiaokai/article-tgv-glass-substrate.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
