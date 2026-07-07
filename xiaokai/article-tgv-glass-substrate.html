@@ -323,7 +323,7 @@
         }
 
         figure { margin: 32px 0; text-align: center; }
-        .article-body img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); display: block; margin: 20px auto; }
+        figure img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); }
         figure figcaption { font-size: 13px; color: var(--text-tertiary); margin-top: 8px; }
 
         .footer {
@@ -403,26 +403,19 @@
 <!-- Article Body -->
 <div class="article-body">
 
-
-<h2 id="sec1">一、执行摘要</h2>
-<p>2026年，AI算力产业第一次把"封装材料"推到了聚光灯下：当H100的CoWoS封装成本已经占BOM约22%（约$750/颗），B200的CoWoS-L封装成本单代跳涨47%到$1,000–1,100/颗，CoWoS价格年涨15–20%（是逻辑晶圆涨价速度的3倍）<a href="https://caifuhao.eastmoney.com/news/20260614044155384920040">(东方财富/Silicon Analysts)</a> <a href="https://cj.sina.cn/article/norm_detail?froms=ttmp&url=https%3A%2F%2Ffinance.sina.com.cn%2Froll%2F2026-05-12%2Fdoc-inhxrshk9928191.shtml">(爱建证券/SemiAnalysis)</a>；当Rubin Ultra原定4-die方案在CoWoS-L上出现翘曲失控（Warpage）被迫退回双die设计<a href="https://www.computerbase.de/news/wirtschaft/angebliche-packaging-probleme-nvidia-rubin-ultra-reizt-cowos-l-von-tsmc-aus.96757/">(ComputerBase)</a> <a href="https://www.tweaktown.com/news/110819/nvidias-rubin-ultra-reportedly-sticking-to-a-dual-die-design-instead-of-a-four-die-plan/index.html">(WCCFTech/TweakTown)</a>；当ABF载板上游原料2026Q2涨价三成、供需紧张要延续到2027–2028<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-06-10/doc-iniawttz1339361.shtml">(证券时报)</a>——全球半导体巨头不得不在"继续堆硅"和"换底"之间做选择。玻璃基板（TGV，Through Glass Via）就是那个"换底"答案。</p>
-
+<h2 id="executive-summary">一、执行摘要（Executive Summary）</h2>
+<p>2026年，AI算力产业第一次把"封装材料"推到了聚光灯下：当H100的CoWoS封装成本已经占BOM约22%（约$750/颗），B200的CoWoS-L封装成本单代跳涨47%到$1,000–1,100/颗，CoWoS价格年涨15–20%（是逻辑晶圆涨价速度的3倍）<a href="https://caifuhao.eastmoney.com/news/20260614044155384920040">(东方财富/Silicon Analysts)</a> <a href="https://cj.sina.cn/article/norm_detail?froms=ttmp&amp;url=https%3A%2F%2Ffinance.sina.com.cn%2Froll%2F2026-05-12%2Fdoc-inhxrshk9928191.shtml">(爱建证券/SemiAnalysis)</a>；当Rubin Ultra原定4-die方案在CoWoS-L上出现翘曲失控（Warpage）被迫退回双die设计<a href="https://www.computerbase.de/news/wirtschaft/angebliche-packaging-probleme-nvidia-rubin-ultra-reizt-cowos-l-von-tsmc-aus.96757/">(ComputerBase)</a> <a href="https://www.tweaktown.com/news/110819/nvidias-rubin-ultra-reportedly-sticking-to-a-dual-die-design-instead-of-a-four-die-plan/index.html">(WCCFTech/TweakTown)</a>；当ABF载板上游原料2026Q2涨价三成、供需紧张要延续到2027–2028<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-06-10/doc-iniawttz1339361.shtml">(证券时报)</a>——全球半导体巨头不得不在"继续堆硅"和"换底"之间做选择。玻璃基板（TGV，Through Glass Via）就是那个"换底"答案。</p>
 <p><strong>核心判断</strong>：玻璃基板在四个物理维度上对现有材料形成"降维打击"——CTE（热膨胀系数）可调至3 ppm/°C与硅几乎一致，从根源解决大尺寸die翘曲；Df（介电损耗因子）低至0.001–0.003@10GHz（较FR-4低10倍），支持112Gbps+乃至224Gbps信号传输；表面粗糙度Ra&lt;0.1nm（有机基板&gt;1000nm），支持亚2μm细线路；面板级510×515mm方形尺寸让面积利用率从硅晶圆的60%跃升至95%+，单位封装成本有望下降20–30%<a href="https://www.163.com/dy/article/KUGIE92605198R91.html">(网易/CSPTxITGV2026)</a> <a href="https://xueqiu.com/1631948793/388456349">(雪球-CoPoS)</a>。学术实测显示TGV中介层3dB带宽超过110GHz（TSV为67GHz），可支持128Gbaud信号传输<a href="https://www.spiedigitallibrary.org/journals/advanced-photonics-nexus/volume-5/issue-03/036019/High-density-co-packaged-optics-based-on-TSV-and-TGV-interposers/10.1117/1.APN.5.3.036019.full">(SPIE APN 2026.05)</a>。</p>
-
 <p><strong>产业节奏</strong>：2026年全行业定义为"商业化元年"——英特尔1月展示10-2-10厚玻璃芯+EMIB样品（无SeWaRe微裂纹）<a href="https://www.trendforce.com/news/2026/01/26/news-intel-reportedly-presents-first-thick-core-glass-substrate-with-emib-targeting-ai-data-centers/">(TrendForce 2026.01)</a>，亚利桑那工厂小批量试产但良率仅约60%、2027年初搭CPU面市<a href="http://finance.sina.cn/2026-06-22/detail-iniehscr7040000.d.html">(新浪专家交流)</a>；台积电CoPoS试产线2026年6月建成、2027小批量、2028H2–2029量产，魏哲家明确"还需2–3年大批量"<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-06-10/doc-iniawttz1339361.shtml">(台积电股东会/证券时报)</a>；SKC/Absolics佐治亚工厂2026年底前或启动全球首条商业化产线<a href="https://www.eet-china.com/mp/a501116.html">(eet-china)</a>；三星电机、DNP、LG Innotek时间表分别锚定2027、2028、2028量产<a href="https://chosunbiz-chosunbiz-prod.cdn.arcpublishing.com/en/en-it/2026/04/10/K5BL35BDHVDCVOP5U43QWTPXPA/">(Chosun Biz)</a> <a href="https://www.dnp.co.jp/news/detail/20177750_1587.html">(DNP官方)</a>。</p>
-
 <p><strong>市场规模口径差异极大，是内容创作时必须先讲清楚的点</strong>：Yole（窄口径，仅GCS+Interposer+Carrier永久+临时封装玻璃）预测2030年约123亿美元<a href="https://xueqiu.com/4683925210/391863360">(Yole via 雪球)</a>；摩根士丹利（玻璃中介层+芯基板）预测2030年156亿美元；Omdia（宽口径，含显示/光伏/封装）2030年320亿美元；高盛/美银全品类口径（含CPO/6G/MicroLED）看到千亿级。<strong>给内容创作者的建议：采用Yole/JPM窄口径（百亿美元级）作为保守共识，用高盛/美银口径作为"想象空间"上限，切忌用千亿数字定义封装玻璃单一市场。</strong></p>
-
 <p><strong>中国机会真实但分层明显</strong>：最卡脖子的高端半导体玻璃原片仍由康宁（70%+）、AGC（~15%）、肖特（~8%）垄断，国产率不足8%<a href="https://xueqiu.com/2396246949/392455572">(雪球)</a>，凯盛/旗滨/彩虹/力诺持续送样但稳定性有差距<a href="https://finance.sina.com.cn/wm/2026-06-10/doc-iniaxzpi4337120.shtml">(新浪访谈)</a>；中游TGV加工和下游封装是国内最容易卡位的环节——沃格光电（通格微）武汉10万㎡TGV产线满产、成都8.6代线2026Q3投产；京东方5月20日与康宁签三年MOU、试验线2026H1通线送样；长电科技XDFOI平台完成玻璃基FCBGA验证、2027年规划月产5–8万片；通富微电TGV通过可靠性测试<a href="https://tech.ifeng.com/c/8uUFj9S8sVT">(凤凰网/IT之家)</a> <a href="https://www.eet-china.com/mp/a501116.html">(eet-china)</a> <a href="https://caifuhao.eastmoney.com/news/20260704231000734593050">(东方财富-长电)</a>。<strong>面板厂（京东方、TCL）跨界是这一轮最被低估的变量——大尺寸玻璃制造、TGV开孔、精密加工能力与面板产线天然同源。</strong></p>
-
 <p><strong>风险必须说透</strong>：当前量产良率60–85%，距有机基板90%+有明显差距；TGV铜填孔空洞率约15%（需要百万孔100%无缺陷）；铜CTE（17 ppm/K）与玻璃（3–5 ppm/K）巨大失配带来长期可靠性风险；电镀填铜是真正卡点；一条510×515mm产线投资13–15亿元、行业标准体系尚未建立；有一线专家直言"产业化应用至少在2030年以后"<a href="https://www.istgroup.com/en/tech_20250909_tgv-failure-analysis/">(iST宜特)</a> <a href="https://eureka.patsnap.com/materials/tgv-copper-filled-substrate">(Patsnap)</a> <a href="https://www.163.com/dy/article/KUGIE92605198R91.html">(网易)</a>。</p>
-
 <p><strong>与英伟达"一楼基础设施在变"叙事的衔接点</strong>：黄仁勋2026年5月以最高32亿美元投资康宁（首付$5亿期权+未来$27亿增持+数十亿美元预付款锁定光纤产能），在北卡和德州建三座新厂，把美国光互联产能翻10倍<a href="https://www.nasdaq.com/articles/does-nvidia-deal-make-corning-stock-buy">(Nasdaq/Motley Fool)</a> <a href="http://www.asiaict.com/optics/15746.html">(AsiaICT)</a>；康宁7月初发布GlassBridge玻璃波光互联方案，对准公差放宽到30μm、24通道耦合良率&gt;95%、光模块成本下降22%，并已与英伟达、Meta、亚马逊签数十亿美元长约，Rubin架构全面适配玻璃基板<a href="https://www.eet-china.com/mp/a507265.html">(eet-china 2026.07)</a>。这就是黄仁勋说的"基础设施在变"——从GPU芯片到铜缆到光纤到封装基板，整个AI硬件底层正在玻璃化。</p>
-
+<hr>
 <h2 id="_1">二、技术逻辑：为什么硅和有机物都走到了尽头</h2>
 <h3 id="21">2.1 三种材料的物理参数对决</h3>
 <p>AI芯片封装对基板材料的要求是极端的：要在数百瓦功耗、数百摄氏度回流焊温差、TB/s级信号传输、数十微米级凸点间距下保持纳米级平整度和长期可靠性。当我们把硅中介层、有机基板（ABF/BT）和玻璃放在同一坐标系下，结论几乎是物理学决定的。</p>
-<p><img alt="三种封装材料性能对比" src="material_radar.png"></p>
+<p><img alt="三种封装材料性能对比" src="https://www.coze.cn/s/DcqRGUs1kno/"></p>
 <table>
 <thead>
 <tr>
@@ -515,7 +508,7 @@
 3. <strong>RDL重布线模块</strong>：光刻胶涂覆→曝光→显影→刻蚀</p>
 <hr>
 <h2 id="ces-20262030">三、产业时间线：从CES 2026到2030的"八年抗战"</h2>
-<p><img alt="全球主要玩家玻璃基板量产路线图" src="timeline_roadmap.png"></p>
+<p><img alt="全球主要玩家玻璃基板量产路线图" src="https://www.coze.cn/s/Er2k5DBLq7o/"></p>
 <h3 id="31">3.1 英特尔：抢跑但仍是"打样性质"</h3>
 <p>英特尔是玻璃基板最早、最激进的推动者，在亚利桑那Chandler累计投入超10亿美元建设研发与pilot基础设施<a href="https://chosunbiz-chosunbiz-prod.cdn.arcpublishing.com/en/en-it/2026/04/10/K5BL35BDHVDCVOP5U43QWTPXPA/">(Chosun Biz)</a>。2026年1月NEPCON Japan展示了业界首款"Thick Core"玻璃芯基板样品——整体封装78×77mm、10-2-10结构（玻璃芯两侧各10层RDL）、玻璃芯本身由两层800μm级材料组成、嵌入两个EMIB硅桥、支持约1716mm²硅面积（2倍光罩），并且英特尔明确表示测试中<strong>没有出现SeWaRe（玻璃微裂纹）问题</strong>——这是玻璃基板量产的关键里程碑<a href="https://www.trendforce.com/news/2026/01/26/news-intel-reportedly-presents-first-thick-core-glass-substrate-with-emib-targeting-ai-data-centers/">(TrendForce 2026.01)</a>。</p>
 <p><strong>但需要澄清一个市场误传</strong>：2026年6月1日英特尔发布的Xeon 6+ "Clearwater Forest"（首款18A服务器CPU、288核、Foveros Direct 3D+12个EMIB 2.5D）<a href="https://www.trendforce.com/news/2026/03/03/news-intel-unveils-xeon-6-clearwater-forest-at-mwc-with-18a-chiplet-design-and-foveros-direct-3d">(TrendForce 2026.03)</a> <a href="https://www.ithome.com/0/959/359.htm">(IT之家)</a><strong>并不是</strong>玻璃芯基板的量产产品——根据产业链专家交流信息，当前量产良率仅约60%，2026H2转入小批量试产，首批玻璃芯基板CPU预计2027年初面市，且初期是"打样性质"、"给市场做示范"，不会短期爆发<a href="http://finance.sina.cn/2026-06-22/detail-iniehscr7040000.d.html">(新浪专家交流 2026.06)</a>。英特尔内部把玻璃基板战略定位于Forest、In-Body等先进封装技术之下的"补充选项"，走一步看一步，核心原因是新技术需要经历试验期、观察期、产品打磨阶段。精加工将从Chandler转移到新墨西哥州Rio Rancho基地（该基地已获超35亿美元先进封装投资）<a href="https://finance.sina.com.cn/stock/relnews/cn/2026-06-10/doc-iniawttz1339361.shtml">(证券时报)</a>，并规划印度建设玻璃芯生产基地。供应商方面，玻璃原片由美国（康宁）、德国（肖特）、日本（AGC/NEG）分任一、二、三供，下游基板加工合作EPS、ATS等，封测合作伙伴为安靠<a href="http://finance.sina.cn/2026-06-22/detail-iniehscr7040000.d.html">(新浪专家交流)</a>。</p>
@@ -536,7 +529,7 @@
 <p><strong>肖特（SCHOTT）</strong>2025年9月在SEMICON Taiwan展示先进封装玻璃方案，聚焦超平TTV（总厚度偏差）控制和全球产能扩张，2025年初通过收购QSIL GmbH Quarz强化半导体材料组合<a href="https://www.schott.com/en-tw/news-and-media/media-releases/2025/schott-unveils-cutting-edge-glass-solutions-for-advanced-semiconductor-packaging-at-semicon-taiwan-2025">(SCHOTT官方 2025.09)</a>。相比康宁的激进垂直整合，肖特更聚焦于"材料供应商"角色，提供玻璃晶圆和面板产品，覆盖玻璃载片、玻璃中介层、玻璃芯原片多个层级。</p>
 <hr>
 <h2 id="_2">四、市场规模：口径差异是创作者最大的坑</h2>
-<p><img alt="各机构对半导体玻璃基板市场规模预测" src="cost_comparison.png"></p>
+<p><img alt="各机构对半导体玻璃基板市场规模预测" src="https://www.coze.cn/s/G59N7Vm4kk4/"></p>
 <p>不同机构给出的市场规模数字差出一个数量级，这不是谁对谁错，而是<strong>口径完全不同</strong>。内容创作者必须先把口径讲清楚，否则会误导观众：</p>
 <table>
 <thead>
@@ -624,7 +617,7 @@
 <p><strong>价值量参考</strong>：单颗高端AI芯片玻璃基板价值&gt;100美元<a href="https://caifuhao.eastmoney.com/news/20260507000258516673850">(东方财富-可乐小苍蝇)</a>；显示领域TGV玻璃基板单价6000–8000元/㎡（与高阶6–8层PCB持平）；半导体高精密玻璃基板按通孔数量、叠层层数、精度定制化报价，类似芯片流片定价模式<a href="https://finance.sina.com.cn/wm/2026-06-10/doc-iniaxzpi4337120.shtml">(新浪访谈)</a>。</p>
 <hr>
 <h2 id="_3">五、产业链全景拆解</h2>
-<p><img alt="TGV玻璃基板产业链全景图" src="china_supply_chain.png"></p>
+<p><img alt="TGV玻璃基板产业链全景图" src="https://www.coze.cn/s/FjL-Pcl0y4U/"></p>
 <h3 id="51">5.1 上游：特种玻璃原片（最卡脖子）</h3>
 <p>这是整条产业链<strong>技术壁垒最高、国产化最难</strong>的环节，占成品基板终端售价1.5–10%，但没有合格原片中游完全无法量产<a href="https://xueqiu.com/4655880906/387712409">(雪球)</a>。用于高端芯片封装的TGV原片要求ppb级杂质管控、CTE精准对标硅、纳米级平整度、超低介电损耗。</p>
 <p><strong>全球格局</strong>：康宁（70%+）、AGC旭硝子（~15%）、肖特（~8%）三家垄断90%+高端市场份额，其中康宁凭借"溢流熔融下拉法（Fusion Process）"专利封锁，是全球唯一成熟量产半导体级超薄溢流玻璃的企业，可做到0.1–0.7mm超薄、纳米级平整度、CTE与硅片高度匹配<a href="https://xueqiu.com/2396246949/392455572">(雪球康宁垄断分析)</a>。台积电CoWoS、英伟达GB200、英特尔下一代CPU玻璃中介层基材几乎独家采购康宁，是全球算力芯片玻璃基板第一原料商。</p>
@@ -751,7 +744,7 @@
 <hr>
 <h2 id="ai">八、与英伟达AI算力叙事的衔接：为什么黄仁勋要"换地基"</h2>
 <h3 id="81-aibom">8.1 封装成本正在吞噬AI芯片BOM</h3>
-<p><img alt="H100 vs B200制造成本结构对比" src="market_forecast.png"></p>
+<p><img alt="H100 vs B200制造成本结构对比" src="https://www.coze.cn/s/F3u9tniNuGg/"></p>
 <p>英伟达AI GPU的成本账是玻璃基板叙事最直观的落点。根据Silicon Analysts和SemiAnalysis数据：</p>
 <ul>
 <li><strong>H100制造成本约$3,320/颗</strong>：HBM $1,350（40%）、CoWoS封装 $750（22%）、逻辑晶圆 $630（19%）、其他 $590（18%）<a href="https://caifuhao.eastmoney.com/news/20260614044155384920040">(东方财富)</a></li>
