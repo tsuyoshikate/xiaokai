@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人形机器人：成本砍95%之后，还剩什么卡点？| 小K爱研究</title>
+    <meta name="description" content="人形机器人三年成本砍掉95%，从59万降到2.69万。砍完之后还剩灵巧手、丝杠、续航三大硬骨头。中美走的是完全不同的两条路。工厂已经上了，家里还要等。">
+    <meta name="keywords" content="人形机器人,宇树科技,成本下降,灵巧手,行星滚柱丝杠,谐波减速器,六维力传感器,量产,中美差异,投资,绿的谐波,恒立液压,优必选,智元机器人">
+    <meta name="author" content="小K">
+    <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/article-robot-humanoid-cost-drop.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="人形机器人：成本砍95%之后，还剩什么卡点？">
+    <meta property="og:description" content="三年从59万到2.69万，不是PPT上的数字，是中国供应链实打实干出来的。但灵巧手寿命1-3个月、丝杠国产化率不到20%、续航2-4小时——成本下来了，"能用"还没完全解决。">
+    <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/article-robot-humanoid-cost-drop.html">
+    <meta property="og:site_name" content="小K爱研究">
+    <meta property="og:locale" content="zh_CN">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; line-height: 1.8; color: #333; background: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
+        h2 { font-size: 22px; margin-top: 40px; margin-bottom: 16px; color: #1a1a1a; border-bottom: 2px solid #d97757; padding-bottom: 8px; }
+        h3 { font-size: 18px; margin-top: 24px; margin-bottom: 12px; color: #333; }
+        p { margin-bottom: 16px; font-size: 16px; }
+        .meta { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .intro { background: #fff; padding: 24px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #d97757; }
+        .intro p { margin-bottom: 8px; font-size: 17px; font-weight: 500; }
+        .chart-container { margin: 30px 0; text-align: center; }
+        .chart-container .chart-title { font-size: 14px; color: #666; margin-bottom: 8px; }
+        .chart-box { width: 100%; height: 380px; background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .img-container { margin: 24px 0; text-align: center; }
+        .img-container img { max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .img-caption { font-size: 13px; color: #888; margin-top: 8px; }
+        strong { color: #1a1a1a; }
+        .highlight-box { background: #fff; padding: 20px; border-radius: 12px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .highlight-box p { margin-bottom: 8px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .data-table th { background: #f5f5f5; padding: 12px 16px; text-align: left; font-size: 14px; color: #555; }
+        .data-table td { padding: 12px 16px; border-top: 1px solid #eee; font-size: 14px; }
+        .conclusion { background: linear-gradient(135deg, #d97757 0%, #c4a35a 100%); color: #fff; padding: 24px; border-radius: 12px; margin: 30px 0; }
+        .conclusion p { color: #fff; font-size: 16px; }
+        .source { font-size: 13px; color: #999; margin-top: 4px; }
+        .back-link { display: inline-block; margin-top: 40px; color: #d97757; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>人形机器人：成本砍95%之后，还剩什么卡点？</h1>
+    <div class="meta">2026年7月7日 · 小K爱研究 · 深度分析</div>
+
+    <div class="intro">
+        <p>人形机器人三年成本砍掉95%，怎么做到的？</p>
+        <p>砍完这95%之后，还剩什么卡点没解决？</p>
+        <p>什么时候能真正量产？</p>
+        <p>中国和美国，走的是一条路吗？</p>
+        <p>投资看什么？</p>
+        <p>我们来一一解答。</p>
+    </div>
+
+    <!-- 问题一 -->
+    <h2>问题一：95%是怎么砍的</h2>
+    <p>宇树科技，三年价格轨迹：59万→26万→16.76万→2.69万。降了95%。</p>
+    <p>而且不是亏本卖。G1基础款物料成本4.16万，卖8.5万，毛利率40%。正经生意。</p>
+    <p>为什么能砍这么狠？三个字：供应链。</p>
+    <p>人形机器人最贵的是关节——旋转关节和线性关节，加起来占整机成本的60%以上。关节里面最贵的三个零件：减速器、伺服电机、力矩传感器。</p>
+    <p>2022年以前几乎全靠进口。一个谐波减速器五六千，六维力传感器10万起步。</p>
+
+    <div class="img-container">
+        <img src="imgs/robot/伺服电机.webp" alt="伺服电机实物">
+        <div class="img-caption">伺服电机实物——关节成本的核心构成</div>
+    </div>
+
+    <p>到2026年——</p>
+    <p>减速器国产化率超过60%。绿的谐波一家，国内市占率超过60%，打破了日本哈默纳科的垄断。</p>
+    <p>六维力传感器，一年降了60%以上，从2-3万降到5-8千。</p>
+
+    <div class="img-container">
+        <img src="imgs/robot/六维力传感器_CIIF2025.jpeg" alt="通用六维力传感器 CIIF 2025">
+        <div class="img-caption">CIIF 2025 展出的通用六维力传感器——一年降价60%以上</div>
+    </div>
+
+    <p>单个关节成本，从2400块压到800块。</p>
+    <p>这些零件大量复用了新能源汽车的成熟供应链。中国电动车产业链全球最卷，产能和技术溢出到人形机器人领域，成本自然断崖式下跌。</p>
+
+    <div class="chart-container">
+        <div class="chart-title">图1：宇树人形机器人3年价格轨迹</div>
+        <div id="chart-price" class="chart-box"></div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">图2：核心零部件国产化率对比</div>
+        <div id="chart-localization" class="chart-box"></div>
+    </div>
+
+    <p><strong>一句话：不是机器人变厉害了，是中国供应链太猛了。</strong></p>
+
+    <!-- 问题二 -->
+    <h2>问题二：砍完95%之后，还剩什么没解决</h2>
+    <p>成本砍了95%，但别以为问题都解决了。还剩三个硬骨头。</p>
+
+    <h3>第一，灵巧手</h3>
+    <p>人手有27个自由度、数千个触觉传感器。当前各家方案从6到42个自由度不等，没有收敛方向。更要命的是寿命——灵巧手寿命普遍只有1-3个月，最短的一周就出故障。</p>
+
+    <div class="img-container">
+        <img src="imgs/robot/灵巧手结构图.webp" alt="灵巧手结构图">
+        <div class="img-caption">灵巧手内部结构——手指、手掌、拇指的多轴驱动方案</div>
+    </div>
+
+    <p>工厂买一台机器人回去，手是最先坏的部分。换一只手多少钱？按BofA的数据，灵巧手占整机BOM的19%。宇树G1卖8.5万，一只手大约1.6万。一个月换一次，一年光手就19万。</p>
+
+    <div class="chart-container">
+        <div class="chart-title">图3：灵巧手成本与更换费用</div>
+        <div id="chart-hand-cost" class="chart-box"></div>
+    </div>
+
+    <h3>第二，行星滚柱丝杠</h3>
+    <p>这是线性关节的核心零件，国产化率不到20%——是当前国产化率最低的核心零部件。减速器已经解决60%了，丝杠还不到20%。</p>
+
+    <div class="img-container">
+        <img src="imgs/robot/行星滚柱丝杠_爆炸图.webp" alt="行星滚柱丝杠爆炸图">
+        <div class="img-caption">行星滚柱丝杠爆炸图——输入轴、行星轮、齿圈、输出法兰的精密配合</div>
+    </div>
+
+    <div class="img-container">
+        <img src="imgs/robot/行星滚柱丝杠_截面图.jpeg" alt="行星滚柱丝杠截面图">
+        <div class="img-caption">行星滚柱丝杠截面图——多根行星滚柱均匀分布</div>
+    </div>
+
+    <p>谁在做？恒立液压市占率70%以上，北特科技、五洲新春也在布局。但还没大规模量产。</p>
+
+    <h3>第三，续航</h3>
+    <p>行业普遍2-4小时。这不是某一家的问题，是物理定律的限制。电池做大了→重量上升→关节负担加重→功耗反扑→需要更大电池。死循环。</p>
+    <p>固态电池是终极方案，能量密度翻倍到500Wh/kg，但EVTank预测：实现8小时稳定续航至少还要3-5年。</p>
+    <p><strong>所以现在的局面是：成本下来了，但"能用"这件事，还没完全解决。</strong></p>
+
+    <!-- 问题三 -->
+    <h2>问题三：中国和美国，走的是一条路吗</h2>
+    <p>不是一条路。</p>
+
+    <div class="img-container">
+        <img src="imgs/robot/华为实验室机器人.jpeg" alt="华为/智元实验室机器人">
+        <div class="img-caption">华为/智元实验室中的人形机器人原型机</div>
+    </div>
+
+    <h3>中国走的是"制造+成本+速度"路线</h3>
+    <p>宇树R1双臂版2.69万。特斯拉Optimus Gen 3成本约18万——差了将近7倍。</p>
+    <p>麦肯锡今年4月的深度拆解：脱离中国供应链，Optimus的BOM从4.6万美元飙到13.1万美元——暴涨近3倍。</p>
+
+    <div class="chart-container">
+        <div class="chart-title">图4：脱离中国供应链，Optimus BOM成本暴涨近3倍</div>
+        <div id="chart-bom" class="chart-box"></div>
+    </div>
+
+    <p>不是"中国便宜"这么简单，是"离开中国造不出来"。中国在全球机器人供应链中的份额：永磁体90%、精密轴承40%、电机35%。</p>
+    <p>2025年全球人形机器人出货1.8万台，中国占了80%-95%。宇树5500台，智元5200台，两家合计占全球80%。</p>
+
+    <h3>美国走的是"AI定义机器人"路线</h3>
+    <p>特斯拉用FSD芯片做端到端神经网络，Figure集成OpenAI大模型，1X做订阅模式——买断2万美元+每月499美元。</p>
+    <p>逻辑是：硬件可以让中国做，但"大脑"必须是美国的。类似智能手机时代——富士康组装，但iOS和Android在美国。</p>
+
+    <h3>日本呢？走了一条"成功陷阱"的路</h3>
+    <p>工业机器人零部件全球最强——谐波减速器、RV减速器、伺服电机都是日本的。但整机严重缺位。</p>
+    <p>TrendForce的分析很精准：日本企业专注"ROI已经充分理解的成熟工业应用"，不愿意冒险投新赛道。工业机器人太赚钱了，人形机器人只是"防御性布局"。</p>
+    <p>结果就是：零部件有壁垒，整机几乎缺席。</p>
+
+    <!-- 问题四 -->
+    <h2>问题四：什么时候能真正量产</h2>
+    <p><strong>已经在量产了，但远没有到"够用"的阶段。</strong></p>
+    <p>2025年是量产元年——全球出货1.8万台，中国占80%以上。宇树5500台，智元5200台。</p>
+    <p>2026年更猛——大摩预测全球5万台以上，同比增长700%。宇树募投7.5万台人形+11.5万台四足。智元从第1000台到第10000台只用了三个月，规划年产能1.5万台。优必选柳州万台产线已落地。小鹏规划5万台。</p>
+
+    <div class="img-container">
+        <img src="imgs/robot/宇树工厂产线.jpeg" alt="宇树工厂产线">
+        <div class="img-caption">宇树科技工厂产线——工程师正在调试多台人形机器人</div>
+    </div>
+
+    <p>产能军备竞赛已经打起来了。</p>
+    <p><strong>但产能不等于能用。</strong>GGII蓝皮书的核心判断是："成本不是卡点，能力才是。"硬件方案没收敛前，多数竞争是无效竞争。优必选Walker S2产能利用率只有18%——产线建好了，但订单没跟上。</p>
+
+    <div class="highlight-box">
+        <p><strong>给一个时间判断：</strong></p>
+        <p>B端（工厂/物流）——2到3年内可以形成有用部署。理想工况下，投资回收期已经勉强压到2年以内，但真实工况还需要验证。</p>
+        <p>C端（家庭）——至少5年以上。灵巧手寿命1-3个月、续航2-4小时、具身大模型10步串联成功率只有60%——这些问题没解决之前，买回家就是大号玩具。</p>
+        <p><strong>一句话：工厂里已经上了，家里还要等。</strong></p>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">图5：人形机器人全球出货量预测</div>
+        <div id="chart-production" class="chart-box"></div>
+    </div>
+
+    <!-- 问题五 -->
+    <h2>问题五：投资看什么</h2>
+    <p><strong>三条线。</strong></p>
+
+    <h3>第一条：上游卖水人——确定性最高</h3>
+    <p>绿的谐波——谐波减速器龙头，国内市占率超60%，人形业务2026年占营收35%。</p>
+    <p>恒立液压——行星滚柱丝杠市占70%以上，墨西哥工厂年底投产。丝杠国产化率不到20%，是最稀缺的环节，谁先突破谁就是下一个绿的谐波。</p>
+    <p>双环传动——精密齿轮，和特斯拉头部人形集成商联合研发超过2年。</p>
+
+    <h3>第二条：整机龙头——弹性最大</h3>
+    <p>宇树科技已上市，2025年营收17亿，毛利率60%。是少数已经盈利的整机厂。</p>
+
+    <h3>第三条：场景落地——政策在推</h3>
+    <p>国家电网68亿大单。十五五规划硬性指标：每省至少20个运营场景，每家央企至少10个，2026年11月联合评估。</p>
+
+    <!-- 核心数据表 -->
+    <h2>核心数据速查表</h2>
+    <table class="data-table">
+        <thead>
+            <tr><th>指标</th><th>数值</th><th>来源</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>宇树价格轨迹</td><td>59万→26万→16.76万→2.69万（3年降95%）</td><td>36氪 2026.7.6</td></tr>
+            <tr><td>宇树G1 BOM</td><td>4.16万元（关节2.75万），毛利率40%</td><td>界面新闻 2026.7.6</td></tr>
+            <tr><td>执行器占BOM</td><td>40%-60%</td><td>McKinsey 2026.4</td></tr>
+            <tr><td>不用中国供应链BOM</td><td>$4.6万→$13.1万（+185%）</td><td>McKinsey 2026.4</td></tr>
+            <tr><td>谐波减速器国产化率</td><td>~60%</td><td>GGII 2025</td></tr>
+            <tr><td>行星滚柱丝杠国产化率</td><td>&lt;20%</td><td>GGII 2025</td></tr>
+            <tr><td>六维力传感器降价</td><td>一年降60%+（2-3万→5-8千）</td><td>钛媒体 2026.6.25</td></tr>
+            <tr><td>灵巧手占BOM</td><td>19%</td><td>BofA 2025.4</td></tr>
+            <tr><td>灵巧手寿命</td><td>1-3个月（最短1周）</td><td>界面新闻 2026.7.6</td></tr>
+            <tr><td>行业续航</td><td>2-4小时</td><td>TrendForce</td></tr>
+            <tr><td>2025全球出货</td><td>1.8万台</td><td>IDC</td></tr>
+            <tr><td>2026全球预测</td><td>5万+台（+700%）</td><td>TrendForce</td></tr>
+            <tr><td>2030 BOM预测</td><td>$13,000-17,000</td><td>BofA</td></tr>
+            <tr><td>中国出货占全球</td><td>80-95%</td><td>IDC/TrendForce</td></tr>
+            <tr><td>优必选U1订单</td><td>1.3万台（6.30发布会）</td><td>潇湘晨报 2026.7.6</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 结尾 -->
+    <div class="conclusion">
+        <p>三年前，一台人形机器人59万。今天，2.69万。</p>
+        <p>这不是PPT上的数字，是中国供应链用三年时间实打实干出来的。</p>
+        <p>成本下来了，但灵巧手、丝杠、续航还在攻关。工厂已经上了，家里还要等。中美走的是两条不同的路——中国拼制造，美国拼AI。</p>
+        <p>不管谁赢，全球机器人都要用中国的零件。麦肯锡算过：脱离中国供应链，成本暴涨3倍。</p>
+        <p>这才是真正的壁垒。不是谁的Demo更炫，是谁的供应链不可替代。</p>
+        <p><strong>数字不会骗人。</strong></p>
+    </div>
+
+    <div class="source">
+        数据来源：36氪、TrendForce、McKinsey、BofA、IDC、GGII、界面新闻、钛媒体、EVTank、国泰海通、中金公司
+    </div>
+
+    <a href="index.html" class="back-link">← 返回首页</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script>
+// Chart 1: 价格轨迹
+(function(){
+    var chart = echarts.init(document.getElementById('chart-price'));
+    chart.setOption({
+        title: { text: "宇树人形机器人3年价格轨迹：59万→2.69万", left: "center", textStyle: { fontSize: 14, color: "#333" } },
+        grid: { left: "8%", right: "6%", bottom: "12%", containLabel: true },
+        xAxis: { type: "category", data: ["2023年", "2024年初", "2025年", "2026年"], axisLabel: { color: "#666", fontSize: 12 }, axisLine: { lineStyle: { color: "#666" } } },
+        yAxis: { type: "value", name: "价格（万元）", axisLabel: { color: "#666" }, axisLine: { lineStyle: { color: "#666" } }, nameTextStyle: { color: "#666" } },
+        series: [{ type: "line", data: [59, 26, 16.76, 2.69], itemStyle: { color: "#d97757" }, lineStyle: { width: 3 }, symbolSize: 10, label: { show: true, position: "top", formatter: "{c}万", fontSize: 13, fontWeight: "bold", color: "#d97757" } }],
+        tooltip: { trigger: "axis" }
+    });
+    window.addEventListener('resize', function(){ chart.resize(); });
+})();
+
+// Chart 2: 国产化率
+(function(){
+    var chart = echarts.init(document.getElementById('chart-localization'));
+    chart.setOption({
+        title: { text: "人形机器人核心零部件国产化率", subtext: "丝杠是当前最稀缺环节", left: "center", textStyle: { fontSize: 14, color: "#333" }, subtextStyle: { fontSize: 11, color: "#999" } },
+        grid: { left: "15%", right: "10%", bottom: "5%", top: "18%", containLabel: true },
+        xAxis: { type: "value", max: 100, axisLabel: { color: "#666", formatter: "{value}%" }, axisLine: { lineStyle: { color: "#666" } } },
+        yAxis: { type: "category", data: ["永磁体", "精密轴承", "伺服电机", "谐波减速器", "行星滚柱丝杠"], axisLabel: { color: "#666", fontSize: 12 }, axisLine: { lineStyle: { color: "#666" } }, inverse: true },
+        series: [{ type: "bar", data: [{value:90,itemStyle:{color:"#91cc75"}},{value:40,itemStyle:{color:"#788c5d"}},{value:35,itemStyle:{color:"#788c5d"}},{value:60,itemStyle:{color:"#91cc75"}},{value:20,itemStyle:{color:"#ee6666"}}], barWidth: "50%", label: { show: true, position: "right", formatter: "{c}%", fontSize: 12, color: "#333" } }],
+        tooltip: { trigger: "axis" }
+    });
+    window.addEventListener('resize', function(){ chart.resize(); });
+})();
+
+// Chart 3: 灵巧手成本
+(function(){
+    var chart = echarts.init(document.getElementById('chart-hand-cost'));
+    chart.setOption({
+        title: { text: "灵巧手：占BOM 19%，寿命1-3个月", subtext: "换一次手≈1.6万，一年更换成本≈19万", left: "center", textStyle: { fontSize: 14, color: "#333" }, subtextStyle: { fontSize: 11, color: "#999" } },
+        grid: { left: "8%", right: "6%", bottom: "12%", containLabel: true },
+        xAxis: { type: "category", data: ["灵巧手(BOM占比)", "换一次手", "一年换12次"], axisLabel: { color: "#666", fontSize: 11 }, axisLine: { lineStyle: { color: "#666" } } },
+        yAxis: { type: "value", name: "费用（万元）", axisLabel: { color: "#666" }, axisLine: { lineStyle: { color: "#666" } }, nameTextStyle: { color: "#666" } },
+        series: [{ type: "bar", data: [{value:1.6,itemStyle:{color:"#6a9bcc"}},{value:1.6,itemStyle:{color:"#c4a35a"}},{value:19.2,itemStyle:{color:"#ee6666"}}], barWidth: "40%", label: { show: true, position: "top", formatter: "{c}万", fontSize: 13, fontWeight: "bold" } }],
+        tooltip: { trigger: "axis" }
+    });
+    window.addEventListener('resize', function(){ chart.resize(); });
+})();
+
+// Chart 4: 中美BOM对比
+(function(){
+    var chart = echarts.init(document.getElementById('chart-bom'));
+    chart.setOption({
+        title: { text: "脱离中国供应链，Optimus BOM暴涨近3倍", subtext: "数据来源：McKinsey 2026.4", left: "center", textStyle: { fontSize: 14, color: "#333" }, subtextStyle: { fontSize: 11, color: "#999" } },
+        grid: { left: "8%", right: "6%", bottom: "12%", containLabel: true },
+        xAxis: { type: "category", data: ["使用中国供应链", "脱离中国供应链"], axisLabel: { color: "#666", fontSize: 12 }, axisLine: { lineStyle: { color: "#666" } } },
+        yAxis: { type: "value", name: "BOM成本（万美元）", axisLabel: { color: "#666" }, axisLine: { lineStyle: { color: "#666" } }, nameTextStyle: { color: "#666" } },
+        series: [{ type: "bar", data: [{value:4.6,itemStyle:{color:"#91cc75"}},{value:13.1,itemStyle:{color:"#ee6666"}}], barWidth: "40%", label: { show: true, position: "top", formatter: "${c}万", fontSize: 14, fontWeight: "bold" } }],
+        tooltip: { trigger: "axis" }
+    });
+    window.addEventListener('resize', function(){ chart.resize(); });
+})();
+
+// Chart 5: 量产预测
+(function(){
+    var chart = echarts.init(document.getElementById('chart-production'));
+    chart.setOption({
+        title: { text: "人形机器人全球出货量预测", subtext: "2026年预计5万+台，同比增长700%", left: "center", textStyle: { fontSize: 14, color: "#333" }, subtextStyle: { fontSize: 11, color: "#999" } },
+        grid: { left: "8%", right: "6%", bottom: "12%", containLabel: true },
+        xAxis: { type: "category", data: ["2025年", "2026年(预测)", "2030年(预测)"], axisLabel: { color: "#666", fontSize: 12 }, axisLine: { lineStyle: { color: "#666" } } },
+        yAxis: { type: "value", name: "全球出货量（万台）", axisLabel: { color: "#666" }, axisLine: { lineStyle: { color: "#666" } }, nameTextStyle: { color: "#666" } },
+        series: [{ type: "bar", data: [{value:1.8,itemStyle:{color:"#6a9bcc"}},{value:5,itemStyle:{color:"#d97757"}},{value:51,itemStyle:{color:"#91cc75"}}], barWidth: "50%", label: { show: true, position: "top", formatter: "{c}万台", fontSize: 12, fontWeight: "bold" } }],
+        tooltip: { trigger: "axis" }
+    });
+    window.addEventListener('resize', function(){ chart.resize(); });
+})();
+</script>
+</body>
+</html>
