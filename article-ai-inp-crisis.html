@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子 | 小K爱研究</title>
+    <meta name="description" content="全球AI算力最大的瓶颈可能不是芯片，而是一种你听都没听过的金属——铟。全球每年产量不到1100吨，中国占了70%，AI正在把它吃光。深度解析磷化铟供应链危机、铟价走势、供需缺口与投资逻辑。">
+    <meta name="keywords" content="磷化铟, 铟, InP, 光模块, AI算力, 供应链, 云南锗业, 先导微电子">
+    <meta name="author" content="小K">
+    <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/article-ai-inp-crisis.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子">
+    <meta property="og:description" content="全球AI算力最大的瓶颈可能不是芯片，而是一种你听都没听过的金属——铟。全球每年产量不到1100吨，中国占了70%，AI正在把它吃光。">
+    <meta property="og:site_name" content="小K爱研究">
+    <meta property="og:locale" content="zh_CN">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子",
+      "headline": "AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子",
+      "description": "全球AI算力最大的瓶颈可能不是芯片，而是一种你听都没听过的金属——铟。深度解析磷化铟供应链危机。",
+      "author": {
+        "@type": "Person",
+        "name": "小K",
+        "jobTitle": "数据研究分析",
+        "description": "专注数据深度拆解，数据可溯源，案例有出处"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "小K"
+      },
+      "datePublished": "2026-07-09",
+      "dateModified": "2026-07-09",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://tsuyoshikate.github.io/xiaokai/article-ai-inp-crisis.html"
+      },
+      "url": "https://tsuyoshikate.github.io/xiaokai/article-ai-inp-crisis.html",
+      "wordCount": 5500,
+      "articleSection": "半导体供应链",
+      "inLanguage": "zh-CN",
+      "keywords": ["磷化铟", "铟", "InP", "光模块", "AI算力", "供应链"],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "磷化铟（InP）",
+          "description": "由铟和磷组成的化合物半导体，高速光模块的核心材料，800G/1.6T光模块不可或缺"
+        },
+        {
+          "@type": "Thing",
+          "name": "铟（In）",
+          "description": "元素周期表第49号元素，银白色软金属，全球年产量不到1100吨，100%是锌冶炼的副产品"
+        },
+        {
+          "@type": "Thing",
+          "name": "出口管制",
+          "description": "中国2025年2月将磷化铟纳入出口管制，2026年6月金属铟出口审查进一步趋严"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "云南锗业",
+          "description": "国内InP衬底龙头，华为哈勃战略持股子公司鑫耀半导体23.91%"
+        },
+        {
+          "@type": "Organization",
+          "name": "先导微电子",
+          "description": "全球唯一实现铟矿到光模块全链条闭环的企业"
+        },
+        {
+          "@type": "Organization",
+          "name": "住友电工",
+          "description": "全球InP衬底市场份额42%"
+        }
+      ]
+    }
+    </script>
+    <style>
+    :root {
+        --bg-primary: #0a0a0a; --bg-secondary: #141414; --bg-card: #1a1a1a;
+        --text-primary: #e8e8e8; --text-secondary: #a0a0a0; --text-muted: #666;
+        --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #2a2a2a;
+        --red: #ff4a4a; --green: #4aff4a; --yellow: #ffcc4a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: var(--bg-primary); color: var(--text-primary);
+        line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px;
+    }
+    h1 { font-size: 2em; margin: 1.5em 0 0.5em; color: var(--text-primary); }
+    h2 { font-size: 1.5em; margin: 1.5em 0 0.5em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+    h3 { font-size: 1.2em; margin: 1.2em 0 0.4em; color: var(--text-primary); }
+    p { margin: 0.8em 0; color: var(--text-secondary); }
+    strong { color: var(--text-primary); }
+    blockquote { border-left: 3px solid var(--accent); padding: 0.5em 1em; margin: 1em 0; background: var(--bg-secondary); }
+    table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+    th, td { border: 1px solid var(--border); padding: 0.6em 0.8em; text-align: left; }
+    th { background: var(--bg-card); color: var(--text-primary); }
+    td { color: var(--text-secondary); }
+    .source { font-size: 0.85em; color: var(--text-muted); margin-top: 2em; border-top: 1px solid var(--border); padding-top: 1em; }
+    .hero-stat { font-size: 3em; font-weight: bold; color: var(--accent); margin: 0.3em 0; }
+    .hero-desc { font-size: 1.1em; color: var(--text-secondary); }
+    .chart-container { max-width: 560px; margin: 1.5em auto; text-align: center; }
+    .chart-container img { width: 100%; height: auto; border-radius: 8px; }
+    .chart-container figcaption { font-size: 0.85em; color: var(--text-muted); margin-top: 0.5em; }
+    .disclaimer { font-size: 0.85em; color: var(--text-muted); margin-top: 1em; padding: 0.8em; background: var(--bg-secondary); border-radius: 4px; }
+    a.back { display: inline-block; margin: 1em 0; color: var(--accent); text-decoration: none; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
+    .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1em 1.2em; margin: 1.5em 0; }
+    .highlight-box .highlight-title { font-weight: bold; color: var(--accent); margin-bottom: 0.5em; }
+    .highlight-box p { margin: 0.3em 0; }
+    .source-note { font-size: 0.85em; color: var(--text-muted); background: var(--bg-secondary); padding: 0.8em 1em; border-radius: 4px; margin: 1em 0; }
+    .data-impact { color: #ff4a4a; font-weight: bold; }
+    .data-warning { color: #ffcc4a; font-weight: bold; }
+    .step-number { display: inline-block; background: var(--accent); color: var(--bg-primary); font-weight: bold; border-radius: 50%; width: 2em; height: 2em; text-align: center; line-height: 2em; margin-right: 0.5em; }
+    ul, ol { margin: 0.8em 0; padding-left: 1.5em; color: var(--text-secondary); }
+    li { margin: 0.4em 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
+    <h1>AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子</h1>
+    <p style="color:#666;font-size:0.9em;">小K | 2026年7月9日</p>
+    <p><span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">磷化铟</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">铟</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">InP</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">光模块</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">AI算力</span> <span style="font-size:12px;padding:2px 8px;border:1px solid #2a2a2a;border-radius:12px;color:#666;">供应链</span></p>
+    <p style="color:#a0a0a0;font-size:1.1em;line-height:1.6;">全球AI算力最大的瓶颈可能不是芯片，而是一种你听都没听过的金属——铟。全球每年产量不到1100吨，中国占了70%，AI正在把它吃光。</p>
+    <div class="highlight-box">
+        <p>• <strong>一句话：</strong>全球AI算力最大的瓶颈可能不是芯片，而是一种你听都没听过的金属——铟。全球每年产量不到1100吨，中国占了70%，AI正在把它吃光。</p>
+    </div>
+
+    <h2 id="sec1">你可能没听过"铟"，但AI离不开它</h2>
+
+    <p>先说一个反直觉的事实：<strong>AI数据中心吃金属，可能比吃电还凶。</strong></p>
+
+    <p>每颗AI芯片都需要光模块来互连，而光模块的核心材料叫<strong>磷化铟（InP）</strong>——一种由铟（In）和磷（P）组成的化合物半导体。没有磷化铟，就没有800G/1.6T高速光模块；没有高速光模块，英伟达GB200 NVL72、谷歌TPU v6、微软Maia 100——这些AI芯片全是废铁。</p>
+
+    <p>但铟是什么？大多数人没听过。</p>
+
+    <p>铟是元素周期表第49号元素，银白色软金属，全球年产量<strong>不到1100吨</strong>——什么概念？全球钢产量19亿吨，铟只有它的<strong>一百七十万分之一</strong>。而且铟有一个致命的特性：<strong>它100%是锌冶炼的副产品</strong>，不存在独立铟矿，不能单独开采。锌价低迷→冶炼厂减产→铟供给同步收缩。你想增产铟？先问锌矿答不答应。</p>
+
+    <p>这就是所谓的<strong>"副产品悖论"</strong>——供给弹性几乎为零。</p>
+
+    <div class="chart-container">
+        <img src="images/产业链图谱_文字版.png" alt="磷化铟产业链图谱">
+        <figcaption>磷化铟产业链全景：从铟矿到AI光模块的完整链条</figcaption>
+    </div>
+
+    <hr>
+
+    <h2 id="sec2">铟价已经涨疯了</h2>
+
+    <p>2026年铟价的走势，用"疯狂"两个字形容不过分：</p>
+
+    <table>
+        <tr><th>时间</th><th>精铟价格（元/kg）</th><th>变化</th></tr>
+        <tr><td>2025年底</td><td>~2960</td><td>起点</td></tr>
+        <tr><td>2026年1月</td><td>4200</td><td class="data-impact">+42%</td></tr>
+        <tr><td>2026年3月</td><td>4950</td><td class="data-impact">十年新高</td></tr>
+        <tr><td>2026年6月30日</td><td>5300</td><td class="data-impact">半年+77.9%</td></tr>
+    </table>
+
+    <div class="chart-container">
+        <img src="images/01_价格涨幅数据图.jpg" alt="铟价涨幅数据图">
+        <figcaption>2025-2026年精铟价格走势：半年暴涨77.9%</figcaption>
+    </div>
+
+    <p>6英寸磷化铟衬底更夸张：<strong>从2025年底的8000元/片涨到2026年中的1.8万-2.8万元/片，涨幅225%-250%</strong>。上游金属铟半年涨了60%。</p>
+
+    <p>招商证券预测2026年铟价中枢在5500-6000元/kg，乐观情况可能突破7000-8000元/kg。</p>
+
+    <p>你可能会问：<strong>涨这么多了，是不是快到顶了？</strong></p>
+
+    <p>这个问题问得好。要回答它，得先搞清楚一件事：<strong>这轮暴涨和上一轮有什么不同？</strong></p>
+
+    <hr>
+
+    <h2 id="sec3">2005年 vs 2026年：两轮暴涨，本质不同</h2>
+
+    <p>铟在历史上经历过两轮典型暴涨。2005年那一轮，是LCD面板产业爆发驱动的。当时铟价从~150元/kg飙到~1000元/kg（约$961/kg），然后呢？<strong>2008年跌到200元/kg，暴跌80%。</strong></p>
+
+    <p>所以很多人本能地认为：涨多了就会跌，历史会重演。</p>
+
+    <p><strong>但这一轮和2005年有三个本质区别：</strong></p>
+
+    <p><strong>第一，需求性质不同。</strong> 2005年是LCD面板——终端消费品，渗透率见顶后需求自然放缓。2026年是AI算力基础设施——800G→1.6T→3.2T，每一代光模块升级都<strong>非线性地</strong>增加铟消耗。1.6T光模块的InP衬底用量是800G的<strong>2.7-3倍</strong>，3.2T再翻3-5倍。这不是"渗透率见顶"的问题，是"代际倍增"的问题。</p>
+
+    <p><strong>第二，供给格局不同。</strong> 2005年中国没有出口管制，供给可以随价格增加。2026年，中国2025年2月将磷化铟纳入出口管制，2026年6月金属铟出口审查进一步趋严，审批时间从"当天"延长到"数日"。全球70%的铟供应来自中国——这个出口管制是悬在海外买家头上的达摩克利斯之剑。</p>
+
+    <div class="chart-container">
+        <img src="images/02_全球铟供应分布.jpg" alt="全球铟供应分布">
+        <figcaption>全球铟供应分布：中国占70%，出口管制成为全球供应最大变量</figcaption>
+    </div>
+
+    <p><strong>第三，硅光反而推升铟需求。</strong> 这是最反直觉的一点。很多人以为硅光技术会替代磷化铟——错。硅光方案在1.6T光模块中占比高达70-80%，但<strong>每套硅光模块必须外置磷化铟激光器光源</strong>。硅光渗透率越高，InP激光器需求越大。硅光不是InP的替代者，是InP的放大器。</p>
+
+    <div class="highlight-box">
+        <p><strong>一句话：</strong>2005年是"消费品周期"，涨完就跌；2026年是"基础设施结构性短缺"，涨完了还能涨。</p>
+    </div>
+
+    <hr>
+
+    <h2 id="sec4">缺口到底有多大？</h2>
+
+    <p>来看供需数据（据Yole、Omdia 2026年4月联合报告）：</p>
+
+    <table>
+        <tr><th>年份</th><th>全球InP衬底需求（万片）</th><th>全球有效产能（万片）</th><th>缺口率</th></tr>
+        <tr><td>2025</td><td>200-210</td><td>60-70</td><td class="data-impact">~69%</td></tr>
+        <tr><td>2026</td><td>260-300</td><td>75-85</td><td class="data-impact">~70%</td></tr>
+        <tr><td>2027E</td><td>350-400</td><td>100-120</td><td class="data-impact">~65%</td></tr>
+        <tr><td>2028E</td><td>480+</td><td>150-200</td><td class="data-impact">~50%</td></tr>
+        <tr><td>2030E</td><td>700+</td><td>250-350</td><td class="data-impact">~40%</td></tr>
+    </table>
+
+    <p>Lumentum预测AI数据中心InP需求2025-2030年CAGR <strong>85%</strong>。英伟达预测2026-2030年需求增长<strong>20倍</strong>。</p>
+
+    <p><strong>2026年全球需求260-300万片，产能只有75-85万片——缺口超过70%。</strong> 也就是说，每10片需求只有7片能满足。</p>
+
+    <p>海外三巨头垄断了大部分产能：住友电工（42%份额）、AXT（35%）、JX金属（13%），订单排到了2027-2028年。</p>
+
+    <p>Coherent的高管飞到中国协商出口许可问题——这在两年前是不可想象的。</p>
+
+    <hr>
+
+    <h2 id="sec5">中国玩家：谁在扩产？什么时候能到？</h2>
+
+    <p>面对这个缺口，国内玩家正在疯狂扩产。但有一个关键事实：<strong>从投产到满产，需要12-18个月的良率爬坡</strong>。6英寸InP衬底良率从30%爬到85%需要1.5-2年。</p>
+
+    <p><strong>云南锗业（002428）</strong>——国内InP衬底龙头：</p>
+    <ul>
+        <li>现有产能15万片/年，2026年目标18万片</li>
+        <li>2026年4月启动扩产项目，建设期18个月</li>
+        <li><strong>预计2027年10月全面达产，年底产能45万片/年</strong></li>
+        <li>华为哈勃战略持股子公司鑫耀半导体23.91%，已锁定约53%的磷化铟产能</li>
+        <li>订单已排到2027年底</li>
+    </ul>
+
+    <p><strong>先导微电子</strong>——全产业链一体化玩家：</p>
+    <ul>
+        <li>现有InP衬底年化产能24万片（6英寸当量）</li>
+        <li>全球唯一实现"铟矿→8N高纯铟→InP衬底→外延→光芯片→光模块"全链条闭环</li>
+        <li>衢州基地：2026年7月完成20亿元投资备案，建设期到2029年8月，<strong>达产后年产InP衬底300万片+GaAs衬底300万片</strong></li>
+        <li>武汉光谷基地：120亿元投资，2027年达产</li>
+    </ul>
+
+    <p><strong>有研新材</strong>（央企）：6英寸衬底完成客户送样验证，规划2027年量产</p>
+
+    <p><strong>三安光电</strong>：侧重InP外延片，月产能600片6英寸，产品通过华为海思认证</p>
+
+    <div class="highlight-box">
+        <p><strong>关键判断：</strong>即使所有项目按期推进，大规模有效供货的最早时间窗口是2028年上半年。2026-2027年，缺口不会缩小，只会扩大。</p>
+    </div>
+
+    <hr>
+
+    <h2 id="sec6">铟的存量：14-18年</h2>
+
+    <p>一个更深层的问题：<strong>地球上的铟够用多久？</strong></p>
+
+    <p>根据USGS和安泰科数据：</p>
+    <ul>
+        <li>全球可经济开采铟储量：<strong>1.16-1.5万吨</strong>（含低品位总资源量5.3-5.8万吨）</li>
+        <li>中国储量：约8000吨，占全球52-73%</li>
+        <li>2025年全球原生铟产量：约1100吨（中国760吨）</li>
+        <li><strong>静态储采比：14-18年</strong></li>
+    </ul>
+
+    <p>14-18年意味着什么？如果不考虑回收和技术进步，按当前开采速度，不到20年全球可经济开采的铟就会耗尽。</p>
+
+    <p>但有个好消息：<strong>再生铟正在崛起</strong>。2024年全球再生铟产量已达1033吨，首次超过原生铟760吨。如果再生铟占比提升到70-80%，理论上全球铟供应可支撑50年以上。</p>
+
+    <p><strong>但问题是</strong>：再生铟的提纯难度极高，从废旧ITO靶材中回收的铟纯度通常只有4-5N，而AI光模块需要的InP衬底要求<strong>7N纯度（99.99999%）</strong>。从4N到7N，每一步都是指数级的技术难度。</p>
+
+    <hr>
+
+    <h2 id="sec7">能做空吗？</h2>
+
+    <p>粉丝问得最多的是：<strong>涨这么多了，能不能做空？</strong></p>
+
+    <p>直说结论：<strong>当前阶段做空铟相关标的，风险收益比极差。</strong></p>
+
+    <p><strong>原因一：没有做空工具。</strong> 铟没有期货、没有期权、没有衍生品市场。铟现货市场流通盘仅数吨级，流动性极差，你连对手方都找不到。</p>
+
+    <p><strong>原因二：股票端传导效率低。</strong> 铟概念股里，铟业务营收占比都极低：</p>
+    <ul>
+        <li>锡业股份：铟营收占比仅1%+，铟价涨跌对公司业绩影响微弱</li>
+        <li>株冶集团：铟生产线设计产能仅60吨/年</li>
+        <li>云南锗业：InP业务营收占比12.93%，但市盈率超3400倍——你做空它，它涨一倍你也不意外</li>
+    </ul>
+
+    <p><strong>原因三：供给端不可控。</strong> 中国出口管制持续收紧是做多资金的最大支撑。美国DLA还计划3年储备403吨铟（约全球半年产量）——这是需求增量。</p>
+
+    <p><strong>可行的做空窗口在哪？</strong> 等2028年产能释放信号明确后。具体来说，关注这几个信号：</p>
+    <ul>
+        <li>云南锗业/先导微电子产能爬坡速度超预期</li>
+        <li>海外云厂商AI资本开支同比增速降至20%以下</li>
+        <li>中国放松铟出口管制</li>
+    </ul>
+
+    <div class="highlight-box">
+        <p><strong>在那之前，做空就是在赌命。</strong></p>
+    </div>
+
+    <hr>
+
+    <h2 id="sec8">拐点在哪？</h2>
+
+    <p>综合供需模型推算：<strong>铟价拐点大概率出现在2028年上半年到2029年上半年。</strong></p>
+
+    <p>逻辑很简单：</p>
+    <ul>
+        <li><strong>2028年</strong>：云南锗业45万片达产 + 先导微电子衢州项目推进 + 海外Coherent/AXT扩产落地 → 全球InP有效产能有望翻倍至150-200万片</li>
+        <li><strong>需求端</strong>：800G→1.6T的换代高峰在2026-2027年，1.6T→3.2T的节奏可能放缓</li>
+        <li><strong>供需缺口</strong>：从2026年的70%收窄到2028年的约50%，再到2030年的约40%</li>
+    </ul>
+
+    <p>但即使回调，<strong>铟价中枢不会回到2024年水平</strong>。出口管制 + AI刚需 + 资源稀缺的三重支撑，已经锚定了新的价格底部。</p>
+
+    <p>用情景分析来看：</p>
+
+    <table>
+        <tr><th>情景</th><th>2027年底铟价</th><th>2027年底InP衬底价格</th><th>概率</th></tr>
+        <tr><td>乐观（管制升级+AI超预期）</td><td class="data-impact">7000-8000元/kg</td><td>6000-7000美元/片</td><td>25%</td></tr>
+        <tr><td>基准（管制维持+需求正常）</td><td>5500-6500元/kg</td><td>5000-5500美元/片</td><td>50%</td></tr>
+        <tr><td>悲观（管制放松+产能超预期）</td><td>3500-4500元/kg</td><td>3000-3500美元/片</td><td>25%</td></tr>
+    </table>
+
+    <hr>
+
+    <h2 id="sec9">3-5年内没有替代技术</h2>
+
+    <p>最后回答一个隐含问题：<strong>有没有可能某种新技术取代磷化铟？</strong></p>
+
+    <p>短期答案：<strong>没有。</strong></p>
+
+    <table>
+        <tr><th>替代路线</th><th>能替代什么</th><th>替代不了什么</th><th>状态</th></tr>
+        <tr><td>硅光（SiPh）</td><td>调制器/波导/探测器</td><td>激光器（必须外置InP）</td><td>1.6T占比70-80%</td></tr>
+        <tr><td>薄膜铌酸锂（TFLN）</td><td>超高速调制器</td><td>激光器（无源材料）</td><td>2026年1.6T/3.2T开始商用</td></tr>
+        <tr><td>砷化镓（GaAs）</td><td>短距低速（&lt;100G）</td><td>长距高速（波长不匹配）</td><td>成熟但仅限VCSEL</td></tr>
+        <tr><td>二维材料/直接带隙硅</td><td>理论上全部</td><td>效率极低（&lt;1%）</td><td>实验室阶段，5-10年</td></tr>
+    </table>
+
+    <p>硅光和铌酸锂替代的是InP的"调制功能"，反而因为需要外置InP激光器而<strong>间接推升InP需求</strong>。</p>
+
+    <p>长期（5-10年）值得关注的方向：硅基III-V异质集成（在硅片上直接集成InP激光器，降低衬底面积需求）、量子点激光器（无需InP衬底，但效率与可靠性远不达标）。</p>
+
+    <hr>
+
+    <h2 id="sec10">所以，到底该怎么办？</h2>
+
+    <p><strong>如果你是投资者：</strong></p>
+    <ul>
+        <li>2026-2027年，铟价高景气是确定性事件，做多确定性远高于做空</li>
+        <li>关注云南锗业（产能释放 + 华为哈勃持股）和先导微电子（全产业链闭环 + 300万片远期产能）</li>
+        <li>做空等2028年，现在别碰</li>
+        <li>注意：云南锗业当前PE超3400倍，估值泡沫本身就是风险</li>
+    </ul>
+
+    <p><strong>如果你是AI从业者：</strong></p>
+    <ul>
+        <li>光模块供应链是AI基建最脆弱的环节之一，比GPU还脆弱——GPU至少有三家能造（英伟达/AMD/自研），InP衬底全球只有几家能做</li>
+        <li>800G光模块毛利率预警：铟价继续涨，30%+的毛利可能跌到个位数</li>
+    </ul>
+
+    <p><strong>如果你只是好奇：</strong></p>
+    <ul>
+        <li>下次有人说"AI的最大瓶颈是算力"，你可以告诉他：算力的瓶颈是芯片，芯片的瓶颈是光模块，光模块的瓶颈是磷化铟，磷化铟的瓶颈是铟——一种全球年产不到1100吨、中国占70%、14-18年就会用完的金属。</li>
+        <li><strong>AI吃金属，真的比吃电还凶。</strong></li>
+    </ul>
+
+    <hr>
+
+    <div class="source">
+        <p><em>参考来源：</em></p>
+        <ul>
+            <li><em>USGS Mineral Commodity Summaries 2026</em></li>
+            <li><em>安泰科《2025年铟市场发展报告》</em></li>
+            <li><em>Yole、Omdia 2026年4月联合报告（经雪球@涨津翊引用）</em></li>
+            <li><em>中邮证券/华西证券/招商证券研报</em></li>
+            <li><em>云南锗业/先导基电公司公告</em></li>
+            <li><em>路透社报道</em></li>
+        </ul>
+    </div>
+
+    <hr>
+    <div class="disclaimer">以上内容仅为产业研究，不构成任何投资建议。数据均已标注来源，如有疑问请查阅原始资料。</div>
+    <p style="font-size:0.85em;color:#666;">本内容由 Coze AI 生成</p>
+    <a href="https://tsuyoshikate.github.io/xiaokai/" class="back">← 返回首页</a>
+</body>
+</html>
