@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深度文章 - 小K爱研究</title>
+    <meta name="description" content="小K爱研究 · 深度行业分析">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, rgba(30,60,114,0.5) 0%, rgba(10,10,10,0) 100%);
+        }
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+        }
+        .header p {
+            font-size: 18px;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+        .back-link {
+            display: inline-block;
+            color: #4ade80;
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .category {
+            margin-bottom: 50px;
+        }
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .category-title .icon {
+            font-size: 28px;
+        }
+        .category-title .count {
+            font-size: 14px;
+            opacity: 0.5;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+        .article-list {
+            display: grid;
+            gap: 12px;
+        }
+        .article-item {
+            padding: 20px 25px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .article-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateX(8px);
+        }
+        .article-item .title {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .article-item .date {
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        .article-item .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: rgba(74,222,128,0.15);
+            color: #4ade80;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 32px; }
+            .article-item { padding: 15px 18px; }
+            .article-item .title { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>深度文章</h1>
+        <p>小K爱研究 · 深度行业分析</p>
+        <a href="index.html" class="back-link">← 返回首页</a>
+    </div>
+    
+    <div class="container">
+        <!-- AI营销 -->
+        <div class="category">
+            <div class="category-title">
+                <span class="icon">🎯</span>
+                AI营销
+                <span class="count">(4篇)</span>
+            </div>
+            <div class="article-list">
+                <a href="article-ai-marketing-industry.html" class="article-item">
+                    <div class="title">AI营销产业链全景深度解析</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">产业链</span>
+                </a>
+                <a href="article-ai-marketing-truth.html" class="article-item">
+                    <div class="title">AI营销真相：1.87万亿的市场里，聪明人都在怎么玩？</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">市场分析</span>
+                </a>
+                <a href="article-ai-marketing-report.html" class="article-item">
+                    <div class="title">AI营销深度分析报告</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">深度报告</span>
+                </a>
+                <a href="article-ai-content-pipeline.html" class="article-item">
+                    <div class="title">没有质检的流水线：AI内容如何从"帮你赚钱"变成"帮你骗人"</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">内容生态</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI基础设施 -->
+        <div class="category">
+            <div class="category-title">
+                <span class="icon">⚡</span>
+                AI基础设施
+                <span class="count">(6篇)</span>
+            </div>
+            <div class="article-list">
+                <a href="article-ai-capex-bubble.html" class="article-item">
+                    <div class="title">AI算力的钱流向哪里？7250亿资本支出拆解</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">资本支出</span>
+                </a>
+                <a href="article-ai-gpu-dual-chain.html" class="article-item">
+                    <div class="title">AI算力双链路分析：从零件到终端的钱流追踪——谁在暴利，谁在血亏</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">算力</span>
+                </a>
+                <a href="article-ai-power-bill.html" class="article-item">
+                    <div class="title">AI的电力账单：谁先搞定电，谁就赢了AI</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">能源</span>
+                </a>
+                <a href="article-ai-cooling-bill.html" class="article-item">
+                    <div class="title">AI的散热账单：风冷已死，液冷上位</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">散热</span>
+                </a>
+                <a href="article-ai-storage-bottleneck.html" class="article-item">
+                    <div class="title">AI存储瓶颈：HBM和SSD的生死时速</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">存储</span>
+                </a>
+                <a href="article-ai-price-revolution.html" class="article-item">
+                    <div class="title">AI价格革命：推理成本一年暴跌90%，谁在买单？</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">成本</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI泡沫与竞争 -->
+        <div class="category">
+            <div class="category-title">
+                <span class="icon">💥</span>
+                AI泡沫与竞争
+                <span class="count">(3篇)</span>
+            </div>
+            <div class="article-list">
+                <a href="article-ai-bubble-china-wins.html" class="article-item">
+                    <div class="title">说在美国AI泡沫破裂之前，中国将赢在最后</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">中美竞争</span>
+                </a>
+                <a href="article-openai-chip-collapse.html" class="article-item">
+                    <div class="title">OpenAI自研芯片崩塌：AI公司的硬件梦碎</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">OpenAI</span>
+                </a>
+                <a href="article-deepseek-spacex.html" class="article-item">
+                    <div class="title">DeepSeek和SpaceX：两个疯狂的赌徒</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">创业公司</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 硬件与半导体 -->
+        <div class="category">
+            <div class="category-title">
+                <span class="icon"></span>
+                硬件与半导体
+                <span class="count">(6篇)</span>
+            </div>
+            <div class="article-list">
+                <a href="article-ai-inp-crisis.html" class="article-item">
+                    <div class="title">AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子</div>
+                    <div class="date">2026-07-09</div>
+                    <span class="tag">半导体材料</span>
+                </a>
+                <a href="article-nvidia-physical-limit.html" class="article-item">
+                    <div class="title">英伟达的物理极限，就是中国的起跑线</div>
+                    <div class="date">2026-07-07</div>
+                    <span class="tag">中美对比</span>
+                </a>
+                <a href="article-gpu-depreciation-cliff.html" class="article-item">
+                    <div class="title">GPU折旧悬崖：4年残值归零的恐怖真相</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">GPU</span>
+                </a>
+                <a href="article-hynix-adr-cycle.html" class="article-item">
+                    <div class="title">海力士ADR周期：存储芯片的过山车</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">存储芯片</span>
+                </a>
+                <a href="article-tgv-glass-substrate.html" class="article-item">
+                    <div class="title">TGV玻璃基板：下一代封装的革命</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">封装</span>
+                </a>
+                <a href="article-power-semiconductor.html" class="article-item">
+                    <div class="title">功率半导体：AI背后的隐形王者</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">功率器件</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 前沿科技 -->
+        <div class="category">
+            <div class="category-title">
+                <span class="icon"></span>
+                前沿科技
+                <span class="count">(4篇)</span>
+            </div>
+            <div class="article-list">
+                <a href="article-ai-jspace-claude.html" class="article-item">
+                    <div class="title">Claude的脑子里有个"小剧场"：Anthropic发现了AI的内心独白空间</div>
+                    <div class="date">2026-07-09</div>
+                    <span class="tag">AI安全</span>
+                </a>
+                <a href="article-robot-battery-trap.html" class="article-item">
+                    <div class="title">机器人电池陷阱：续航焦虑的终极解决方案</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">机器人</span>
+                </a>
+                <a href="article-underwater-datacenter.html" class="article-item">
+                    <div class="title">水下数据中心：微软的疯狂实验</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">数据中心</span>
+                </a>
+                <a href="article-opc-profit-layer.html" class="article-item">
+                    <div class="title">OPC利润层：光刻胶产业链的暴利秘密</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">半导体材料</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 行业分析 -->
+        <div class="category">
+            <div class="category-title">
+                <span class="icon"></span>
+                行业分析
+                <span class="count">(3篇)</span>
+            </div>
+            <div class="article-list">
+                <a href="article-china-auto-rise.html" class="article-item">
+                    <div class="title">中国汽车崛起：从追随者到引领者</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">汽车</span>
+                </a>
+                <a href="article-ai-restructure-five-steps.html" class="article-item">
+                    <div class="title">AI重构五步法：企业转型的必经之路</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">企业转型</span>
+                </a>
+                <a href="article-spacex-debt.html" class="article-item">
+                    <div class="title">SpaceX债务迷局：火箭公司的财务真相</div>
+                    <div class="date">2026-06-14</div>
+                    <span class="tag">航天</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
