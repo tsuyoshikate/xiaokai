@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momenta上市：拆解"物理AI第一股"的资金流向和业务流向 | 小K爱研究</title>
+    <meta name="description" content="Momenta港股上市，市值约700亿港元。翻完招股书，拆解两条核心线：资金流向（钱从哪来、到哪去）和业务流向（产品从哪来、到哪去）。智驾行业终局，不是谁卖车多，而是谁在每辆车上持续抽成。">
+    <meta name="keywords" content="Momenta, 物理AI, 自动驾驶, 港股上市, 世界模型, 具身智能, 智驾, 数据飞轮, 曹旭东, R7">
+    <meta name="author" content="小K">
+    <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/article-momenta-physical-ai.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Momenta上市：拆解"物理AI第一股"的资金流向和业务流向">
+    <meta property="og:description" content="翻完招股书，把资金流向和业务流向两条线画清楚。智驾行业的终局，不是谁卖车多，而是谁在每辆车上持续抽成。">
+    <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/article-momenta-physical-ai.html">
+    <meta property="og:site_name" content="小K爱研究">
+    <meta property="og:locale" content="zh_CN">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; line-height: 1.8; color: #333; background: #fafafa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a1a; }
+        h2 { font-size: 22px; margin-top: 40px; margin-bottom: 16px; color: #1a1a1a; border-bottom: 2px solid #d97757; padding-bottom: 8px; }
+        h3 { font-size: 18px; margin-top: 24px; margin-bottom: 12px; color: #333; }
+        p { margin-bottom: 16px; font-size: 16px; }
+        .meta { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .intro { background: #fff; padding: 24px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #d97757; }
+        .intro p { margin-bottom: 8px; font-size: 17px; font-weight: 500; }
+        .img-container { margin: 24px 0; text-align: center; }
+        .img-container img { max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .img-caption { font-size: 13px; color: #888; margin-top: 8px; }
+        strong { color: #1a1a1a; }
+        .highlight-box { background: #fff; padding: 20px; border-radius: 12px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .highlight-box p { margin-bottom: 8px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .data-table th { background: #f5f5f5; padding: 12px 16px; text-align: left; font-size: 14px; color: #555; }
+        .data-table td { padding: 12px 16px; border-top: 1px solid #eee; font-size: 14px; }
+        .conclusion { background: linear-gradient(135deg, #d97757 0%, #c4a35a 100%); color: #fff; padding: 24px; border-radius: 12px; margin: 30px 0; }
+        .conclusion p { color: #fff; font-size: 16px; }
+        .source { font-size: 13px; color: #999; margin-top: 4px; }
+        .back-link { display: inline-block; margin-top: 40px; color: #d97757; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        blockquote { border-left: 3px solid #d97757; padding-left: 16px; margin: 16px 0; color: #666; font-style: italic; }
+        
+        /* 数据飞轮流程 */
+        .flywheel { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin: 30px 0; padding: 24px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .flywheel-step { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 100px; }
+        .flywheel-step .step-circle { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #d97757, #c4a35a); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+        .flywheel-step .step-label { font-size: 13px; color: #555; line-height: 1.4; }
+        .flywheel-arrow { font-size: 24px; color: #d97757; font-weight: bold; }
+        .flywheel-center { width: 100%; text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px dashed #ddd; }
+        .flywheel-center .loop-label { display: inline-block; background: #fff3ee; color: #d97757; padding: 6px 18px; border-radius: 20px; font-size: 14px; font-weight: 600; }
+
+        /* 物理AI进化路线 */
+        .evolution-path { margin: 30px 0; padding: 24px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .evolution-stage { display: flex; align-items: flex-start; margin-bottom: 24px; }
+        .evolution-stage:last-child { margin-bottom: 0; }
+        .stage-number { min-width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #d97757, #c4a35a); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; margin-right: 16px; flex-shrink: 0; }
+        .stage-content { flex: 1; }
+        .stage-content h4 { font-size: 16px; color: #1a1a1a; margin-bottom: 6px; }
+        .stage-content p { font-size: 14px; color: #666; margin-bottom: 4px; }
+        .stage-connector { width: 48px; display: flex; justify-content: center; margin-bottom: 8px; }
+        .stage-connector span { display: block; width: 2px; height: 20px; background: #d97757; }
+
+        /* 竞争对比表格高亮 */
+        .data-table tr:hover td { background: #fafafa; }
+        .data-table .highlight-row td { background: #fff8f3; font-weight: 500; }
+        
+        /* 资金分配流程 */
+        .fund-allocation { margin: 24px 0; padding: 24px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .fund-bar { display: flex; align-items: center; margin-bottom: 12px; }
+        .fund-bar .bar-label { width: 120px; font-size: 14px; font-weight: 600; color: #333; flex-shrink: 0; }
+        .fund-bar .bar-track { flex: 1; height: 28px; background: #f0f0f0; border-radius: 14px; overflow: hidden; position: relative; }
+        .fund-bar .bar-fill { height: 100%; border-radius: 14px; display: flex; align-items: center; padding-left: 12px; font-size: 12px; color: #fff; font-weight: 600; }
+        .fund-bar .bar-amount { width: 100px; text-align: right; font-size: 14px; color: #555; flex-shrink: 0; padding-left: 12px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Momenta上市：拆解"物理AI第一股"的资金流向和业务流向</h1>
+    <div class="meta">2026年7月10日 · 小K爱研究 · 深度分析</div>
+
+    <!-- 封面图 -->
+    <div class="img-container">
+        <img src="imgs/hero/momenta-hero.jpg" alt="Momenta物理AI第一股">
+        <div class="img-caption">Momenta港股上市——"物理AI第一股"的资金流向与业务流向全拆解</div>
+    </div>
+
+    <!-- 引言 -->
+    <div class="intro">
+        <p>7月8日，Momenta港股上市，市值约700亿港元，募资约68亿港元。</p>
+        <p>所有人都在说"物理AI第一股"，但没人说清楚两件事：</p>
+        <p>第一，钱从哪来、到哪去？</p>
+        <p>第二，产品/服务从哪来、到哪去？</p>
+        <p>我翻了它的招股书，把这两条线画清楚。</p>
+        <p><strong>智驾行业的终局，不是谁卖车多，而是谁在每辆车上持续抽成。</strong></p>
+    </div>
+
+    <!-- ========== 第一节 ========== -->
+    <h2>一、资金流向：钱从哪来、到哪去</h2>
+
+    <h3>1.1 Momenta的收入从哪来？</h3>
+    <p>Momenta的钱来自车企，分两块：</p>
+    <p><strong>第一块：技术开发费（固定工资）</strong></p>
+    <p>车企买Momenta的智驾算法，不是装个软件就完事。每个车型芯片不同、传感器不同、驾驶风格不同——有的车企求稳，有的求激进。Momenta得派工程师一对一适配。</p>
+    <p>这笔钱，不管车卖不卖得动，都得给。</p>
+
+    <p><strong>第二块：许可授权费（绩效分成）</strong></p>
+    <p>车企每卖一辆搭载Momenta系统的车，Momenta抽一笔。车卖得越多，Momenta赚得越多。</p>
+
+    <p><strong>招股书数据：</strong></p>
+    <table class="data-table">
+        <thead>
+            <tr><th>年份</th><th>技术开发费</th><th>许可授权费</th><th>许可占比</th><th>毛利率</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>2023</td><td>7.20亿</td><td>0.23亿</td><td>3.2%</td><td>17.5%</td></tr>
+            <tr><td>2024</td><td>14.45亿</td><td>3.18亿</td><td>18.1%</td><td>49.0%</td></tr>
+            <tr class="highlight-row"><td>2025</td><td>14.45亿</td><td>9.68亿</td><td>40.1%</td><td>71.6%</td></tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>趋势：许可授权费三年增长42倍，毛利率从17.5%飙到71.6%。</strong></p>
+        <p>这意味着：Momenta从"项目制外包"（靠技术开发费吃饭），变成了"软件授权平台"（靠许可费躺赚）。</p>
+    </div>
+
+    <div class="source">数据来源：Momenta招股书（2026年7月）</div>
+
+    <h3>1.2 钱被谁赚走了？产业链价值分配的转移</h3>
+    <p><strong>智驾行业的钱，正在从硬件流向软件，从一次性买卖流向持续抽成。</strong></p>
+
+    <div class="highlight-box">
+        <p><strong>过去：车企的钱花在硬件</strong></p>
+        <p>买激光雷达、买芯片、买传感器 → 一次性支出 → 硬件厂商赚走大头</p>
+        <p><strong>现在：车企的钱花在软件+服务</strong></p>
+        <p>买算法 + 每辆车付授权费 → 持续支出 → 软件供应商（Momenta、华为）毛利率70%+，越卖越赚</p>
+        <p><strong>对标手机行业：</strong></p>
+        <p>苹果拿走硬件利润，但应用商店抽成30%——软件才是长期印钞机。智驾行业同理：硬件利润被压缩，软件利润上升。</p>
+        <p><strong>结论：产业链里，谁掌握数据和算法，谁拿走最大份额。</strong></p>
+    </div>
+
+    <h3>1.3 Momenta融的钱花在哪？</h3>
+    <p>IPO募资约68亿港元，分配如下：</p>
+
+    <div class="fund-allocation">
+        <div class="fund-bar">
+            <span class="bar-label">研发</span>
+            <div class="bar-track"><div class="bar-fill" style="width:60%;background:linear-gradient(90deg,#d97757,#e8976e);">60%</div></div>
+            <span class="bar-amount">约41亿港元</span>
+        </div>
+        <div class="fund-bar">
+            <span class="bar-label">Robotaxi</span>
+            <div class="bar-track"><div class="bar-fill" style="width:20%;background:linear-gradient(90deg,#c4a35a,#d4b86a);">20%</div></div>
+            <span class="bar-amount">约14亿港元</span>
+        </div>
+        <div class="fund-bar">
+            <span class="bar-label">量产车方案</span>
+            <div class="bar-track"><div class="bar-fill" style="width:10%;background:linear-gradient(90deg,#6a9bcc,#88b4dd);">10%</div></div>
+            <span class="bar-amount">约7亿港元</span>
+        </div>
+        <div class="fund-bar">
+            <span class="bar-label">运营资金</span>
+            <div class="bar-track"><div class="bar-fill" style="width:10%;background:linear-gradient(90deg,#91cc75,#a8dd92);">10%</div></div>
+            <span class="bar-amount">约7亿港元</span>
+        </div>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr><th>用途</th><th>比例</th><th>金额</th><th>具体方向</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>研发</strong></td><td>60%</td><td>约41亿港元</td><td>世界模型、算法迭代、数据闭环工具链、AI算力</td></tr>
+            <tr><td><strong>Robotaxi商业化</strong></td><td>20%</td><td>约14亿港元</td><td>无人驾驶出租车规模化落地</td></tr>
+            <tr><td>量产车方案</td><td>10%</td><td>约7亿港元</td><td>巩固L2+业务、新产品开发</td></tr>
+            <tr><td>运营资金</td><td>10%</td><td>约7亿港元</td><td>日常运营、一般企业用途</td></tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>关键信息：</strong></p>
+        <p>研发是大头（60%）：Momenta认为"技术壁垒"是核心竞争力</p>
+        <p>Robotaxi占20%：赌未来，但目前还亏损</p>
+        <p>量产车只占10%：L2+业务已经能自我造血，不需要IPO募资来养</p>
+        <p><strong>Momenta的逻辑是——用L2+的现金流养L4的烧钱研发。</strong></p>
+    </div>
+
+    <!-- ========== 第二节 ========== -->
+    <h2>二、业务流向：产品/服务从哪来、到哪去</h2>
+
+    <h3>2.1 上游：数据从哪来？</h3>
+    <p>Momenta的算法靠数据喂养，数据来源是<strong>100万台搭载Momenta系统的量产车</strong>：</p>
+    <p>• 累计实车里程超<strong>120亿公里</strong></p>
+    <p>• 提炼出<strong>1亿段黄金数据</strong>（复杂场景、极端case）</p>
+    <p>• 全球24家车企合作，前10大车企中9家用Momenta</p>
+
+    <p><strong>数据飞轮：</strong></p>
+    <div class="flywheel">
+        <div class="flywheel-step">
+            <div class="step-circle">量产<br>车</div>
+            <div class="step-label">100万台<br>量产车</div>
+        </div>
+        <div class="flywheel-arrow">→</div>
+        <div class="flywheel-step">
+            <div class="step-circle">数据</div>
+            <div class="step-label">真实路况<br>数据</div>
+        </div>
+        <div class="flywheel-arrow">→</div>
+        <div class="flywheel-step">
+            <div class="step-circle">算法<br>迭代</div>
+            <div class="step-label">算法迭代<br>越快</div>
+        </div>
+        <div class="flywheel-arrow">→</div>
+        <div class="flywheel-step">
+            <div class="step-circle">体验<br>↑</div>
+            <div class="step-label">体验越好<br>→</div>
+        </div>
+        <div class="flywheel-arrow">→</div>
+        <div class="flywheel-step">
+            <div class="step-circle">车企<br>合作</div>
+            <div class="step-label">更多车企<br>合作</div>
+        </div>
+        <div class="flywheel-center">
+            <span class="loop-label">🔄 更多数据 → 算法更强 → 更多客户 → 更多数据</span>
+        </div>
+    </div>
+
+    <div class="source">数据来源：Momenta招股书、CIC灼识咨询蓝皮书（2025.3-2026.2）</div>
+
+    <h3>2.2 中游：Momenta做什么？</h3>
+    <p>Momenta不造车、不卖硬件，只做一件事——<strong>给车企的大脑装软件</strong>。</p>
+    <p>具体产品：</p>
+    <p>• <strong>L2+量产方案</strong>：城市NOA（导航辅助驾驶），已交付100+款车型</p>
+    <p>• <strong>L4 Robotaxi方案</strong>：无人驾驶出租车，与Uber合作</p>
+    <p>• <strong>R7世界模型</strong>（2026年4月量产）：能理解物理规律的AI模型</p>
+
+    <div class="highlight-box">
+        <p><strong>技术路线：一段式端到端飞轮大模型</strong></p>
+        <p>单一神经网络：传感器数据 → 直接输出控制指令</p>
+        <p>响应速度接近人类本能，城市NOA接管率仅0.1次/千公里</p>
+    </div>
+
+    <h3>2.3 下游：谁买单？</h3>
+    <p><strong>客户：全球24家车企，覆盖国内全部主流乘用车企业，全球前10大车企中9家。</strong></p>
+
+    <table class="data-table">
+        <thead>
+            <tr><th>客户类型</th><th>代表车企</th><th>合作车型</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>豪华品牌</td><td>奔驰、宝马、奥迪</td><td>奔驰CLA、S级、GLC</td></tr>
+            <tr><td>日系</td><td>丰田、本田</td><td>广汽丰田铂智3X</td></tr>
+            <tr><td>国产</td><td>比亚迪、上汽、广汽</td><td>仰望、腾势</td></tr>
+            <tr><td>美系</td><td>通用、福特</td><td>福特多款</td></tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <p><strong>第三方城市NOA市占率64.5%，比第二名（华为HI模式）高出三倍以上。</strong></p>
+    </div>
+
+    <div class="source">数据来源：CIC灼识咨询蓝皮书（2025.3-2026.2）</div>
+
+    <h3>2.4 数据/流量怎么流转？</h3>
+    <div class="flywheel" style="flex-direction: column; gap: 0;">
+        <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 16px;">
+            <div class="flywheel-step">
+                <div class="step-circle" style="background: linear-gradient(135deg, #6a9bcc, #88b4dd);">100万<br>台车</div>
+                <div class="step-label">收集120亿公里<br>真实路况数据</div>
+            </div>
+        </div>
+        <div style="font-size: 28px; color: #d97757; font-weight: bold; padding: 8px 0;">↓</div>
+        <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 16px;">
+            <div class="flywheel-step">
+                <div class="step-circle" style="background: linear-gradient(135deg, #d97757, #e8976e);">算法<br>平台</div>
+                <div class="step-label">训练L2+和L4<br>算法</div>
+            </div>
+        </div>
+        <div style="font-size: 28px; color: #d97757; font-weight: bold; padding: 8px 0;">↓</div>
+        <div style="display: flex; align-items: flex-start; justify-content: center; width: 100%; gap: 60px; flex-wrap: wrap;">
+            <div class="flywheel-step">
+                <div class="step-circle" style="background: linear-gradient(135deg, #91cc75, #a8dd92);">L2+<br>量产</div>
+                <div class="step-label">卖给24家车企<br>每辆车收授权费</div>
+            </div>
+            <div class="flywheel-step">
+                <div class="step-circle" style="background: linear-gradient(135deg, #c4a35a, #d4b86a);">L4<br>Robotaxi</div>
+                <div class="step-label">与Uber合作<br>未来商业化</div>
+            </div>
+        </div>
+        <div style="font-size: 28px; color: #d97757; font-weight: bold; padding: 8px 0;">↓</div>
+        <div style="width: 100%; text-align: center;">
+            <span class="loop-label" style="display: inline-block; background: #fff3ee; color: #d97757; padding: 8px 24px; border-radius: 20px; font-size: 14px; font-weight: 600;">🔄 数据飞轮闭环：更多数据 → 算法更强 → 更多客户</span>
+        </div>
+    </div>
+
+    <!-- ========== 第三节 ========== -->
+    <h2>三、物理AI：Momenta想讲的新故事</h2>
+
+    <blockquote>
+        "过去十年，我们让AI学会驾驶；未来十年，我们将为家庭带来专职的阿姨、医生、教师等机器人服务场景，开创物理AI的'GPT时刻'。"<br>
+        —— 曹旭东，Momenta上市仪式致辞
+    </blockquote>
+
+    <p><strong>什么是物理AI？</strong></p>
+    <p>一句话：<strong>能理解物理世界规律的AI。</strong></p>
+    <p>普通AI处理文字、图片、语音——都在数字空间里。物理AI要处理真实世界的物体：车辆、行人、障碍物、天气、路面摩擦力。</p>
+    <p>举个例子：前面货车掉下一箱苹果。普通AI识别到"前方有障碍物"→减速。物理AI理解"苹果会滚、箱子会散、旁边车会躲、行人可能看"→做出更精准的决策。</p>
+
+    <div class="highlight-box">
+        <p><strong>Momenta R7世界模型（2026年4月量产）：</strong></p>
+        <p>第一层：世界模型预训练（120亿公里数据，让模型"懂物理"）</p>
+        <p>第二层：世界模型仿真（闭环仿真，推演"如果我这样做，世界会怎么变"）</p>
+        <p>第三层：强化学习（模型自己博弈进化，极端场景超越人类驾驶员）</p>
+    </div>
+
+    <p><strong>为什么自动驾驶是物理AI的最佳落地场景？</strong></p>
+    <p>1. <strong>数据够多</strong>：百万量产车每天跑，真实数据量级远超机器人</p>
+    <p>2. <strong>奖惩够明确</strong>：撞没撞、急刹没、接管没——全是Yes/No判断</p>
+    <p>3. <strong>有钱赚</strong>：每辆车既有数据又有授权费，持续喂养研发</p>
+
+    <!-- 物理AI进化图 -->
+    <div class="img-container">
+        <img src="imgs/evolution/physical-ai-evolution.jpg" alt="物理AI三站进化路线">
+        <div class="img-caption">物理AI三站进化路线：从自动驾驶到具身智能到通用物理智能</div>
+    </div>
+
+    <h3>3.2 物理AI三站进化：从四轮到双腿到万物</h3>
+    <p>Momenta的招股书和曹旭东的上市致辞，画出了一条清晰的物理AI进化路线——</p>
+
+    <div class="evolution-path">
+        <div class="evolution-stage">
+            <div class="stage-number">1</div>
+            <div class="stage-content">
+                <h4>第一站：自动驾驶（四轮，已商业化）</h4>
+                <p>AI在道路上理解物理世界。Momenta当前战场，100万台量产车、120亿公里实车数据。</p>
+                <p><strong>这是物理AI唯一一个同时跑通了"数据规模化"和"商业规模化"的领域。</strong></p>
+            </div>
+        </div>
+        <div class="stage-connector"><span></span></div>
+        <div class="evolution-stage">
+            <div class="stage-number">2</div>
+            <div class="stage-content">
+                <h4>第二站：具身智能（双腿/机械臂，2026-2028年规模化）</h4>
+                <p>同一套世界模型，从车上迁移到机器人上。</p>
+                <p>• 工业场景（仓储物流、工厂产线）→ 预计2028年率先规模化</p>
+                <p>• 服务场景（医疗、养老、配送）→ 中间阶段</p>
+                <p>• 家庭场景（保姆机器人）→ 最晚但市场最大</p>
+                <p>Momenta招股书明确写了：R7世界模型"计划2027年扩展至Robotruck，<strong>未来向具身智能领域迁移</strong>"。</p>
+                <p>国务院发展研究中心预测：中国具身智能产业2030年市场规模4000亿元，2035年突破万亿。英伟达黄仁勋CES 2026断言：物理AI可重塑的制造和物流产业价值达50万亿美元。</p>
+            </div>
+        </div>
+        <div class="stage-connector"><span></span></div>
+        <div class="evolution-stage">
+            <div class="stage-number">3</div>
+            <div class="stage-content">
+                <h4>第三站：通用物理智能（10年+，终极形态）</h4>
+                <p>一套世界模型，适配所有物理场景——不区分"车"还是"机器人"还是"工厂"。</p>
+                <p>曹旭东称之为"物理AI的GPT时刻"——就像GPT不挑任务，通用物理AI不挑载体。</p>
+                <p>智源研究院院长王仲远的表述：AI从"预测下一个Token"进化为"预测下一个物理状态"。</p>
+                <p><strong>到这一步，自动驾驶、机器人、工业制造、城市管理的底层能力合而为一。Momenta不是在做一家智驾公司，而是在建物理世界的操作系统。</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>三站之间的逻辑链条：</strong></p>
+        <p>第一站 → 100万台车 × 120亿公里 = 物理世界的训练数据 → 世界模型学会了理解重力、摩擦、因果、空间关系</p>
+        <p>第二站 → 同一套模型，换载体：四轮 → 双腿/机械臂 → 工业→服务→家庭，逐步渗透</p>
+        <p>第三站 → 模型不再区分载体，任何物理场景都能适配 → "物理AI的GPT时刻"</p>
+    </div>
+
+    <div class="source">数据来源：Momenta招股书、证券日报（2026.7.8）、人民日报（2026.6.15）、IDC（2026）、国务院发展研究中心、英伟达CES 2026</div>
+
+    <!-- ========== 第四节 ========== -->
+    <h2>四、竞争格局：谁能活下来？</h2>
+
+    <p>曹旭东判断：<strong>中国智驾最终只剩2-3家，头部占据70%市场份额。</strong>（创始人预判，待验证）</p>
+
+    <p><strong>Momenta vs 华为</strong></p>
+    <table class="data-table">
+        <thead>
+            <tr><th>维度</th><th>Momenta</th><th>华为ADS</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>模式</td><td>安卓式开放</td><td>iOS式绑定</td></tr>
+            <tr><td>传感器</td><td>纯视觉/低成本融合</td><td>激光雷达+4D毫米波+摄像头</td></tr>
+            <tr><td>客户</td><td>全球24家车企</td><td>鸿蒙智行联盟为主</td></tr>
+            <tr class="highlight-row"><td>第三方NOA市占率</td><td>64.5%（第一）</td><td>约20%（第二）</td></tr>
+            <tr><td>综合测评</td><td>96.48分</td><td>97.18分（第一）</td></tr>
+            <tr><td>毛利率</td><td>71.6%</td><td>未披露</td></tr>
+        </tbody>
+    </table>
+
+    <div class="source">数据来源：CIC灼识咨询蓝皮书、智能辅助驾驶天梯榜</div>
+
+    <p><strong>Momenta vs 特斯拉FSD</strong></p>
+    <p>• 特斯拉数据规模碾压（数百万辆行驶车队）</p>
+    <p>• Momenta本土化更强（中国复杂路况适配）</p>
+    <p>• 特斯拉纯视觉，国内法规对高阶智驾有多传感器冗余要求，FSD天花板受限</p>
+    <p>• 特斯拉FSD 2026年5月已正式进入中国市场</p>
+
+    <p><strong>车企自研的威胁</strong></p>
+    <p>• 小鹏、蔚来全栈自研</p>
+    <p>• 比亚迪2026年2月发布自研智驾芯片"璇玑A3"，已进入规模化量产</p>
+    <p>• 上汽投资地平线，成立零束科技</p>
+    <p>• 车企不想让第三方掌握灵魂</p>
+
+    <div class="highlight-box">
+        <p><strong>曹旭东的应对逻辑：</strong></p>
+        <p><em>"好的企业，既不会让内部供应商一家独大，也不会让外部供应商一家独大。"</em></p>
+        <p>意思是：车企需要第三方制衡自研，Momenta的价值在于"被需要"。</p>
+    </div>
+
+    <!-- ========== 第五节 ========== -->
+    <h2>五、风险：Momenta的软肋</h2>
+
+    <div class="highlight-box">
+        <p><strong>1. 亏损还没止住</strong></p>
+        <p>2023-2025年，年内亏损25.7亿、32.1亿、34.6亿，三年累计亏损92亿。经调整后2025年亏损3亿，接近盈亏平衡，但还没赚。</p>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>2. 研发投入不能停</strong></p>
+        <p>2025年研发支出18.69亿，占总营收77.5%。过去三年累计研发46亿。</p>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>3. 车企自研+特斯拉FSD入华的双重挤压</strong></p>
+        <p>车企不会永远依赖第三方，特斯拉FSD想用数据飞轮碾压所有人。</p>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>4. 物理AI叙事的验证期</strong></p>
+        <p>R7量产不到3个月，样本量不足以证明长期可靠性。Robotaxi、无人卡车、具身智能都还在早期。</p>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>5. 约41亿港元研发烧完，能不能建立起壁垒？</strong></p>
+        <p>研发占募资60%，但竞争对手也在押注世界模型：华为乾崑、理想、小鹏、轻舟智航都在做"世界模型+强化学习"。Momenta的技术护城河，能守多久？</p>
+    </div>
+
+    <!-- ========== 第六节 ========== -->
+    <h2>六、赛道预判</h2>
+
+    <div class="highlight-box">
+        <p><strong>要涨还没涨的：</strong></p>
+        <p>• <strong>智驾软件授权模式</strong>——Momenta毛利率71.6%证明软件比硬件值钱，未来会有更多"纯软件智驾供应商"被资本追捧</p>
+        <p>• <strong>物理AI基础设施</strong>——世界模型训练需要的仿真平台、数据闭环工具链，现在还是蓝海</p>
+        <p>• <strong>数据闭环服务商</strong>——帮车企做数据采集、标注、训练的公司，需求会爆发</p>
+    </div>
+
+    <div class="highlight-box">
+        <p><strong>要跌还没跌的：</strong></p>
+        <p>• <strong>纯硬件智驾方案商</strong>——激光雷达、毫米波雷达厂商，如果车企转向纯视觉/低成本融合，硬件供应商议价能力下降</p>
+        <p>• <strong>没有数据飞轮的L4公司</strong>——没有量产车喂养数据，纯靠路测的Robotaxi公司，在物理AI时代会被淘汰</p>
+        <p>• <strong>车企自研芯片的替代风险</strong>——比亚迪"璇玑A3"量产，第三方芯片厂商（地平线、黑芝麻）面临挤压</p>
+    </div>
+
+    <!-- ========== 第七节 结尾 ========== -->
+    <h2>七、结尾</h2>
+
+    <div class="conclusion">
+        <p>Momenta上市，本质上是资本市场第一次给"物理AI"定价。</p>
+        <p>它证明了一件事：<strong>自动驾驶行业从讲故事阶段，进入了看财报阶段。</strong></p>
+        <p>我们拆解了资金流向和业务流向：</p>
+        <p><strong>资金流向</strong>：车企从买硬件转向买软件，Momenta从项目制转向软件授权平台，毛利率从17.5%涨到71.6%</p>
+        <p><strong>业务流向</strong>：100万台车收集数据 → 算法训练 → L2+卖给车企+L4商业化 → 数据飞轮闭环</p>
+        <p>未来竞争不是谁的故事更大，而是谁能把方向盘背后的那套算法跑通、卖出去、越跑越快。</p>
+        <p>曹旭东判断，中国智驾最终只剩2-3家，头部占据70%市场份额。</p>
+        <p>但现实是：比亚迪2月发布自研智驾芯片，上汽投资地平线，特斯拉FSD 5月正式入华。车企不想让第三方掌握灵魂，特斯拉想用数据飞轮碾压所有人。</p>
+        <p><strong>留给Momenta的窗口，可能没有它想的那么长。</strong></p>
+    </div>
+
+    <div class="source">
+        <strong>数据来源汇总：</strong><br>
+        Momenta招股书（2026年7月）<br>
+        CIC灼识咨询蓝皮书（2025.3-2026.2）<br>
+        上海证券报、经济观察报、财经天下WEEKLY（2026年7月报道）<br>
+        证券日报《全球长线资本集体押注Momenta》（2026.7.8）<br>
+        人民日报《物理人工智能，加速走进现实世界》（2026.6.15）<br>
+        36氪《Momenta IPO：当「物理AI」叙事来到二级市场》（2026.7.9）<br>
+        IDC中国具身智能机器人市场预测（2026）<br>
+        国务院发展研究中心具身智能产业规模预测<br>
+        英伟达CES 2026（黄仁勋物理AI演讲）<br>
+        智源研究院王仲远采访（央广网 2026.6.13）
+    </div>
+
+    <a href="index.html" class="back-link">← 返回首页</a>
+</div>
+</body>
+</html>
