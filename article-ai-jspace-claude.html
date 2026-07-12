@@ -168,12 +168,8 @@
     <p>这意味着什么？<strong>并行计算</strong>（GPU终于能满负荷运转）+ <strong>长距离依赖</strong>（再也不会传话传丢了）。Transformer发布时用8块GPU训练3.5天，就打破了当时的翻译记录。从此，整个行业all in。</p>
 
     <div class="chart-container">
-        <!-- 配图占位：Transformer注意力机制示意图 -->
-        <div style="background:var(--bg-card);border:1px dashed var(--border);border-radius:8px;padding:3em 1em;color:var(--text-muted);">
-            <p style="font-size:1.2em;margin-bottom:0.5em;">📊 配图位置</p>
-            <p>Transformer自注意力机制示意图</p>
-            <p style="font-size:0.8em;margin-top:0.5em;">建议内容：展示Self-Attention中每个token同时关注所有其他token的过程，对比RNN的顺序处理方式</p>
-        </div>
+        <img src="imgs/jspace_transformer_attention.jpg" alt="Transformer自注意力机制示意图">
+        <figcaption>图：Transformer自注意力机制——每个token同时关注所有其他token，打破RNN的顺序依赖瓶颈</figcaption>
     </div>
 
     <p>但Transformer有个"副作用"：它的内部处理过程是一个<strong>黑箱</strong>。几十层、几百亿个参数，信息在中间层怎么流转、怎么决策，外部完全看不到。我们能看到的，只有最后一个字——模型最终的输出。</p>
