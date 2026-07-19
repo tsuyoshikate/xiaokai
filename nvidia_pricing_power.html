@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从95%跌到8%：英伟达在中国失去的不是市场，是定价权</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 30px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.4;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 20px;
+            color: #1a1a1a;
+            margin: 35px 0 15px;
+            padding-left: 12px;
+            border-left: 4px solid #e74c3c;
+        }
+        p {
+            margin-bottom: 18px;
+            font-size: 16px;
+            color: #444;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #fff3cd 0%, #fff3cd 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .red {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        .green {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .gold {
+            color: #d4a017;
+            font-weight: 600;
+        }
+        .cover {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 30px;
+            display: block;
+            border-radius: 8px;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #444;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #e5e5e5;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        th {
+            background: #f8f9fa;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        td {
+            color: #444;
+        }
+        tr:nth-child(even) td {
+            background: #fcfcfc;
+        }
+        .table-wrap {
+            overflow-x: auto;
+        }
+        .data-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 18px 22px;
+            margin: 22px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-box h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .data-box ul {
+            margin: 0;
+        }
+        .divider {
+            text-align: center;
+            color: #ccc;
+            margin: 30px 0;
+            letter-spacing: 8px;
+        }
+        .prediction {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .prediction h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        .conclusion {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 35px;
+            text-align: center;
+        }
+        .conclusion p {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+        }
+        .sources {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #888;
+        }
+        .sources ul {
+            margin-top: 10px;
+        }
+        .sources li {
+            color: #888;
+            font-size: 13px;
+        }
+        .disclaimer {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 5px;
+            font-size: 13px;
+            color: #856404;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回首页</a>
+
+        <img src="nvidia_pricing_power_cover_1.jpg" alt="封面" class="cover">
+
+        <h1>从95%跌到8%：英伟达在中国失去的不是市场，是定价权</h1>
+
+        <p>先看一组数字。</p>
+
+        <p>2023年，英伟达在中国AI芯片市场的份额是<span class="red">95%</span>。</p>
+
+        <p>2026年，摩根士丹利给出的预测是<span class="green">8%</span>。</p>
+
+        <p>三年时间，五分之四的市场易主。费城半导体指数一周跌了10%，直接跌进技术性熊市。</p>
+
+        <p>所有人都在问：英伟达怎么了？</p>
+
+        <p>但这个问题问错了。真正该问的是：<strong>英伟达失去了什么？</strong></p>
+
+        <p>答案不是市场。是<span class="highlight">定价权</span>。</p>
+
+        <p>市场份额丢了可以抢回来，但定价权丢了，商业模式就塌了。当客户开始按Token询价，而不是按卡询价时，英伟达的整个估值逻辑都在松动。</p>
+
+        <h2>一、一个提问方式的变化，改写了一切</h2>
+
+        <p>今年WAIC，钛媒体的记者在展馆里泡了一整天，写了一句话：</p>
+
+        <p class="highlight">"过去客户问'你们有多少张卡'，现在问'Token成本多少，响应时延多长'。"</p>
+
+        <p>这可能是今年WAIC最有信息量的一句话。</p>
+
+        <p>听起来只是提问方式变了，但背后是算力的经济属性在变。</p>
+
+        <p>当客户问"有多少张卡"时，算力是<strong>固定资产</strong>——一次采购入账，按折旧周期摊销，看的是产能利用率。</p>
+
+        <p>当客户问"Token成本多少"时，算力是<strong>运营支出</strong>——按使用量付费，按推理次数结算，看的是单位成本和毛利率。</p>
+
+        <p>这两种问法，对应两种完全不同的财务模型、估值逻辑和投资回报率计算。</p>
+
+        <p>更关键的是：第二种问法，对英伟达不利。</p>
+
+        <p>因为按Token计价，比的不是单卡算力多强，而是系统级的成本效率——谁能用更少的功耗、更低的延迟、更高的吞吐产出每一个Token，谁就拥有定价权。</p>
+
+        <p>这恰好是超节点的主场。</p>
+
+        <div class="divider">• • •</div>
+
+        <h2>二、超节点不是技术参数，是定价权武器</h2>
+
+        <p>今年WAIC最火的展品是超节点。华为昇腾950首次公开展出真机，沐曦、昆仑芯、百度昆仑芯、中兴……整个展馆被这些"黑色机柜"占领。</p>
+
+        <p>华泰证券把2026年叫做"国产超节点元年"。</p>
+
+        <p>但大多数人写超节点，写的是技术参数——多少张卡、多少FLOPS、互联带宽多少。这些都没错，但都没抓住重点。</p>
+
+        <p><strong>超节点真正的意义，是把Token生产的成本结构彻底改写了。</strong></p>
+
+        <div class="data-box">
+            <h3>昇腾950超节点做了什么？</h3>
+            <ul>
+                <li>单柜64张计算卡，最高8192卡高速互联</li>
+                <li>FP8总算力8 EFLOPS（每秒800亿亿次）</li>
+                <li>灵衢2.0把芯片间通信延迟从2微秒压到200纳秒——快了10倍</li>
+                <li>互联带宽16.3 PB/s，是英伟达NVL144方案的62倍</li>
+                <li>基于昇腾950的DeepSeek V4 Flash，每卡每秒Token输出效率较V3提升160%</li>
+            </ul>
+        </div>
+
+        <p>这些数字背后的逻辑是：</p>
+
+        <p>过去，Token生产是"单卡作坊"模式——一张卡算一张卡的，卡与卡之间数据搬来搬去，效率损耗巨大。</p>
+
+        <p>现在，超节点把几千张卡变成"一台计算机"——数据在纳秒级完成传输，训练和推理从"单卡能力"变成"系统级产能"。</p>
+
+        <p>结果就是：<span class="highlight">单位Token的产出成本暴降。</span>这不是渐进式的改良，是结构性的成本坍塌。</p>
+
+        <div class="divider">• • •</div>
+
+        <h2>三、Kimi K3的定价，是一把刀</h2>
+
+        <p>成本降了，定价就会变。Kimi K3是最好的例子。</p>
+
+        <p>7月16日凌晨，月之暗面发布Kimi K3——2.8万亿参数，全球首个开源的3万亿级模型。Frontend Code Arena以1679分登顶第一，压过Claude Fable 5（1631分）和GPT-5.6 Sol（1618分）。</p>
+
+        <p>但真正有杀伤力的不是性能，是定价。</p>
+
+        <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>模型</th>
+                    <th>输入价格（$/百万Token）</th>
+                    <th>输出价格（$/百万Token）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Kimi K3</strong></td>
+                    <td>$3（缓存命中 $0.30）</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>GPT-5.6 Sol</td>
+                    <td>~$15</td>
+                    <td>~$75</td>
+                </tr>
+                <tr>
+                    <td>Claude Fable 5</td>
+                    <td>~$15</td>
+                    <td>~$75</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>K3的输入成本只有GPT-5.6 Sol的28%，输出成本也是28%。</p>
+
+        <p>编程场景下缓存命中率超过90%，实际输入成本可以低到$0.30/百万Token——差不多是GPT-5.6 Sol的五十分之一。</p>
+
+        <p>多位分析人士的总结很精准：<span class="highlight">"以Sonnet级别的价格，提供Opus级别的产出。"</span></p>
+
+        <p>K3敢这么定价，不是因为月之暗面做慈善。是因为底层算力成本变了——昇腾超节点把Token生产的成本打下来了，模型层才有底气把价格打到海外的三分之一。</p>
+
+        <p>这是一条完整的因果链：</p>
+
+        <p class="highlight">超节点 → Token生产成本暴降 → 模型层敢定价低40%-90% → 美国闭源模型的高利润商业模式被打碎</p>
+
+        <p>Anthropic官网的数据显示，海外企业迁移到中国大模型后，推理成本降幅普遍在30%到95%之间。性能差距收窄到1%-4%，价格却便宜了60%-90%。</p>
+
+        <p>这不是竞争。这是<span class="red">降维打击</span>。</p>
+
+        <div class="divider">• • •</div>
+
+        <h2>四、费半为什么崩：不是技术输了，是定价锚换了</h2>
+
+        <p>理解了上面这条链，你就理解了费城半导体指数为什么一周跌10%。</p>
+
+        <p>市场暴跌，不是因为英伟达的技术突然不行了。GB300依然很强，Blackwell架构依然是业界标杆。</p>
+
+        <p>但投资者突然意识到一件事：<strong>当客户开始按Token询价，英伟达的"按卡卖"模式就不灵了。</strong></p>
+
+        <p>按卡卖，是卖方市场——我造什么你买什么，定价权在我手里。</p>
+
+        <p>按Token卖，是买方市场——我不管你用什么卡，我只看每百万Token多少钱。</p>
+
+        <p>这意味着：芯片的绝对算力不再是唯一指标，系统级的成本优化能力才是新的核心竞争力。</p>
+
+        <div class="data-box">
+            <h3>英伟达在中国的市场份额变化（摩根士丹利/伯恩斯坦/集邦咨询）</h3>
+            <ul>
+                <li>2023年：英伟达份额约 <span class="red">95%</span></li>
+                <li>2026年预测：英伟达份额约 <span class="green">8%</span></li>
+                <li>华为昇腾2026年预测：<span class="red">62%</span>（摩根士丹利）/ <span class="red">50%</span>（伯恩斯坦）</li>
+                <li>国产芯片合计2026年预测：近 <span class="red">80%</span>（集邦咨询）</li>
+                <li>46%中国高管计划将AI加速器预算投向国产芯片（彭博行业研究）</li>
+            </ul>
+        </div>
+
+        <p>两组独立预测——摩根士丹利和伯恩斯坦——给出高度一致的结论：华为50-62%，英伟达8%。</p>
+
+        <p>三年时间，五分之四的市场易主。</p>
+
+        <p>更致命的是：这些流失的份额，大概率回不来了。不是因为英伟达做不出好产品，而是因为整个定价逻辑变了。当中国市场从"按卡买"切换到"按Token买"，英伟达的封闭生态（CUDA）反而成了成本负担。</p>
+
+        <div class="divider">• • •</div>
+
+        <h2>五、中美对比：两条路线，两个终局</h2>
+
+        <p>这件事放到中美对比的框架里看，更清晰。</p>
+
+        <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>维度</th>
+                    <th>美国路线</th>
+                    <th>中国路线</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>商业模式</td>
+                    <td>闭源高价（Fable 5 $75/百万输出）</td>
+                    <td>开源性价比（K3 $15/百万输出）</td>
+                </tr>
+                <tr>
+                    <td>算力生态</td>
+                    <td>英伟达封闭（NVLink/CUDA）</td>
+                    <td>超节点开放（灵衢开源）</td>
+                </tr>
+                <tr>
+                    <td>定价锚</td>
+                    <td>按卡卖（卖方市场）</td>
+                    <td>按Token卖（买方市场）</td>
+                </tr>
+                <tr>
+                    <td>核心优势</td>
+                    <td>单卡性能 + 生态锁定</td>
+                    <td>系统级成本效率</td>
+                </tr>
+                <tr>
+                    <td>风险</td>
+                    <td>高利润模式被低价产品侵蚀</td>
+                    <td>软件生态（CUDA差距）仍需追赶</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>美国走的是"性能溢价"路线——我的模型最强，所以可以卖最贵。</p>
+
+        <p>中国走的是"性价比屠夫"路线——我的性能接近你，但价格只有你的三分之一，还要开源。</p>
+
+        <p>在训练时代，性能溢价是成立的。因为训练对算力要求极高，差距大就是差距大，客户愿意为性能买单。</p>
+
+        <p>但在推理时代，逻辑变了。</p>
+
+        <p>推理看的是持续吞吐、毫秒响应、单位成本——这些恰好是超节点的主场。当性能差距收窄到1%-4%，价格差距却有60%-90%时，大多数企业客户会怎么选？</p>
+
+        <p>答案已经写在采购订单里了。</p>
+
+        <p>字节跳动、阿里巴巴锁定大量昇腾950订单。中国移动超节点集采6208张卡，明确锁定昇腾生态。韩国云厂商锁定首批出口订单，马来西亚规划部署3000台昇腾服务器。</p>
+
+        <p>这不是"爱国采购"。这是<span class="highlight">成本驱动的商业决策</span>。</p>
+
+        <div class="divider">• • •</div>
+
+        <h2>六、还有一层：从"流量经营"到"Token经营"</h2>
+
+        <p>超节点改写的不仅是芯片厂的命运，还有运营商的商业模式。</p>
+
+        <p>今年MWC上海，"Token经营"成了高频词。三大运营商都在尝试从传统的"流量经营"迈向AI时代的"Byte+Token"双经营。</p>
+
+        <p>2025年的数据已经说明趋势：</p>
+
+        <div class="data-box">
+            <h3>运营商AI业务增速（2025年）</h3>
+            <ul>
+                <li>中国电信智能业务增长 <span class="red">38.2%</span></li>
+                <li>中国移动智算服务收入增长 <span class="red">279%</span></li>
+                <li>中国联通AI收入增长 <span class="red">超140%</span></li>
+                <li>传统通信业务收入 同比下降 <span class="green">0.5%</span></li>
+            </ul>
+        </div>
+
+        <p>"一降一升"——传统业务增长趋缓，AI业务爆发。</p>
+
+        <p>运营商从"卖流量"变成"卖Token"，背后的基础设施就是超节点。谁的超节点能把Token生产成本压到最低，谁就能拿到运营商的大单。</p>
+
+        <p>这也是为什么超节点竞争如此激烈——不只是芯片厂在打，整个算力产业链的价值分配都在被重写。</p>
+
+        <div class="divider">• • •</div>
+
+        <div class="prediction">
+            <h3>赛道预判：定价权转移的三个阶段</h3>
+            <ul>
+                <li><strong>第一阶段（2026，正在发生）：</strong>国产超节点规模商用，Token生产成本结构性下降。中国模型开始用"性能接近+价格屠夫"策略抢占全球市场。英伟达在中国份额跌至个位数。</li>
+                <li><strong>第二阶段（2027-2028）：</strong>定价锚点彻底切换。企业采购从"按卡询价"全面转向"按Token询价"。英伟达的封闭生态成为成本负担，被迫开放或接受份额持续流失。超节点市场规模预计突破3000亿元。</li>
+                <li><strong>第三阶段（2029+）：</strong>全球AI算力市场形成"双轨制"——美国服务海外市场（高利润闭源），中国服务全球南方+国内市场（性价比开源）。英伟达仍是技术领导者，但不再是定价权拥有者。</li>
+            </ul>
+        </div>
+
+        <div class="conclusion">
+            <p>这不是一场技术战争，是一场定价权战争。英伟达失去的不是市场，是定义价格的能力。一旦定价锚从"卡"切换到"Token"，这个能力就很难拿回来了。</p>
+        </div>
+
+        <div class="divider">• • •</div>
+
+        <p>最后说一句。</p>
+
+        <p>很多人看到"英伟达份额跌到8%"，第一反应是"国产替代真牛"。但我想说的不是这个。</p>
+
+        <p>我想说的是：<span class="highlight">定价权的转移，往往不是从技术突破开始的，而是从提问方式的变化开始的。</span></p>
+
+        <p>当客户不再问"你有多少张卡"，而是问"Token成本多少"时，游戏规则就变了。</p>
+
+        <p>英伟达不是输在技术上。是输在时代换了赛道，而赛道换了计分方式。</p>
+
+        <p>这比技术落后更致命。因为技术可以追，但定价逻辑一旦变了，就很难逆转。</p>
+
+        <div class="disclaimer">
+            ⚠️ 内容仅作行业研究与科普，不构成投资建议
+        </div>
+
+        <div class="sources">
+            <strong>参考来源：</strong>
+            <ul>
+                <li>摩根士丹利分析师Charlie Chan研报（2026年5月）：2026年中国AI加速芯片市场份额预测</li>
+                <li>伯恩斯坦研报（2025年12月）：华为约50%、英伟达8%市场份额预测</li>
+                <li>集邦咨询：国产芯片供应商2026年合计占中国AI服务器芯片市场近80%份额</li>
+                <li>彭博行业研究：60名中国高管中46%计划将AI加速器预算投向国产芯片</li>
+                <li>华为官方：Atlas 950 SuperPoD技术参数（8192卡、8EFLOPS、灵衢2.0）</li>
+                <li>钛媒体：《算力定价权的转移——从"你有多少张卡"到"Token成本多少"》（2026.07.18）</li>
+                <li>凤凰网科技：《Kimi K3杀疯海外，国产超节点集体亮相，中国AI合力出击》（2026.07.18）</li>
+                <li>新浪财经：《Kimi K3的API定价相比其他大模型是否更划算？》（2026.07.18）</li>
+                <li>澎湃新闻：《Kimi K3来了：自己承认不如顶级模型，还涨价，凭什么？》（2026.07.18）</li>
+                <li>每日经济新闻：《AI、6G之外，"Token经营"成为MWC上海新焦点》（2026.06.25）</li>
+                <li>国家数据局：2026年3月中国日均Token调用量突破140万亿</li>
+                <li>华泰证券：2026年为"国产超节点元年"，预计2028年市场规模达3414亿元</li>
+                <li>Anthropic官网：Claude Fable 5定价数据</li>
+                <li>OpenAI官网：GPT-5.6 Sol定价数据</li>
+                <li>月之暗面官方博客：Kimi K3技术参数与定价</li>
+            </ul>
+            <p style="margin-top:15px;color:#aaa;">小K爱研究</p>
+        </div>
+    </div>
+</body>
+</html>
