@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产能卖到2027年——光模块是真需求还是真泡沫？</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  line-height: 1.8;
+  padding: 0;
+}
+.disclaimer {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 75, 75, 0.15);
+  border: 1px solid rgba(255, 75, 75, 0.4);
+  color: #ff6b6b;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+h1 {
+  font-size: 2.2em;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+.subtitle {
+  font-size: 1.05em;
+  color: #888;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+.author-line {
+  font-size: 0.9em;
+  color: #6c8cff;
+  margin-bottom: 48px;
+}
+.author-line span {
+  color: #888;
+  margin-left: 16px;
+}
+h2 {
+  font-size: 1.5em;
+  color: #ffffff;
+  margin: 48px 0 20px;
+  padding-left: 14px;
+  border-left: 4px solid #6c8cff;
+}
+h3 {
+  font-size: 1.15em;
+  color: #b8c4ff;
+  margin: 28px 0 12px;
+}
+p {
+  margin-bottom: 18px;
+  font-size: 1.02em;
+  color: #ccc;
+}
+strong {
+  color: #fff;
+}
+em {
+  color: #ffa94d;
+  font-style: normal;
+}
+.highlight-box {
+  background: rgba(108, 140, 255, 0.08);
+  border: 1px solid rgba(108, 140, 255, 0.25);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.highlight-box p {
+  margin-bottom: 8px;
+}
+.highlight-box p:last-child {
+  margin-bottom: 0;
+}
+.data-callout {
+  background: rgba(255, 169, 77, 0.08);
+  border-left: 3px solid #ffa94d;
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: 0 6px 6px 0;
+}
+.data-callout .num {
+  color: #ffa94d;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.red-callout {
+  background: rgba(255, 75, 75, 0.08);
+  border-left: 3px solid #ff6b6b;
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: 0 6px 6px 0;
+}
+.red-callout .num {
+  color: #ff6b6b;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.green-callout {
+  background: rgba(81, 207, 102, 0.08);
+  border-left: 3px solid #51cf66;
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: 0 6px 6px 0;
+}
+.judgment {
+  background: linear-gradient(135deg, rgba(108,140,255,0.12), rgba(255,169,77,0.08));
+  border: 1px solid rgba(108,140,255,0.3);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 32px 0;
+  font-size: 1.08em;
+  color: #fff;
+}
+.verdict-box {
+  background: rgba(108, 140, 255, 0.1);
+  border: 2px solid #6c8cff;
+  border-radius: 10px;
+  padding: 28px;
+  margin: 36px 0;
+}
+.verdict-box h3 {
+  color: #fff;
+  margin-top: 0;
+}
+.verdict-box .verdict-item {
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 6px;
+}
+.verdict-box .verdict-item .label {
+  color: #6c8cff;
+  font-weight: bold;
+}
+.sources {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px solid #333;
+}
+.sources h2 {
+  border-left-color: #888;
+  color: #aaa;
+}
+.sources ol {
+  padding-left: 24px;
+}
+.sources li {
+  color: #888;
+  font-size: 0.88em;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.sources li a {
+  color: #6c8cff;
+  text-decoration: none;
+}
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+}
+th {
+  background: rgba(108,140,255,0.15);
+  color: #b8c4ff;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 2px solid #6c8cff;
+}
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #2a2a4a;
+  color: #ccc;
+}
+tr:hover td {
+  background: rgba(255,255,255,0.03);
+}
+.quote {
+  font-size: 1.15em;
+  color: #fff;
+  font-style: italic;
+  border-left: 3px solid #6c8cff;
+  padding-left: 20px;
+  margin: 28px 0;
+}
+.footer {
+  text-align: center;
+  color: #555;
+  font-size: 0.85em;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a4a;
+}
+
+        .back-link {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            background: rgba(255,255,255,0.08);
+            color: #aaa;
+            border: 1px solid rgba(255,255,255,0.18);
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            text-decoration: none;
+            z-index: 9999;
+            backdrop-filter: blur(8px);
+            transition: all .2s;
+        }
+        .back-link:hover {
+            color: #fff;
+            border-color: rgba(255,255,255,0.45);
+            background: rgba(255,255,255,0.14);
+        }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">内容仅作科普，不构成投资建议</div>
+
+<a href="index.html" class="back-link">← 返回文章列表</a>
+<div class="container">
+
+<h1>产能卖到2027年——光模块是真需求还是真泡沫？</h1>
+<p class="subtitle">需求是真的，但定价已经跑在需求前面了。</p>
+<div class="author-line">小K · AI产业链独立分析<span>2026年7月</span></div>
+
+<!-- 开篇 -->
+
+<p>我先把结论撂这儿：<strong>光模块的需求是真的，但定价已经跑在需求前面了。</strong></p>
+
+<p>我知道这句话两边都不讨好。看多的会说我不懂产业，看空的会说我还不够狠。没关系，数据说完你们自己判断。</p>
+
+<p>7月20日，星期一。CPO概念板块主力净流出39亿，光模块三巨头——中际旭创、新易盛、天孚通信——清一色高开低走。当天我盯着盘面看了两个小时，说实话，这种走势太经典了。</p>
+
+<p>但同一周发生了什么？</p>
+
+<div class="data-callout">
+<p>高盛上调中际旭创目标价，最激进的bull case直接给到<em>2581元</em>，较前一交易日收盘价涨幅+163%。共识目标价1245元。</p>
+</div>
+
+<div class="data-callout">
+<p>同一周，Lumentum在财报电话会上说：EML芯片缺口超过<em>30%</em>，产能已经被下游客户锁定到2028年。</p>
+</div>
+
+<p>基本面说"给我更多"，资金说"我先跑了"。</p>
+
+<p>谁在说谎？</p>
+
+<p>答案是——<strong>都没说谎，只是他们在说的不是同一件事。</strong>基本面说的是2026-2028年的需求曲线，资金说的是2025年7月的估值水位。这两件事之间，隔着一个太平洋。</p>
+
+<p>今天这篇文章，我把光模块这条赛道从需求侧、估值侧、资金流向、技术路线、中美博弈五个维度全部拆一遍。最后给出我自己的赛道级判断。</p>
+
+<div class="judgment">
+<p>先说我的核心判断，省得你们看到一半跑了：</p>
+<p><strong>资金从硬件搬到应用，本质是同一批人在说——AI的下一站利润，不在光模块，在光模块喂出来的应用。硅光代工能力，是下一代胜负手。</strong></p>
+</div>
+
+<!-- 第一部分 -->
+
+<h2>一、看多的铁证：需求侧，没有任何泡沫的迹象</h2>
+
+<p>我先说看多的逻辑，因为这部分是我认为最硬的。</p>
+
+<p>看多光模块的人经常被问一个问题：你们怎么证明需求是真的？是不是又在炒概念？</p>
+
+<p>我的回答是：<strong>去看上游供应商的产能被锁到几年后——这是真需求最硬的证据。</strong>概念炒作不会让下游客户提前两年付定金锁定产能。</p>
+
+<h3>Lumentum：EML缺口>30%，产能锁至2028</h3>
+
+<p>Lumentum FY26Q3（截至2025年3月）营收8.084亿美元，同比增长90%。这个数字什么概念？一家做激光器和光组件的公司，一年之内营收翻了将近一倍。</p>
+
+<p>更关键的是他们在财报电话会上的表态：EML（电吸收调制激光器）芯片的供需缺口超过30%。什么概念？下游客户需要的量，Lumentum只能满足不到七成。剩余的缺口，客户在排队等。</p>
+
+<p>产能已经被锁定到2028年。不是意向，是长协。</p>
+
+<p>我做过十年产业链研究，这种"产能锁定两年以上"的信号，只在两种情况下出现：要么是真正的技术瓶颈导致供给刚性，要么是全行业在抢同一个瓶颈环节。EML属于后者——它是一个小小的激光器芯片，但800G及以上光模块离不开它。</p>
+
+<h3>Coherent：营收18.1亿，长协覆盖到2030</h3>
+
+<p>Coherent（高意）FY26Q3营收18.1亿美元，同比增长21%。这个数字本身不炸裂，但你注意一个细节：他们的长期协议（LTA）覆盖周期已经延伸到2028-2030年。</p>
+
+<p>五年长协。在半导体和光通信行业，这意味着什么？意味着下游客户（微软、谷歌、Meta这些巨头）在用真金白银告诉你：我相信未来五年的AI算力扩张是确定性的。</p>
+
+<p>没有人会签五年长协来赌一个概念。</p>
+
+<h3>AAOI：产能售罄至2027中期</h3>
+
+<p>Applied Optoelectronics（AAOI）Q1营收1.511亿美元，同比增长51%。他们800G光模块的月产能已经接近10万只。</p>
+
+<p>最关键的一句话来自管理层：<em>"产能已售罄至2027年中期。"</em></p>
+
+<p>注意，是2027年中期，不是2029年。之前市场上有人传"AAOI产能卖到2029年"，我交叉验证过，这个口径不准确。管理层原话对应的时间节点是2027年中期。</p>
+
+<p>但即便只是到2027年中，这已经足够说明问题。一家光模块公司，产能提前两年被订完——这是2023年AI泡沫时期没有过的景象。那时候是"我做了产品，希望你买"；现在是"我还没做出来，你已经付了钱"。</p>
+
+<h3>高盛最激进bull case：2581元</h3>
+
+<p>高盛在中际旭创的研报中给出了三档目标价：bear case大概800多，共识1245元，最激进的bull case直接给到2581元，较前一交易日涨幅+163%。</p>
+
+<p>2581元是什么概念？是中际旭创2024年历史最高价再翻一倍多。高盛自己也知道这个数字离谱，所以放在了bull case——但问题是，<strong>他们把这个数字写进了正式报告</strong>。</p>
+
+<p>卖方分析师给target price，本质是告诉你：在什么样的假设条件下，这个估值是合理的。bull case的假设是——800G/1.6T光模块需求在2026-2027年加速爆发，同时中际旭创的市占率和利润率维持当前水平。</p>
+
+<h3>中际旭创H股：7月16日通过聆讯，募资约70亿美元</h3>
+
+<p>中际旭创的H股在7月16日通过了港交所聆讯，预计募资规模约70亿美元。这是2025年港股市场最大规模的IPO之一。</p>
+
+<p>一家A股公司跑到港股再融一轮70亿美元——这不是"我觉得行业好"，这是"我需要钱扩产，A股不够我花的"。70亿美元拿去干嘛？建产线、买设备、抢上游材料。你见过哪家公司在泡沫顶部融这么多钱去扩产的？</p>
+
+<p>泡沫顶部的特征是"融资去还债"或者"融资去搞多元化"。中际旭创的70亿美元，全部指向产能扩张。</p>
+
+<h3>保偏光纤：需求将增长10-20倍</h3>
+
+<p>长飞光纤总裁在近期行业会议上表示，保偏光纤（PMF）的需求将增长10-20倍。保偏光纤是硅光路线和CPO封装中的关键材料，这个倍数增长意味着——<strong>连光模块的"配件"都在经历需求爆发</strong>。</p>
+
+<p>一个产业链，如果连上游的配件都说"需求要涨10倍"，你告诉我这是泡沫？</p>
+
+<div class="highlight-box">
+<p><strong>需求侧小结：</strong></p>
+<p>✓ EML缺口>30%，产能锁至2028</p>
+<p>✓ 长协覆盖至2028-2030年</p>
+<p>✓ 800G产能售罄至2027中期</p>
+<p>✓ H股IPO募资70亿美元扩产</p>
+<p>✓ 配件端保偏光纤需求增长10-20倍</p>
+<p>这些不是PPT上的数字，是财报、长协合同和产线排产表里的数字。<strong>需求是真的，没有任何泡沫迹象。</strong></p>
+</div>
+
+<!-- 第二部分 -->
+
+<h2>二、看空的逻辑：估值侧，资金已经给出答案</h2>
+
+<p>需求是真的。但需求是真的≠股票现在值得买。</p>
+
+<p>这是很多投资者搞不清楚的地方。他们觉得"行业好=股票涨"。不是的。股票涨不涨，取决于<strong>现实有没有跑赢预期</strong>。当所有人都已经预期行业好的时候，"好"已经被定价了，你需要"超预期"才能继续涨。</p>
+
+<p>而现在的光模块板块，<strong>估值已经跑在需求前面了</strong>。</p>
+
+<h3>PE倍数：新易盛62倍，天孚通信106倍</h3>
+
+<p>我直接拉数据：</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>公司</th><th>动态PE（倍）</th><th>2025年业绩增速预期</th><th>PEG</th></tr>
+<tr><td>新易盛</td><td>~62x</td><td>~50-60%</td><td>~1.0-1.2</td></tr>
+<tr><td>天孚通信</td><td>~106x</td><td>~25-45%</td><td>~2.3-4.2</td></tr>
+<tr><td>行业合理值</td><td>~30x</td><td>—</td><td>~1.0</td></tr>
+</table>
+</div>
+
+<p>新易盛62倍PE，如果2025年业绩能增长50-60%，PEG勉强在1左右——这在成长股里算"合理偏贵"。但天孚通信呢？106倍PE，业绩增速只有25-45%，PEG高达2.3到4.2。</p>
+
+<p><strong>PEG超过2的公司，你需要非常强的增长持续性才能justify这个估值。</strong>一旦任何一个季度的业绩增速低于预期，杀估值是分分钟的事。</p>
+
+<h3>7月17日：机构抱团瓦解的标志性一天</h3>
+
+<p>7月17日，星期四。这一天我必须单独拿出来说。</p>
+
+<div class="red-callout">
+<p>中际旭创：成交564亿元，跌幅超过<em>12%</em>。564亿是什么概念？这是中际旭创单日成交历史天量。</p>
+</div>
+
+<div class="red-callout">
+<p>新易盛：单日主力净流出<em>42.97亿</em>元。</p>
+</div>
+
+<p>一天之内，564亿的成交，跌12%。这不是正常调整，这是<strong>机构抱团瓦解的标志性走势</strong>。当一只股票的日成交额达到这种级别，同时大跌超过10%，意味着——前期重仓的机构在集中出逃。</p>
+
+<p>我见过太多这种画面了。2021年的锂电、2020年的半导体，每一轮机构抱团股的瓦解，都是以"天量暴跌"作为标志性事件的。不是因为它基本面突然变差了，而是因为——<strong>所有看好的人都已经买完了，后面没有新的买家了</strong>。</p>
+
+<h3>融资盘：高位接飞刀</h3>
+
+<p>但7月17日最诡异的不是机构在卖，而是融资盘在买。</p>
+
+<div class="red-callout">
+<p>7月17日，融资买入中际旭创<em>56.17亿</em>元，融资买入新易盛<em>42.36亿</em>元。</p>
+</div>
+
+<p>机构在跑，散户和杠杆资金在接。这个画面太熟悉了。每一轮牛市末尾都是这个剧本：聪明钱出货，杠杆资金接盘。</p>
+
+<p>然后呢？</p>
+
+<div class="red-callout">
+<p>新易盛融资余额5日内已下降<em>8.88亿</em>元。</p>
+</div>
+
+<p>接完也在撤。融资盘是最聪明的散户资金，他们7月17日冲进去抄底，五天之后就发现——不对，趋势没有反转，赶紧跑。<strong>8.88亿的融资余额下降，说明这批接飞刀的人已经开始止损了。</strong></p>
+
+<h3>WAIC效应：Sell the News</h3>
+
+<p>还有一层逻辑。7月中旬的世界人工智能大会（WAIC 2025），市场在会前预期会有大量光模块相关的利好——新订单、新合作、新产品发布。但会议结束后，利好落地，资金选择"sell the news"。</p>
+
+<p>这是资本市场的经典规律：<strong>利好出尽即利空</strong>。不是因为利好是假的，而是因为——在利好兑现之前，价格已经把利好定价了。当利好真正来临时，反而是获利了结的最佳时机。</p>
+
+<div class="highlight-box">
+<p><strong>估值侧小结：</strong></p>
+<p>✓ PE显著高于行业合理值（62x-106x vs 30x）</p>
+<p>✓ 天量暴跌=机构抱团瓦解信号</p>
+<p>✓ 融资盘接飞刀后5日即撤退</p>
+<p>✓ WAIC利好出尽，sell the news</p>
+<p><strong>估值已经透支了至少2-3年的增长预期。在这个位置，你需要"超预期"才能涨，但超预期的概率正在递减。</strong></p>
+</div>
+
+<!-- 第三部分 -->
+
+<h2>三、资金搬家去哪了？不是AI不行了，是钱换了个地方</h2>
+
+<p>光模块在跌，那钱去哪了？</p>
+
+<p>7月20日的资金流向数据非常有意思：</p>
+
+<div class="data-callout">
+<p>IT服务板块：净流入<em>40.53亿</em>元，全市场第一。</p>
+</div>
+
+<div class="data-callout">
+<p>电力板块：净流入<em>18.94亿</em>元。</p>
+</div>
+
+<div class="data-callout">
+<p>煤炭板块：净流入<em>4.53亿</em>元。</p>
+</div>
+
+<p>IT服务40亿，电力19亿，煤炭4.5亿。这三个方向加在一起，恰好对应一条逻辑链：</p>
+
+<p><strong>AI应用（IT服务）→ AI应用的能源基础（电力）→ 传统能源对冲（煤炭）</strong></p>
+
+<p>中信证券在最近一篇研报中给出了一个非常精准的判断：<em>"AI定价重心正由投入侧（硬件）向产出侧（应用）迁移。"</em></p>
+
+<p>这句话值得反复品味。</p>
+
+<p>过去两年，AI投资的主线是"谁卖铲子谁赚钱"——英伟达的GPU、光模块、服务器、液冷。这些是AI的"投入侧"。但现在，市场开始问一个问题：<strong>铲子卖了这么多，挖出来的金子呢？</strong></p>
+
+<p>如果AI只投入不产出，那就是泡沫。但如果AI开始产出——AI应用、AI Agent、AI商业化——那利润的中心就从"卖铲子的人"转移到了"用铲子挖到金子的人"。</p>
+
+<p>7月20日的资金流向，就是市场在用真金白银投票：<strong>AI的下一站利润，不在光模块，在光模块喂出来的应用。</strong></p>
+
+<p>注意，我不是说AI硬件不行了。我是说——<strong>在硬件已经充分定价的情况下，边际收益最高的投资方向，变成了应用</strong>。这是同一个AI故事的不同章节，不是故事的结束。</p>
+
+<p>而且你看电力和煤炭也在流入，说明有一批资金在说：不管AI应用能不能跑出来，算力基础设施需要的电力是确定的。这是更底层的确定性逻辑。</p>
+
+<!-- 第四部分 -->
+
+<h2>四、技术路线暗战：硅光 vs 传统——真正的胜负手</h2>
+
+<p>现在聊一个大多数投资者忽略的问题：技术路线。</p>
+
+<p>当前800G光模块的主流方案是"传统可插拔+EML激光器"。中际旭创、新易盛的利润主要来自这里。但如果未来三年技术路线切换了——<strong>现在赚得最多的公司，不一定继续赚</strong>。</p>
+
+<h3>硅光：高盛预测2028年收入占比62%</h3>
+
+<p>高盛在最新的行业研报中预测，到2028年，硅光（Silicon Photonics）方案的收入将占光模块行业总收入的62%。</p>
+
+<p>从目前的不到20%到62%，这意味着什么？意味着<strong>未来三年，硅光将从"新兴方案"变成"主流方案"</strong>。</p>
+
+<p>硅光的核心逻辑是：用半导体工艺（CMOS-compatible）来制造光器件，从而大幅降低成本、提高集成度。传统光模块是"手工作坊式"的精密组装，硅光是"晶圆级批量制造"。前者贵、慢、难扩产；后者便宜、快、易扩产。</p>
+
+<p>一旦硅光成为主流，行业格局会彻底改变。</p>
+
+<h3>CPO量产时间线</h3>
+
+<p>CPO（共封装光学）是硅光技术的进阶形态——把光引擎直接封装到交换芯片旁边，而不是做成可插拔模块。</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>厂商</th><th>CPO进展</th><th>量产预期</th></tr>
+<tr><td>NVIDIA</td><td>下一代平台集成CPO</td><td>2026H2启动</td></tr>
+<tr><td>博通</td><td>Tomahawk 6已出货</td><td>已商用</td></tr>
+<tr><td>英特尔</td><td>硅光平台持续迭代</td><td>2029-2030</td></tr>
+</table>
+</div>
+
+<p>NVIDIA在2026年下半年启动CPO量产——这意味着，距离现在只有一年多时间。博通的Tomahawk 6已经出货。英特尔虽然慢一些，但他们的硅光代工能力是行业最强的。</p>
+
+<p><strong>传统可插拔光模块厂商，面临被边缘化的风险。</strong></p>
+
+<h3>中际旭创的"40%市占率"——注意定语</h3>
+
+<p>市场上经常有人说"中际旭创800G全球市占率约40%"。这个数字基本准确，但你必须注意定语：</p>
+
+<p><strong>是800G可插拔光模块的全球市占约40%，不是CPO的40%。</strong></p>
+
+<p>这两个数字的含义完全不同。在当前的800G可插拔市场，中际旭创确实是王者。但在CPO和硅光赛道上，中际旭创的领先优势并没有那么大。CPO的竞争格局更像是一个"半导体制造"问题，而不是"光模块组装"问题。</p>
+
+<h3>InP衬底：被日美三家垄断的卡脖子环节</h3>
+
+<p>磷化铟（InP）衬底是EML激光器的核心材料。全球90%的InP衬底被三家厂商垄断：</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>厂商</th><th>国家</th><th>备注</th></tr>
+<tr><td>住友电工</td><td>日本</td><td>全球最大InP衬底供应商之一</td></tr>
+<tr><td>AXT（北京通美）</td><td>美国（中国业务）</td><td>在美上市，核心产能部分在中国</td></tr>
+<tr><td>JX金属</td><td>日本</td><td>日系半导体材料巨头</td></tr>
+</table>
+</div>
+
+<p>这意味着什么？<strong>中国的光模块产业，在最上游的衬底材料环节，是被卡脖子的。</strong></p>
+
+<p>中际旭创、新易盛、天孚通信做得再大，他们的激光器芯片依赖的InP衬底，90%来自这三家。如果地缘政治风险升级，这个环节是可能被"断供"的。</p>
+
+<h3>硅光代工：光模块的"台积电时刻"</h3>
+
+<p>我说一个判断：<strong>硅光代工能力，是光模块行业的"台积电时刻"。</strong></p>
+
+<p>在传统光模块时代，核心竞争力是"封装+测试+客户关系"——谁能把光器件封装得更好、成本更低、交货更快，谁就赢。这是一个"制造效率"的竞争。</p>
+
+<p>但在硅光时代，核心竞争力变成了"晶圆级制造能力"——谁能在12英寸晶圆上集成更多的光电器件、实现更高的良率、拥有更大的产能，谁就赢。这是一个"半导体制造"的竞争。</p>
+
+<p>这两者的本质区别是什么？<strong>前者是手艺人生意，后者是工业化生意。手艺人生意的壁垒是经验和客户关系，工业化生意的壁垒是资本、工艺和规模。</strong></p>
+
+<p>台积电之所以能统治芯片代工，不是因为它是"最好的手艺人"，而是因为它有最大的产能、最先进的工艺节点、最高的良率。硅光代工也会走同样的路——<strong>谁掌握代工能力，谁就拥有定价权</strong>。</p>
+
+<div class="judgment">
+<p>我的判断：传统光模块厂商如果不能在硅光代工上建立能力，未来三年会面临被边缘化的风险。这不是危言耸听，而是技术路线更迭的必然结果。就像功能机时代的诺基亚，不是做得不好，而是赛道变了。</p>
+</div>
+
+<!-- 第五部分 -->
+
+<h2>五、中美对比：封装领先 vs 上游受制</h2>
+
+<p>光模块产业的中美格局，我用一句话概括：<strong>中国在下游封装和模块端领先，美国在中游芯片和上游材料端垄断。</strong></p>
+
+<h3>美国：掌握EML和InP上游</h3>
+
+<p>美国的光模块产业链优势集中在上游：</p>
+
+<p><strong>Lumentum</strong>：全球EML激光器芯片的龙头之一，缺口>30%的"卖方"。在AI数据中心光模块上游拥有不可替代的地位。</p>
+
+<p><strong>Coherent（高意）</strong>：从InP衬底到激光器芯片到光模块，全产业链布局。是少数能"自给自足"的玩家。</p>
+
+<p><strong>AAOI</strong>：美国本土的光模块制造商，虽然规模不如中国企业，但在美国"供应链安全"逻辑下具有战略价值。</p>
+
+<p><strong>英特尔</strong>：硅光代工能力全球领先，拥有从设计到制造的全套硅光平台。</p>
+
+<p>总结：美国掌握的是"从材料到芯片"的核心环节。这些环节技术壁垒最高、扩产最难、地缘政治敏感度最高。</p>
+
+<h3>中国：封装和模块端领先，上游受制</h3>
+
+<p>中国的光模块产业链优势集中在中下游：</p>
+
+<p><strong>中际旭创</strong>：800G可插拔光模块全球市占约40%，是当前出货量最大的光模块厂商。但注意——它的核心竞争力是封装效率和客户关系，不是上游芯片。</p>
+
+<p><strong>新易盛</strong>：800G光模块第二大供应商，增长迅速，但在硅光布局上相对滞后。</p>
+
+<p><strong>天孚通信</strong>：光器件龙头，做的是光模块的"精密零部件"。PE高达106倍，说明市场给予了极高的成长预期。</p>
+
+<p><strong>长飞光纤</strong>：保偏光纤扩产，布局硅光路线的关键材料。</p>
+
+<p>总结：中国掌握的是"从器件到模块"的封装和集成环节。这些环节规模大、出货快、客户关系强，但上游的核心芯片和材料依赖进口。</p>
+
+<h3>卡脖子环节</h3>
+
+<div class="red-callout">
+<p><strong>InP衬底</strong>：90%被日美三家垄断（住友电工、AXT、JX金属）</p>
+</div>
+
+<div class="red-callout">
+<p><strong>EML芯片</strong>：Lumentum和Coherent占据主要份额，缺口>30%</p>
+</div>
+
+<p>这两个环节，是中国光模块产业最大的软肋。如果地缘政治风险升级，InP衬底和EML芯片是最容易被"卡"的环节。</p>
+
+<h3>中国的破局方向：硅光路线</h3>
+
+<p>有意思的是，硅光路线反而可能是中国"弯道超车"的机会。</p>
+
+<p>为什么？因为硅光的底层工艺是CMOS-compatible的——它可以用成熟的12英寸半导体代工线来制造。而中国在半导体代工领域虽然先进制程受限，但在成熟制程（28nm及以上）拥有大量产能。</p>
+
+<p>长飞光纤在保偏光纤上的大规模扩产，国内硅光芯片厂商（如赛微电子、中芯国际相关产线）的持续推进，都是在为硅光路线做基础能力建设。</p>
+
+<p><strong>如果硅光真的在2028年成为主流（高盛预测占比62%），那中国在成熟制程上的产能优势，反而可能成为硅光代工的竞争优势。</strong></p>
+
+<p>这是一个非常有意思的"翻转"——传统路线上被卡脖子的中国，在硅光路线上可能拥有结构性优势。</p>
+
+<div class="table-wrap">
+<table>
+<tr><th>维度</th><th>美国优势</th><th>中国优势</th></tr>
+<tr><td>传统可插拔</td><td>芯片设计</td><td>封装效率、规模出货</td></tr>
+<tr><td>EML/InP</td><td>Lumentum、Coherent垄断</td><td>几乎空白</td></tr>
+<tr><td>硅光路线</td><td>英特尔代工能力</td><td>成熟制程产能优势</td></tr>
+<tr><td>CPO</td><td>博通、NVIDIA主导标准</td><td>跟随布局</td></tr>
+<tr><td>卡脖子风险</td><td>可限制InP/EML出口</td><td>可发挥成熟制程产能</td></tr>
+</table>
+</div>
+
+<!-- 结尾 -->
+
+<h2>六、赛道预判：三年向上，但当前要等</h2>
+
+<p>好，最后说我的赛道级判断。还是那句话：<strong>只判赛道，不判个股。</strong></p>
+
+<div class="verdict-box">
+<h3>🔮 小K的赛道预判</h3>
+
+<div class="verdict-item">
+<p><span class="label">需求端（3年维度）：确定向上 ✓</span></p>
+<p>AI算力扩张是确定的，光模块作为数据中心互联的核心器件，需求增长没有悬念。EML缺口>30%、产能锁定到2027-2028年、长协签到2030年——这些都是真需求的证据。</p>
+</div>
+
+<div class="verdict-item">
+<p><span class="label">短期（6个月）：估值消化期 ⚠️</span></p>
+<p>当前PE水平（62x-106x）已经透支了至少2-3年的增长预期。在这个位置，即使业绩符合预期，股价也未必涨。你需要等到估值回到合理区间（30-40x PE），或者业绩超预期到能消化当前估值的程度。</p>
+</div>
+
+<div class="verdict-item">
+<p><span class="label">中期（1-2年）：硅光路线切换带来新一轮机会 🔥</span></p>
+<p>2026H2 NVIDIA启动CPO量产，2028年硅光收入占比预计达62%。技术路线切换期，会诞生新的赢家和输家。真正值得盯的不是"谁做800G最多"，而是"谁先掌握硅光代工能力"。</p>
+</div>
+
+<div class="verdict-item">
+<p><span class="label">资金逻辑：从硬件到应用的迁移已经开始 📊</span></p>
+<p>7月20日IT服务净流入40亿、光模块净流出39亿——这不是偶然。中信证券判断"AI定价重心由投入侧向产出侧迁移"。未来6-12个月，AI投资主线会从"卖铲子"转向"用铲子"。</p>
+</div>
+</div>
+
+<p>最后，我想说一句可能得罪人的话：</p>
+
+<p>现在市场讨论光模块，焦点都放在"谁800G出货最多"、"谁拿了英伟达的订单"。这些问题在2024-2025年是对的，但在2026-2028年会变成错误的问题。</p>
+
+<p>正确的问题应该是：<strong>谁能在硅光代工上建立能力？</strong></p>
+
+<p>因为硅光代工，是光模块的台积电时刻。</p>
+
+<p>当行业从"手艺人生意"变成"工业化生意"，游戏规则就彻底变了。以前你是封装高手，你可以活得很好；以后你是代工巨头，你才能定价整个行业。</p>
+
+<p>台积电在芯片代工领域花了30年建立统治地位。硅光代工领域的"台积电"，可能在未来3-5年内就会浮现。</p>
+
+<p>谁是那个"台积电"？我不知道。但我知道一件事：<strong>它一定不是靠封装效率取胜的公司，而是靠晶圆级制造能力取胜的公司。</strong></p>
+
+<p>盯紧这个方向。</p>
+
+<p>我是小K，我们下篇见。</p>
+
+<!-- 数据来源 -->
+
+<div class="sources">
+<h2>数据来源</h2>
+<ol>
+<li>Lumentum FY26Q3财报及Earnings Call（2025年5月）：营收8.084亿美元，同比+90%；EML缺口>30%；产能锁定至2028年</li>
+<li>Coherent FY26Q3财报（2025年5月）：营收18.1亿美元，同比+21%；长期协议覆盖至2028-2030年</li>
+<li>Applied Optoelectronics（AAOI）Q1 2025财报：营收1.511亿美元，同比+51%；800G月产能近10万只；产能售罄至2027年中期</li>
+<li>高盛研报《中际旭创》（2025年7月）：bull case目标价2581元，共识目标价1245元；硅光收入占比2028年预测62%</li>
+<li>港交所聆讯资料（2025年7月16日）：中际旭创H股通过聆讯，募资规模约70亿美元</li>
+<li>长飞光纤总裁行业发言（2025年7月）：保偏光纤需求将增长10-20倍</li>
+<li>A股市场交易数据（2025年7月17日-20日）：中际旭创成交564亿/跌超12%；新易盛主力净流出42.97亿；融资买入/余额数据；CPO概念净流出39亿；IT服务净流入40.53亿；电力净流入18.94亿；煤炭净流入4.53亿</li>
+<li>中信证券AI行业研报（2025年7月）："AI定价重心正由投入侧（硬件）向产出侧（应用）迁移"</li>
+<li>NVIDIA/Broadcom/Intel CPO量产时间线：综合多家行业媒体及公司公开信息</li>
+<li>InP衬底市场格局：住友电工、AXT（北京通美）、JX金属三家合计占全球约90%份额，综合Yole及行业研报数据</li>
+<li>中际旭创800G全球市占率约40%（可插拔口径）：综合LightCounting及多家券商研报</li>
+</ol>
+</div>
+
+<div class="footer">
+<p>小K · AI产业链独立分析 · 2026年7月</p>
+<p>内容仅作科普，不构成投资建议。所有观点基于公开信息，不代表任何机构立场。</p>
+</div>
+
+</div>
+</body>
+</html>
