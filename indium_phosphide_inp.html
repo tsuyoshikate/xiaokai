@@ -545,68 +545,6 @@
   </ul>
 </div>
 
-<!-- ===== 算术自洽检查 ===== -->
-<div class="math-check">
-  <h3>✔️ 算术自洽检查</h3>
-  <table>
-    <tr>
-      <th>检查项</th>
-      <th>计算逻辑</th>
-      <th>结果</th>
-    </tr>
-    <tr>
-      <td style="text-align:left;">精铟涨幅一致性</td>
-      <td>2800→5550：(+5550-2800)/2800 = 98.2%；但用户数据称+81.2%（以年初为基准，年初可能非2800而是~3060）</td>
-      <td class="check-warn">⚠️ 涨幅口径差异：2800为2025年初价，81.2%为较2026年初涨幅。两者时间基准不同，不矛盾</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">2025年缺口率</td>
-      <td>(210-65)/210 = 69.0%，取中值确认</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">2026年缺口率</td>
-      <td>(280-80)/280 = 71.4%，与~70%一致</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">Lumentum CAGR 85%推算20倍</td>
-      <td>1.85^5 = 18.0倍；1.85^6 = 33.3倍。5年约18倍，6年约33倍，20倍介于5–6年之间</td>
-      <td class="check-pass">✅ 通过（20倍对应约5.3年CAGR 85%）</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">2英寸InP涨幅</td>
-      <td>(2400-800)/800 = 200%，文中写"接近2倍"（即+200%）</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">6英寸InP涨幅</td>
-      <td>(5000-1400)/1400 = 257%，文中写"超过250%"</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">铟需求19吨→419吨</td>
-      <td>419/19 = 22.1倍增长，与InP需求60万→1300万片（21.7倍）一致</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">英伟达投资总额</td>
-      <td>Lumentum 20亿 + Coherent 20亿 = 40亿美元≈130亿人民币（按6.5汇率）</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">Yole市占率加总</td>
-      <td>42%+36%+13% = 91%，与"90%以上"一致</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-    <tr>
-      <td style="text-align:left;">国内五家产能合计</td>
-      <td>云南锗业15万+先导24万 = 39万片（2026年有效产能），占260–300万需求的13%–15%</td>
-      <td class="check-pass">✅ 通过</td>
-    </tr>
-  </table>
-</div>
-
 <!-- ===== 红队审查 ===== -->
 <div class="redteam">
   <h3>🔴 红队审查结果</h3>
