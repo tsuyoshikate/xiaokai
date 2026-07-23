@@ -78,56 +78,11 @@
   .dir-watch { color: #4ecdc4; }
   .verdict-logic { font-size: 14px; color: #999; line-height: 1.7; }
   
-  /* 红队审查 */
-  .redteam { background: #0d0d0d; border: 1px solid #333; border-radius: 10px; padding: 24px; margin: 36px 0; }
-  .redteam h3 { color: #ff8888; font-size: 17px; margin-bottom: 14px; }
-  .redteam ul { list-style: none; padding: 0; }
-  .redteam li { font-size: 14px; color: #888; padding: 6px 0; border-bottom: 1px solid #1a1a1a; line-height: 1.6; }
-  .redteam li:last-child { border-bottom: none; }
-  .redteam .pass { color: #4ecdc4; }
-  .redteam .warn { color: #ffd700; }
   
-  /* 算术自洽 */
-  .math-check { background: #0d0d0d; border: 1px solid #333; border-radius: 10px; padding: 24px; margin: 24px 0; }
-  .math-check h3 { color: #4ecdc4; font-size: 17px; margin-bottom: 14px; }
-  .math-check table { font-size: 13px; }
-  .math-check th { background: #111; color: #4ecdc4; }
-  .math-check td { font-size: 13px; }
-  .check-pass { color: #4ecdc4; font-weight: 700; }
-  .check-warn { color: #ffd700; font-weight: 700; }
   
-  /* 来源汇总 */
-  .sources { background: #0d0d0d; border: 1px solid #222; border-radius: 10px; padding: 24px; margin: 24px 0; }
-  .sources h3 { color: #888; font-size: 15px; margin-bottom: 12px; }
-  .sources ul { list-style: none; padding: 0; }
-  .sources li { font-size: 13px; color: #666; padding: 4px 0; line-height: 1.6; }
   
-  /* 分隔线 */
-  .divider { border: none; border-top: 1px solid #1a1a1a; margin: 40px 0; }
   
-  /* 对比表格 */
-  .vs-table { margin: 20px 0; }
-  .vs-table td:first-child { text-align: left; font-weight: 600; color: #ccc; }
-  
-  /* 响应式 */
-  @media (max-width: 600px) {
-    .blast-grid { grid-template-columns: 1fr; gap: 16px; }
-    .blast-num { font-size: 36px; }
-    .hero h1 { font-size: 26px; }
-    .chain { flex-direction: column; align-items: stretch; }
-    .chain-arrow { text-align: center; transform: rotate(90deg); }
-    table { font-size: 12px; }
-    th, td { padding: 7px 6px; }
-  }
 
-  .back-link {
-    position: fixed; top: 16px; left: 16px; z-index: 9999;
-    background: rgba(12,14,20,0.82); color: var(--accent-green, #76b900);
-    padding: 8px 14px; border-radius: 8px; text-decoration: none;
-    font-size: 14px; border: 1px solid var(--border, rgba(255,255,255,0.08));
-    backdrop-filter: blur(4px);
-  }
-  .back-link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -545,19 +500,7 @@
   </ul>
 </div>
 
-<!-- ===== 红队审查 ===== -->
-<div class="redteam">
-  <h3>🔴 红队审查结果</h3>
-  <ul>
-    <li><span class="pass">✅ 逻辑漏洞检查：</span>核心因果链"算力→光模块→EML→InP→铟"闭合完整，无跳跃推理。硅光=放大器而非替代者的论述有充分依据。</li>
-    <li><span class="pass">✅ 过时数据检查：</span>所有价格数据标注了具体日期（7月22日、7月8日等），无未标注时间的模糊引用。供需缺口数据引用了2026年Yole/Omdia最新报告。</li>
-    <li><span class="warn">⚠️ 谄媚表达检查：</span>"英伟达的20倍令"可能有过度渲染倾向，已补充"20倍是否完全兑现存疑"的反面论述。对国内企业的评价保留了"杯水车薪""从0到1""充满不确定性"等冷静判断。</li>
-    <li><span class="pass">✅ 数据冲突处理：</span>精铟价格存在多口径（5550/5600/5920元/kg），因统计时点和来源不同（上海有色网/北方有色网/91金属网），已在文中注明"7月22日均价5550元/kg"作为基准。</li>
-    <li><span class="warn">⚠️ 供给缺口预测风险：</span>2027–2030年产能数据为行业测算值，实际扩产进度可能受设备交付（MOCVD交期12–18月）、良率爬坡、客户认证等不确定因素影响。缺口收窄速度可能慢于预期。</li>
-    <li><span class="pass">✅ 替代方案公平性：</span>对硅基III-V异质集成、量子点激光器等技术替代路线未简单否定，给出"5到10年窗口期"的合理时间框架。</li>
-    <li><span class="pass">✅ 出口管制双面性：</span>明确指出过度收紧铟出口可能加速海外替代路线发展，避免了单向乐观叙事。</li>
-    <li><span class="warn">⚠️ 国内企业数据来源：</span>云南锗业信息来自投资者纪要（公开披露），先导微电子产能数据来自公开备案信息，但"全球唯一全链条闭环"的判断缺乏第三方独立验证，已标注为"企业自述"范畴。</li>
-  </ul>
+
 </div>
 
 </div>
