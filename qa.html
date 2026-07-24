@@ -4,97 +4,191 @@
 
 <head>
 
+
+
     <meta charset="UTF-8">
+
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>行业问答 · 小K爱研究 | AI产业链独立分析师</title><!-- 小K | 爱研究 · 只给你看真实数据，不灌鸡汤</title>
+
+
+    <title>行业问答 · 小K爱研究 | AI产业链独立分析师</title>
+
+
 
     <meta name="description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。数据可溯源，案例有出处。">
 
+
+
     <meta name="keywords" content="AI产业链,中美AI对比,AI数据分析,AI研算,DeepSeek,HBM,数据中心,GPU,算力">
+
+
 
     <meta name="google-site-verification" content="9o_Rcc87lPq64b3bhwFf3dH9IW-0JF6jNiTooxFy3xQ">
 
+
+
     <meta name="msvalidate.01" content="111C8816F76DA0DB4369C7B74868B75F">
+
+
 
     <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/">
 
+
+
     <meta property="og:type" content="website">
+
+
 
     <meta property="og:title" content="小K | 爱研究 · 只给你看真实数据，不灌鸡汤">
 
+
+
     <meta property="og:description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。">
+
+
 
     <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/">
 
+
+
     <meta property="og:site_name" content="小K爱研究">
+
+
 
     <meta property="og:locale" content="zh_CN">
 
+
+
     <script type="application/ld+json">
+
+
 
     {
 
+
+
       "@context": "https://schema.org",
+
+
 
       "@type": "WebSite",
 
+
+
       "name": "小K爱研究",
+
+
 
       "description": "AI产业链逐层数据拆解 · 中美12层对比框架 · 数据可溯源",
 
+
+
       "author": {"@type": "Person", "name": "小K"},
+
+
 
       "inLanguage": "zh-CN"
 
+
+
     }
+
+
 
     </script>
 
+
+
     <style>
+
+
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+
+
         :root {
+
+
 
             --bg-primary: #0a0a0a; --bg-secondary: #111; --bg-card: #1a1a1a;
 
+
+
             --text-primary: #e8e8e8; --text-secondary: #999; --text-muted: #666;
+
+
 
             --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #222;
 
+
+
         }
+
+
 
         html { scroll-behavior: smooth; }
 
+
+
         body {
+
+
 
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
 
+
+
             background: var(--bg-primary); color: var(--text-primary);
+
+
 
             line-height: 1.7; -webkit-font-smoothing: antialiased;
 
+
+
         }
+
+
 
         nav {
 
+
+
             position: fixed; top: 0; width: 100%; z-index: 100;
+
+
 
             background: rgba(10,10,10,0.85); backdrop-filter: blur(20px);
 
+
+
             border-bottom: 1px solid var(--border);
+
+
 
         }
 
+
+
         .nav-inner { max-width: 900px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+
+
 
         .nav-logo { font-weight: 700; font-size: 16px; color: var(--accent); text-decoration: none; }
 
+
+
         .nav-links { display: flex; gap: 24px; list-style: none; }
 
+
+
         .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; transition: color .3s; }
+
+
 
         .nav-links a:hover { color: var(--text-primary); }
 
@@ -102,15 +196,27 @@
 
         #hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 60px; }
 
+
+
         .hero-content { max-width: 600px; }
+
+
 
         .hero-tag { display: inline-block; padding: 5px 14px; border: 1px solid var(--accent); border-radius: 20px; font-size: 12px; color: var(--accent); margin-bottom: 24px; }
 
+
+
         .hero-title { font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: var(--text-primary); }
+
+
 
         .hero-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; }
 
+
+
         .btn-primary { display: inline-block; padding: 12px 28px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+
+
 
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(74,158,255,0.25); }
 
@@ -118,11 +224,19 @@
 
         section { padding: 80px 24px; }
 
+
+
         .section-inner { max-width: 900px; margin: 0 auto; }
+
+
 
         .section-label { font-size: 12px; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; }
 
+
+
         .section-title { font-size: clamp(22px, 3vw, 30px); font-weight: 700; margin-bottom: 8px; }
+
+
 
         .section-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 36px; }
 
@@ -130,7 +244,11 @@
 
         .cat-section { margin-bottom: 48px; }
 
+
+
         .cat-title { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 4px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+
 
         .cat-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
 
@@ -138,25 +256,47 @@
 
         .articles-grid { display: grid; gap: 16px; }
 
+
+
         .article-card {
+
+
 
             background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
 
+
+
             padding: 24px; transition: transform .25s, border-color .25s, box-shadow .25s;
+
+
 
             text-decoration: none; color: inherit; display: block;
 
+
+
         }
+
+
 
         .article-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
 
+
+
         .article-badge { display: inline-block; padding: 3px 10px; background: rgba(74,158,255,0.12); color: var(--accent); border-radius: 4px; font-size: 11px; font-weight: 500; margin-bottom: 10px; }
+
+
 
         .article-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; color: var(--text-primary); }
 
+
+
         .article-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
 
+
+
         .article-meta { display: flex; gap: 14px; font-size: 12px; color: var(--text-muted); }
+
+
 
         .article-arrow { font-size: 12px; color: var(--accent); margin-top: 10px; font-weight: 500; }
 
@@ -164,7 +304,11 @@
 
         #about { background: var(--bg-secondary); }
 
+
+
         .about-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 14px; max-width: 600px; }
+
+
 
         .about-text strong { color: var(--text-primary); }
 
@@ -172,227 +316,487 @@
 
         footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); }
 
+
+
         footer p { font-size: 12px; color: var(--text-muted); }
 
 
 
         @media (max-width: 768px) {
 
+
+
             .nav-links { display: none; }
+
+
 
             .hero-subtitle { font-size: 14px; }
 
+
+
             section { padding: 56px 16px; }
+
+
 
             .article-card { padding: 20px; }
 
+
+
         }
 
+
+
     </style>
-  .back-link {
-    position: fixed; top: 16px; left: 16px; z-index: 9999;
-    background: rgba(12,14,20,0.82); color: var(--accent-green, #76b900);
-    padding: 8px 14px; border-radius: 8px; text-decoration: none;
-    font-size: 14px; border: 1px solid var(--border, rgba(255,255,255,0.08));
-    backdrop-filter: blur(4px);
-  }
-  .back-link:hover { text-decoration: underline; }
+
+
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
+
+
+
+</head>
+
 <body>
 
-<a href="index.html" class="back-link">← 返回首页</a>
+<nav>
 
 
-<div class="articles-container">
-    <span class="header-tag">行业问答</span>
-    <h1 class="page-title">行业问答</h1>
-    <p class="page-subtitle">每一个问题背后，都藏着一条产业链的真相</p>
 
-        <div class="category-section">
+    <div class="nav-inner">
+
+
+
+        <a href="index.html" class="nav-logo">小K爱研究</a>
+
+
+
+        <ul class="nav-links">
+
+
+
+            <li><a href="articles.html">文章</a></li>
+
+
+
+            <li><a href="#about">关于</a></li>
+
+
+
+        <li><a href="qa.html">行业问答</a></li></ul>
+
+
+
+    </div>
+
+
+
+</nav>
+
+<section id="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">真实数据 · 交叉验证 · 不灌鸡汤</span>
+
+        <h1 class="hero-title">行业问答</h1>
+
+        <p class="hero-subtitle">读者最常问的「为什么」与「是不是」——把每一个反直觉问题拆到底，用数据说话。</p>
+
+        <a href="index.html" class="btn-primary">← 返回首页</a>
+
+    </div>
+
+</section>
+
+
+
+<section id="articles">
+
+    <div class="section-inner">
+
+        <div class="section-label">// 行业问答</div>
+
+        <h2 class="section-title">读者提问，逐层拆解</h2>
+
+        <p class="section-desc">以下文章标题本身就是问题——每一个都从一个真疑问出发，用产业链数据给答案。</p>
+
+        <!-- 分类: ⚡ AI算力基础设施 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">⚡ AI算力基础设施</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">从电力、散热到数据中心选址——AI算力的物理底座</p>
+
             <div class="articles-grid">
-                <a href="optical_module_2027.html" class="article-card">
+
+<a href="optical_module_2027.html" class="article-card">
+
+
 
                     <span class="article-badge">AI算力 · 光模块</span>
 
+
+
                     <h4 class="article-title">产能卖到2027年——光模块是真需求还是真泡沫？</h4>
+
+
 
                     <p class="article-desc">需求是真的，但定价已跑在需求前面。从需求侧、估值侧、资金流向、技术路线、中美博弈五维拆解光模块赛道。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研究</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="category-section">
+        <!-- 分类: 💾 AI芯片与资本市场 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">💾 AI芯片与资本市场</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">算力产业链的钱流追踪：谁在赚钱，谁在被卡脖子</p>
+
             <div class="articles-grid">
-                <a href="article-hynix-adr-cycle.html" class="article-card">
+
+<a href="article-hynix-adr-cycle.html" class="article-card">
+
+
 
                     <span class="article-badge">存储周期 · 资本市场</span>
 
+
+
                     <h4 class="article-title">294亿美金：SK海力士的里程碑，还是存储周期的墓碑？</h4>
+
+
 
                     <p class="article-desc">SK海力士ADR募资294亿美金追平沙特阿美，史上最大ADR。HBM占全球52%出货量，单季利润率72%超英伟达。散户杠杆、PE陷阱、三极格局全拆解。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-06-28</span><span>📊 10+ 数据源</span><span>🖼️ 2 张图表</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
-                <a href="article-tgv-glass-substrate.html" class="article-card">
+
+
+<a href="article-tgv-glass-substrate.html" class="article-card">
+
+
 
                     <span class="article-badge">封装材料 · 赛道深研</span>
 
+
+
                     <h4 class="article-title">TGV玻璃基板：AI芯片封装为什么必须从硅和有机物转向玻璃？</h4>
+
+
 
                     <p class="article-desc">CoWoS-L翘曲失控、ABF载板涨价三成、Rubin Ultra被迫退回双die——玻璃基板是解决AI封装灾难的唯一可量产路径。2026商业化元年，全赛道深度拆解。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07-05</span><span>📊 30+ 数据源</span><span>🖼️ 5 张图表</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="category-section">
+        <!-- 分类: 🧠 AI大模型与应用 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">🧠 AI大模型与应用</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">大模型落地与AI应用：机会、护城河与PMF</p>
+
             <div class="articles-grid">
-                <a href="ai_startup_2026.html" class="article-card">
+
+<a href="ai_startup_2026.html" class="article-card">
+
+
 
                     <span class="article-badge">AI创业 · 2026机会 · 一人公司</span>
 
+
+
                     <h4 class="article-title">2026年AI创业，还有哪些真正的机会？</h4>
+
+
 
                     <p class="article-desc">通用AI工具已成红海，大厂碾压一切；垂直场景和 AI Agent 才是个人创业者真正的护城河。OPC（一人公司）是当前最优解——用最轻的资产，吃最确定的赛道。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07-23</span><span>📊 信通院 / 36氪 / 公开报道</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
-                <a href="ai_app_pmf.html" class="article-card">
+
+
+<a href="ai_app_pmf.html" class="article-card">
+
+
 
                     <span class="article-badge">AI应用 · PMF · 成本结构</span>
 
+
+
                     <h4 class="article-title">为什么90%的AI应用找不到PMF？从产业链成本结构拆起</h4>
+
+
 
                     <p class="article-desc">不是技术不行，是产业链成本结构决定了大多数AI应用的单位经济学根本跑不通。从上游成本层、中游定价权陷阱到下游价值层，拆解这个"不可能三角"。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07-24</span><span>📊 6 章节深度</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="category-section">
+        <!-- 分类: 📢 AI营销 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">📢 AI营销</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">AI如何重塑营销：真相、乱象与正确姿势</p>
+
             <div class="articles-grid">
-                <a href="personal_ip_ai_monetization.html" class="article-card">
+
+<a href="personal_ip_ai_monetization.html" class="article-card">
+
+
 
                     <span class="article-badge">蒸馏自己 · 中美对比 · x402</span>
 
+
+
                     <h4 class="article-title">我打算在中国和美国分别"蒸馏"一次自己，会有什么不同？</h4>
+
+
 
                     <p class="article-desc">美国走开放协议路线（x402/MCP/ERC-8004），Agent直接付USDC；中国走平台闭环路线（公众号+知识库+AI客服），用户在APP内代付。两条路底层逻辑一样：结构化数据→Agent调用→调用方付费。创作者要做的不是等路修好，而是边走边看。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07-19</span><span>📊 Coinbase/Cloudflare/Anthropic</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
-                <a href="article-ai-marketing-truth.html" class="article-card">
+
+
+<a href="article-ai-marketing-truth.html" class="article-card">
+
+
 
                     <span class="article-badge">AI营销 · 三层模型</span>
 
+
+
                     <h4 class="article-title">AI营销真相：1.87万亿的市场里，聪明人都在怎么玩？</h4>
+
+
 
                     <p class="article-desc">AI营销分三层：第一层AI赋能传统营销ROI可算，第二层GEO原生渠道需新指标，第三层AI效率工具算人效。搞混三层是ROI矛盾的根源。</p>
 
+
+
                     <div class="article-meta"><span>📊 数据研算</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="category-section">
+        <!-- 分类: 🌍 跨界观察 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">🌍 跨界观察</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">AI向外溢出：医药、制造、科研的链式反应</p>
+
             <div class="articles-grid">
-                <a href="article-ai-pharma.html" class="article-card">
+
+<a href="article-ai-pharma.html" class="article-card">
+
+
 
                     <span class="article-badge">AI制药 · 深度研究</span>
 
+
+
                     <h4 class="article-title">AI制药：哪些是真水平，哪些是讲故事？</h4>
+
+
 
                     <p class="article-desc">AI设计分子、预测蛋白结构的新闻满天飞，但真正进临床、卖出来的有几家？拆解AI制药真实管线进度与资本叙事之间的落差。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研报</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="category-section">
+        <!-- 分类: 🤖 人形机器人 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">🤖 人形机器人</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">从大脑到触觉——具身智能的硬仗</p>
+
             <div class="articles-grid">
-                <a href="article-trex-tactile.html" class="article-card">
+
+<a href="article-trex-tactile.html" class="article-card">
+
+
 
                     <span class="article-badge">具身智能 · 触觉感知</span>
 
+
+
                     <h4 class="article-title">为什么机器人触觉“加了反而更差”？一篇arXiv论文打脸整个行业</h4>
+
+
 
                     <p class="article-desc">斯坦福×英伟达等26位作者把触觉token注入π0.5，成功率从17%掉到6%。问题不在数据，在频率错配——T-Rex用多专家架构扳回65%。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 论文解读</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
 
-        <div class="category-section">
+        <!-- 分类: ⚖️ AI产业事件 -->
+
+        <div class="cat-section">
+
             <h3 class="cat-title">⚖️ AI产业事件</h3>
-            <p class="cat-desc">疑问驱动的研究——答案在数据里</p>
+
+            <p class="cat-desc">正在发生的关键博弈与路线之争</p>
+
             <div class="articles-grid">
-                <a href="article-vla-wam-debate.html" class="article-card">
+
+<a href="article-vla-wam-debate.html" class="article-card">
+
+
 
                     <span class="article-badge">具身智能 · 路线之争</span>
 
+
+
                     <h4 class="article-title">机器人大脑路线之争：VLA已死，还是融合当立？</h4>
+
+
 
                     <p class="article-desc">一边喊“VLA已死”，一边50亿押注“类脑VLA”。Jim Fan的WAM与智平方的融合派，两篇对比论文正在画出清晰的分工边界。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研报</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
             </div>
+
         </div>
+
+
     </div>
+
+</section>
+
+
+
 <footer>
+
+
 
     <p>© 2026 小K爱研究 · 数据可溯源，案例有出处</p>
 
+
+
 </footer>
-
-
 
 </body>
 
