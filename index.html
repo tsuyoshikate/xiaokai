@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小K | 爱研究 · 只给你看真实数据，不灌鸡汤</title>
+    <title>小K爱研究 · AI产业链逐层数据拆解</title>
     <meta name="description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。数据可溯源，案例有出处。">
     <meta name="keywords" content="AI产业链,中美AI对比,AI数据分析,AI研算,DeepSeek,HBM,数据中心,GPU,算力">
     <meta name="google-site-verification" content="9o_Rcc87lPq64b3bhwFf3dH9IW-0JF6jNiTooxFy3xQ">
     <meta name="msvalidate.01" content="111C8816F76DA0DB4369C7B74868B75F">
-    <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/">
+    <link rel="canonical" href="https://xiaokaiyanjiu.cn/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="小K | 爱研究 · 只给你看真实数据，不灌鸡汤">
+    <meta property="og:title" content="小K爱研究 · AI产业链逐层数据拆解">
     <meta property="og:description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。">
-    <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/">
+    <meta property="og:url" content="https://xiaokaiyanjiu.cn/">
     <meta property="og:site_name" content="小K爱研究">
     <meta property="og:locale" content="zh_CN">
+    <link rel="icon" href="favicon.ico">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,935 +23,677 @@
       "name": "小K爱研究",
       "description": "AI产业链逐层数据拆解 · 中美12层对比框架 · 数据可溯源",
       "author": {"@type": "Person", "name": "小K"},
-      "inLanguage": "zh-CN"
+      "inLanguage": "zh-CN",
+      "url": "https://xiaokaiyanjiu.cn/"
     }
     </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg-primary: #0a0a0a; --bg-secondary: #111; --bg-card: #1a1a1a;
-            --text-primary: #e8e8e8; --text-secondary: #999; --text-muted: #666;
-            --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #222;
+            --bg-primary: #07070b;
+            --bg-secondary: #0e0e16;
+            --bg-card: rgba(18, 18, 28, 0.6);
+            --text-primary: #f0f0f5;
+            --text-secondary: #9090a8;
+            --text-muted: #555568;
+            --accent: #6c5ce7;
+            --accent-2: #00d2ff;
+            --accent-glow: rgba(108, 92, 231, 0.35);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(108, 92, 231, 0.4);
         }
+
         html { scroll-behavior: smooth; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: var(--bg-primary); color: var(--text-primary);
-            line-height: 1.7; -webkit-font-smoothing: antialiased;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
+
+        /* === Animated Background === */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(108, 92, 231, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(108, 92, 231, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: floatOrb 12s ease-in-out infinite;
+        }
+        .glow-orb:nth-child(1) {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.25), transparent);
+            top: -150px; left: -100px;
+            animation-delay: 0s;
+        }
+        .glow-orb:nth-child(2) {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.15), transparent);
+            bottom: -100px; right: -50px;
+            animation-delay: -4s;
+        }
+        .glow-orb:nth-child(3) {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 157, 0.1), transparent);
+            top: 40%; right: 20%;
+            animation-delay: -8s;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, -30px) scale(1.08); }
+            66% { transform: translate(-30px, 20px) scale(0.95); }
+        }
+
+        /* === Nav === */
         nav {
-            position: fixed; top: 0; width: 100%; z-index: 100;
-            background: rgba(10,10,10,0.85); backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 100;
+            background: rgba(7, 7, 11, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
+            transition: opacity 0.4s, transform 0.4s;
         }
-        .nav-inner { max-width: 900px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 700; font-size: 16px; color: var(--accent); text-decoration: none; }
-        .nav-links { display: flex; gap: 24px; list-style: none; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; transition: color .3s; }
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
         .nav-links a:hover { color: var(--text-primary); }
 
-        #hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 60px; }
-        .hero-content { max-width: 600px; }
-        .hero-tag { display: inline-block; padding: 5px 14px; border: 1px solid var(--accent); border-radius: 20px; font-size: 12px; color: var(--accent); margin-bottom: 24px; }
-        .hero-title { font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: var(--text-primary); }
-        .hero-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; }
-        .btn-primary { display: inline-block; padding: 12px 28px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(74,158,255,0.25); }
-
-        section { padding: 80px 24px; }
-        .section-inner { max-width: 900px; margin: 0 auto; }
-        .section-label { font-size: 12px; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; }
-        .section-title { font-size: clamp(22px, 3vw, 30px); font-weight: 700; margin-bottom: 8px; }
-        .section-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 36px; }
-
-        .cat-section { margin-bottom: 48px; }
-        .cat-title { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 4px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-        .cat-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
-
-        .articles-grid { display: grid; gap: 16px; }
-        .article-card {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
-            padding: 24px; transition: transform .25s, border-color .25s, box-shadow .25s;
-            text-decoration: none; color: inherit; display: block;
+        /* === Hero === */
+        #hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px 60px;
         }
-        .article-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
-        .article-badge { display: inline-block; padding: 3px 10px; background: rgba(74,158,255,0.12); color: var(--accent); border-radius: 4px; font-size: 11px; font-weight: 500; margin-bottom: 10px; }
-        .article-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; color: var(--text-primary); }
-        .article-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
-        .article-meta { display: flex; gap: 14px; font-size: 12px; color: var(--text-muted); }
-        .article-arrow { font-size: 12px; color: var(--accent); margin-top: 10px; font-weight: 500; }
 
-        #about { background: var(--bg-secondary); }
-        .about-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 14px; max-width: 600px; }
-        .about-text strong { color: var(--text-primary); }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.25);
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--accent);
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulseDot 2s ease infinite;
+        }
 
-        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); }
-        footer p { font-size: 12px; color: var(--text-muted); }
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.5); }
+        }
 
-        @media (max-width: 768px) {
+        .hero-title {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.4s;
+            background: linear-gradient(135deg, #f0f0f5 0%, #9090a8 60%, #6c5ce7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+        .hero-tagline strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 12px;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 1.2s;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .scroll-hint:hover { color: var(--accent); }
+        .scroll-hint .mouse {
+            width: 24px; height: 38px;
+            border: 2px solid var(--text-muted);
+            border-radius: 12px;
+            position: relative;
+        }
+        .scroll-hint .mouse::after {
+            content: '';
+            position: absolute;
+            top: 8px; left: 50%;
+            transform: translateX(-50%);
+            width: 4px; height: 8px;
+            background: var(--text-muted);
+            border-radius: 2px;
+            animation: scrollWheel 1.8s ease infinite;
+        }
+        @keyframes scrollWheel {
+            0% { opacity: 0; transform: translateX(-50%) translateY(0); }
+            40% { opacity: 1; }
+            80% { opacity: 0; transform: translateX(-50%) translateY(12px); }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Cards Section === */
+        #explore {
+            position: relative;
+            z-index: 1;
+            padding: 100px 24px 120px;
+        }
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-size: 12px;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .section-title {
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            transition-delay: 0.1s;
+        }
+        .section-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 56px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            transition-delay: 0.2s;
+        }
+        .visible .section-label,
+        .visible .section-title,
+        .visible .section-desc {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                        border-color 0.35s,
+                        box-shadow 0.35s;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .visible .card {
+            animation: cardIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .visible .card:nth-child(1) { animation-delay: 0.1s; }
+        .visible .card:nth-child(2) { animation-delay: 0.25s; }
+        .visible .card:nth-child(3) { animation-delay: 0.4s; }
+        .visible .card:nth-child(4) { animation-delay: 0.55s; }
+        .visible .card:nth-child(5) { animation-delay: 0.7s; }
+
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+        .card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(108, 92, 231, 0.08), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.35s;
+            pointer-events: none;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.12),
+                        0 0 0 1px rgba(108, 92, 231, 0.15);
+        }
+        .card:hover::before,
+        .card:hover::after { opacity: 1; }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            display: block;
+            line-height: 1;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .card-link {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s;
+        }
+        .card:hover .card-link { gap: 10px; }
+
+        .card-number {
+            position: absolute;
+            top: 16px; right: 20px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-muted);
+            opacity: 0.3;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* === Footer === */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        footer p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        /* === Modal === */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            transform: scale(0.9);
+            transition: transform 0.3s;
+        }
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+        .modal-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .modal-box p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        .modal-qr {
+            width: 240px;
+            height: 240px;
+            border-radius: 12px;
+            margin: 0 auto;
+            display: block;
+            background: #fff;
+            padding: 10px;
+        }
+        .modal-close {
+            margin-top: 24px;
+            padding: 10px 32px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .modal-close:hover { opacity: 0.85; }
+
+        /* === Responsive === */
+        @media (max-width: 900px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
             .nav-links { display: none; }
-            .hero-subtitle { font-size: 14px; }
-            section { padding: 56px 16px; }
-            .article-card { padding: 20px; }
+            .cards-grid { grid-template-columns: 1fr; }
+            #explore { padding: 60px 16px 80px; }
+            .card { padding: 28px 22px; }
+            .modal-qr { width: 200px; height: 200px; }
         }
     </style>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
 </head>
 <body>
 
+<!-- Background -->
+<div class="bg-grid"></div>
+<div class="bg-glow">
+    <div class="glow-orb"></div>
+    <div class="glow-orb"></div>
+    <div class="glow-orb"></div>
+</div>
+
+<!-- Nav -->
 <nav>
     <div class="nav-inner">
-        <a href="#hero" class="nav-logo">小K爱研究</a>
+        <a href="index.html" class="nav-logo">小K<span>爱研究</span></a>
         <ul class="nav-links">
-            <li><a href="#articles">文章</a></li>
-            <li><a href="#about">关于</a></li>
+            <li><a href="articles.html">深度文章</a></li>
+            <li><a href="qa.html">行业问答</a></li>
+            <li><a href="#explore">探索</a></li>
         </ul>
     </div>
 </nav>
 
+<!-- Hero -->
 <section id="hero">
-    <div class="hero-content">
-        <span class="hero-tag">真实数据 · 交叉验证 · 不灌鸡汤</span>
-        <h1 class="hero-title">AI产业链<br>逐层数据拆解</h1>
-        <p class="hero-subtitle">
-            中美AI产业12层框架，每层都有硬核数据。<br>
-            每条数字至少两个独立来源交叉验证。<br>
-            查不到的不编不补，写"缺口"。
-        </p>
-        <a href="#articles" class="btn-primary">📄 阅读文章 →</a>
+    <div class="hero-badge">
+        <span class="dot"></span>
+        真实数据 · 交叉验证 · 不灌鸡汤
     </div>
+    <h1 class="hero-title">小K爱研究</h1>
+    <p class="hero-tagline"><strong>小K爱研究</strong> / AI产业链独立分析师</p>
+    <p class="hero-desc">
+        查不到的不编不补，写"缺口"。<br>
+        每篇围绕一个反常识发现展开，用数据说话，用图表佐证。
+    </p>
+    <a href="#explore" class="scroll-hint">
+        <span>SCROLL</span>
+        <div class="mouse"></div>
+    </a>
 </section>
 
-<section id="articles">
+<!-- Explore Cards -->
+<section id="explore">
+    <div class="section-inner" id="explore-content">
+        <div class="section-label">// 探索</div>
+        <h2 class="section-title">选择你要去的地方</h2>
+        <p class="section-desc">深度文章、行业问答、社交媒体、开源项目——五个入口，总有一个你需要的。</p>
 
-    <div class="section-inner">
+        <div class="cards-grid">
+            <!-- Card 1: 深度文章 -->
+            <a href="articles.html" class="card">
+                <span class="card-number">01</span>
+                <span class="card-icon">📄</span>
+                <h3 class="card-title">深度文章</h3>
+                <p class="card-desc">AI产业链逐层拆解，从电力到芯片，从算力到应用，每篇都有硬核数据。</p>
+                <span class="card-link">阅读文章 →</span>
+            </a>
 
-        <div class="section-label">// 文章</div>
+            <!-- Card 2: 行业问答 -->
+            <a href="qa.html" class="card">
+                <span class="card-number">02</span>
+                <span class="card-icon">❓</span>
+                <h3 class="card-title">行业问答</h3>
+                <p class="card-desc">每个问题背后都藏着一条产业链真相。用数据回答AI行业的真问题。</p>
+                <span class="card-link">查看问答 →</span>
+            </a>
 
-        <h2 class="section-title">深度研究 <a href="#about" style="font-size:13px;font-weight:400;color:var(--accent);text-decoration:none;margin-left:12px;vertical-align:middle;">📞 联系小K →</a></h2>
-
-        <p class="section-desc">每篇围绕一个反常识发现展开，用数据说话，用图表佐证。</p>
-
-
-
-        <!-- 分类1: AI算力基础设施 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">⚡ AI算力基础设施</h3>
-
-            <p class="cat-desc">从电力、散热到数据中心选址——AI算力的物理底座</p>
-
-            <div class="articles-grid">
-
-
-
-
-                <a href="optical_module_2027.html" class="article-card">
-
-                    <span class="article-badge">AI算力 · 光模块</span>
-
-                    <h4 class="article-title">产能卖到2027年——光模块是真需求还是真泡沫？</h4>
-
-                    <p class="article-desc">需求是真的，但定价已跑在需求前面。从需求侧、估值侧、资金流向、技术路线、中美博弈五维拆解光模块赛道。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研究</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-
-
-
-                <a href="optical_module_research.html" class="article-card">
-
-                    <span class="article-badge">AI算力 · 光模块</span>
-
-                    <h4 class="article-title">AI算力bottleneck：光模块业绩兑现链深度拆解——从800G到3.2T的技术跃迁与产业链重构</h4>
-
-                    <p class="article-desc">从800G到3.2T三代速率跃迁，拆解光模块如何成为万卡集群的算力瓶颈，以及中际旭创等中国龙头的业绩兑现逻辑。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 高盛/大摩研报</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>                <a href="article-underwater-datacenter.html" class="article-card">
-
-                    <span class="article-badge">基础设施 · 中美对比</span>
-
-                    <h4 class="article-title">微软水下数据中心：技术赢了，账本输了</h4>
-
-                    <p class="article-desc">微软Project Natick故障率仅陆地1/8，PUE 1.07，却宣布终止。中国海兰信已商用落地。全生命周期成本海底低15-20%，但建设贵、维护难——为什么中国能做成？</p>
-
-                    <div class="article-meta"><span>📅 2026-06-28</span><span>📊 8+ 数据源</span><span>🖼️ 2 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-power-bill.html" class="article-card">
-
-                    <span class="article-badge">能源 · 中美对比</span>
-
-                    <h4 class="article-title">AI的电力账单：谁先搞定电，谁就赢了AI</h4>
-
-                    <p class="article-desc">ChatGPT一天85万度电，全球数据中心用电量超德国+意大利。美国造电，中国搬算力，两条路谁走得通？</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-cooling-bill.html" class="article-card">
-
-                    <span class="article-badge">散热 · 数据中心</span>
-
-                    <h4 class="article-title">AI的散热账单：风冷已死，液冷上位</h4>
-
-                    <p class="article-desc">散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。风冷散不掉，水不够用，两条路堵死只剩液冷。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-power-semiconductor.html" class="article-card">
-
-                    <span class="article-badge">供电 · 中美对比</span>
-
-                    <h4 class="article-title">没有它，GPU就是块废铁</h4>
-
-                    <p class="article-desc">英伟达800V架构引爆功率半导体市场，碳化硅成刚需。中国天岳先进衬底份额反超Wolfspeed全球第一，但器件和模块仍落后——赢了面粉，输了面包。</p>
-
-                    <div class="article-meta"><span>📅 2026-06-30</span><span>📊 10+ 数据源</span><span>🖼️ 2 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
+            <!-- Card 3: 抖音 -->
+            <div class="card" onclick="openModal('douyin')">
+                <span class="card-number">03</span>
+                <span class="card-icon">🎵</span>
+                <h3 class="card-title">抖音</h3>
+                <p class="card-desc">扫码关注「小K讲AI+营销」，每天一个AI科技趋势与营销洞察。</p>
+                <span class="card-link">扫码关注 →</span>
             </div>
 
-        </div>
-
-
-
-        <!-- 分类2: AI芯片与资本市场 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">💾 AI芯片与资本市场</h3>
-
-            <p class="cat-desc">GPU、HBM、折旧、融资——算力产业链的钱流追踪</p>
-
-            <div class="articles-grid">
-
-                <a href="nvidia_pricing_power.html" class="article-card">
-
-                    <span class="article-badge">定价权 · 超节点 · 中美博弈</span>
-
-                    <h4 class="article-title">从95%跌到8%：英伟达在中国失去的不是市场，是定价权</h4>
-
-                    <p class="article-desc">2023年英伟达中国AI芯片份额95%，2026年摩根士丹利预测仅8%。真正丢的不是市场，是定价权——当客户从"按卡询价"转向"按Token询价"，昇腾超节点把Token成本打下来，Kimi K3敢定价低40%-90%，英伟达"按卡卖"的估值逻辑正在崩塌。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-19</span><span>📊 摩根士丹利/伯恩斯坦/集邦</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-
-
-                <a href="ai_cost_crisis.html" class="article-card">
-
-                    <span class="article-badge">资本市场 · 能源成本 · 中美博弈</span>
-
-                    <h4 class="article-title">美芯片股一周跌10%跌进熊市，油价一周涨15%暴涨，只因中国AI便宜了40%</h4>
-
-                    <p class="article-desc">费半回撤超20%正式跌入技术性熊市，WTI原油暴涨15.5%。Kimi K3成本比美国同类模型低40%，投资者开始质疑美国科技公司的天量资本开支——两个底座同时裂：芯片和电力。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-18</span><span>📊 高盛/IEA/克普勒</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-hynix-adr-cycle.html" class="article-card">
-
-                    <span class="article-badge">存储周期 · 资本市场</span>
-
-                    <h4 class="article-title">294亿美金：SK海力士的里程碑，还是存储周期的墓碑？</h4>
-
-                    <p class="article-desc">SK海力士ADR募资294亿美金追平沙特阿美，史上最大ADR。HBM占全球52%出货量，单季利润率72%超英伟达。散户杠杆、PE陷阱、三极格局全拆解。</p>
-
-                    <div class="article-meta"><span>📅 2026-06-28</span><span>📊 10+ 数据源</span><span>🖼️ 2 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-storage-bottleneck.html" class="article-card">
-
-                    <span class="article-badge">存储 · HBM</span>
-
-                    <h4 class="article-title">AI军备竞赛的真正瓶颈——从GPU转向存储芯片</h4>
-
-                    <p class="article-desc">HBM占AI芯片BOM成本45%超越GPU核心，美光CEO坦言只能满足50%-67%需求，三巨头控制全球HBM市场——AI胜负手已从算力转向存储。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-gpu-dual-chain.html" class="article-card">
-
-                    <span class="article-badge">算力 · 钱流追踪</span>
-
-                    <h4 class="article-title">AI算力双链路分析：从零件到终端的钱流追踪</h4>
-
-                    <p class="article-desc">B200拆解$6400显存占45%，4层加价英伟达毛利81%，投入1块收回8分——约2.1万亿云积压订单中41%是循环投资。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-gpu-depreciation-cliff.html" class="article-card">
-
-                    <span class="article-badge">金融结构 · 风险</span>
-
-                    <h4 class="article-title">GPU折旧悬崖：资产比债务先死的金融结构</h4>
-
-                    <p class="article-desc">GPU 3年基本归零，但抵押它借的债要30年还完。CoreWeave用2年过时芯片做抵押品借了250亿美元——越算越离谱。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-capex-bubble.html" class="article-card">
-
-                    <span class="article-badge">资本开支 · 泡沫</span>
-
-                    <h4 class="article-title">AI资本开支泡沫</h4>
-
-                    <p class="article-desc">四大云厂商万亿Capex背后，投入产出比正在恶化。泡沫还是基建？数据说话。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-spacex-debt.html" class="article-card">
-
-                    <span class="article-badge">融资 · 债务</span>
-
-                    <h4 class="article-title">千亿现金不够花：SpaceX发债背后的AI资本开支真相</h4>
-
-                    <p class="article-desc">SpaceX账上1008亿现金还借250亿债。算力合同90天可终止，债市一级抢购二级抛售——钱够不够，取决于你信不信AI还能烧多久。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-deepseek-spacex.html" class="article-card">
-
-                    <span class="article-badge">融资对比 · 估值</span>
-
-                    <h4 class="article-title">DeepSeek首轮融资与SpaceX IPO深度对比</h4>
-
-                    <p class="article-desc">DeepSeek 500亿首融 vs SpaceX 750亿史上最大IPO，控制权设计、估值逻辑、风险收益逐一拆解。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-tgv-glass-substrate.html" class="article-card">
-
-                    <span class="article-badge">封装材料 · 赛道深研</span>
-
-                    <h4 class="article-title">TGV玻璃基板：AI芯片封装为什么必须从硅和有机物转向玻璃？</h4>
-
-                    <p class="article-desc">CoWoS-L翘曲失控、ABF载板涨价三成、Rubin Ultra被迫退回双die——玻璃基板是解决AI封装灾难的唯一可量产路径。2026商业化元年，全赛道深度拆解。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-05</span><span>📊 30+ 数据源</span><span>🖼️ 5 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-bubble-china-wins.html" class="article-card">
-
-                    <span class="article-badge">三层楼模型 · 中美博弈</span>
-
-                    <h4 class="article-title">说在美国AI泡沫破裂之前，中国将赢在最后</h4>
-
-                    <p class="article-desc">英伟达份额从90%掉到74%，大客户纷纷自研芯片，Stargate 5000亿拆成双边合同——破的不是AI，是一楼基建的估值泡沫。价值往三楼搬，中国接住了这一棒。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-05</span><span>📊 12+ 数据源</span><span>🖼️ 5 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-openai-chip-collapse.html" class="article-card">
-
-                    <span class="article-badge">自研芯片 · 中美对比</span>
-
-                    <h4 class="article-title">OpenAI造芯片，不是因为英伟达，是因为中国</h4>
-
-                    <p class="article-desc">DeepSeek推理价格6块，Claude是181块，差30倍。美国卡光刻机，中国卡推理成本——各卡各的7寸，谁先追上谁？</p>
-
-                    <div class="article-meta"><span>📅 2026-06-30</span><span>📊 10+ 数据源</span><span>🖼️ 4 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-nvidia-physical-limit.html" class="article-card">
-
-                    <span class="article-badge">英伟达 · 物理极限 · 中美对比</span>
-
-                    <h4 class="article-title">英伟达的物理极限，就是中国的起跑线</h4>
-
-                    <p class="article-desc">78层PCB、CoWoS产能、光模块——英伟达撞上的三堵物理墙，恰恰是中国产业链的起跑线。延期不是技术问题，是物理极限。五大投资问题逐一拆解。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-07</span><span>📊 15+ 数据源</span><span>🖼️ 配图版</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-inp-crisis.html" class="article-card">
-
-                    <span class="article-badge">半导体材料 · 供应链</span>
-
-                    <h4 class="article-title">AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子</h4>
-
-                    <p class="article-desc">精铟半年涨167%，6英寸InP衬底从8000涨到2.8万元/片，全球年产量不到1100吨，铟100%是锌的副产品不能单独开采。拐点在哪？做空可行吗？三类读者各一句话建议。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-09</span><span>📊 10+ 数据源</span><span>🖼️ 配图版</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            
-
-                <a href="nvidia_capital_flow.html" class="article-card">
-
-                    <span class="article-badge">英伟达 · 资金流向 · 融资循环</span>
-
-                    <h4 class="article-title">一张图看懂：英伟达在AI产业链的资金流向</h4>
-
-                    <p class="article-desc">同一笔钱在链条上被算了好几次收入——Big Tech 投入 7250 亿美元，真实 AI 终端收入最多 1500 亿。投资者=客户=供应商三重身份重叠，飞轮转得越快，停下来时的惯性越大。用一张图拆穿这个循环。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-21</span><span>📊 SEC EDGAR / Bloomberg / BIS</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            
-
-                <a href="indium_phosphide_inp.html" class="article-card">
-
-                    <span class="article-badge">磷化铟 · 战略物资 · 英伟达押注</span>
-
-                    <h4 class="article-title">磷化铟：从冷门材料到战略物资，英伟达的20倍豪赌</h4>
-
-                    <p class="article-desc">算力的真正瓶颈不在GPU，在"搬数据"。磷化铟是光互联与EML芯片的命门，供需缺口1:4、价格一年翻倍；英伟达20倍长单豪赌，出口管制让铟成为中国的"反卡脖子"杠杆。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-23</span><span>📊 公开财报 / 行业测算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
+            <!-- Card 3: 微信 -->
+            <div class="card" onclick="openModal('wechat')">
+                <span class="card-number">04</span>
+                <span class="card-icon">💬</span>
+                <h3 class="card-title">微信</h3>
+                <p class="card-desc">扫码添加微信，获取更多深度研究内容与行业交流。</p>
+                <span class="card-link">扫码添加 →</span>
             </div>
 
-        </div>
-
-
-
-        <!-- 分类3: AI大模型与应用 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">🧠 AI大模型与应用</h3>
-
-            <p class="cat-desc">性能、价格、落地——大模型时代的真实账本</p>
-
-            <div class="articles-grid">
-
-                <a href="article-stepfun-terminal.html" class="article-card">
-
-                    <span class="article-badge">AI终端 · 大模型</span>
-
-                    <h4 class="article-title">大模型公司开始造手机了：阶跃星辰的终端之战</h4>
-
-                    <p class="article-desc">100亿美元估值，年营收仅5亿，PS 140倍。阶跃星辰发布全球首款AI智能体手机STEPX Neo，自研Step AOS操作系统，196B端侧大模型，从零做OS让Agent成为系统一等公民。赛道级深度分析。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-13</span><span>📊 25 数据源</span><span>🖼️ 12 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-douban-super-entrance.html" class="article-card">
-
-                    <span class="article-badge">AI超级入口 · 字节跳动</span>
-
-                    <h4 class="article-title">豆包：从AI工具到字节超级入口的进化之路</h4>
-
-                    <p class="article-desc">3.82亿月活断层第一，172.1%增速碾压所有对手。字节用推荐算法+流量分发+资本投入三件套，把豆包从工具推到超级入口。但AGI时代，AI能无限生成内容时，分发的护城河还在吗？</p>
-
-                    <div class="article-meta"><span>📅 2026-07-14</span><span>📊 20+ 数据源</span><span>🖼️ 13 张配图</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-jspace-claude.html" class="article-card">
-
-                    <span class="article-badge">AI可解释性 · Anthropic</span>
-
-                    <h4 class="article-title">Claude的脑子里有个"小剧场"：Anthropic发现了AI的内心独白空间</h4>
-
-                    <p class="article-desc">Anthropic发明Jacobian Lens，第一次系统读到AI内心独白。Claude有个"意识舞台"J-space——只占10%激活方差，却承载高阶推理。五组实验证明它具备可报告、可控制、参与推理、灵活广播、选择性进入五大特征。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-09</span><span>📊 AI安全</span><span>🖼️ 配图版</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-price-revolution.html" class="article-card">
-
-                    <span class="article-badge">大模型 · 中美对比</span>
-
-                    <h4 class="article-title">性能差3%，价格差30倍——中美AI大模型的真实账本</h4>
-
-                    <p class="article-desc">LMSYS竞技场中美旗舰差距仅1.9%，但价格差30倍。DeepSeek ¥6 vs Claude ¥181。李开复：中美AI是两条完全不同的线——闭源追上限 vs 开源拼落地。</p>
-
-                    <div class="article-meta"><span>📅 2026-06-28</span><span>📊 7+ 数据源</span><span>🖼️ 2 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-content-pipeline.html" class="article-card">
-
-                    <span class="article-badge">AI内容 · 质量危机</span>
-
-                    <h4 class="article-title">如何从"帮你赚钱"变成"帮你骗人"</h4>
-
-                    <p class="article-desc">AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——一条没有质检的工业流水线正在运转。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-opc-profit-layer.html" class="article-card">
-
-                    <span class="article-badge">AI创业 · 利润</span>
-
-                    <h4 class="article-title">一人公司：1600万人冲进1%利润层</h4>
-
-                    <p class="article-desc">全国1600万家一人公司冲进AI产业链利润仅1%的应用层。50%月入不到7000元——门槛归零≠利润归你。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-restructure-five-steps.html" class="article-card">
-
-                    <span class="article-badge">行业重构 · 方法论</span>
-
-                    <h4 class="article-title">AI重构行业五步法</h4>
-
-                    <p class="article-desc">Midjourney造医疗扫描仪，不是跨界是重构。五步法拆解AI重构任何行业的底层逻辑：找假设墙、翻译数据问题、算力替代技能、B转C、数据飞轮。</p>
-
-                    <div class="article-meta"><span>📅 2026-06-30</span><span>📊 6+ 数据源</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            
-
-                <a href="ai_startup_2026.html" class="article-card">
-
-                    <span class="article-badge">AI创业 · 2026机会 · 一人公司</span>
-
-                    <h4 class="article-title">2026年AI创业，还有哪些真正的机会？</h4>
-
-                    <p class="article-desc">通用AI工具已成红海，大厂碾压一切；垂直场景和 AI Agent 才是个人创业者真正的护城河。OPC（一人公司）是当前最优解——用最轻的资产，吃最确定的赛道。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-23</span><span>📊 信通院 / 36氪 / 公开报道</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            
-
-                <a href="ai_app_pmf.html" class="article-card">
-
-                    <span class="article-badge">AI应用 · PMF · 成本结构</span>
-
-                    <h4 class="article-title">为什么90%的AI应用找不到PMF？从产业链成本结构拆起</h4>
-
-                    <p class="article-desc">不是技术不行，是产业链成本结构决定了大多数AI应用的单位经济学根本跑不通。从上游成本层、中游定价权陷阱到下游价值层，拆解这个"不可能三角"。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-24</span><span>📊 6 章节深度</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 分类4: AI营销 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">📢 AI营销</h3>
-
-            <p class="cat-desc">三层模型、本土案例、ROI拆解——AI营销的真相</p>
-
-            <div class="articles-grid">
-
-                
-
-                <a href="personal_ip_ai_monetization.html" class="article-card">
-
-                    <span class="article-badge">蒸馏自己 · 中美对比 · x402</span>
-
-                    <h4 class="article-title">我打算在中国和美国分别"蒸馏"一次自己，会有什么不同？</h4>
-
-                    <p class="article-desc">美国走开放协议路线（x402/MCP/ERC-8004），Agent直接付USDC；中国走平台闭环路线（公众号+知识库+AI客服），用户在APP内代付。两条路底层逻辑一样：结构化数据→Agent调用→调用方付费。创作者要做的不是等路修好，而是边走边看。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-19</span><span>📊 Coinbase/Cloudflare/Anthropic</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-marketing-truth.html" class="article-card">
-
-                    <span class="article-badge">AI营销 · 三层模型</span>
-
-                    <h4 class="article-title">AI营销真相：1.87万亿的市场里，聪明人都在怎么玩？</h4>
-
-                    <p class="article-desc">AI营销分三层：第一层AI赋能传统营销ROI可算，第二层GEO原生渠道需新指标，第三层AI效率工具算人效。搞混三层是ROI矛盾的根源。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-marketing-industry.html" class="article-card">
-
-                    <span class="article-badge">AI营销 · 产业链</span>
-
-                    <h4 class="article-title">AI营销产业链全景深度解析</h4>
-
-                    <p class="article-desc">三阶段定位框架+4家A股核心公司深拆（蓝色光标/易点天下/浙文互联/省广集团），营收结构、毛利率、AI产品进度逐一拆解。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-ai-marketing-report.html" class="article-card">
-
-                    <span class="article-badge">AI营销 · 完整报告</span>
-
-                    <h4 class="article-title">AI营销深度分析报告</h4>
-
-                    <p class="article-desc">2025-2026年中国AI营销深度分析：1.87万亿市场规模、7大本土案例拆解（百雀羚/戴森/科沃斯/豪士面包/利欧股份/名创优品/小红书）、AI营销三层模型。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 分类5: 跨界观察 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">🌍 跨界观察</h3>
-
-            <p class="cat-desc">不限于AI，但同样用数据说话</p>
-
-            <div class="articles-grid">
-
-                <a href="article-ai-pharma.html" class="article-card">
-
-                    <span class="article-badge">AI制药 · 深度研究</span>
-
-                    <h4 class="article-title">AI制药：哪些是真水平，哪些是讲故事？</h4>
-
-                    <p class="article-desc">AI设计分子、预测蛋白结构的新闻满天飞，但真正进临床、卖出来的有几家？拆解AI制药真实管线进度与资本叙事之间的落差。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研报</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-china-auto-rise.html" class="article-card">
-
-                    <span class="article-badge">中国制造 · 产业升级</span>
-
-                    <h4 class="article-title">换道碾压：中国汽车如何用33年改写百年格局</h4>
-
-                    <p class="article-desc">从1992年钱学森的建议到2025年全球登顶，33年战略定力、四重机缘叠加、日德美三线失守——比亚迪/奇瑞/吉利/上汽四大路线全拆解。</p>
-
-                    <div class="article-meta"><span>📊 数据研算</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 分类: 空域经济 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">🚀 空域经济 · 物理AI</h3>
-
-            <p class="cat-desc">天网地网两张网——从火箭回收到低空经济的万亿赛道</p>
-
-            <div class="articles-grid">
-
-
-
-                <a href="embodied_ai_research.html" class="article-card">
-
-                    <span class="article-badge">物理AI · 具身智能</span>
-
-                    <h4 class="article-title">具身智能融资与量产双拐点：Physical AI的万亿级产业爆发与中美技术路线深度对比</h4>
-
-                    <p class="article-desc">2026量产元年下，拆解中美具身智能的融资节奏、量产拐点与技术路线差异，看清Physical AI的万亿赛道谁在领跑。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 投融资数据</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>                <a href="article-kongyu-economy.html" class="article-card">
-
-                    <span class="article-badge">空域经济 · 中美对比 · 物理AI</span>
-
-                    <h4 class="article-title">天网·地网：两张网的中国机遇——从长征十号首飞到低空经济的万亿赛道</h4>
-
-                    <p class="article-desc">一枚火箭落地，两张网同时加速。天网是太空基础设施——长征十号6分钟回收、千帆星座1296颗卫星组网；地网是低空经济——12.3万家企业、7000亿市场、eVTOL单座60元。反常识：低空经济中国才是定义者，不是美国。两张网本质是同一套物理AI能力体系的三层迁移。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-11</span><span>📊 13处配图</span><span>🖼️ 11张</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-momenta-physical-ai.html" class="article-card">
-
-                    <span class="article-badge">物理AI · 自动驾驶</span>
-
-                    <h4 class="article-title">Momenta：当"物理AI第一股"开始讲一个关于"城市"的故事</h4>
-
-                    <p class="article-desc">物理AI三站：自动驾驶（地面）→人形机器人（工厂）→低空经济（空中）。Momenta用数据闭环+无图路线实现自动驾驶量产，同时向具身智能和低空飞行器扩展。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-10</span><span>📊 10+ 数据源</span><span>🖼️ 配图版</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- 分类6: 人形机器人 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">🤖 人形机器人</h3>
-
-            <p class="cat-desc">成本拆解、供应链国产化、量产路径——人形机器人的真实账本</p>
-
-            <div class="articles-grid">
-
-                <a href="tactile_sensor_199.html" class="article-card">
-
-                    <span class="article-badge">具身智能 · 触觉传感器</span>
-
-                    <h4 class="article-title">199元的触觉传感器：具身智能的iPhone时刻到了</h4>
-
-                    <p class="article-desc">当六轴力传感器从万元跌破199元，具身智能的供应链扭点、BOM拆解与中美路径全景解析。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研究</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-trex-tactile.html" class="article-card">
-
-                    <span class="article-badge">具身智能 · 触觉感知</span>
-
-                    <h4 class="article-title">为什么机器人触觉“加了反而更差”？一篇arXiv论文打脸整个行业</h4>
-
-                    <p class="article-desc">斯坦福×英伟达等26位作者把触觉token注入π0.5，成功率从17%掉到6%。问题不在数据，在频率错配——T-Rex用多专家架构扳回65%。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 论文解读</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-robot-urkl-fight.html" class="article-card">
-
-                    <span class="article-badge">具身智能 · 产业链 · 中美对比</span>
-
-                    <h4 class="article-title">机器人打了一架，我从中拆出了一条千亿产业链</h4>
-
-                    <p class="article-desc">URKL格斗赛全网曝光5-8亿。擂台是假，压力测试是真——每一拳跑出来的数据都在喂工业级算法。上半年融资345亿、出货量增2.3倍，特斯拉vs中国量产路线对决。格斗是具身智能的F1。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-17</span><span>📊 11+ 数据源</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="article-robot-humanoid-cost-drop.html" class="article-card">
-
-                    <span class="article-badge">人形机器人 · 成本拆解 · 中美对比</span>
-
-                    <h4 class="article-title">人形机器人跌破万元：三年降价95%背后的真相</h4>
-
-                    <p class="article-desc">宇树R1降到2.99万，小布米9998元——三年累计降价95%。核心零部件国产化率75%-90%，灵巧手和丝杠仍是短板。B端2-3年量产，C端至少5年。五大投资问题直接回答。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-07</span><span>📊 20+ 数据源</span><span>🖼️ 5 张图表 + 7 张实拍图</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            </div>
-
-
-
-        <!-- 新分类: AI产业事件 -->
-
-        <div class="cat-section">
-
-            <h3 class="cat-title">⚖️ AI产业事件</h3>
-
-            <p class="cat-desc">AI行业的重大事件深度拆解——诉讼、收购、监管、路线之争。</p>
-
-            <div class="articles-grid">
-
-                <a href="article-vla-wam-debate.html" class="article-card">
-
-                    <span class="article-badge">具身智能 · 路线之争</span>
-
-                    <h4 class="article-title">机器人大脑路线之争：VLA已死，还是融合当立？</h4>
-
-                    <p class="article-desc">一边喊“VLA已死”，一边50亿押注“类脑VLA”。Jim Fan的WAM与智平方的融合派，两篇对比论文正在画出清晰的分工边界。</p>
-
-                    <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研报</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-                <a href="apple-v-openai.html" class="article-card">
-
-                    <span class="article-badge">诉讼 · 商业秘密 · 中美对比</span>
-
-                    <h4 class="article-title">OpenAI vs 苹果：AI时代首场硬件商业秘密大战</h4>
-
-                    <p class="article-desc">苹果41页诉状指控OpenAI系统性盗用硬件机密：Tang Tan面试要求候选人带苹果主板/电池/SiP芯片，Chang Liu离职后不还电脑还炫耀LOL我还能访问内网，400+前苹果员工跳槽，65亿美元收购io Products。xAI案刚被驳回，苹果案指控远超信息层面。</p>
-
-                    <div class="article-meta"><span>📅 2026-07-16</span><span>📊 14 数据源</span><span>🖼️ 9 张图表</span></div>
-
-                    <div class="article-arrow">阅读全文 →</div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-    </div>
-
-</section>
-
-
-
-
-
-<section id="about">
-    <div class="section-inner">
-        <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;">关于小K</h2>
-        <div class="about-text">
-            <p>自媒体创作者，全网多平台分发。专注<strong>AI + 数据收集/研算</strong>方向。</p>
-            <p>所有内容基于<strong>AI产业链12层中美对比框架</strong>，从能源到AI原生经济逐层拆解。</p>
-            <p>数据原则：<strong>交叉验证、利益相关标注、缺口不补</strong>。专业术语必配大白话解释。</p>
-        </div>
-        <div class="qr-section" style="display:flex;gap:32px;margin-top:24px;justify-content:center;flex-wrap:wrap;">
-            <div style="text-align:center;">
-                <img src="douyin-qr.png" alt="抖音二维码" style="width:140px;height:140px;border-radius:12px;border:1px solid var(--border);">
-                <p style="margin-top:8px;font-size:13px;color:var(--text-secondary);">抖音：小K讲AI营销</p>
-            </div>
-            <div style="text-align:center;">
-                <img src="wechat-qr.png" alt="微信二维码" style="width:140px;height:140px;border-radius:12px;border:1px solid var(--border);">
-                <p style="margin-top:8px;font-size:13px;color:var(--text-secondary);">微信：AAM_2026</p>
-            </div>
+            <!-- Card 4: GitHub -->
+            <a href="https://github.com/tsuyoshikate" target="_blank" rel="noopener" class="card">
+                <span class="card-number">05</span>
+                <span class="card-icon">🐙</span>
+                <h3 class="card-title">GitHub</h3>
+                <p class="card-desc">开源项目与代码仓库，数据可视化源码与工具脚本。</p>
+                <span class="card-link">访问 GitHub →</span>
+            </a>
         </div>
     </div>
 </section>
 
+<!-- Footer -->
 <footer>
-    <p>© 2026 小K爱研究 · 数据可溯源，案例有出处</p>
+    <p>&copy; 2026 小K爱研究 · <a href="articles.html">深度文章</a> · 数据可溯源，案例有出处</p>
 </footer>
 
+<!-- QR Modal -->
+<div class="modal-overlay" id="qrModal" onclick="closeModal(event)">
+    <div class="modal-box">
+        <h3 id="modalTitle">扫码关注</h3>
+        <p id="modalDesc">长按或扫描二维码</p>
+        <img class="modal-qr" id="modalQr" src="" alt="二维码">
+        <br>
+        <button class="modal-close" onclick="closeModal(event, true)">关闭</button>
+    </div>
+</div>
+
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    observer.observe(document.getElementById('explore-content'));
+
+    // Nav hide/show on scroll
+    let lastScroll = 0;
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 100) {
+            nav.style.opacity = currentScroll > lastScroll ? '0.6' : '1';
+        } else {
+            nav.style.opacity = '1';
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Modal
+    function openModal(type) {
+        const modal = document.getElementById('qrModal');
+        const title = document.getElementById('modalTitle');
+        const desc = document.getElementById('modalDesc');
+        const qr = document.getElementById('modalQr');
+
+        if (type === 'douyin') {
+            title.textContent = '抖音关注';
+            desc.textContent = '「小K讲AI+营销」· 扫码关注';
+            qr.src = 'douyin-qr.png';
+        } else if (type === 'wechat') {
+            title.textContent = '微信添加';
+            desc.textContent = '扫码添加微信';
+            qr.src = 'wechat-qr.png';
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(event, force) {
+        if (force || event.target === document.getElementById('qrModal')) {
+            const modal = document.getElementById('qrModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // ESC to close modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal(null, true);
+    });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
 </body>
 </html>
