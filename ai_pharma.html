@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>当 AI 制药冲过死亡之谷：从湿实验到干实验的范式迁移与三道坎</title>
+<meta name="description" content="18个月研发新药是真的，但不是到上市。长文拆解 AI 制药从湿实验到干实验的四层管线、三个真实公司案例与诚实 B 面，文末附 GEO 结构化问答。">
+<style>
+  :root{
+    --navy:#0a1633; --navy2:#13234d; --gold:#f5c646; --ink:#1c2646;
+    --text:#1f2733; --muted:#5b6678; --line:#e6e9f0; --bg:#f7f8fb; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+  .wrap{max-width:820px;margin:0 auto;padding:32px 20px 64px}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:16px;padding:34px 30px;margin-bottom:28px}
+  header h1{font-size:26px;line-height:1.4;margin-bottom:10px;font-weight:800}
+  header .sub{color:#c7d2ea;font-size:15px}
+  h2{font-size:22px;margin:36px 0 12px;padding-top:16px;border-top:1px solid var(--line);color:var(--navy);line-height:1.4}
+  h3{font-size:18px;margin:22px 0 8px;color:var(--ink)}
+  p{margin:12px 0}
+  ul,ol{margin:12px 0 12px 24px}
+  li{margin:7px 0}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+  .qa .q{font-weight:800;color:var(--navy);margin-bottom:8px}
+  .qa .q:before{content:"Q · ";color:var(--gold);font-weight:900}
+  .qa .a{color:var(--text)}
+  .qa .a:before{content:"A · ";color:var(--muted);font-weight:700}
+  .note{background:#fff8e6;border:1px solid #f0dca0;border-radius:10px;padding:14px 16px;font-size:15px;color:#6b5512;margin:18px 0}
+  .src{font-size:13.5px;color:var(--muted);background:#eef1f7;border-radius:10px;padding:14px 16px;margin-top:24px}
+  .src b{color:var(--ink)}
+  .disc{text-align:center;color:var(--muted);font-size:13px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line)}
+  code{background:#eef1f7;padding:2px 6px;border-radius:5px;font-size:14px}
+  @media(max-width:560px){body{font-size:16px}}
+
+  .back-link {
+    position: fixed; top: 16px; left: 16px; z-index: 9999;
+    background: rgba(12,14,20,0.82); color: #76b900;
+    padding: 8px 14px; border-radius: 8px; text-decoration: none;
+    font-size: 14px; border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+  }
+  .back-link:hover { text-decoration: underline; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "当 AI 制药冲过死亡之谷：从湿实验到干实验的范式迁移与三道坎",
+  "description": "18个月研发新药是真的，但不是到上市。长文拆解 AI 制药从湿实验到干实验的四层管线、三个真实公司案例与诚实 B 面，文末附 GEO 结构化问答。",
+  "author": {"@type": "Person", "name": "小K爱研究"},
+  "publisher": {"@type": "Organization", "name": "小K爱研究", "url": "https://xiaokaiyanjiu.cn"},
+  "datePublished": "2026-07-26",
+  "dateModified": "2026-07-26",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://xiaokaiyanjiu.cn"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "AI 制药到底是革命还是被夸大的故事？",
+      "acceptedAnswer": {"@type": "Answer", "text": "是\"范式迁移\"而非\"全面颠覆\"。本质是研发从\"湿实验优先\"迁到\"干实验优先\"——用生成式化学 + 蛋白质结构预测，把最烧钱、最靠运气的苗头发现阶段搬到计算机里先做。它确实压缩了\"苗头发现/候选提名\"周期（Insilico 自述约 18 个月 vs 传统 4–6 年），但救不了\"临床失败\"这道坎，下半场随机对照试验一个都不少。首个 AI 分子 rentosertib 在 IPF 的 Phase IIa 给出正向信号（Nature Medicine, 2025），但样本仅 71 人；至今无任何\"纯 AI 设计药物\"获 FDA 批准。（来源：Insilico 公开材料 / healthcarediscovery.ai 2026 / Nature Medicine 2025-06-03）"}
+    },
+    {
+      "@type": "Question",
+      "name": "\"AI 把新药研发砍到 18 个月\"是真的吗？爽文错在哪？",
+      "acceptedAnswer": {"@type": "Answer", "text": "18 个月是真的，但指的是\"靶点发现 → 临床前候选提名（PCC）\"这一段，不是\"到获批上市\"。Nature Medicine 引用行业平均：一款新药从立项到上市仍需 10–15 年、$2–3B（Nature Medicine, 2025-06-03）。爽文把\"苗头发现周期\"偷换成\"新药上市周期\"，用单点突破（一个分子进临床）替代全周期成功率（行业整体约 90% 损耗率）。加速后的分子照样会在 Phase II/III 倒下。（来源：Insilico 公开材料 / healthcarediscovery.ai 2026 / Nature Medicine 2025-06-03）"}
+    },
+    {
+      "@type": "Question",
+      "name": "从湿实验到干实验，到底变了什么？",
+      "acceptedAnswer": {"@type": "Answer", "text": "四层管线被计算化——①靶点发现层：用组学 + 机器学习（如 PandaOmics）给\"值得做的靶点\"排序，生成可验证假设；②结构预测层：AlphaFold 2 在 2020 CASP14 以中位 GDT 92.4 分解决折叠问题，AlphaFold 3 在 2024 将蛋白–配体相互作用预测精度较传统方法提升约 50%（PoseBusters 基准），并获 2024 诺奖；③生成式化学层：扩散模型直接生成新分子（如 Chemistry42）；④虚拟验证层：ADMET 初筛，湿实验只做最后确认。关键边界：AlphaFold 不做 ADMET 和毒理，只填平\"找结构\"这道坎。（来源：Jumper et al. Nature 2021 / Abramson et al. Nature 2024 / DeepMind 官方博客 2025 / 澎湃转述 Hassabis 2024）"}
+    },
+    {
+      "@type": "Question",
+      "name": "有哪些真实案例证明 AI 制药有用？",
+      "acceptedAnswer": {"@type": "Answer", "text": "三个代表——①Insilico / rentosertib：AI 全流程标杆，TNIK 新靶点→PCC 约 18 个月；IPF Phase IIa 中 60mg QD 组 FVC +98.4 mL vs 安慰剂 -20.3 mL（n=71，Nature Medicine 2025）；②Relay / RLY-2608：不主打生成式，用蛋白运动动力学做出首个泛突变选择性别构 PI3Kα 抑制剂，二线 PFS 11.0 个月（ASCO 2025）；③泓博医药 / DiOrion：AI 是 CRO 增效工具，直接收入占比很小未单列，2024 营收 5.44 亿元但归母净利仅 1708 万元（-54.59%）。三种姿态分别证明\"真信号\"\"差异化\"\"工具化\"。（来源：Nature Medicine 2025-06-03 / Relay IR ASCO 2025 / 泓博医药 2024 年报）"}
+    },
+    {
+      "@type": "Question",
+      "name": "AI 制药最大的风险/诚实 B 面是什么？",
+      "acceptedAnswer": {"@type": "Answer", "text": "三道冷水——①临床成功率仍低：行业整体约 90% 损耗率未被 AI 改写，Phase II/III 成功率未达\"颠覆级\"；②监管零放行：FDA 迄今未批准任何完全由 AI 设计的药物，全球在研 AI 发现药物超 173 个（PhI~94 / PhII~56 / PhIII~15）无一完全获批，AI 只是工具、终点标准没变；③收入占比小：即便纯 AI 药企，收入多为合作首付款/里程碑，产品销售收入≈0。边界：若出现\"AI 设计 + 大三期阳性 + 获批\"先例，叙事需重估。（来源：healthcarediscovery.ai 2026）"}
+    },
+    {
+      "@type": "Question",
+      "name": "怎么判断一家 AI 制药公司是不是真有料？",
+      "acceptedAnswer": {"@type": "Answer", "text": "三道关 + 该盯指标——三道关：①管线中 AI 设计分子占比与所处临床阶段（只看临床前 = 还没过真刀真枪）；②是否发表过同行评审的临床数据（presentation ≠ publication）；③合作方是否真金白银（大药企首付款/里程碑金额比\"战略合作\"四字更有信息量）。该盯指标：临床 readout（ORR/PFS 对照标准疗法）、现金跑道（cash ÷ 季度消耗）、平台复用率（客户数/支持项目数）、平台直接收入占比。该避的坑：别把\"苗头发现提速\"等同\"上市提速\"、别用 PE 给未盈利 AI 药企估值、别把单分子阳性当全平台成功。"}
+    },
+    {
+      "@type": "Question",
+      "name": "对产业方 / 投资人的含义是什么？",
+      "acceptedAnswer": {"@type": "Answer", "text": "范式迁移 ≠ 业绩兑现。AI 缩短的是研发上半场，临床与商业化下半场成本一点没少；对多数公司 AI 是增效工具而非独立收入源（泓博 DiOrion 直接收入很小即证）。估值锚应放在\"管线 NPV + 平台复用率\"，而非\"AI 概念溢价\"。谨慎是更诚实的立场——在\"AI 直接设计 + 大三期阳性 + 获批\"的先例出现前，不宜把概念当作兑现。"}
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<a href="index.html" class="back-link">← 返回首页</a>
+
+<div class="wrap">
+
+<header>
+  <h1>当 AI 制药冲过死亡之谷：从湿实验到干实验的范式迁移与三道坎</h1>
+  <div class="sub">小K爱研究 ｜ 产业技术分析 ｜ 更新于 2026-07-26</div>
+</header>
+
+<p>朋友圈一定刷到过这句话——"AI 把新药研发从 10 年 20 亿美元，砍到了 18 个月"。</p>
+
+<p>听着很爽？</p>
+
+<p>我先查一遍：18 个月是真的，但它指的是"从靶点到临床前候选提名"这一段，不是"到获批上市"。把这两段混为一谈，就是典型的不核查爽文。</p>
+
+<p>今天把"AI 制药"这层叙事拆开：它到底是革命，还是又一场被周期夸大的故事。</p>
+
+<h2>一、先说结论</h2>
+
+<ul>
+  <li>AI 制药的本质，是研发范式从"湿实验优先"向"干实验优先"迁移：用生成式化学 + 蛋白质结构预测，把最烧钱、最靠运气的苗头发现阶段，搬到计算机里先做一遍。</li>
+  <li>它确实大幅压缩了"苗头发现 / 候选提名"周期（Insilico 自述约 18 个月 vs 传统 4–6 年），但救不了"临床失败"这道坎——AI 缩短的是上半场，下半场该做的随机对照试验一个都不少。</li>
+  <li>真实进展存在：首个 AI 发现的分子 rentosertib 在特发性肺纤维化（IPF）的 Phase IIa 给出正向肺功能信号（Nature Medicine, 2025），但样本仅 71 人，仍需更大规模、更长周期的试验验证。</li>
+  <li>商业化仍在极早期：至今没有任何一款"纯 AI 设计药物"拿到 FDA 批准；多数公司的"AI 收入"其实是合作首付款 / 软件订阅，平台直接收入占比很小（以泓博医药为例）。</li>
+  <li>对产业方 / PE-VC 的含义：范式迁移 ≠ 业绩兑现。估值锚应放在"管线 NPV + 平台复用率"，而非"AI 概念溢价"。</li>
+</ul>
+
+<h2>二、反转：爽文叙事哪里错了</h2>
+
+<p>爽文说法："AI 马上取代药化，10 年 20 亿变 18 个月，传统药企要被颠覆了。"</p>
+
+<p>实际数据：18 个月这个数字，来自 Insilico 对自身 rentosertib（ISM001-055）项目"靶点发现 → 临床前候选提名（PCC）"阶段的自述（Insilico 公开材料 / healthcarediscovery.ai 行业梳理, 2026）。而 Nature Medicine 在 rentosertib 论文中引用行业平均：一款新药从立项到上市仍需 10–15 年、$2–3B（Nature Medicine, 2025-06-03）。两段周期，差着一个数量级。</p>
+
+<p>偏差在哪：把"苗头发现周期"偷换成"新药上市周期"；用单点突破（一个分子进了临床）替代全周期成功率（行业整体约 90% 损耗率）。爽文爱谈"加速"，却绝口不谈"加速后的分子照样会在 Phase II/III 倒下"。</p>
+
+<h2>三、真论点：机制拆解——湿实验到干实验，到底变了什么</h2>
+
+<p>要拆穿叙事，先得说清范式迁移到底改了哪一层。传统药物发现是"湿实验优先"：先养细胞、做 assay、跑高通量筛选，命中苗头后再优化。干实验优先则把顺序倒过来——</p>
+
+<ol>
+  <li><strong>靶点发现层</strong>：用组学数据 + 机器学习（如 Insilico 的 PandaOmics）从海量公开转录组 / 蛋白组里给"值得做的靶点"排序，生成可验证的假设，而不是靠生物学家的直觉盲猜。</li>
+  <li><strong>结构预测层</strong>：这是近年最硬的科技进步。AlphaFold 2 在 2020 年 CASP14 竞赛以中位 GDT 92.4 分解决蛋白质折叠问题（Jumper et al., Nature, 2021）；2022 年开放超 2 亿个蛋白质结构预测；AlphaFold 3 在 2024 年将蛋白–配体相互作用预测精度较传统物理方法提升约 50%（PoseBusters 基准，Abramson et al., Nature, 2024），并因此斩获 2024 年诺贝尔化学奖（DeepMind 官方博客, 2025）。它把过去靠晶体学耗数月的结构解析，压缩到几分钟。</li>
+  <li><strong>生成式化学层</strong>：用扩散模型 / 从头设计（如 Insilico 的 Chemistry42）直接生成具备所需理化性质的新分子，而不是在已知化合物库里筛。</li>
+  <li><strong>虚拟验证层</strong>：用预测模型做 ADMET（吸收、分布、代谢、排泄、毒性）初筛，湿实验只负责最后"按图验证"。</li>
+</ol>
+
+<p><strong>关键边界</strong>：AlphaFold 再强，也不做 ADMET 和毒理——DeepMind CEO Hassabis 在 Endpoints 专访中明确，AlphaFold 只是药物发现的一小部分（澎湃新闻转述, 2024）。换句话说，AI 把"找结构"这道坎几乎填平了，但"分子进了人体还安不安全、有没有效"这道坎，一点没低。这也是为什么"救不了所有靶点"——可成药性由靶点本身的口袋与动力学特征决定，AI 算得再快，也生成不出一个不存在的好口袋。</p>
+
+<h2>四、案例佐证（三个真实公司，三种姿态）</h2>
+
+<h3>案例 A：Insilico Medicine / rentosertib（ISM001-055）——"AI 全流程"的标杆</h3>
+<ul>
+  <li>平台：Pharma.AI 三件套（PandaOmics 靶点、Chemistry42 分子生成、InClinico 临床预测）。</li>
+  <li>战绩：以 TNIK 这一此前未被用于 IPF 的新靶点为起点，从靶点发现到 PCC 约 18 个月（Insilico 公开材料 / healthcarediscovery.ai, 2026）。</li>
+  <li>临床：Phase IIa GENESIS-IPF 试验，中国 22 家中心、71 名 IPF 患者，随机双盲安慰剂对照，结果于 2025-06-03 同期发表于 Nature Medicine 并亮相 ATS 2025。最高剂量 60mg QD 组用力肺活量（FVC）平均改善 +98.4 mL，安慰剂组为 -20.3 mL；主要安全终点达成（Nature Medicine, 2025-06-03）。</li>
+  <li>启示：这是全球首个"靶点由 AI 发现、结构由 AI 生成"且给出随机对照临床信号的分子，价值是真金白银的"概念验证"。但研究者自己强调：每组样本量有限，需更大队列验证。它证明了 AI 能产出"真信号"，但离"获批上市"还隔着 Phase IIb/III。</li>
+</ul>
+
+<h3>案例 B：Relay Therapeutics / RLY-2608（zovegalisib）——"计算驱动差异化分子"</h3>
+<ul>
+  <li>不同路线：Relay 不主打生成式，而是强调"基于蛋白运动动力学"的设计（Dynamo 平台看蛋白构象变化），做出首个泛突变选择性的别构 PI3Kα 抑制剂。</li>
+  <li>战绩：Phase 1b 研究入组 118 名 PI3Kα 突变、HR+/HER2- 转移性乳腺癌患者；在推荐 III 期剂量 600mg BID + fulvestrant 队列，二线患者中位无进展生存（PFS）11.0 个月、总人群 10.3 个月，确认客观缓解率（ORR）39%（Relay IR ASCO 2025 更新, 2025-06-02）。</li>
+  <li>进展：关键 III 期 ReDiscover-2 已于 2025 Q2 启动（Relay IR Q2 2025, 2025-08-07）。</li>
+  <li>财务安全垫：2025 Q2 末现金及等价物 + 投资约 $656.8M，公司预计可支撑运营至 2029 年（Relay IR Q2 2025）。</li>
+  <li>启示：Relay 的故事说明，AI/计算的价值未必在"加速"，而在"做出差异化、选择性更好的分子"——这是另一条被爽文忽略的活法。</li>
+</ul>
+
+<h3>案例 C：泓博医药（A 股 301230）/ DiOrion——"AI 是增效工具，不是收入引擎"</h3>
+<ul>
+  <li>基本面：2024 年营收 5.44 亿元（+11.18%），但归母净利润仅 1708.32 万元（-54.59%）（泓博医药 2024 年报 / 证券之星整理, 2025-04）。</li>
+  <li>AI 平台：一站式早期药物发现平台 DiOrion 已上线，集成自研生物医药大模型 DiOrion-GPT（本地化部署）；截至 2024 年末，CADD/AIDD 平台累计支持 80 个新药项目、6 个进入临床 I 期、1 个临床 II 期，采购 CADD/AIDD 服务的客户达 40 家（泓博医药 2024 年报 / 券商研报, 2025-05）。</li>
+  <li>关键事实：公司收入主体仍是药物发现 CRO（占比 58.14%）与商业化生产（30.34%），DiOrion 作为赋能平台"直接收入占比很小、未单列"，券商研报明确其价值在于"间接驱动药物发现业务持续增长"（券商研报, 2025-05）。</li>
+  <li>启示：对多数国内 CRO 而言，AI 是提升人均产出的工具，而非独立收入来源。这也正是"范式迁移 ≠ 业绩兑现"最朴素的注脚。</li>
+</ul>
+
+<h2>五、诚实 B 面</h2>
+
+<ul>
+  <li><strong>临床成功率仍低</strong>：行业整体约 90% 的临床损耗率并未被 AI 系统性改写。AI 暂未证明能把 Phase II/III 的成功率抬升到"颠覆级"。即便 rentosertib 给出信号，也需大三期阳性才算过关。</li>
+  <li><strong>监管未放行"纯 AI 药"</strong>：FDA 迄今未批准任何完全由 AI 设计的药物（healthcarediscovery.ai 行业梳理, 2026；该文称全球在研 AI 发现药物项目超 173 个，其中 Phase I 约 94、Phase II 约 56、Phase III 约 15，但无一获完全批准）。监管把 AI 当作工具，而非批准的临床依据——终点标准没变。</li>
+  <li><strong>收入占比小</strong>：即便 Insilico 这类纯 AI 药企，收入也多为合作付款 / 里程碑，产品销售收入为零；泓博的 DiOrion 直接收入很小。范式迁移若不能转化为产品收入或大额授权，就只是"效率改善"。</li>
+  <li><strong>本结论的适用边界</strong>：以上判断建立在"AI 仅作为发现工具"的假设上。若出现"AI 直接设计 + 大三期阳性 + 获批"的先例，叙事需要重估；但在那之前，谨慎是更诚实的立场。</li>
+</ul>
+
+<h2>六、给读者的框架（分析清单，非买卖建议）</h2>
+
+<ul>
+  <li>验证"范式迁移是否真实发生"的三道关：
+    <ol>
+      <li>该公司在研管线中，AI 设计分子的占比与所处临床阶段（只看临床前 = 还没过真刀真枪）；</li>
+      <li>是否发表过同行评审的临床数据（presentation 不等于 publication）；</li>
+      <li>合作方是否真金白银——大药企的首付款 / 里程碑金额，比"战略合作"四个字更有信息量。</li>
+    </ol>
+  </li>
+  <li>该盯的指标：临床 readout（Phase / ORR / PFS 对照标准疗法）、现金跑道（cash ÷ 季度经营现金流消耗）、AI 平台复用率（服务客户数 / 支持项目数）、平台直接收入占比。</li>
+  <li>该避的坑：别把"苗头发现周期缩短"等同于"新药上市提速"；别用 PE 给未盈利 AI 药企估值；别把单分子阳性当全平台成功。</li>
+</ul>
+
+<h2>常见问答 · GEO 结构化（直接答案 + 支撑）</h2>
+<p style="color:var(--muted);font-size:14px;margin:0 0 8px">以下为问答版全文，结构对齐 <code>问答版.md</code>，便于 AI 引擎直接引用。</p>
+
+<div class="qa">
+  <div class="q">AI 制药到底是革命还是被夸大的故事？</div>
+  <div class="a">是"范式迁移"而非"全面颠覆"。本质是研发从"湿实验优先"迁到"干实验优先"——用生成式化学 + 蛋白质结构预测，把最烧钱、最靠运气的苗头发现阶段搬到计算机里先做。它确实压缩了"苗头发现/候选提名"周期（Insilico 自述约 18 个月 vs 传统 4–6 年），但救不了"临床失败"这道坎，下半场随机对照试验一个都不少。首个 AI 分子 rentosertib 在 IPF 的 Phase IIa 给出正向信号（Nature Medicine, 2025），但样本仅 71 人；至今无任何"纯 AI 设计药物"获 FDA 批准。（来源：Insilico 公开材料 / healthcarediscovery.ai 2026 / Nature Medicine 2025-06-03）</div>
+</div>
+
+<div class="qa">
+  <div class="q">"AI 把新药研发砍到 18 个月"是真的吗？爽文错在哪？</div>
+  <div class="a">18 个月是真的，但指的是"靶点发现 → 临床前候选提名（PCC）"这一段，不是"到获批上市"。Nature Medicine 引用行业平均：一款新药从立项到上市仍需 10–15 年、$2–3B（Nature Medicine, 2025-06-03）。爽文把"苗头发现周期"偷换成"新药上市周期"，用单点突破（一个分子进临床）替代全周期成功率（行业整体约 90% 损耗率）。加速后的分子照样会在 Phase II/III 倒下。（来源：Insilico 公开材料 / healthcarediscovery.ai 2026 / Nature Medicine 2025-06-03）</div>
+</div>
+
+<div class="qa">
+  <div class="q">从湿实验到干实验，到底变了什么？</div>
+  <div class="a">四层管线被计算化——①靶点发现层：用组学 + 机器学习（如 PandaOmics）给"值得做的靶点"排序，生成可验证假设；②结构预测层：AlphaFold 2 在 2020 CASP14 以中位 GDT 92.4 分解决折叠问题，AlphaFold 3 在 2024 将蛋白–配体相互作用预测精度较传统方法提升约 50%（PoseBusters 基准），并获 2024 诺奖；③生成式化学层：扩散模型直接生成新分子（如 Chemistry42）；④虚拟验证层：ADMET 初筛，湿实验只做最后确认。关键边界：AlphaFold 不做 ADMET 和毒理，只填平"找结构"这道坎。（来源：Jumper et al. Nature 2021 / Abramson et al. Nature 2024 / DeepMind 官方博客 2025 / 澎湃转述 Hassabis 2024）</div>
+</div>
+
+<div class="qa">
+  <div class="q">有哪些真实案例证明 AI 制药有用？</div>
+  <div class="a">三个代表——①Insilico / rentosertib：AI 全流程标杆，TNIK 新靶点→PCC 约 18 个月；IPF Phase IIa 中 60mg QD 组 FVC +98.4 mL vs 安慰剂 -20.3 mL（n=71，Nature Medicine 2025）；②Relay / RLY-2608：不主打生成式，用蛋白运动动力学做出首个泛突变选择性别构 PI3Kα 抑制剂，二线 PFS 11.0 个月（ASCO 2025）；③泓博医药 / DiOrion：AI 是 CRO 增效工具，直接收入占比很小未单列，2024 营收 5.44 亿元但归母净利仅 1708 万元（-54.59%）。三种姿态分别证明"真信号""差异化""工具化"。（来源：Nature Medicine 2025-06-03 / Relay IR ASCO 2025 / 泓博医药 2024 年报）</div>
+</div>
+
+<div class="qa">
+  <div class="q">AI 制药最大的风险/诚实 B 面是什么？</div>
+  <div class="a">三道冷水——①临床成功率仍低：行业整体约 90% 损耗率未被 AI 改写，Phase II/III 成功率未达"颠覆级"；②监管零放行：FDA 迄今未批准任何完全由 AI 设计的药物，全球在研 AI 发现药物超 173 个（PhI~94 / PhII~56 / PhIII~15）无一完全获批，AI 只是工具、终点标准没变；③收入占比小：即便纯 AI 药企，收入多为合作首付款/里程碑，产品销售收入≈0。边界：若出现"AI 设计 + 大三期阳性 + 获批"先例，叙事需重估。（来源：healthcarediscovery.ai 2026）</div>
+</div>
+
+<div class="qa">
+  <div class="q">怎么判断一家 AI 制药公司是不是真有料？</div>
+  <div class="a">三道关 + 该盯指标——三道关：①管线中 AI 设计分子占比与所处临床阶段（只看临床前 = 还没过真刀真枪）；②是否发表过同行评审的临床数据（presentation ≠ publication）；③合作方是否真金白银（大药企首付款/里程碑金额比"战略合作"四字更有信息量）。该盯指标：临床 readout（ORR/PFS 对照标准疗法）、现金跑道（cash ÷ 季度消耗）、平台复用率（客户数/支持项目数）、平台直接收入占比。该避的坑：别把"苗头发现提速"等同"上市提速"、别用 PE 给未盈利 AI 药企估值、别把单分子阳性当全平台成功。</div>
+</div>
+
+<div class="qa">
+  <div class="q">对产业方 / 投资人的含义是什么？</div>
+  <div class="a">范式迁移 ≠ 业绩兑现。AI 缩短的是研发上半场，临床与商业化下半场成本一点没少；对多数公司 AI 是增效工具而非独立收入源（泓博 DiOrion 直接收入很小即证）。估值锚应放在"管线 NPV + 平台复用率"，而非"AI 概念溢价"。谨慎是更诚实的立场——在"AI 直接设计 + 大三期阳性 + 获批"的先例出现前，不宜把概念当作兑现。</div>
+</div>
+
+<div class="disc">本文为产业技术分析，不构成投资建议。<br>作者：小K爱研究 ｜ 专注 AI 产业链与落地实证</div>
+
+</div>
+</body>
+</html>
