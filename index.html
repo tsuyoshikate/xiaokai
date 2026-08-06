@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小K爱研究 · AI产业链逐层数据拆解</title>
-    <meta name="description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。数据可溯源，案例有出处。">
+    <meta name="description" content="小K爱研究：AI产业研究 · AI Agent 系统 · AI 投资成长教练。中美12层对比框架，每条数字至少两个独立来源交叉验证。数据可溯源，案例有出处。">
     <meta name="keywords" content="AI产业链,中美AI对比,AI数据分析,AI研算,DeepSeek,HBM,数据中心,GPU,算力">
     <meta name="google-site-verification" content="9o_Rcc87lPq64b3bhwFf3dH9IW-0JF6jNiTooxFy3xQ">
     <meta name="msvalidate.01" content="111C8816F76DA0DB4369C7B74868B75F">
     <link rel="canonical" href="https://xiaokaiyanjiu.cn/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="小K爱研究 · AI产业链逐层数据拆解">
-    <meta property="og:description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。">
+    <meta property="og:description" content="小K爱研究：AI产业研究 · AI Agent 系统 · AI 投资成长教练。中美12层对比框架，每条数字至少两个独立来源交叉验证。">
     <meta property="og:url" content="https://xiaokaiyanjiu.cn/">
     <meta property="og:site_name" content="小K爱研究">
     <meta property="og:locale" content="zh_CN">
@@ -21,7 +21,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "小K爱研究",
-      "description": "AI产业链逐层数据拆解 · 中美12层对比框架 · 数据可溯源",
+      "description": "AI产业研究 · AI Agent 系统 · AI 投资成长教练 · 中美12层对比框架 · 数据可溯源",
       "author": {"@type": "Person", "name": "小K"},
       "inLanguage": "zh-CN",
       "url": "https://xiaokaiyanjiu.cn/"
@@ -510,6 +510,9 @@
         }
         .modal-close:hover { opacity: 0.85; }
 
+        .about-project { position: relative; z-index: 1; padding: 40px 24px 100px; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .cards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -517,6 +520,7 @@
         @media (max-width: 560px) {
             .nav-links { display: none; }
             .cards-grid { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
             #explore { padding: 60px 16px 80px; }
             .card { padding: 28px 22px; }
             .modal-qr { width: 200px; height: 200px; }
@@ -539,6 +543,8 @@
         <a href="index.html" class="nav-logo">小K<span>爱研究</span></a>
         <ul class="nav-links">
             <li><a href="articles.html">深度文章</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="ai-coach.html">投资成长教练</a></li>
             <li><a href="qa.html">行业问答</a></li>
             <li><a href="#explore">探索</a></li>
         </ul>
@@ -552,7 +558,7 @@
         真实数据 · 交叉验证 · 不灌鸡汤
     </div>
     <h1 class="hero-title">小K爱研究</h1>
-    <p class="hero-tagline"><strong>小K爱研究</strong> / AI产业链独立分析师</p>
+    <p class="hero-tagline"><strong>小K爱研究</strong> / AI产业研究 · AI Agent · 投资成长教练</p>
     <p class="hero-desc">
         查不到的不编不补，写"缺口"。<br>
         每篇围绕一个反常识发现展开，用数据说话，用图表佐证。
@@ -619,9 +625,34 @@
     </div>
 </section>
 
+<!-- About Project -->
+<section id="about-project" class="about-project">
+    <div class="section-inner">
+        <div class="section-label">// 关于这个项目</div>
+        <h2 class="section-title">小K是谁，在做什么</h2>
+        <p class="section-desc">我不是一个内容号，是一套在跑的 AI 产业研究系统。想知道背后的那个人和系统长什么样，从这进。</p>
+        <div class="cards-grid grid-2">
+            <a href="about.html" class="card">
+                <span class="card-number">06</span>
+                <span class="card-icon">🪚</span>
+                <h3 class="card-title">关于我</h3>
+                <p class="card-desc">从 2022 年玩 AI 画，到给阿里做 LoRA，再到搭这套研究系统——我是谁，踩过哪些坑。</p>
+                <span class="card-link">了解小K →</span>
+            </a>
+            <a href="ai-coach.html" class="card">
+                <span class="card-number">07</span>
+                <span class="card-icon">📈</span>
+                <h3 class="card-title">AI 投资成长教练</h3>
+                <p class="card-desc">一个帮你从凭感觉交易，长到系统化交易的 AI 陪练。不荐股，只帮你少犯错。</p>
+                <span class="card-link">看看它 →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Footer -->
 <footer>
-    <p>&copy; 2026 小K爱研究 · <a href="articles.html">深度文章</a> · 数据可溯源，案例有出处</p>
+    <p>&copy; 2026 小K爱研究 · <a href="articles.html">深度文章</a> · <a href="about.html">关于我</a> · <a href="ai-coach.html">投资成长教练</a> · 数据可溯源，案例有出处</p>
 </footer>
 
 <!-- QR Modal -->
@@ -645,7 +676,7 @@
         });
     }, { threshold: 0.15 });
 
-    observer.observe(document.getElementById('explore-content'));
+    document.querySelectorAll('.section-inner').forEach(el => observer.observe(el));
 
     // Nav hide/show on scroll
     let lastScroll = 0;
