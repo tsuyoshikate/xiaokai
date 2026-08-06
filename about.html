@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 · 小K爱研究</title>
+    <meta name="description" content="小K是谁：2022 年起玩 AI 作画，Civitai 巅峰全球排名 65；给阿里巴巴做 LoRA，与上海上市公司合作仿真虚拟人项目，团队开发 AI 试穿小程序；英盛网签约导师；现搭建 AI 产业研究系统，覆盖 189 家 AI 产业链公司。">
+    <meta name="keywords" content="小K,小K爱研究,AI产业研究,AI作画,LoRA,独立分析师">
+    <link rel="canonical" href="https://xiaokaiyanjiu.cn/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="关于我 · 小K爱研究">
+    <meta property="og:description" content="从 2022 年玩 AI 作画，到给阿里巴巴做 LoRA，再到搭建 AI 产业研究系统。">
+    <meta property="og:url" content="https://xiaokaiyanjiu.cn/about.html">
+    <meta property="og:site_name" content="小K爱研究">
+    <link rel="icon" href="favicon.ico">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "小K",
+      "alternateName": "小K爱研究",
+      "url": "https://xiaokaiyanjiu.cn/about.html",
+      "description": "AI产业研究者、AI Agent 构建者。2022年起玩AI作画，Civitai巅峰期全球排名65；2023年为阿里巴巴制作LoRA，曾与上海上市公司合作仿真虚拟人（接入大模型+语音双向），团队开发AI试穿小程序；英盛网签约导师；现搭建AI产业研究系统，覆盖189家AI产业链公司。",
+      "sameAs": ["https://github.com/tsuyoshikate"]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #07070b;
+            --bg-secondary: #0e0e16;
+            --bg-card: rgba(18, 18, 28, 0.6);
+            --text-primary: #f0f0f5;
+            --text-secondary: #9090a8;
+            --text-muted: #555568;
+            --accent: #6c5ce7;
+            --accent-2: #00d2ff;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(108, 92, 231, 0.4);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(7, 7, 11, 0.7);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1000px; margin: 0 auto; padding: 16px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo { font-weight: 800; font-size: 17px; color: var(--text-primary); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 26px; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+        /* Hero */
+        .page-hero {
+            position: relative; z-index: 1;
+            padding: 150px 24px 50px; max-width: 820px; margin: 0 auto; text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px; background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.25); border-radius: 100px;
+            font-size: 12px; color: var(--accent); margin-bottom: 22px;
+        }
+        .page-hero h1 {
+            font-size: clamp(38px, 7vw, 64px); font-weight: 900; letter-spacing: -1.5px;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #f0f0f5 0%, #9090a8 60%, #6c5ce7 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .page-hero .tagline { font-size: clamp(16px, 2.4vw, 20px); color: var(--text-primary); font-weight: 600; margin-bottom: 14px; }
+        .page-hero .desc { font-size: 15px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.85; }
+
+        /* Content */
+        .wrap { max-width: 760px; margin: 0 auto; padding: 30px 24px 100px; position: relative; z-index: 1; }
+        .wrap h2 {
+            font-size: 24px; font-weight: 800; margin: 52px 0 18px; letter-spacing: -0.5px;
+            padding-left: 14px; border-left: 4px solid var(--accent);
+        }
+        .wrap h2:first-child { margin-top: 10px; }
+        .wrap p { font-size: 15.5px; color: var(--text-secondary); margin: 14px 0; line-height: 1.95; }
+        .wrap strong { color: var(--text-primary); font-weight: 600; }
+
+        /* Timeline */
+        .timeline { margin: 24px 0 8px; padding-left: 22px; border-left: 2px solid var(--border); }
+        .timeline .item { position: relative; padding: 0 0 26px 6px; }
+        .timeline .item::before {
+            content: ''; position: absolute; left: -29px; top: 6px;
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--accent); box-shadow: 0 0 0 4px rgba(108,92,231,0.15);
+        }
+        .timeline .yr { font-size: 14px; font-weight: 800; color: var(--accent); font-family: 'Courier New', monospace; }
+        .timeline .txt { font-size: 15px; color: var(--text-secondary); margin-top: 4px; line-height: 1.9; }
+
+        /* Two-col do/don't */
+        .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
+        .colbox { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+        .colbox h3 { font-size: 16px; margin: 0 0 12px; }
+        .colbox.do h3 { color: #4ade80; }
+        .colbox.dont h3 { color: #fb7185; }
+        .colbox ul { list-style: none; }
+        .colbox li { font-size: 14.5px; color: var(--text-secondary); padding: 7px 0; border-bottom: 1px solid var(--border); line-height: 1.7; }
+        .colbox li:last-child { border-bottom: none; }
+
+        .note {
+            background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25);
+            border-left: 4px solid var(--amber, #f59e0b); border-radius: 10px;
+            padding: 16px 18px; margin: 26px 0; font-size: 14.5px; color: var(--text-secondary); line-height: 1.85;
+        }
+        .disclaimer {
+            background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.2);
+            color: #c9962f; padding: 14px 18px; margin: 36px 0 0; border-radius: 10px;
+            font-size: 13.5px; line-height: 1.7;
+        }
+
+        footer { position: relative; z-index: 1; padding: 36px 24px; text-align: center; border-top: 1px solid var(--border); }
+        footer p { font-size: 12px; color: var(--text-muted); }
+        footer a { color: var(--text-secondary); text-decoration: none; }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .twocol { grid-template-columns: 1fr; }
+            .page-hero { padding-top: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">小K<span>爱研究</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="articles.html">深度文章</a></li>
+            <li><a href="about.html" class="active">关于我</a></li>
+            <li><a href="ai-coach.html">投资成长教练</a></li>
+            <li><a href="qa.html">行业问答</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="hero-badge">关于我</div>
+    <h1>我是小K。</h1>
+    <p class="tagline">一个在 AI 圈子里画过画、写过研报，也把大模型做进过真实生意的人。</p>
+    <p class="desc">只把那些被吹上天、或者黑到底的事，挨个查一遍，给你一个站得住脚的说法。</p>
+</header>
+
+<main class="wrap">
+
+    <h2>先说我的来路</h2>
+    <p>不然你不知道我凭什么在这说话。这行里自称"老师"的太多了，我更想让你看我实际干过什么。</p>
+    <div class="timeline">
+        <div class="item">
+            <div class="yr">2022</div>
+            <div class="txt">那会儿能用 AI 生成一张像样的画的人，一只手数得过来。我用谷歌的服务器跑图，挂出去卖——算是踩到了最早那波。后来在 <strong>Civitai</strong> 巅峰期，全球创作者排到第 65 名，在社区里算排得上号。</div>
+        </div>
+        <div class="item">
+            <div class="yr">2023</div>
+            <div class="txt">Stable Diffusion 刚火起来，我给<strong>阿里巴巴</strong>做过 LoRA——能复刻特定风格或对象的模型。企业级的活儿，不是玩票。</div>
+        </div>
+        <div class="item">
+            <div class="yr">落地</div>
+            <div class="txt">我把技术往生意里落：自己训了个人 LoRA，又给一家服装店做衣服 LoRA 让 AI 分身穿搭；团队还做了 <strong>AI 试穿小程序</strong>——用户拍张照传上去就能试衣服。从模型到产品，不是停在 demo。</div>
+        </div>
+        <div class="item">
+            <div class="yr">项目</div>
+            <div class="txt">和 <strong>上海一家 20 多年的上市公司</strong> 合作过一个虚拟人：做仿真形象，接进大模型，再打通语音转文字、文字转语音，让它能开口说话。这个虚拟人既当设计助理帮设计师，也当客服接待客户。</div>
+        </div>
+        <div class="item">
+            <div class="yr">身份</div>
+            <div class="txt">我是 <strong>英盛网</strong> 的签约导师，去上过人工智能相关的课程。把实战里摸出来的东西，讲给想入行的人听。</div>
+        </div>
+        <div class="item">
+            <div class="yr">现在</div>
+            <div class="txt">我搭了一套 <strong>AI 产业研究系统</strong>，每天盯着 189 家产业链公司，把复杂的东西讲清楚。你前面看到那些文章，都是从这套系统里长出来的。</div>
+        </div>
+    </div>
+
+    <h2>我的边界很清楚了</h2>
+    <div class="twocol">
+        <div class="colbox do">
+            <h3>我做</h3>
+            <ul>
+                <li>把 AI 产业里被吹上天、或黑到底的事，一个个查一遍，给你能站住脚的说法</li>
+                <li>每条数据尽量两个来源交叉验证，查不到就写"缺口"，不编</li>
+                <li>用图表把产业链一层层拆开，让你看得懂</li>
+                <li>搭 Agent：从数据库到 skill 再到 Agent 一层层建起来，把重复的研究活儿交给系统跑</li>
+                <li>帮企业把 AI 从 demo 落地到整套闭环系统</li>
+            </ul>
+        </div>
+        <div class="colbox dont">
+            <h3>我不做</h3>
+            <ul>
+                <li>不拿没披露的数据编故事</li>
+                <li>不替你做决定</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="disclaimer">个人观点，仅供参考。不做投资建议，投资需找专业机构。市场有风险，决策需谨慎。</div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 小K爱研究 · <a href="articles.html">深度文章</a> · <a href="ai-coach.html">投资成长教练</a> · 数据可溯源，案例有出处</p>
+</footer>
+
+</body>
+</html>
