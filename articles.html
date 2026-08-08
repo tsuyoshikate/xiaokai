@@ -1,1161 +1,2349 @@
 <!DOCTYPE html>
 
+
+
 <html lang="zh-CN">
+
+
 
 <head>
 
+
+
     <meta charset="UTF-8">
+
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
     <title>小K | 爱研究 · 只给你看真实数据，不灌鸡汤</title>
+
+
 
     <meta name="description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。数据可溯源，案例有出处。">
 
+
+
     <meta name="keywords" content="AI产业链,中美AI对比,AI数据分析,AI研算,DeepSeek,HBM,数据中心,GPU,算力">
+
+
 
     <meta name="google-site-verification" content="9o_Rcc87lPq64b3bhwFf3dH9IW-0JF6jNiTooxFy3xQ">
 
+
+
     <meta name="msvalidate.01" content="111C8816F76DA0DB4369C7B74868B75F">
+
+
 
     <link rel="canonical" href="https://tsuyoshikate.github.io/xiaokai/">
 
+
+
     <meta property="og:type" content="website">
+
+
 
     <meta property="og:title" content="小K | 爱研究 · 只给你看真实数据，不灌鸡汤">
 
+
+
     <meta property="og:description" content="AI产业链逐层数据拆解。中美12层对比框架，每条数字至少两个独立来源交叉验证。">
+
+
 
     <meta property="og:url" content="https://tsuyoshikate.github.io/xiaokai/">
 
+
+
     <meta property="og:site_name" content="小K爱研究">
+
+
 
     <meta property="og:locale" content="zh_CN">
 
+
+
     <script type="application/ld+json">
+
+
 
     {
 
+
+
       "@context": "https://schema.org",
+
+
 
       "@type": "WebSite",
 
+
+
       "name": "小K爱研究",
+
+
 
       "description": "AI产业链逐层数据拆解 · 中美12层对比框架 · 数据可溯源",
 
+
+
       "author": {"@type": "Person", "name": "小K"},
+
+
 
       "inLanguage": "zh-CN"
 
+
+
     }
+
+
 
     </script>
 
+
+
     <style>
+
+
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+
+
         :root {
+
+
 
             --bg-primary: #0a0a0a; --bg-secondary: #111; --bg-card: #1a1a1a;
 
+
+
             --text-primary: #e8e8e8; --text-secondary: #999; --text-muted: #666;
+
+
 
             --accent: #4a9eff; --accent-dim: #2a5a9a; --border: #222;
 
+
+
         }
+
+
 
         html { scroll-behavior: smooth; }
 
+
+
         body {
+
+
 
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
 
+
+
             background: var(--bg-primary); color: var(--text-primary);
+
+
 
             line-height: 1.7; -webkit-font-smoothing: antialiased;
 
+
+
         }
+
+
 
         nav {
 
+
+
             position: fixed; top: 0; width: 100%; z-index: 100;
+
+
 
             background: rgba(10,10,10,0.85); backdrop-filter: blur(20px);
 
+
+
             border-bottom: 1px solid var(--border);
 
+
+
         }
+
+
 
         .nav-inner { max-width: 900px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
 
+
+
         .nav-logo { font-weight: 700; font-size: 16px; color: var(--accent); text-decoration: none; }
+
+
 
         .nav-links { display: flex; gap: 24px; list-style: none; }
 
+
+
         .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 13px; transition: color .3s; }
+
+
 
         .nav-links a:hover { color: var(--text-primary); }
 
+
+
         #hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 60px; }
+
+
 
         .hero-content { max-width: 600px; }
 
+
+
         .hero-tag { display: inline-block; padding: 5px 14px; border: 1px solid var(--accent); border-radius: 20px; font-size: 12px; color: var(--accent); margin-bottom: 24px; }
+
+
 
         .hero-title { font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: var(--text-primary); }
 
+
+
         .hero-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px; }
+
+
 
         .btn-primary { display: inline-block; padding: 12px 28px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
 
+
+
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(74,158,255,0.25); }
+
+
 
         section { padding: 80px 24px; }
 
+
+
         .section-inner { max-width: 900px; margin: 0 auto; }
+
+
 
         .section-label { font-size: 12px; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; }
 
+
+
         .section-title { font-size: clamp(22px, 3vw, 30px); font-weight: 700; margin-bottom: 8px; }
+
+
 
         .section-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 36px; }
 
+
+
         .cat-section { margin-bottom: 48px; }
+
+
 
         .cat-title { font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 4px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 
+
+
         .cat-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
+
 
         .articles-grid { display: grid; gap: 16px; }
 
+
+
         .article-card {
+
+
 
             background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
 
+
+
             padding: 24px; transition: transform .25s, border-color .25s, box-shadow .25s;
+
+
 
             text-decoration: none; color: inherit; display: block;
 
+
+
         }
+
+
 
         .article-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
 
+
+
         .article-badge { display: inline-block; padding: 3px 10px; background: rgba(74,158,255,0.12); color: var(--accent); border-radius: 4px; font-size: 11px; font-weight: 500; margin-bottom: 10px; }
+
+
 
         .article-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; color: var(--text-primary); }
 
+
+
         .article-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+
+
 
         .article-meta { display: flex; gap: 14px; font-size: 12px; color: var(--text-muted); }
 
+
+
         .article-arrow { font-size: 12px; color: var(--accent); margin-top: 10px; font-weight: 500; }
+
+
 
         #about { background: var(--bg-secondary); }
 
+
+
         .about-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 14px; max-width: 600px; }
+
+
 
         .about-text strong { color: var(--text-primary); }
 
+
+
         footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); }
+
+
 
         footer p { font-size: 12px; color: var(--text-muted); }
 
+
+
         @media (max-width: 768px) {
+
+
 
             .nav-links { display: none; }
 
+
+
             .hero-subtitle { font-size: 14px; }
+
+
 
             section { padding: 56px 16px; }
 
+
+
             .article-card { padding: 20px; }
+
+
 
         }
 
+
+
     </style>
+
+
 
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0adfb63c5144be7aa37fdd7fd42948a"}'></script>
 
+
+
 </head>
+
+
 
 <body>
 
+
+
 <nav>
+
+
 
     <div class="nav-inner">
 
+
+
         <a href="#hero" class="nav-logo">小K爱研究</a>
+
+
 
         <ul class="nav-links">
 
+
+
             <li><a href="index.html">首页</a></li>
+
+
 
             <li><a href="#articles">文章</a></li>
 
+
+
             <li><a href="about.html">关于我</a></li>
+
+
 
             <li><a href="ai-coach.html">投资成长教练</a></li>
 
+
+
         </ul>
 
+
+
     </div>
+
+
 
 </nav>
 
+
+
 <section id="hero">
+
+
 
     <div class="hero-content">
 
+
+
         <span class="hero-tag">真实数据 · 交叉验证 · 不灌鸡汤</span>
+
+
 
         <h1 class="hero-title">AI产业链<br>逐层数据拆解</h1>
 
+
+
         <p class="hero-subtitle">
+
+
 
             中美AI产业12层框架，每层都有硬核数据。<br>
 
+
+
             每条数字至少两个独立来源交叉验证。<br>
+
+
 
             查不到的不编不补，写"缺口"。
 
+
+
         </p>
+
+
 
         <a href="#articles" class="btn-primary">📄 阅读文章 →</a>
 
+
+
     </div>
 
+
+
 </section>
+
+
 
 <section id="articles">
 
+
+
     <div class="section-inner">
+
+
 
         <div class="section-label">// 文章</div>
 
+
+
         <h2 class="section-title">深度研究 <a href="#about" style="font-size:13px;font-weight:400;color:var(--accent);text-decoration:none;margin-left:12px;vertical-align:middle;">📞 联系小K →</a></h2>
+
+
 
         <p class="section-desc">每篇围绕一个反常识发现展开，用数据说话，用图表佐证。</p>
 
+
+
         <!-- 分类1: AI算力基础设施 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">⚡ AI算力基础设施</h3>
 
+
+
             <p class="cat-desc">从电力、散热到数据中心选址——AI算力的物理底座</p>
 
+
+
             <div class="articles-grid">
+
     <a href="jlc_hardware_infra.html" class="article-card">
+
       <span class="article-badge">⚡</span>
+
       <div class="article-title">当EDA免费、打样也免费：嘉立创如何用送铲子逻辑，卡住物理AI的最初一公里</div>
+
       <div class="article-desc">免费 EDA + 免费打样 + 元器件商城，嘉立创把硬件创新创业的铲子送出去，悄然卡住物理 AI 的最初一公里。</div>
+
       <div class="article-meta">2026-08-06 · 深度长文</div>
+
     </a>
+
     <a href="power_near_zero.html" class="article-card">
+
       <span class="article-badge">⚡</span>
+
       <div class="article-title">当电价趋近于零：AI时代的终极能源，已经在合肥开始倒计时</div>
+
       <div class="article-desc">当绿电过剩把度电成本压向零，AI 算力中心的能源账被重写——合肥正在上演这场倒计时的样本。</div>
+
       <div class="article-meta">2026-08-05 · 深度长文</div>
+
     </a>
 
-                
+
 
                 
+
+
+
+                
+
 <a href="mlcc_price_hike.html" class="article-card">
+
       <span class="article-badge">⚡</span>
+
       <div class="article-title">当MLCC涨价30%：一场被忽视的“电子元器件通胀”</div>
+
       <div class="article-desc">AI算力需求与基础元件产能错配，三星电机 8/1 全系调涨约30%，成本压力向整机传导。</div>
+
       <div P26-08-06 · 深度长文</div>
+
     </a>
+
     <a href="ai_high_end_pcb.html" class="article-card">
+
       <span class="article-badge">⚡</span>
+
       <div class="article-title">当 1.6T 时代来临：高端 PCB 如何成为那块被忽视的板</div>
+
       <div class="article-desc">AI 算力链里，所有人的目光锁在 GPU、HBM、光模块上。但 1.6T 时代真正被忽视的瓶颈，可能是一块板——高端 PCB（mSAP/HDI 高阶板）。红板科</div>
+
       <div class="article-meta">2026-08-03 · 深度长文</div>
+
     </a>
+
     <a href="cpo_optical_route.html" class="article-card">
+
   <span class="article-badge">⚡</span>
+
   <div class="article-title">当 1.6T 爆发、CPO 却推迟到 2028：光互联的路线之争</div>
+
   <div class="article-desc">CPO 推迟到 2028，1.6T 可插拔却爆发——用系统良率、云厂决策、需求上修，解释为什么“延期=利好”。</div>
+
   <div class="article-meta">2026-08-01 · 深度长文</div>
+
 </a><a href="optical_module_valuation.html" class="article-card">
+
+
 
     <span class="article-badge">光模块 · 估值框架 · Trading Comps</span>
 
+
+
     <h4 class="article-title">当光模块涨成信仰：我用投行 Trading Comps 拆了一遍，发现多数人连分母都搞错了</h4>
+
+
 
     <p class="article-desc">光模块涨成信仰，但多数人连估值分母都搞错了。用投行 Trading Comps 拉 7 家 peer 拆完，结论：相对同业中性、绝对倍数极端，安全垫全绑在“AI 资本开支不放缓”这一个假设上。</p>
 
+
+
     <div class="article-meta"><span>📅 2026-07-27</span><span>📊 中际旭创/新易盛/Arista Comps</span></div>
+
+
 
     <div class="article-arrow">阅读全文 →</div>
 
+
+
 </a>
+
 <a href="optical_module_research.html" class="article-card">
+
+
 
                     <span class="article-badge">AI算力 · 光模块</span>
 
+
+
                     <h4 class="article-title">AI算力bottleneck：光模块业绩兑现链深度拆解——从800G到3.2T的技术跃迁与产业链重构</h4>
+
+
 
                     <p class="article-desc">从800G到3.2T三代速率跃迁，拆解光模块如何成为万卡集群的算力瓶颈，以及中际旭创等中国龙头的业绩兑现逻辑。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 高盛/大摩研报</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>                <a href="article-underwater-datacenter.html" class="article-card">
 
+
+
                     <span class="article-badge">基础设施 · 中美对比</span>
+
+
 
                     <h4 class="article-title">微软水下数据中心：技术赢了，账本输了</h4>
 
+
+
                     <p class="article-desc">微软Project Natick故障率仅陆地1/8，PUE 1.07，却宣布终止。中国海兰信已商用落地。全生命周期成本海底低15-20%，但建设贵、维护难——为什么中国能做成？</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-06-28</span><span>📊 8+ 数据源</span><span>🖼️ 2 张图表</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-power-bill.html" class="article-card">
 
+
+
                     <span class="article-badge">能源 · 中美对比</span>
+
+
 
                     <h4 class="article-title">AI的电力账单：谁先搞定电，谁就赢了AI</h4>
 
+
+
                     <p class="article-desc">ChatGPT一天85万度电，全球数据中心用电量超德国+意大利。美国造电，中国搬算力，两条路谁走得通？</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-cooling-bill.html" class="article-card">
 
+
+
                     <span class="article-badge">散热 · 数据中心</span>
+
+
 
                     <h4 class="article-title">AI的散热账单：风冷已死，液冷上位</h4>
 
+
+
                     <p class="article-desc">散热占数据中心建设投资20%，GPU功耗三年翻三倍，80%冷却水蒸发回不来。风冷散不掉，水不够用，两条路堵死只剩液冷。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-power-semiconductor.html" class="article-card">
 
+
+
                     <span class="article-badge">供电 · 中美对比</span>
+
+
 
                     <h4 class="article-title">没有它，GPU就是块废铁</h4>
 
+
+
                     <p class="article-desc">英伟达800V架构引爆功率半导体市场，碳化硅成刚需。中国天岳先进衬底份额反超Wolfspeed全球第一，但器件和模块仍落后——赢了面粉，输了面包。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-06-30</span><span>📊 10+ 数据源</span><span>🖼️ 2 张图表</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             </div>
 
+
+
         </div>
+
+
 
         <!-- 分类2: AI芯片与资本市场 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">💾 AI芯片与资本市场</h3>
 
+
+
             <p class="cat-desc">GPU、HBM、折旧、融资——算力产业链的钱流追踪</p>
+
+
 
             <div class="articles-grid">
 
+
+
                 
 
+
+
 <a href="micron_q2_share.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当美光 25% 市占率逼近海力士：存储涨价周期的“数字幻觉”与真实博弈</div>
+
       <div class="article-desc">美光Q2 DRAM 市占率升至25%紧追海力士，存储涨价周期下的份额博弈与真实供需。</div>
+
       <div P26-08-07 · 深度长文</div>
+
     </a>
+
     <a href="samsung_zhbm_roadmap.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当三星把内存“种”在芯片上：zHBM 如何改写AI算力的物理规则</div>
+
       <div class="article-desc">三星公布 zHBM 3D 内存路线图，晶圆键合垂直堆叠，挑战 SK海力士 HBM 霸主地位。</div>
+
       <div P26-08-06 · 深度长文</div>
+
     </a>
+
     <a href="ai_amd_spacex_drop.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当 AMD 盘后跌 8.8%、SpaceX 二级报价回落约 9%：AI 资本开支越猛，市场为何越害怕？</div>
+
       <div class="article-desc">AI产业链估值锚生变：资本开支越高越被质疑回报，市场从“投未来”转向“验真金”。</div>
+
       <div P26-08-06 · 深度长文</div>
+
     </a>
+
     <a href="dram_hbm_soldout_2027.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">三大存储原厂2027年DRAM/HBM产能全部售罄</div>
+
       <div class="article-desc">这不是一次普通的周期波动，而是存储行业从</div>
+
       <div class="article-meta">2026-08-05 · 深度长文</div>
+
     </a>
+
 <a href="domestic_compute_h1.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当国产算力集体"预喜"：H1业绩翻倍背后，是产业拐点还是估值幻觉？</div>
+
       <div class="article-desc">当国产算力集体</div>
+
       <div class="article-meta">2026-08-05 · 深度长文</div>
+
     </a>
+
 <a href="ai_cambricon_midyear.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当寒武纪站上 7847 亿：万亿市值后的中报三问</div>
+
       <div class="article-desc">寒武纪市值约 7847 亿元（C2 真实截面，不是"万亿"定值情绪）。它是科创板第一支站上这个量级的 AI 芯片股。8 月 8 日中报披露——万亿之后，第一场业</div>
+
       <div class="article-meta">2026-08-04 · 深度长文</div>
+
     </a>
+
     <a href="ai_domestic_redline.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当 75% 红线压下来：国产 GPU 从"能用"到"真替真用"的账本</div>
+
       <div class="article-desc">国产 GPU 持有者最近最兴奋的一句话大概是——"网传 9 月某大客户集采，75% 必须国产"。听起来像利好落地？我先查一遍。</div>
+
       <div class="article-meta">2026-08-03 · 深度长文</div>
+
     </a>
+
     <a href="ai_inference_cost_paradox.html" class="article-card">
+
       <span class="article-badge">💾</span>
+
       <div class="article-title">当模型免费而账单爆炸：推理侧的 Jevons 悖论与算力链利润池</div>
+
       <div class="article-desc">模型圈最近最反常识的一句话：DeepSeek 把推理基准打到 1，Kimi 降价 10 倍，OpenAI 也跟降 15–30 倍——模型正变得"免费"。但转头一</div>
+
       <div class="article-meta">2026-08-04 · 深度长文</div>
+
     </a>
+
     <a href="ai_chain_30pct.html" class="article-card">
+
   <span class="article-badge">💾</span>
+
   <div class="article-title">当 AI 链一个月跌去三成：散户最想不通的事，其实有结构性答案</div>
+
   <div class="article-desc">AI 链一个月跌三成，是 AI 逻辑破了吗？用估值透支、叙事切换、bounds 需求真实但业绩滞后，解释这是“定价逻辑的切换”而非泡沫破裂。</div>
+
   <div class="article-meta">2026-08-01 · 深度长文</div>
+
 </a><a href="storage_faith.html" class="article-card">
+
   <span class="article-badge">💾</span>
+
   <div class="article-title">当存储涨成信仰：DRAM +46%、NAND +65% 背后的定价权游戏</div>
+
   <div class="article-desc">DRAM +46%、NAND +65%，这轮存储涨价和以前不一样——用 HBM 虹吸、AI 需求外溢、长鑫接盘式崛起，解释结构性缺口如何延续到 2027。</div>
+
   <div class="article-meta">2026-08-01 · 深度长文</div>
+
 </a><a href="ai_nvda_margin_moat.html" class="article-card">
+
       <span class="article-badge">NVDA · 75%毛利 · 护城河 · 三层结构</span>
+
       <h4 class="article-title">当 NVDA 毛利站上 75%：英伟达的护城河到底有多宽</h4>
+
       <p class="article-desc">朋友圈刷屏"NVDA 毛利 75% 躺着赚"，但护城河真有那么宽？拆三层结构（架构 + 生态 + 规模），看清哪些能复制、哪些是真壁垒。</p>
+
       <div class="article-meta">📅 2026-07-31 · 📊 毛利率/经营利润率刻度 / 护城河三层</div>
+
     </a>
+
 <a href="ai_cowos_moat.html" class="article-card">
+
       <span class="article-badge">CoWoS · 先进封装 · 产能瓶颈 · 三重约束</span>
+
       <h4 class="article-title">当 CoWoS 成为 AI 算力的"咽喉"：封装护城河比晶圆更卡脖子</h4>
+
       <p class="article-desc">三重约束（wafer + CoWoS + HBM）lead time 里，CoWoS 才是最短的那块板。需求三年翻三倍、月产能爬坡，谁卡住封装谁卡住 AI 算力。</p>
+
       <div class="article-meta">📅 2026-07-31 · 📊 三重约束 lead time / 月产能爬坡</div>
+
     </a>
+
 <a href="ai_fcf_where.html" class="article-card">
+
       <span class="article-badge">自由现金流 · Capex · 折旧魔法 · 四大厂财报</span>
+
       <h4 class="article-title">当 AI 公司利润创新高：先查一遍自由现金流去哪了</h4>
+
       <p class="article-desc">微软Meta谷歌亚马逊利润又创纪录，但亚马逊 FCF 从 329 亿跌到 77 亿、capex 飙到 1318 亿。利润可被折旧美化，现金流不会骗人。</p>
+
       <div class="article-meta">📅 2026-07-30 · 📊 Capex/OCF/FCF 对比 / 折旧政策 / 循环交易</div>
+
     </a>
+
 <a href="ai_arms_race_earnings.html" class="article-card">
+
       <span class="article-badge">AI军备竞赛 · 财报周 · 验真金 · 资本开支</span>
+
       <h4 class="article-title">当 AI 军备竞赛从"讲故事"进入"验真金"：7月超级财报周，市场开始验真金</h4>
+
       <p class="article-desc">核心矛盾从"有没有 AI 需求"切到"巨额资本开支能不能兑现利润"。7 月超级财报周不再为买显卡鼓掌，只盯云增速 / AI 变现 / 自由现金流三把尺子。估值温度计横跨两个数量级。</p>
+
       <div class="article-meta">📅 2026-07-29 · 📊 月度AI产业深度分析 / 财报</div>
+
     </a>
+
 <a href="hbm4.html" class="article-card">
+
+
 
     <span class="article-badge">HBM4 · SK海力士 · 三强博弈</span>
 
+
+
     <h4 class="article-title">当 HBM4 开打：SK海力士的护城河没有你想的那么宽</h4>
+
+
 
     <p class="article-desc">朋友圈刷屏的“HBM 永远缺货、SK海力士躺着赚”爽文错在哪？HBM4 量产这把枪一响，三家全过了英伟达认证——这不是独食，是三强混战开场。把“产能稀缺”偷换成“某家永远通吃”，结论就歪了。</p>
 
+
+
     <div class="article-meta"><span>📅 2026-07-27</span><span>📊 集邦/Counterpoint/美光财报</span></div>
+
+
 
     <div class="article-arrow">阅读全文 →</div>
 
+
+
 </a>
+
 <a href="nvidia_pricing_power.html" class="article-card">
+
+
 
                     <span class="article-badge">定价权 · 超节点 · 中美博弈</span>
 
+
+
                     <h4 class="article-title">从95%跌到8%：英伟达在中国失去的不是市场，是定价权</h4>
+
+
 
                     <p class="article-desc">2023年英伟达中国AI芯片份额95%，2026年摩根士丹利预测仅8%。真正丢的不是市场，是定价权——当客户从"按卡询价"转向"按Token询价"，昇腾超节点把Token成本打下来，Kimi K3敢定价低40%-90%，英伟达"按卡卖"的估值逻辑正在崩塌。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07-19</span><span>📊 摩根士丹利/伯恩斯坦/集邦</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="ai_cost_crisis.html" class="article-card">
 
+
+
                     <span class="article-badge">资本市场 · 能源成本 · 中美博弈</span>
+
+
 
                     <h4 class="article-title">美芯片股一周跌10%跌进熊市，油价一周涨15%暴涨，只因中国AI便宜了40%</h4>
 
+
+
                     <p class="article-desc">费半回撤超20%正式跌入技术性熊市，WTI原油暴涨15.5%。Kimi K3成本比美国同类模型低40%，投资者开始质疑美国科技公司的天量资本开支——两个底座同时裂：芯片和电力。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-18</span><span>📊 高盛/IEA/克普勒</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
                 
+
+
 
                 <a href="article-ai-storage-bottleneck.html" class="article-card">
 
+
+
                     <span class="article-badge">存储 · HBM</span>
+
+
 
                     <h4 class="article-title">AI军备竞赛的真正瓶颈——从GPU转向存储芯片</h4>
 
+
+
                     <p class="article-desc">HBM占AI芯片BOM成本45%超越GPU核心，美光CEO坦言只能满足50%-67%需求，三巨头控制全球HBM市场——AI胜负手已从算力转向存储。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-gpu-dual-chain.html" class="article-card">
 
+
+
                     <span class="article-badge">算力 · 钱流追踪</span>
+
+
 
                     <h4 class="article-title">AI算力双链路分析：从零件到终端的钱流追踪</h4>
 
+
+
                     <p class="article-desc">B200拆解$6400显存占45%，4层加价英伟达毛利81%，投入1块收回8分——约2.1万亿云积压订单中41%是循环投资。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-gpu-depreciation-cliff.html" class="article-card">
 
+
+
                     <span class="article-badge">金融结构 · 风险</span>
+
+
 
                     <h4 class="article-title">GPU折旧悬崖：资产比债务先死的金融结构</h4>
 
+
+
                     <p class="article-desc">GPU 3年基本归零，但抵押它借的债要30年还完。CoreWeave用2年过时芯片做抵押品借了250亿美元——越算越离谱。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-capex-bubble.html" class="article-card">
 
+
+
                     <span class="article-badge">资本开支 · 泡沫</span>
+
+
 
                     <h4 class="article-title">AI资本开支泡沫</h4>
 
+
+
                     <p class="article-desc">四大云厂商万亿Capex背后，投入产出比正在恶化。泡沫还是基建？数据说话。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-spacex-debt.html" class="article-card">
 
+
+
                     <span class="article-badge">融资 · 债务</span>
+
+
 
                     <h4 class="article-title">千亿现金不够花：SpaceX发债背后的AI资本开支真相</h4>
 
+
+
                     <p class="article-desc">SpaceX账上1008亿现金还借250亿债。算力合同90天可终止，债市一级抢购二级抛售——钱够不够，取决于你信不信AI还能烧多久。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-deepseek-spacex.html" class="article-card">
 
+
+
                     <span class="article-badge">融资对比 · 估值</span>
+
+
 
                     <h4 class="article-title">DeepSeek首轮融资与SpaceX IPO深度对比</h4>
 
+
+
                     <p class="article-desc">DeepSeek 500亿首融 vs SpaceX 750亿史上最大IPO，控制权设计、估值逻辑、风险收益逐一拆解。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
                 
+
+
 
                 <a href="article-ai-bubble-china-wins.html" class="article-card">
 
+
+
                     <span class="article-badge">三层楼模型 · 中美博弈</span>
+
+
 
                     <h4 class="article-title">说在美国AI泡沫破裂之前，中国将赢在最后</h4>
 
+
+
                     <p class="article-desc">英伟达份额从90%掉到74%，大客户纷纷自研芯片，Stargate 5000亿拆成双边合同——破的不是AI，是一楼基建的估值泡沫。价值往三楼搬，中国接住了这一棒。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-05</span><span>📊 12+ 数据源</span><span>🖼️ 5 张图表</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-openai-chip-collapse.html" class="article-card">
 
+
+
                     <span class="article-badge">自研芯片 · 中美对比</span>
+
+
 
                     <h4 class="article-title">OpenAI造芯片，不是因为英伟达，是因为中国</h4>
 
+
+
                     <p class="article-desc">DeepSeek推理价格6块，Claude是181块，差30倍。美国卡光刻机，中国卡推理成本——各卡各的7寸，谁先追上谁？</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-06-30</span><span>📊 10+ 数据源</span><span>🖼️ 4 张图表</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-nvidia-physical-limit.html" class="article-card">
 
+
+
                     <span class="article-badge">英伟达 · 物理极限 · 中美对比</span>
+
+
 
                     <h4 class="article-title">英伟达的物理极限，就是中国的起跑线</h4>
 
+
+
                     <p class="article-desc">78层PCB、CoWoS产能、光模块——英伟达撞上的三堵物理墙，恰恰是中国产业链的起跑线。延期不是技术问题，是物理极限。五大投资问题逐一拆解。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-07</span><span>📊 15+ 数据源</span><span>🖼️ 配图版</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-inp-crisis.html" class="article-card">
 
+
+
                     <span class="article-badge">半导体材料 · 供应链</span>
+
+
 
                     <h4 class="article-title">AI吃金属比吃电还凶：一场磷化铟"铟危机"正在卡住全球算力的脖子</h4>
 
+
+
                     <p class="article-desc">精铟半年涨167%，6英寸InP衬底从8000涨到2.8万元/片，全球年产量不到1100吨，铟100%是锌的副产品不能单独开采。拐点在哪？做空可行吗？三类读者各一句话建议。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-09</span><span>📊 10+ 数据源</span><span>🖼️ 配图版</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             
+
+
 
                 <a href="nvidia_capital_flow.html" class="article-card">
 
+
+
                     <span class="article-badge">英伟达 · 资金流向 · 融资循环</span>
+
+
 
                     <h4 class="article-title">一张图看懂：英伟达在AI产业链的资金流向</h4>
 
+
+
                     <p class="article-desc">同一笔钱在链条上被算了好几次收入——Big Tech 投入 7250 亿美元，真实 AI 终端收入最多 1500 亿。投资者=客户=供应商三重身份重叠，飞轮转得越快，停下来时的惯性越大。用一张图拆穿这个循环。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-21</span><span>📊 SEC EDGAR / Bloomberg / BIS</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             
+
+
 
                 <a href="indium_phosphide_inp.html" class="article-card">
 
+
+
                     <span class="article-badge">磷化铟 · 战略物资 · 英伟达押注</span>
+
+
 
                     <h4 class="article-title">磷化铟：从冷门材料到战略物资，英伟达的20倍豪赌</h4>
 
+
+
                     <p class="article-desc">算力的真正瓶颈不在GPU，在"搬数据"。磷化铟是光互联与EML芯片的命门，供需缺口1:4、价格一年翻倍；英伟达20倍长单豪赌，出口管制让铟成为中国的"反卡脖子"杠杆。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-23</span><span>📊 公开财报 / 行业测算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             </div>
 
+
+
         </div>
+
+
 
         <!-- 分类3: AI大模型与应用 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">🧠 AI大模型与应用</h3>
 
+
+
             <p class="cat-desc">性能、价格、落地——大模型时代的真实账本</p>
 
+
+
             <div class="articles-grid">
+
+
 
                                 
 
-                    
+
 
                     
+
+
+
+                    
+
 <a href="palantir_surge.html" class="article-card">
+
       <span class="article-badge">Palantir · AI商业化 · 财报兑现</span>
+
       <h4 class="article-title">当 Palantir 暴涨 29%：AI 商业化终于不再是“故事”</h4>
+
       <p class="article-desc">Palantir 单季营收与指引大超预期的背后，是 AI 从“讲故事”到“验真金”的商业化拐点。</p>
+
       <div class="article-meta">📅 2026-08-07 · 📊 AI商业化 / 财报兑现</div>
+
     </a>
+
     <a href="enterprise_agent_pilot.html" class="article-card">
+
       <span class="article-badge">企业Agent · 死在试点 · 88%真相 · 幸存者框架</span>
+
       <h4 class="article-title">当企业 Agent 死在试点：88% 的真相与幸存者框架</h4>
+
       <p class="article-desc">88% 企业已上 Agentic AI 试点，仅 24% 见回报——拆解死在试点的四大结构性死因，给出 5 信号自查框架。</p>
+
       <div class="article-meta">📅 2026-08-02 · 📊 数据孤岛 / ROI锚 / 合规红线 / 5信号自查</div>
+
     </a><a href="vertical_agent_window.html" class="article-card">
+
       <span class="article-badge">垂直Agent · 窗口收窄 · solo founder · 窄缝升值</span>
+
       <h4 class="article-title">当垂直 Agent 窗口收窄：独立开发者的最后机遇</h4>
+
       <p class="article-desc">通用 Agent 窗口正在关闭，但垂直窄缝反而升值——用应用级联、Big Ten 吸走 80% 收入、并购门槛变了，解释 solo founder 的最后机遇与 4 问筛选矩阵。</p>
+
       <div class="article-meta">📅 2026-08-02 · 📊 应用级联 / Big Ten / 并购门槛 / 4问筛选</div>
+
     </a><a href="ai_model_pricing_war.html" class="article-card">
+
       <span class="article-badge">DeepSeek · API定价 · 价格战 · 利润池转移</span>
+
       <h4 class="article-title">当 API 定价被改写成"水电账单"：DeepSeek 与模型层价格战</h4>
+
       <p class="article-desc">DeepSeek 把 API 调用单价压到基准的 1/30，token 正变成水电。利润池从中间层向两端转移——纯卖 API 的 PS/ARR 倍数不再安全。</p>
+
       <div class="article-meta">📅 2026-07-30 · 📊 定价刻度 / 中美估值范式 / 开源闭源博弈</div>
+
     </a>
+
 <a href="agent_deathvalley.html" class="article-card">
+
                         <span class="article-badge">Agent · 落地 · 死亡之谷 · 工程化</span>
+
                         <h4 class="article-title">AI Agent 落地的「死亡之谷」：89% 阵亡、11% 拿 171% ROI 的工程化真相</h4>
+
                         <p class="article-desc">从 89% 阵亡到 11% 拿 171% ROI，拆解 AI Agent 落地的工程化真相与死亡之谷。</p>
+
                         <div class="article-meta"><span>📅 2026-07-26</span><span>📊 小K爱研究·产业链拆解</span></div>
+
                         <div class="article-arrow">阅读全文 →</div>
+
                     </a>
+
+
 
                     <a href="opc_onecompany.html" class="article-card">
+
                         <span class="article-badge">OPC · 一人公司 · 1600万 · 真相</span>
+
                         <h4 class="article-title">OPC一人公司是AI创业最优解，还是新陷阱？——1600万家的真相</h4>
+
                         <p class="article-desc">从产业链利润分配、个体收入分布、同质化结构三个层面，独立拆解OPC是不是2026年AI创业的最优解。</p>
+
                         <div class="article-meta"><span>📅 2026-07-25</span><span>📊 小K爱研究·产业链拆解</span></div>
+
                         <div class="article-arrow">阅读全文 →</div>
+
                     </a>
+
+
 
                     <a href="deepseek_opc.html" class="article-card">
 
+
+
                     <span class="article-badge">DeepSeek · OPC · 一人公司 · 生死线</span>
+
+
 
                     <h4 class="article-title">当 DeepSeek 把模型变成自来水：OPC 一人公司的三道生死线</h4>
 
+
+
                     <p class="article-desc">首轮融资510亿、API压到0.025元/百万tokens、Apache 2.0开源最强模型——模型变成自来水后，OPC一人公司的三道生死线：成本错觉（真实月成本是表面4倍）、稀缺性崩塌（卖微调逻辑归零）、禁区地图（别碰模型/平台/算力）。护城河要从"模型层"挪到"交付层"。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-24</span><span>📊 同花顺/天眼查/网易/CSDN</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-stepfun-terminal.html" class="article-card">
 
+
+
                     <span class="article-badge">AI终端 · 大模型</span>
+
+
 
                     <h4 class="article-title">大模型公司开始造手机了：阶跃星辰的终端之战</h4>
 
+
+
                     <p class="article-desc">100亿美元估值，年营收仅5亿，PS 140倍。阶跃星辰发布全球首款AI智能体手机STEPX Neo，自研Step AOS操作系统，196B端侧大模型，从零做OS让Agent成为系统一等公民。赛道级深度分析。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-13</span><span>📊 25 数据源</span><span>🖼️ 12 张图表</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-douban-super-entrance.html" class="article-card">
 
+
+
                     <span class="article-badge">AI超级入口 · 字节跳动</span>
+
+
 
                     <h4 class="article-title">豆包：从AI工具到字节超级入口的进化之路</h4>
 
+
+
                     <p class="article-desc">3.82亿月活断层第一，172.1%增速碾压所有对手。字节用推荐算法+流量分发+资本投入三件套，把豆包从工具推到超级入口。但AGI时代，AI能无限生成内容时，分发的护城河还在吗？</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-14</span><span>📊 20+ 数据源</span><span>🖼️ 13 张配图</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-jspace-claude.html" class="article-card">
 
+
+
                     <span class="article-badge">AI可解释性 · Anthropic</span>
+
+
 
                     <h4 class="article-title">Claude的脑子里有个"小剧场"：Anthropic发现了AI的内心独白空间</h4>
 
+
+
                     <p class="article-desc">Anthropic发明Jacobian Lens，第一次系统读到AI内心独白。Claude有个"意识舞台"J-space——只占10%激活方差，却承载高阶推理。五组实验证明它具备可报告、可控制、参与推理、灵活广播、选择性进入五大特征。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-09</span><span>📊 AI安全</span><span>🖼️ 配图版</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-price-revolution.html" class="article-card">
 
+
+
                     <span class="article-badge">大模型 · 中美对比</span>
+
+
 
                     <h4 class="article-title">性能差3%，价格差30倍——中美AI大模型的真实账本</h4>
 
+
+
                     <p class="article-desc">LMSYS竞技场中美旗舰差距仅1.9%，但价格差30倍。DeepSeek ¥6 vs Claude ¥181。李开复：中美AI是两条完全不同的线——闭源追上限 vs 开源拼落地。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-06-28</span><span>📊 7+ 数据源</span><span>🖼️ 2 张图表</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-content-pipeline.html" class="article-card">
 
+
+
                     <span class="article-badge">AI内容 · 质量危机</span>
+
+
 
                     <h4 class="article-title">如何从"帮你赚钱"变成"帮你骗人"</h4>
 
+
+
                     <p class="article-desc">AI内容播放量一年翻两倍，事实性问答场景下近三成可能出错，25个平台全没识别出来——一条没有质检的工业流水线正在运转。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-opc-profit-layer.html" class="article-card">
 
+
+
                     <span class="article-badge">AI创业 · 利润</span>
+
+
 
                     <h4 class="article-title">一人公司：1600万人冲进1%利润层</h4>
 
+
+
                     <p class="article-desc">全国1600万家一人公司冲进AI产业链利润仅1%的应用层。50%月入不到7000元——门槛归零≠利润归你。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-restructure-five-steps.html" class="article-card">
 
+
+
                     <span class="article-badge">行业重构 · 方法论</span>
+
+
 
                     <h4 class="article-title">AI重构行业五步法</h4>
 
+
+
                     <p class="article-desc">Midjourney造医疗扫描仪，不是跨界是重构。五步法拆解AI重构任何行业的底层逻辑：找假设墙、翻译数据问题、算力替代技能、B转C、数据飞轮。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-06-30</span><span>📊 6+ 数据源</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
-            
 
-                
 
             
 
+
+
                 
+
+
+
+            
+
+
+
+                
+
+
 
             </div>
 
+
+
         </div>
+
+
 
         <!-- 分类4: AI营销 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">📢 AI营销</h3>
 
+
+
             <p class="cat-desc">三层模型、本土案例、ROI拆解——AI营销的真相</p>
+
+
 
             <div class="articles-grid">
 
-                
+
 
                 
+
+
+
+                
+
+
 
                 <a href="article-ai-marketing-industry.html" class="article-card">
 
+
+
                     <span class="article-badge">AI营销 · 产业链</span>
+
+
 
                     <h4 class="article-title">AI营销产业链全景深度解析</h4>
 
+
+
                     <p class="article-desc">三阶段定位框架+4家A股核心公司深拆（蓝色光标/易点天下/浙文互联/省广集团），营收结构、毛利率、AI产品进度逐一拆解。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-ai-marketing-report.html" class="article-card">
 
+
+
                     <span class="article-badge">AI营销 · 完整报告</span>
+
+
 
                     <h4 class="article-title">AI营销深度分析报告</h4>
 
+
+
                     <p class="article-desc">2025-2026年中国AI营销深度分析：1.87万亿市场规模、7大本土案例拆解（百雀羚/戴森/科沃斯/豪士面包/利欧股份/名创优品/小红书）、AI营销三层模型。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             </div>
 
+
+
         </div>
+
+
 
         <!-- 分类5: 跨界观察 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">🌍 跨界观察</h3>
 
+
+
             <p class="cat-desc">不限于AI，但同样用数据说话</p>
 
+
+
             <div class="articles-grid">
+
     <a href="hefei_city_algorithm.html" class="article-card">
+
       <span class="article-badge">城市算法 · 产业升级</span>
+
       <div class="article-title">260亿变1.2万亿：合肥这套城市算法，全中国没有一个城市抄得会</div>
+
       <div class="article-desc">从京东方到长鑫再到蔚来，合肥用一套国资下注加产业链招商的城市算法，把 260 亿赌成了 1.2 万亿——为何别人抄不会。</div>
+
       <div class="article-meta">2026-08-05 · 深度长文</div>
+
       <div class="article-arrow">阅读全文 →</div>
+
     </a>
 
+
+
                 
+
+
 
                 <a href="article-china-auto-rise.html" class="article-card">
 
+
+
                     <span class="article-badge">中国制造 · 产业升级</span>
+
+
 
                     <h4 class="article-title">换道碾压：中国汽车如何用33年改写百年格局</h4>
 
+
+
                     <p class="article-desc">从1992年钱学森的建议到2025年全球登顶，33年战略定力、四重机缘叠加、日德美三线失守——比亚迪/奇瑞/吉利/上汽四大路线全拆解。</p>
+
+
 
                     <div class="article-meta"><span>📊 数据研算</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             </div>
 
+
+
         </div>
+
+
 
         <!-- 分类: 空域经济 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">🚀 空域经济 · 物理AI</h3>
 
+
+
             <p class="cat-desc">天网地网两张网——从火箭回收到低空经济的万亿赛道</p>
 
+
+
             <div class="articles-grid">
+
+
 
                 <a href="embodied_ai_research.html" class="article-card">
 
+
+
                     <span class="article-badge">物理AI · 具身智能</span>
+
+
 
                     <h4 class="article-title">具身智能融资与量产双拐点：Physical AI的万亿级产业爆发与中美技术路线深度对比</h4>
 
+
+
                     <p class="article-desc">2026量产元年下，拆解中美具身智能的融资节奏、量产拐点与技术路线差异，看清Physical AI的万亿赛道谁在领跑。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 投融资数据</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>                <a href="article-kongyu-economy.html" class="article-card">
 
+
+
                     <span class="article-badge">空域经济 · 中美对比 · 物理AI</span>
+
+
 
                     <h4 class="article-title">天网·地网：两张网的中国机遇——从长征十号首飞到低空经济的万亿赛道</h4>
 
+
+
                     <p class="article-desc">一枚火箭落地，两张网同时加速。天网是太空基础设施——长征十号6分钟回收、千帆星座1296颗卫星组网；地网是低空经济——12.3万家企业、7000亿市场、eVTOL单座60元。反常识：低空经济中国才是定义者，不是美国。两张网本质是同一套物理AI能力体系的三层迁移。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-11</span><span>📊 13处配图</span><span>🖼️ 11张</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-momenta-physical-ai.html" class="article-card">
 
+
+
                     <span class="article-badge">物理AI · 自动驾驶</span>
+
+
 
                     <h4 class="article-title">Momenta：当"物理AI第一股"开始讲一个关于"城市"的故事</h4>
 
+
+
                     <p class="article-desc">物理AI三站：自动驾驶（地面）→人形机器人（工厂）→低空经济（空中）。Momenta用数据闭环+无图路线实现自动驾驶量产，同时向具身智能和低空飞行器扩展。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-10</span><span>📊 10+ 数据源</span><span>🖼️ 配图版</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             </div>
 
+
+
         </div>
+
+
 
         <!-- 分类6: 人形机器人 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">🤖 人形机器人</h3>
 
+
+
             <p class="cat-desc">成本拆解、供应链国产化、量产路径——人形机器人的真实账本</p>
 
+
+
             <div class="articles-grid">
+
+
 
                 <a href="tactile_sensor_199.html" class="article-card">
 
+
+
                     <span class="article-badge">具身智能 · 触觉传感器</span>
+
+
 
                     <h4 class="article-title">199元的触觉传感器：具身智能的iPhone时刻到了</h4>
 
+
+
                     <p class="article-desc">当六轴力传感器从万元跌破199元，具身智能的供应链扭点、BOM拆解与中美路径全景解析。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07</span><span>📊 深度研究</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
                 
+
+
 
                 <a href="article-robot-urkl-fight.html" class="article-card">
 
+
+
                     <span class="article-badge">具身智能 · 产业链 · 中美对比</span>
+
+
 
                     <h4 class="article-title">机器人打了一架，我从中拆出了一条千亿产业链</h4>
 
+
+
                     <p class="article-desc">URKL格斗赛全网曝光5-8亿。擂台是假，压力测试是真——每一拳跑出来的数据都在喂工业级算法。上半年融资345亿、出货量增2.3倍，特斯拉vs中国量产路线对决。格斗是具身智能的F1。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-17</span><span>📊 11+ 数据源</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
                 <a href="article-robot-humanoid-cost-drop.html" class="article-card">
 
+
+
                     <span class="article-badge">人形机器人 · 成本拆解 · 中美对比</span>
+
+
 
                     <h4 class="article-title">人形机器人跌破万元：三年降价95%背后的真相</h4>
 
+
+
                     <p class="article-desc">宇树R1降到2.99万，小布米9998元——三年累计降价95%。核心零部件国产化率75%-90%，灵巧手和丝杠仍是短板。B端2-3年量产，C端至少5年。五大投资问题直接回答。</p>
+
+
 
                     <div class="article-meta"><span>📅 2026-07-07</span><span>📊 20+ 数据源</span><span>🖼️ 5 张图表 + 7 张实拍图</span></div>
 
+
+
                     <div class="article-arrow">阅读全文 →</div>
+
+
 
                 </a>
 
+
+
             </div>
+
+
 
         <!-- 新分类: AI产业事件 -->
 
+
+
         <div class="cat-section">
+
+
 
             <h3 class="cat-title">⚖️ AI产业事件</h3>
 
+
+
             <p class="cat-desc">AI行业的重大事件深度拆解——诉讼、收购、监管、路线之争。</p>
 
+
+
             <div class="articles-grid">
+        <a href="zhiwei_lingfeng_fund.html" class="article-card">
+            <span class="article-badge">️ AI产业事件</span>
+            <h4 class="article-title">智微凌峰基金30亿元落子半导体设备_材料_先进封</h4>
+            <p class="article-desc">当30亿基金落子“卡脖子”：一场产业资本与隐形冠军的合谋</p>
+            <div class="article-meta"><span>📅 2026-08-08</span></div>
+            <div class="article-arrow">阅读全文 →</div>
+        </a>
+        <a href="jiangsu_huawei_ai_compute.html" class="article-card">
+            <span class="article-badge">️ AI产业事件</span>
+            <h4 class="article-title">江苏省与华为签署AI算力中心_城市公共云_数据基</h4>
+            <p class="article-desc">当江苏牵手华为：一份省级算力协议背后的产业地理重塑</p>
+            <div class="article-meta"><span>📅 2026-08-08</span></div>
+            <div class="article-arrow">阅读全文 →</div>
+        </a>
+        <a href="nvda_lancium_power.html" class="article-card">
+            <span class="article-badge">️ AI产业事件</span>
+            <h4 class="article-title">英伟达向Lancium投资最多30亿美元_锁定S</h4>
+            <p class="article-desc">当英伟达花30亿美元买电：AI巨头为何开始&quot;囤电&quot;而非&quot;囤芯片&quot;</p>
+            <div class="article-meta"><span>📅 2026-08-08</span></div>
+            <div class="article-arrow">阅读全文 →</div>
+        </a>
+        <a href="jpm_tech_debt_500b.html" class="article-card">
+            <span class="article-badge">️ AI产业事件</span>
+            <h4 class="article-title">摩根大通上修2026科技债发行至5000亿美元</h4>
+            <p class="article-desc">当5000亿美元涌向AI基建：一场由债券市场主导的算力军备竞赛</p>
+            <div class="article-meta"><span>📅 2026-08-08</span></div>
+            <div class="article-arrow">阅读全文 →</div>
+        </a>
+
+
 
                 
 
+
+
                 
+
+
 
 <a href="miit_robot_training.html" class="article-card">
+
       <span class="article-badge">工信部 · 人形机器人 · 实景实训</span>
+
       <h4 class="article-title">当「实训」成为「准入证」：人形机器人万台目标的真门槛不在车间，在数据</h4>
+
       <p class="article-desc">工信部推AI制造业创新中心与人形机器人实景实训，把“数据”确立为产业硬通货。</p>
+
       <div class="article-meta">📅 2026-08-07 · 📊 工信部 / 人形机器人</div>
+
     </a>
+
     <a href="us_ban_china_ai.html" class="article-card">
+
       <span class="article-badge">白宫封杀 · 算力冷战 · 中国AI</span>
+
       <h4 class="article-title">当白宫要封杀中国AI：一场让英伟达站到“反对阵营”的算力冷战</h4>
+
       <p class="article-desc">白宫酝酿封杀中国AI模型入美，近200家硅谷初创联名反对，连英伟达都下场联署。封杀若落地，短期是政治姿态，中期是产业链地震——它可能反手撬动英伟达的CUDA生态护城河。</p>
+
       <div class="article-meta">📅 2026-08-05 · 📊 地缘政策 / 算力冷战</div>
+
     </a>
+
 <a href="ai_pharma_pe_void.html" class="article-card">
+
       <span class="article-badge">AI制药 · PE作废 · PS分层 · 估值框架</span>
+
       <h4 class="article-title">当 AI 制药的 PE 全部作废：30 倍 PS 差里，藏着散户读不懂的管线生死簿</h4>
+
       <p class="article-desc">AI 制药涨成信仰，但 PE 在这张表里集体失灵。拆完 32 家 peer：PE 作废、PS 差 30 倍、安全垫绑在三个表外假设。框架比结论值钱，可复用。</p>
+
       <div class="article-meta">📅 2026-07-29 · 📊 AI制药 Comps 子表 2026-07-25</div>
+
     </a>
+
 <a href="ai_pharma.html" class="article-card">
+
       <span class="article-badge">AI制药 · 范式迁移 · 死亡之谷 · 产业深度</span>
+
       <h4 class="article-title">当 AI 制药冲过死亡之谷：从湿实验到干实验的范式迁移与三道坎</h4>
+
       <p class="article-desc">AI 制药不是爽文：湿实验到干实验的范式迁移，三道坎卡住 90% 玩家，3 个真实公司案例拆真水平与讲故事的边界。</p>
+
       <div class="article-meta">2026-07-26 · 深度长文</div>
+
     </a>
+
 <a href="apple-v-openai.html" class="article-card">
+
+
 
                     <span class="article-badge">诉讼 · 商业秘密 · 中美对比</span>
 
+
+
                     <h4 class="article-title">OpenAI vs 苹果：AI时代首场硬件商业秘密大战</h4>
+
+
 
                     <p class="article-desc">苹果41页诉状指控OpenAI系统性盗用硬件机密：Tang Tan面试要求候选人带苹果主板/电池/SiP芯片，Chang Liu离职后不还电脑还炫耀LOL我还能访问内网，400+前苹果员工跳槽，65亿美元收购io Products。xAI案刚被驳回，苹果案指控远超信息层面。</p>
 
+
+
                     <div class="article-meta"><span>📅 2026-07-16</span><span>📊 14 数据源</span><span>🖼️ 9 张图表</span></div>
+
+
 
                     <div class="article-arrow">阅读全文 →</div>
 
+
+
                 </a>
+
+
 
             </div>
 
+
+
         </div>
+
+
 
     </div>
 
+
+
 </section>
+
+
 
 <section id="about">
 
+
+
     <div class="section-inner">
+
+
 
         <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;">关于小K</h2>
 
+
+
         <div class="about-text">
+
+
 
             <p>自媒体创作者，全网多平台分发。专注<strong>AI + 数据收集/研算</strong>方向。</p>
 
+
+
             <p>所有内容基于<strong>AI产业链12层中美对比框架</strong>，从能源到AI原生经济逐层拆解。</p>
+
+
 
             <p>数据原则：<strong>交叉验证、利益相关标注、缺口不补</strong>。专业术语必配大白话解释。</p>
 
+
+
         </div>
+
+
 
         <div class="qr-section" style="display:flex;gap:32px;margin-top:24px;justify-content:center;flex-wrap:wrap;">
 
+
+
             <div style="text-align:center;">
+
+
 
                 <img src="douyin-qr.png" alt="抖音二维码" style="width:140px;height:140px;border-radius:12px;border:1px solid var(--border);">
 
+
+
                 <p style="margin-top:8px;font-size:13px;color:var(--text-secondary);">抖音：小K讲AI营销</p>
 
+
+
             </div>
+
+
 
             <div style="text-align:center;">
 
+
+
                 <img src="wechat-qr.png" alt="微信二维码" style="width:140px;height:140px;border-radius:12px;border:1px solid var(--border);">
+
+
 
                 <p style="margin-top:8px;font-size:13px;color:var(--text-secondary);">微信：AAM_2026</p>
 
+
+
             </div>
+
+
 
         </div>
 
+
+
     </div>
+
+
 
 </section>
 
+
+
 <footer>
+
+
 
     <p>© 2026 小K爱研究 · 数据可溯源，案例有出处</p>
 
+
+
 </footer>
 
+
+
 </body>
+
+
 
 </html>
