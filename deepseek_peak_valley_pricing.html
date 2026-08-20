@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>当DeepSeek把API价格当成电费来算</title>
+<meta name="description" content="当DeepSeek把API价格当成电费来算">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "当DeepSeek把API价格当成电费来算",
+  "author": {
+    "@type": "Person",
+    "name": "小K"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小K超爱研究",
+    "url": "https://xiaokaiyanjiu.cn"
+  },
+  "datePublished": "2026-08-20",
+  "dateModified": "2026-08-20",
+  "description": "当DeepSeek把API价格当成电费来算"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "DeepSeek API峰谷定价是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DeepSeek 首次把'峰谷定价'搬进了大模型 API：一天 24 小时被切成 7 小时高峰和 17 小时闲时，闲时价格直接打五折。在此之前，全世界的大模型 API 都是'一个价格走天下'，无论凌晨三点还是工作日下午，每百万 Token 一个价。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek API价格为什么上涨1100%？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "对照 V4-Pro 调价前（0.025/3/6 元），高峰时段三项涨幅分别达到 1100%、200%、350%；V4-Flash 也涨了 400%/200%/350%。高峰时段恰恰是企业级请求、开发者的代码补全、客服机器人集中爆发的上班时间，GPU 资源稀缺，稀缺就该贵。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek为什么把数据中心建在乌兰察布？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "答案全在电表里：乌兰察布是国家'东数西算'八大枢纽之一、内蒙古枢纽的核心节点，园区直供电价低至 2 毛出头/度，绿电平均上网电价长期处于全国洼地。业内测算，同等规模算力建在乌兰察布，全生命周期电费比东部沿海低 30%-40%。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek的峰谷定价对开发者有什么影响？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "开发者真正的对策是'错峰调用'：把不赶时间的任务挪到晚上，成本立省一半。五折闲时是真实折扣（批量处理、代码生成、模型评测这类任务放到闲时确实更便宜）；高峰涨价则是供需定价——企业级请求集中在工作时间，GPU 资源稀缺，稀缺就该贵。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek这次调价有什么风险？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1100% 的涨幅可能让价格敏感的开发者转向替代模型；错峰引导若执行不顺，闲时五折反而会压低整体收入；而绿电波动与人才半径，是乌兰察布模式的两颗暗雷。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek调价对国产大模型市场意味着什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "定价权开始分化。DeepSeek 用'成本定价'打底（低电费+高利用率），同行如果做不到同样的成本结构，要么跟随涨价（丢失价格优势），要么硬扛亏损。行业从'拼参数、拼价格战'进入'拼成本、拼定价能力'的阶段——这可能是国产大模型集体变贵的开始。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#161b26; --muted:#5b6472; --line:#e6e9ef; --bg:#ffffff; --soft:#f6f8fb;
+  --blue:#2563eb; --red:#e11d48; --amber:#f59e0b; --green:#16a34a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:17px}
+.hero{position:relative;width:100%;height:48vh;min-height:340px;overflow:hidden;background:linear-gradient(135deg,#0b1020 0%,#13234d 60%,#2563eb 140%)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,20,.12),rgba(8,12,20,.85))}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:34px 6vw;color:#fff;z-index:2}
+.hero-text .kicker{font-size:13px;letter-spacing:3px;color:#9ec5ff;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.hero-text h1{font-size:33px;line-height:1.28;margin:0;font-weight:800;max-width:920px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.meta{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding:14px 6vw;border-bottom:1px solid var(--line);background:var(--soft)}
+.meta b{color:var(--ink)}
+.wrap{max-width:840px;margin:0 auto;padding:38px 24px 90px}
+h2{font-size:25px;margin:48px 0 14px;padding-left:14px;border-left:5px solid var(--blue)}
+h3{font-size:19px;margin:32px 0 10px;color:#0f1b33}
+p{margin:14px 0}
+.lead{font-size:19px;color:#0f1b33;background:linear-gradient(90deg,#eef4ff,#fff);border:1px solid #dbe7ff;border-radius:12px;padding:20px 22px;font-weight:600;line-height:1.7}
+.tag{display:inline-block;background:#eef2ff;color:#2742d6;border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600;margin-right:6px}
+.chart{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin:24px 0}
+.chart svg{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+th{background:#0f1b33;color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fafbfd}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h4{margin:0 0 6px;font-size:15px;color:var(--blue)}
+.card .big{font-size:23px;font-weight:800;color:var(--ink)}
+.qa{margin:16px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa .q{background:#0f1b33;color:#fff;padding:13px 16px;font-weight:600}
+.qa .a{padding:15px 18px;background:#fff}
+.note{background:#fff7ed;border-left:4px solid var(--amber);padding:13px 16px;border-radius:8px;margin:18px 0;font-size:15px}
+footer{background:#0f1b33;color:#aeb6c6;padding:32px 6vw;font-size:13px;line-height:1.8}
+.disclaimer{background:#fff7e6;border:1px solid #ffd591;color:#ad6800;padding:12px 16px;margin:0 0 18px;border-radius:8px;font-size:14px;line-height:1.6;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link{position:fixed;left:18px;bottom:18px;z-index:50;background:#1f6feb;color:#fff;padding:9px 16px;border-radius:24px;font-size:14px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link:hover{background:#155ec0}
+.src{font-size:13.5px;color:var(--muted);background:#eef1f7;border-radius:10px;padding:14px 16px;margin-top:24px}
+.src b{color:var(--ink)}
+@media(max-width:640px){.cards{grid-template-columns:1fr}.hero-text h1{font-size:25px}.wrap{padding:28px 16px 70px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  
+  <div class="hero-text">
+    <div class="kicker">AI 产业链 · 深度拆解</div>
+    <div class="disclaimer">个人观点，仅供参考。不做投资建议，投资需找专业机构。股市有风险投资需谨慎。</div>
+    <h1>当DeepSeek把API价格当成电费来算</h1>
+  </div>
+</div>
+<div class="meta"><span>📅 <b>2026 年 08 月 20 日</b></span><span>⏱ 阅读约 <b>6</b> 分钟</span><span>🏷 AI 产业链 · 深度拆解</span></div>
+<div class="wrap">
+<div class="lead">当DeepSeek把API价格当成电费来算</div>
+<p style="margin:18px 0 0"><span class="tag">深度拆解</span></p>
+<p>> <strong>判断核心句</strong>：DeepSeek 的峰谷调价不是简单涨价，而是一场"电力成本定价学"的公开课——单价的背后，是电价（乌兰察布 2 毛出头的绿电）、芯片（英伟达 Blackwell 的供应风险）与利用率（7 小时高峰对 17 小时闲时）三重因素的叠加；它同时标志着 DeepSeek 从"幻方输血"走向"自己造血"的转折点。</p>
+<h2>开场</h2>
+<p>2026 年 8 月 17 日零时，DeepSeek 两款主力模型（V4-Flash、V4-Pro）的 API 价格表悄然更新。最高涨幅——1100%。</p>
+<p>这不是普通的涨价。DeepSeek 首次把"峰谷定价"搬进了大模型 API：一天 24 小时被切成 7 小时高峰和 17 小时闲时，闲时价格直接打五折。在此之前，全世界的大模型 API 都是"一个价格走天下"，无论凌晨三点还是工作日下午，每百万 Token 一个价。</p>
+<p>为什么偏偏是现在？为什么偏偏是这种方式？拆开这张价格表，你会发现它背后站着一本账——一本从电价、芯片到基金盈亏都算进去的账。</p>
+<h2>第一点：价格是怎么算出来的——峰谷，其实是"利用率"的数学</h2>
+<p>先看这张价格表（每百万 Tokens，人民币）：</p>
+<table><thead><tr><th>模型</th><th>时段</th><th>缓存命中输入</th><th>缓存未命中输入</th><th>输出</th></tr></thead><tbody><tr><td>V4-Pro</td><td>高峰(9-12/14-18)</td><td>0.3 元</td><td>9 元</td><td>27 元</td></tr><tr><td>V4-Pro</td><td>闲时(其余17小时)</td><td>0.15 元</td><td>4.5 元</td><td>13.5 元</td></tr><tr><td>V4-Flash</td><td>高峰</td><td>0.1 元</td><td>3 元</td><td>9 元</td></tr><tr><td>V4-Flash</td><td>闲时</td><td>0.05 元</td><td>1.5 元</td><td>4.5 元</td></tr></tbody></table>
+<p>对照 V4-Pro 调价前（0.025/3/6 元），高峰时段三项涨幅分别达到 <strong>1100%、200%、350%</strong>；V4-Flash 也涨了 400%/200%/350%。</p>
+<p>高峰时段为什么偏偏是 9 点到 12 点、14 点到 18 点？因为这是上班时间。企业级请求、开发者的代码补全、客服机器人——都在这个窗口集中爆发；而 12 点到 14 点的午休、深夜和凌晨，GPU 在空转。</p>
+<p>大模型推理是<strong>持续占用算力</strong>的生意：训练是一次性投入，推理却要 7×24 小时耗着 GPU。GPU 空转一秒钟，折旧和电费都在烧。DeepSeek 用五折价格把批量任务、代码生成、模型评测这类"不赶时间"的活引到闲时，本质上是<strong>把空转的 GPU 时间卖出第二遍</strong>。</p>
+<p>这不是阴谋，是工业界的老规矩——电力行业早就这么干了：峰谷电价、错峰用电。大模型的成本结构越来越像电厂：固定成本极高（GPU 折旧、机房、电费），边际成本极低（多跑一个请求几乎不增加成本）。既然像电厂，定价自然要学电厂。</p>
+<h2>第二点：电费是单价的底层变量——乌兰察布的那本账</h2>
+<p>如果"利用率"决定价格怎么波动，那"电费"决定价格的地板在哪。</p>
+<p>彭博社 8 月 1 日报道：DeepSeek 正计划在内蒙古乌兰察布建设 <strong>1GW 规模的 AI 数据中心</strong>——按当前主流 AI 机柜功率密度测算，相当于一次性投放超过 30 万张高端 GPU。</p>
+<p>为什么是乌兰察布？一座草原城市，远离北上广深的人才与客户。答案全在电表里：</p>
+<ul>
+<li>乌兰察布是<strong>国家"东数西算"八大枢纽之一、内蒙古枢纽的核心节点</strong>，享受国家级算力网络的政策红利；</li>
+<li><strong>园区直供电价低至 2 毛出头/度</strong>，绿电平均上网电价长期处于全国洼地；</li>
+<li>业内测算，同等规模算力建在乌兰察布，<strong>全生命周期电费比东部沿海低 30%-40%</strong>；</li>
+<li>对一座年耗电以"亿度"计的 AI 集群，<strong>电价每差 1 分钱，就是千万级甚至上亿级的年度成本差</strong>。</li>
+</ul>
+<p>再叠加 DeepSeek 自己的"省电基因"：它以混合专家架构（MoE）和推理成本优化著称，把单次推理的单位功耗压到行业平均的几分之一。"省电算法 + 便宜绿电"，双重压缩单位成本——这才是 DeepSeek 敢把价格打得比同行低、还能在价格战中反复"掀桌子"的底气。</p>
+<p>8 月 19 日的招聘信息印证了这一切：DeepSeek 在招土木工程人才、月薪 3 万去内蒙草原守机房。机房正在从图纸变成现实。</p>
+<p>但乌兰察布也有另一面：绿电依赖天时，风光出力波动大，若缺储能与兜底电源，电价洼地的可持续性存疑；远离人才中心，对需要顶级 AI 工程师快速迭代的公司，是隐性的协同成本。</p>
+<h2>第三点：芯片是成本里最不可控的变量——Blackwell 与供应风险</h2>
+<p>电价可以靠选址锁定，利用率可以靠定价引导，但有一块成本，DeepSeek 很难自己控制：<strong>芯片</strong>。</p>
+<p>路透社 2026 年 2 月报道，DeepSeek 使用英伟达最先进的 <strong>Blackwell 芯片</strong>训练新模型——这一消息本身即涉出口管制争议。对 DeepSeek 而言，这意味着：</p>
+<ul>
+<li>GPU 占大模型总成本的大头（折旧 + 稀缺溢价），而供应受地缘政策影响，随时可能收紧；</li>
+<li>数据中心可以建在政策红利区（乌兰察布），但 GPU 供应风险无法用选址对冲；</li>
+<li>一旦高端芯片供应受阻，算力成本不降反升，价格地板会被抬高。</li>
+</ul>
+<p>这恰恰解释了峰谷调价的另一层动机：<strong>在成本不可控的约束下，把可控的部分（利用率、错峰）榨到极致</strong>。芯片价格我定不了，但让 GPU 在闲时也转起来、把单位成本摊薄，这是 DeepSeek 自己能做的事。</p>
+<h2>第四点：从"幻方输血"到自己造血——盈利状况的反转时刻</h2>
+<p>最后一块拼图，是 DeepSeek 的钱从哪来。</p>
+<p>过去两年，DeepSeek 一直被外界视为"梁文锋用幻方量化的利润养大的 AI 实验室"——靠基金回血。但 2026 年 7 月，这个叙事出现裂痕：</p>
+<ul>
+<li><strong>幻方量化滑铁卢</strong>：9 只产品 7 月单月净值跌幅全部超过 20%，其中中证 500 量化进取 1 号单月下挫 22.15%（该产品成立以来累计收益 448.91%，但年内已转负）；幻方信淮 500 指数专享产品年内跌至 -3.84%。中小盘指数增强策略集体承压。</li>
+<li><strong>同期 DeepSeek 融资狂飙</strong>：7 月 24 日完成首轮融资 <strong>510 亿元</strong>，投前估值 <strong>5000 亿元</strong>——梁文锋个人出资 200 亿（最大单一出资方）、腾讯 100 亿、宁德时代 50 亿、网易/京东/IDG 各约 30 亿、国家 AI 产业投资基金约 9.8 亿；意向资金超过 1000 亿抢着投。8 月又传重启第二轮约 500 亿融资。</li>
+</ul>
+<p>"冰火七月"：一边是量化产品集体亏损，一边是 AI 融资市场疯抢。这两件事放在一起看，信号很清楚——<strong>DeepSeek 的输血模式正在切换</strong>：从依赖幻方利润，转向资本市场融资 + API 商业化自我造血。</p>
+<p>峰谷调价，就是这个切换里最标志性的一步：涨价（尤其是高峰 1100%）提升收入，错峰引导提升利用率、摊薄成本，一进一出，都是在改善单位经济模型（unit economics）。<strong>从"烧钱换规模"到"精细化定价换毛利"，是 DeepSeek 商业化的成人礼</strong>——代价是，开发者要为高峰时段的"贵"买单。</p>
+<h2>收尾</h2>
+<p>DeepSeek 的峰谷调价，给整个行业上了一堂定价公开课：大模型的对外单价，最终由电价、芯片、利用率三重因素决定；而这三者，DeepSeek 已经分别用乌兰察布、算法省电、峰谷定价给出了自己的答案。</p>
+<p>风险同样存在：1100% 的涨幅可能让价格敏感的开发者转向替代模型；错峰引导若执行不顺，闲时五折反而会压低整体收入；而绿电波动与人才半径，是乌兰察布模式的两颗暗雷。</p>
+<p>但无论如何，有一点已经改变：<strong>大模型 API 不再是一口价，它开始像电费、像机票、像酒店——按供需、按时段定价</strong>。这是 AI 产业从"烧钱竞赛"走向"成本定价"的成人礼，而 DeepSeek，这次走在了前面。</p>
+<h2>Q&A</h2>
+<h2>Q1：闲时五折是不是套路？高峰涨那么多，开发者是不是被收割了？</h2>
+<p>不是套路，是机制。五折闲时是真实折扣（批量处理、代码生成、模型评测这类任务放到闲时确实更便宜）；高峰涨价则是供需定价——企业级请求集中在工作时间，GPU 资源稀缺，稀缺就该贵。开发者真正的对策是"错峰调用"：把不赶时间的任务挪到晚上，成本立省一半。</p>
+<h2>Q2：为什么说 DeepSeek 的定价越来越像电力行业？</h2>
+<p>因为成本结构像：大模型推理的固定成本极高（GPU 折旧+电费+机房），边际成本极低。电力行业为应对这种结构，发明了峰谷电价；DeepSeek 只是把同一套逻辑搬到了算力上。这也意味着，未来大模型的定价会越来越精细——按天时段、按地域、按任务类型分层定价，都会出现。</p>
+<h2>Q3：数据中心建在乌兰察布，电价便宜但离客户远，值吗？</h2>
+<p>值。对推理这类"算完发结果"的任务，网络延迟影响有限；而 30%-40% 的电费差是实打实的利润。只要东数西算的政策红利和绿电供给持续，这个选址就是成本最优解。真正的风险在人才——顶尖 AI 工程师愿不愿意长期驻守草原，这是 DeepSeek 要解决的隐性成本。</p>
+<h2>Q4：这次调价对国产大模型市场意味着什么？</h2>
+<p>定价权开始分化。DeepSeek 用"成本定价"打底（低电费+高利用率），同行如果做不到同样的成本结构，要么跟随涨价（丢失价格优势），要么硬扛亏损。行业从"拼参数、拼价格战"进入"拼成本、拼定价能力"的阶段——这可能是国产大模型集体变贵的开始。</p>
+<hr/>
+<p><strong>数据出处</strong>：</p>
+<ul>
+<li>峰谷定价价格表/时段/涨幅：智东西《最高涨1100%！DeepSeek新定价今日生效》（2026-08-17）</li>
+<li>乌兰察布 1GW 数据中心/电价/成本差：国际新能源网（2026-08-06，引彭博社 8-1 报道）</li>
+<li>英伟达 Blackwell 训练：路透社（2026-02-24）</li>
+<li>融资 510 亿/估值 5000 亿/出资方：野马财经、财通社（2026-08）</li>
+<li>幻方量化 9 只产品 7 月跌幅：野马财经《梁文锋的冰火七月》（2026-08）</li>
+<li>招土木人才守机房：腾讯新闻/36氪（2026-08-19）</li>
+</ul>
+
+<div class="note">⚠️ 电价可以靠选址锁定，利用率可以靠定价引导，但有一块成本，DeepSeek 很难自己控制：**芯片**。</div>
+<h2>读者问答（FAQ）</h2><div class="qa"><div class="q">Q：DeepSeek API峰谷定价是什么？</div><div class="a">A：DeepSeek 首次把'峰谷定价'搬进了大模型 API：一天 24 小时被切成 7 小时高峰和 17 小时闲时，闲时价格直接打五折。在此之前，全世界的大模型 API 都是'一个价格走天下'，无论凌晨三点还是工作日下午，每百万 Token 一个价。</div></div><div class="qa"><div class="q">Q：DeepSeek API价格为什么上涨1100%？</div><div class="a">A：对照 V4-Pro 调价前（0.025/3/6 元），高峰时段三项涨幅分别达到 1100%、200%、350%；V4-Flash 也涨了 400%/200%/350%。高峰时段恰恰是企业级请求、开发者的代码补全、客服机器人集中爆发的上班时间，GPU 资源稀缺，稀缺就该贵。</div></div><div class="qa"><div class="q">Q：DeepSeek为什么把数据中心建在乌兰察布？</div><div class="a">A：答案全在电表里：乌兰察布是国家'东数西算'八大枢纽之一、内蒙古枢纽的核心节点，园区直供电价低至 2 毛出头/度，绿电平均上网电价长期处于全国洼地。业内测算，同等规模算力建在乌兰察布，全生命周期电费比东部沿海低 30%-40%。</div></div><div class="qa"><div class="q">Q：DeepSeek的峰谷定价对开发者有什么影响？</div><div class="a">A：开发者真正的对策是'错峰调用'：把不赶时间的任务挪到晚上，成本立省一半。五折闲时是真实折扣（批量处理、代码生成、模型评测这类任务放到闲时确实更便宜）；高峰涨价则是供需定价——企业级请求集中在工作时间，GPU 资源稀缺，稀缺就该贵。</div></div><div class="qa"><div class="q">Q：DeepSeek这次调价有什么风险？</div><div class="a">A：1100% 的涨幅可能让价格敏感的开发者转向替代模型；错峰引导若执行不顺，闲时五折反而会压低整体收入；而绿电波动与人才半径，是乌兰察布模式的两颗暗雷。</div></div><div class="qa"><div class="q">Q：DeepSeek调价对国产大模型市场意味着什么？</div><div class="a">A：定价权开始分化。DeepSeek 用'成本定价'打底（低电费+高利用率），同行如果做不到同样的成本结构，要么跟随涨价（丢失价格优势），要么硬扛亏损。行业从'拼参数、拼价格战'进入'拼成本、拼定价能力'的阶段——这可能是国产大模型集体变贵的开始。</div></div>
+<div class="src"><b>数据来源：</b>公开来源 + 小K超爱研究产业数据库（公司财报 / 行业媒体 / 当日产业巡检聚合）</div>
+</div>
+<footer>
+本文为产业机制拆解，仅解释已发生的产业现象，不预测涨跌、不构成任何投资建议。涉及 A 股标的仅作产业机制说明，不做个股方向判断。投资有风险，决策需独立。
+</footer>
+<a href="articles.html" class="back-link">← 返回文章列表</a>
+</body>
+</html>
