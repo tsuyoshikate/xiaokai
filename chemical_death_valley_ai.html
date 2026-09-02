@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>化工研发最大的"死亡之谷"，AI 正在绕过去｜小K超爱研究</title>
+<meta name="description" content="智能化工大模型3.0 Pro发布，81.96%不是重点，长兴岛千吨级智能中试平台才是：AI 开始从知识工具进入工业数据生产系统，用'数据按需生成'压缩化工研发的死亡之谷。本文拆解六方全栈链条、AVEVA 设计软件缺口与可证伪观测指标。" />
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#c2410c; --accent2:#1d4ed8; --soft:#fff7ed; --card:#fffaf5;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.85;font-size:17px;}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 80px;}
+  header.hero{border-bottom:3px solid var(--accent);padding-bottom:22px;margin-bottom:8px;}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.04em;font-size:14px;}
+  h1{font-size:30px;line-height:1.35;margin:10px 0 14px;font-weight:800;letter-spacing:-.01em;}
+  .byline{color:var(--muted);font-size:14px;}
+  h2{font-size:23px;margin:42px 0 14px;padding-left:12px;border-left:4px solid var(--accent);font-weight:800;}
+  h3{font-size:19px;margin:30px 0 10px;color:#111;font-weight:700;}
+  p{margin:14px 0;}
+  strong{color:#111;}
+  .lead{font-size:18px;color:#222;background:var(--soft);border:1px solid #fed7aa;
+    border-radius:10px;padding:16px 18px;margin:20px 0;}
+  blockquote{margin:18px 0;padding:12px 18px;background:var(--card);border-left:4px solid var(--accent2);
+    border-radius:0 8px 8px 0;color:#222;font-style:normal;}
+  blockquote.formula{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    font-size:15px;background:#0f172a;color:#e2e8f0;border-left-color:#38bdf8;}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:var(--soft);font-weight:700;}
+  .tag{display:inline-block;background:var(--soft);border:1px solid #fed7aa;border-radius:999px;
+    padding:2px 11px;font-size:13px;color:var(--muted);margin:2px 4px 2px 0;}
+  .disclaim{margin-top:46px;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;
+    padding:16px 18px;font-size:14px;color:#7c2d12;}
+  .disclaim b{color:#9a3412;}
+  .code-note{font-size:13px;color:var(--muted);}
+  footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center;}
+  a{color:var(--accent2);text-decoration:none;}
+  hr{border:none;border-top:1px solid var(--line);margin:30px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">化工 × AI 产业链深度研究 · 作用力视角</div>
+    <h1>化工研发最大的"死亡之谷"，AI 正在绕过去</h1>
+    <div class="byline">2026-09-01 · 小K超爱研究 · 阅读约 10 分钟</div>
+  </header>
+
+  <div class="lead">
+    2026年8月31日，智能化工大模型3.0 Pro发布，官方给出一串漂亮数字：文本问答准确率 81.96%、多模态 80.75%。多数解读停在"国产行业大模型又进步了"。
+    <strong>本文想提出另一个读法：81.96% 不是重点，长兴岛那台千吨级装置才是——AI 的角色正在从"知识工具"进入"工业数据生产系统"。</strong>
+  </div>
+
+  <h2>一、先讲清楚：化工研发的"死亡之谷"到底卡在哪</h2>
+
+  <p>一个化工新工艺从想法到量产，必经三个阶段：</p>
+  <blockquote>实验室发现（克—公斤级）→ 中试放大（百公斤—吨级）→ 工业装置（万吨级）</blockquote>
+
+  <p>三步之间不是等比放大，而是<strong>非线性放大</strong>：反应器尺寸变了，传热、传质、流体力学全部改变；实验室里成立的工艺，放大后可能局部过热、副反应失控、催化剂失活——这就是化工行业特有的"放大效应"。</p>
+
+  <p>行业里有个流传的说法：大批实验室成果倒在中试这一步，能走到工厂的反而少。这道坎有个名字——<strong>死亡之谷</strong>。</p>
+
+  <p>为什么中试这么难？把问题拆开看，卡点不是"化学不懂"，而是<strong>数据断层</strong>：</p>
+  <blockquote>实验室数据太干净（理想条件、小尺度，无法外推）→ 工业装置数据太贵（核心 Know-how，不公开、不敢试错）→ 中间的真实工况数据长期缺失</blockquote>
+
+  <p><strong>化工智能化的真正瓶颈，不是模型不够聪明，而是喂给模型的真实工况数据不存在。</strong>没有真实数据，再强的模型也只能在"知识的舒适区"里打转，一到放大就失灵。这就是通用大模型在化工行业"水土不服"的原因——不是不会答，是没数据可依。</p>
+
+  <h2>二、3.0 Pro 在做什么：把中试从"物理试错"变成"数据生成"</h2>
+
+  <p>3.0 Pro 这次不一样的地方，是模型身后多了一台装置。官方表述：团队在大连长兴岛建成国内首个<strong>千吨级智能中试平台</strong>，形成"实验室难覆盖、工业装置难获取的<strong>真实工况催化反应与工艺数据'按需生成'</strong>的能力"。</p>
+
+  <p>翻译成人话：<strong>过去是"人带着工艺去装置上试"，现在是"模型需要什么工况数据，平台就定向生成什么工况数据"。</strong>模型可以主动提出"我要看这个催化剂在 850℃、2MPa、特定空速下的表现"，装置就按需产出这批真实工况数据，反哺模型训练与工艺验证。</p>
+
+  <p>数据是 AI 的粮食——而过去化工行业最缺的不是模型，是粮食。长兴岛这台装置，本质上是给 AI 建了一座<strong>"真实工况数据农场"</strong>。</p>
+
+  <p>再配合 3.0 Pro 的四层技术体系（大模型—智能体—专业技能与工具—应用场景），模型第一次不只是"回答问题"，而是<strong>接任务、拆任务、调工具、验结果</strong>。化物所智能化工团队核心成员叶茂的解释最直白："当工程师提出流程设计或工艺优化需求时，模型不仅理解意图，还能自动拆解出需要计算哪些物性参数、调用哪些模拟软件、进行哪些工程设计，并对计算结果进行分析与校核。"</p>
+
+  <p>注意"绕过去"这三个字——这不是推倒重来。传统路径是"物理放大式试错"，一步步花钱花时间趟过去；3.0 Pro 的路径是"数据生成+虚拟校核"：把死亡之谷从"物理空间"搬到"数据空间"，在虚拟空间完成规划、仿真、校核，把"必须上装置试"的范围大幅压缩。死亡之谷不会消失，但它的宽度和深度正在被压缩。</p>
+
+  <h2>三、名单比模型本身更有信息量：这不是一个模型，是一条生产线</h2>
+
+  <p>发布同日，化物所联合科大讯飞、阿里云、华为、宁波数据集团（筹）、中控技术、AVEVA 等单位成立<strong>智能化工联合创新实验室</strong>。把这张名单放到全链条上看，每个人占的格子非常清楚：</p>
+
+  <table>
+    <thead><tr><th>链条环节</th><th>参与方</th><th>承担角色</th></tr></thead>
+    <tbody>
+      <tr><td>数据</td><td>大连化物所</td><td>化工场景、全链条大数据中心、长兴岛中试平台（数据生产端）</td></tr>
+      <tr><td>模型</td><td>科大讯飞</td><td>星火大模型底座 + AI4S 团队</td></tr>
+      <tr><td>算力</td><td>阿里云</td><td>云算力平台（3.0 Pro 联合研发方）</td></tr>
+      <tr><td>算力/软件生态</td><td>华为</td><td>1.0 时代即参与开发；昇腾算力生态</td></tr>
+      <tr><td>工厂控制</td><td>中控技术</td><td>DCS/UCS 控制系统 + 时序大模型 TPT（生产执行端）</td></tr>
+      <tr><td>设计软件</td><td>AVEVA</td><td>流程工业三维设计/工程软件（工程设计端）</td></tr>
+    </tbody>
+  </table>
+
+  <p>3.0 Pro 不是"化物所+讯飞+阿里云"三家的事，而是一条<strong>覆盖"数据→模型→算力→设计→控制→工厂"的完整生产线</strong>。单点模型是"工具"，闭合链条才是"生产系统"。</p>
+
+  <p>还有一个身份值得单独划重点：化物所建成我国首个覆盖"研发—设计—生产—市场"的石化化工全链条大数据中心，入选国家数据局石化化工行业高质量数据集建设<strong>链主单位</strong>。在数据要素政策语境里，"链主"意味着有权主导行业数据标准的制定与数据集的归集——<strong>谁掌握真实工况数据的定义权和汇聚权，谁就掌握训练下一代行业模型的原材料供应</strong>。这比任何单一算法都更接近"护城河"。</p>
+
+  <h2>四、反转：名单里那个"不合群"的名字——AVEVA</h2>
+
+  <p>AVEVA（剑维软件）是英国工业软件公司，2023 年被施耐德电气收购退市。它的产品线覆盖流程工业工程设计全流程：E3D（三维工厂设计）、PDMS（1976 年问世，全球第一个基于面向对象工程数据库的 3D 工厂设计系统）、P&ID、工程数据管理等。<strong>E3D/PDMS 在流程工业三维设计领域占据绝对主导地位，是中国大型设计院的主力设计平台。</strong></p>
+
+  <p>一个国内案例：中国昆仑工程（综合甲级设计院）与 AVEVA 合作超二十年——2002 年引入 PDMS、2018 年应用 E3D、2024 年 E3D 迁移、2025 年推进"AVEVA E3D×DeepSeek 本地化集成"项目（智能设计助手"小E"）。官方实测数据：<strong>管口方位图生成从人工约 20 分钟/张降到 AI 约 2 分钟/张（效率提升 90%）；管底标高对齐从单段 0.2–0.5 小时降到单次 1–2 秒、自动完成率 100%</strong>。</p>
+
+  <p>把 3.0 Pro 的新闻和这个案例放在一起看，会出现一个微妙的画面：<strong>模型的智能是我们自己的，但模型要调用、要生成数据的工程设计软件底座，主流仍是 AVEVA（英国）。</strong>化工行业智能化链条里，最上游的"设计软件层"恰恰是最依赖海外的环节——工程师的技能栈，从建库、模板到 PML 二次开发，都长在别人平台上。</p>
+
+  <p>这不是唱衰，是把话说透：<strong>中国化工智能化目前突破的是"模型层"（大模型+智能体），而"工具层"（工程设计软件）仍是缺口。</strong>联合创新实验室把 AVEVA 拉进名单，说明官方对此心知肚明——"工业软件融合"被列为实验室四大方向之一。绕死亡之谷可以靠数据和模型，但要真正"一步到工厂"，设计软件层这一关必须过。</p>
+
+  <h2>五、B 面：我不当市场回答，只给两个情景</h2>
+
+  <p><strong>情景 A（模型引领，工具跟进）：</strong>若 3.0 Pro 持续迭代（官方已披露 4.0 规划：以甲醇制烯烃等成熟工艺为验证场景，贯通实验室研发、工程设计与工厂运行），长兴岛平台的数据生产能力被验证，且中控/国内软件厂商逐步填补设计软件缺口，则中国化工智能化会走出"模型—数据双轮驱动"路径——死亡之谷被系统性压缩，"一步到工厂"从口号变成可复制的范式。</p>
+
+  <p><strong>情景 B（模型先进，底座卡脖子）：</strong>若模型层持续领先，但工程设计软件层长期依赖 AVEVA 等海外产品（授权、数据主权、版本升级受制于人），则在最关键的"设计—放大"环节形成软肋——一旦外部环境收紧，智能化链条的"最后一公里"会被卡住。届时"绕死亡之谷"绕到一半，桥墩却是别人的。</p>
+
+  <p><strong>哪些数据出现、本文就错？</strong>几条硬指标：长兴岛平台长期停留在"演示级"、无规模化数据产出；3.0 Pro 的企业调用量停滞（API 调用增速显著放缓）；400+ 智能体中绝大多数未在真实化工项目中被实际调用；官方后续转向"问答性能竞赛"而非"任务执行落地"。反过来，如果基于长兴岛平台数据的工艺验证案例持续公开、API 调用量继续高增长、"一步到工厂"出现可复制的成功案例——本文的判断就坐实。</p>
+
+  <h2>六、价值捕获：谁是这轮变革的最大受益者</h2>
+
+  <p>化工智能化的新增议价空间，可近似写成：</p>
+  <blockquote class="formula">新增议价空间 ≈ 真实工况数据掌控度 × 模型任务执行能力 × 链条闭合度 × 客户（化工企业）依赖度</blockquote>
+
+  <p>按这个框架，受益梯度非常清晰：</p>
+  <blockquote>数据端（化物所/长兴岛）→ 模型端（讯飞/星火）→ 落地端（中控）→ 设计软件端（AVEVA/国产替代）</blockquote>
+
+  <p><strong>数据端（化物所/长兴岛）：</strong>真实工况数据从"不存在"变成"可生产"，谁掌握数据生产权，谁就掌握行业模型的原料供应——稀缺性最高的位置。<strong>模型端（讯飞/星火）：</strong>星火底座被行业首个大模型采用，相当于拿到"化工行业 AI 底座"入场券。<strong>落地端（中控）：</strong>DCS 是工厂数据的主入口，中控连续 15 年国内 DCS 市占第一（45.1%），若控制系统与行业大模型打通，等于握住"数据出口+执行终端"两端。<strong>设计软件端（AVEVA/国产替代）：</strong>缺口最大、变数也最大——若国产替代在 AI 时代窗口补上这一格，价值重估空间最大；若补不上，这是整个链条最脆弱的一环。</p>
+
+  <p>一个信号：中控技术 2024 年 6 月在新加坡全球发布 UCS（通用控制系统）+TPT（流程工业时序大模型），官方称"全球首个"，定位"控制底座+时序 AI 大脑"——国内流程工业控制龙头已经在往"脑身协同"方向卡位，与化工大模型形成潜在对接点。</p>
+
+  <h2>关键数据速览</h2>
+  <table>
+    <thead><tr><th>维度</th><th>关键事实</th><th>来源口径</th></tr></thead>
+    <tbody>
+      <tr><td>3.0 Pro 发布</td><td>2026.8.31 化物所×科大讯飞×阿里云；81.96% / 80.75%（自评口径）</td><td>新华社 / 化物所官网</td></tr>
+      <tr><td>规模数字</td><td>400+ 智能体；300+ 企业注册；API 累计调用 1400万+ 次</td><td>新华社 / 科技日报</td></tr>
+      <tr><td>长兴岛平台</td><td>国内首个千吨级智能中试平台；真实工况数据"按需生成"</td><td>化物所官网 / 央视</td></tr>
+      <tr><td>版本时间线</td><td>1.0(2024.3) → 2.0(2024.11) → 2.0Pro(2025.5) → 3.0(2025.11) → 3.0Pro(2026.8.31)</td><td>百度百科 / 讯飞官方</td></tr>
+      <tr><td>六方名单</td><td>数据(化物所)、模型(讯飞)、算力(阿里云/华为)、控制(中控)、设计(AVEVA)</td><td>化物所官网</td></tr>
+      <tr><td>AVEVA 案例</td><td>昆仑工程"小E"：管口图 20分钟→2分钟；标高对齐 0.2-0.5h→1-2秒</td><td>中国勘察设计 / 剑维软件</td></tr>
+      <tr><td>中控地位</td><td>DCS 连续 15 年国内市占第一（45.1%）；2024.6 发布 UCS+TPT</td><td>央视焦点访谈 / 公司官网</td></tr>
+    </tbody>
+  </table>
+
+  <h2>冷硬结尾</h2>
+  <p>3.0 Pro 发布那天，绝大多数报道在写准确率；真正重要的，是长兴岛那台千吨级装置开始"按需生成"真实工况数据。</p>
+  <p>从 1.0 到 3.0 Pro，两年半六次迭代（2024.3 → 2024.11 → 2025.5 → 2025.11 → 2026.7 体验版 → 2026.8.31 正式版），中国化工行业第一次有了一台"AI 指挥的数据生产装置"——AI 从读文献的助手，变成了能定向生成工业数据的生产系统。</p>
+  <p><strong>死亡之谷还在，但它的宽度正在被压缩。绕过去的路修到哪一步，不取决于发布会，取决于长兴岛的数据出不出得来、AVEVA 那格谁来补。化工研发的下一代竞争，不在实验室里，在数据线上。</strong></p>
+
+  <div class="disclaim">
+    <b>免责声明：</b>本文为产业机制研究，所有数据均引自公开来源（新华社、中科院大连化物所官网、科技日报、央视、中国科学报、AVEVA 官方、《中国勘察设计》等），仅代表作者基于公开信息的分析观点，<b>不构成任何投资建议</b>。化工智能化进程与产业政策具有高度不确定性，请独立判断、谨慎决策。投资有风险，入市需谨慎。
+  </div>
+
+  <footer>© 2026 小K超爱研究 · 用作用力看产业 · 个人观点，仅供参考</footer>
+
+</div>
+<p style="margin-top:28px"><a href="articles.html" style="display:inline-block;padding:9px 18px;background:var(--accent);color:#fff;text-decoration:none;border-radius:6px;font-size:14px">← 返回文章列表</a></p>
+</body>
+</html>
