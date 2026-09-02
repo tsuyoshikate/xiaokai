@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>稳定币不是去美元化，是美元把收银台搬进了机器经济｜小K超爱研究</title>
+<meta name="description" content="98.6% 的 AI Agent 支付用 USDC，GENIUS Act 把储备锁死在美债，Circle 96% 收入来自准备金利息，BIS 实测 70% 稳定币流入来自非美元货币——稳定币不是去美元化，是美元把收银台搬进了机器经济。本文拆解证据链、香港镜像、反方两情景与证伪条件。" />
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#4c1d95; --accent2:#1d4ed8; --soft:#f5f3ff; --card:#faf9ff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.85;font-size:17px;}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 80px;}
+  header.hero{border-bottom:3px solid var(--accent);padding-bottom:22px;margin-bottom:8px;}
+  .kicker{color:var(--accent);font-weight:700;letter-spacing:.04em;font-size:14px;}
+  h1{font-size:30px;line-height:1.35;margin:10px 0 14px;font-weight:800;letter-spacing:-.01em;}
+  .byline{color:var(--muted);font-size:14px;}
+  h2{font-size:23px;margin:42px 0 14px;padding-left:12px;border-left:4px solid var(--accent);font-weight:800;}
+  h3{font-size:19px;margin:30px 0 10px;color:#111;font-weight:700;}
+  p{margin:14px 0;}
+  strong{color:#111;}
+  .lead{font-size:18px;color:#222;background:var(--soft);border:1px solid #ddd6fe;
+    border-radius:10px;padding:16px 18px;margin:20px 0;}
+  blockquote{margin:18px 0;padding:12px 18px;background:var(--card);border-left:4px solid var(--accent2);
+    border-radius:0 8px 8px 0;color:#222;font-style:normal;}
+  blockquote.formula{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    font-size:15px;background:#0f172a;color:#e2e8f0;border-left-color:#38bdf8;}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:var(--soft);font-weight:700;}
+  .tag{display:inline-block;background:var(--soft);border:1px solid #ddd6fe;border-radius:999px;
+    padding:2px 11px;font-size:13px;color:var(--muted);margin:2px 4px 2px 0;}
+  .disclaim{margin-top:46px;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:10px;
+    padding:16px 18px;font-size:14px;color:#4c1d95;}
+  .disclaim b{color:#3b0764;}
+  .code-note{font-size:13px;color:var(--muted);}
+  footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center;}
+  a{color:var(--accent2);text-decoration:none;}
+  hr{border:none;border-top:1px solid var(--line);margin:30px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">稳定币 × 机器经济 × 美元体系 深度研究 · 作用力视角</div>
+    <h1>稳定币不是去美元化，是美元把收银台搬进了机器经济</h1>
+    <div class="byline">2026-09-01 · 小K超爱研究 · 阅读约 12 分钟</div>
+  </header>
+
+  <div class="lead">
+    2025 年，稳定币全年结算约 46 万亿美元；同一时期，AI Agent 在链上的全部支付约 7300 万美元——<strong>前者是后者的六万倍</strong>。多数人读出"机器支付还早"，本文想换一个读法：恰恰是这笔微不足道的钱里，藏着 2026 年货币体系最被误读的一件事——<strong>这笔钱里 98.6% 用的是 USDC（美元稳定币）</strong>。
+  </div>
+
+  <h2>一、反转命题：把"去美元化"叙事拆开看</h2>
+
+  <p>"稳定币 = 去美元化"是这几年最流行的叙事：加密货币要推翻美元霸权、全球绕开美国体系。但数据一次都没站到那边。先看关键数字：</p>
+
+  <table>
+    <thead><tr><th>口径</th><th>数字</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>Agent 支付中的资产占比</td><td><strong>USDC 98.6%</strong></td><td>Keyrock 实测 2025.5—2026.4，1.76 亿笔/7300 万美元</td></tr>
+      <tr><td>稳定币储备的法定投向</td><td><strong>100% 现金或 ≤93 天美债</strong></td><td>GENIUS Act 强制（2025-07-18 特朗普签署）</td></tr>
+      <tr><td>Circle 收入中准备金利息占比</td><td><strong>96%</strong>（26.37 亿/27.47 亿美元）</td><td>2025 财年 10-K</td></tr>
+      <tr><td>法币→稳定币净流入中非美元来源占比</td><td><strong>&gt;70%</strong></td><td>BIS WP No.1340（2026-03）</td></tr>
+      <tr><td>2026 年 2 月稳定币月结算</td><td><strong>7.2 万亿美元，首超 ACH（6.8 万亿）</strong></td><td>麦肯锡/Artemis</td></tr>
+      <tr><td>全球稳定币市值中美元计价占比</td><td><strong>≈98%</strong></td><td>BIS（2026-04 演讲）；DefiLlama 口径略有出入</td></tr>
+    </tbody>
+  </table>
+
+  <p>这组数据的共同指向只有一个：<strong>稳定币这个行业，从储备、收入、结算到需求端，全程绑定在美元上。</strong>所谓"去美元化"讲的是货币的"出口"；数据显示的是货币的"入口"——越来越多的人和企业在通过稳定币"进入美元"。</p>
+
+  <h3>边界迁移图：美元的分发管道换了一层</h3>
+
+  <table>
+    <thead><tr><th>维度</th><th>旧管道（人间管道）</th><th>新管道（机器管道）</th></tr></thead>
+    <tbody>
+      <tr><td>载体</td><td>现金、银行账户、电汇</td><td>USDC/USDT、链上钱包</td></tr>
+      <tr><td>中介</td><td>银行、卡组织（Visa/万事达）、SWIFT</td><td>稳定币发行商、交易所、x402 类协议</td></tr>
+      <tr><td>结算周期</td><td>秒—天级（跨境 1-5 天）</td><td>秒级（&lt;2 秒确认）</td></tr>
+      <tr><td>开户门槛</td><td>KYC、信用记录、银行账户</td><td>钱包签名，无开户</td></tr>
+      <tr><td>单笔成本</td><td>卡固定费约 0.30 美元/笔</td><td>&lt;0.001 美元/笔</td></tr>
+      <tr><td>主要服务对象</td><td>人</td><td>人和<strong>机器（Agent）</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p>机器（AI Agent）没有身份证、没有银行账户、不会排队等 KYC——它们是稳定币天然的第一批"原生用户"。<strong>这就是为什么机器世界的第一笔钱是美元：美元是唯一把"可编程、即时、免开户"做到规模化的货币。</strong></p>
+
+  <h2>二、证据一：GENIUS Act——储备被法律锁死在美债上</h2>
+
+  <p>2025 年 7 月 18 日，特朗普签署《GENIUS Act》（参议院 68-30、众议院 308-122 通过）。核心设计：稳定币发行方必须 100% 以现金或 93 天内到期美债作为储备；禁止向持有人付息；按发行规模分级监管（100 亿美元阈值）；明确禁止美联储发行 CBDC。</p>
+
+  <p>规模佐证：截至 2025 年 3 月，Tether（USDT）约 1500 亿美元规模中持有美债约 1200 亿美元（含间接敞口，约 80%）；Circle（USDC）超 600 亿美元规模中持有美债超 555 亿美元（超 92%）。花旗 2025 年 4 月报告预测：2030 年稳定币发行方持有的美债将从超 1.2 万亿美元起跳，<strong>超过任何单一国家持有的美债规模</strong>。</p>
+
+  <p>GENIUS Act 的本质不是"给加密合法身份"，而是<strong>把稳定币改造成"美债的链上分销管道"</strong>：</p>
+
+  <blockquote class="formula">用户付美元 → 发行方买美债 → 稳定币在链上流通 → 用户赎回时美债变现 → 利息归发行方</blockquote>
+
+  <p>美国财政部借款咨询委员会（TBAC）预测：未来三年稳定币规模可能增长 8 倍、突破 2 万亿美元。<strong>美国要的不是"禁止加密"，而是"让加密替美元打工"——去美元化的工具，储备却 92%+ 押在美债上，这是对"去美元化"叙事最直接的物理反驳。</strong></p>
+
+  <h2>三、证据二：OCC——稳定币被收编进联邦监管</h2>
+
+  <p>2025 年 12 月，Circle 获得美国货币监理署（OCC）条件性批准设立 First National Digital Currency Bank, N.A.（国家信托银行）；2026 年 7 月获得最终批准，初期业务为托管。同期，Tether 于 2026 年 1 月通过 Anchorage Digital Bank（OCC 监管）推出 GENIUS Act 合规稳定币 USAT。</p>
+
+  <p>OCC 牌照的意义不是"Circle 开了家银行"，而是<strong>稳定币第一次拿到了与传统银行同级的联邦监管身份</strong>——储备、托管、合规直接对接美国联邦金融体系。OCC + GENIUS Act 叠在一起，美国政策路径已经闭环：<strong>稳定币不是要替代美元的新货币，是美元在机器世界的官方结算形态。</strong></p>
+
+  <h2>四、证据三：Circle 96%——稳定币的本质是利差生意</h2>
+
+  <p>Circle 2025 财年：总收入 27.47 亿美元，其中<strong>准备金收入 26.37 亿美元（占 96%）</strong>，其他业务（订阅/服务）仅 1.1 亿美元。用户把美元换成 USDC，USDC 不付息，Circle 拿这些美元买美债吃利息——它赚的每一块钱都来自美元利率曲线。</p>
+
+  <p>这个结构既是稳定币"美元属性"的证据，也是它的脆弱点：美联储每降息 100bp，Circle 的准备金收入就对应缩水。<strong>稳定币的繁荣与美元利率正相关——这不是去美元化，这是深度美元化。</strong></p>
+
+  <h2>五、香港镜像：36 家申请批 2 张，港元挤不进牌桌</h2>
+
+  <p>香港《稳定币条例》2025 年 8 月 1 日生效；金管局收到 <strong>36 份申请，2026 年 4 月 10 日首批仅批 2 张牌照</strong>（获批率不足 6%）：<strong>碇点金融</strong>（渣打香港 + HKT + Animoca 合资，港元稳定币 HKDAP，2026 年 8 月 12 日启动第一阶段 Beta）和<strong>汇丰</strong>（计划下半年推港元稳定币，接入 PayMe；行业共识其约 85% 支付业务收入来自存款净息差，属被动参与）。</p>
+
+  <p>对照：<strong>蚂蚁集团、京东因内地监管介入，叫停了香港稳定币计划</strong>；OSL 于 2026 年 8 月 7 日发布 AgentPay（面向 AI Agent 的稳定币支付基础设施）——但定位是"基础设施供应商"，而非港元稳定币发行人。</p>
+
+  <p>美国是"美元稳定币联邦化"（GENIUS Act + OCC，放量扩张），香港是"港元稳定币银行化"（发钞行系主导、首批获批率 &lt;6%）。两条路径的共同点是：<strong>监管都在用稳定币巩固本币在数字经济里的地位</strong>。区别是美元已经坐上机器世界的牌桌，而港元/人民币系还在犹豫要不要上桌——36 批 2 的审批节奏，本身就是"既想要、又不敢"的注脚。</p>
+
+  <p>香港的镜像意义在于：<strong>它证明了"稳定币=美元化"不是美国的自说自话，而是竞争者的共同判断。</strong>如果稳定币真是去美元化工具，亚洲应该抢着发；恰恰因为稳定币是美元化工具，亚洲才既要防、又想要。</p>
+
+  <h2>六、BIS 实证：70% 非美流入——全球在抢着买数字美元</h2>
+
+  <p>BIS Working Paper No.1340（2026 年 3 月，BIS+IMF 经济学家 Iñaki Aldasoro、Paula Beltrán、Federico Grinberg）：基于 4 种美元稳定币（USDT/USDC/DAI/BUSD）×27 种法币×64 家交易所、2021.1—2025.11 日度数据，发现：</p>
+
+  <ul>
+    <li><strong>超 70% 的法币→稳定币累计净流入来自非美元货币</strong>——大部分稳定币交易天然隐含"换美元"动作；</li>
+    <li>稳定币净流入外生增加 1% → 稳定币-法币<strong>平价偏差扩大约 40 个基点</strong>、本币贬值约 5 个基点、短期美元溢价扩大 5-10 个基点；</li>
+    <li>约 44% 的稳定币价格压力传导至传统美元融资市场（CIP 偏差），且<strong>中介资本枯竭时溢出放大数倍</strong>，赎回摩擦与流动冲击叠加可达基准 5 倍。</li>
+  </ul>
+
+  <p>结论很硬：<strong>稳定币已经是一个并行的"美元外汇系统"</strong>——新兴市场居民用本币换稳定币，本质是绕过本国银行体系去买"数字美元"。去美元化叙事预测"美元份额下降"；BIS 的实证指向相反：<strong>稳定币让美元触达了更多、更小的用户</strong>——从阿根廷比索、尼日利亚奈拉、土耳其里拉的持有者，到 AI Agent 这种非人类实体。美元不是在退场，是在用新接口扩大覆盖半径。</p>
+
+  <h2>七、反方：不当市场回答，给两个情景</h2>
+
+  <p><strong>情景 A（美元换接口坐实，机器结算层=美元双默认）：</strong>GENIUS Act 框架稳定运行、OCC 收编持续、x402/MPP 类协议被 Visa/万事达/云厂商全面接纳，则机器经济的结算层收敛为"USDC 资产 + Stripe 类管道"双默认——美元通过稳定币成为机器世界唯一规模化货币，Circle 与支付巨头互相成就，美债获得结构性新增买盘。</p>
+
+  <p><strong>情景 B（碎片化：多极稳定币分食）：</strong>若平台自建稳定币（PYUSD/JPMD/FIDD 等）在机器支付场景规模化、或内地监管推动离岸人民币/港元稳定币放量、或 USDC 遭遇黑天鹅（储备/监管/运营事件）引发挤兑，则机器结算层碎片化为"多资产、多协议、多网络"——美元仍是最大单一货币，但"收银台"不再只有一张，利润率被多方分食。</p>
+
+  <h2>八、证伪条件：哪些数据出现，本文就错</h2>
+
+  <p><strong>若以下数据出现，本文核心命题（稳定币是美元换接口而非去美元化）弱化/证伪：</strong>非美元稳定币在 Agent 支付中的占比从个位数升至 <strong>&gt;20%</strong> 且持续；GENIUS Act 被废或储备规则实质放松（稳定币可配置非美资产）；USDC 在机器支付中的占比从 98.6% 明显下滑且无单一替代者（说明机器在选"非美元"而非"另一家美元"）；人民币/港元稳定币在海外 Agent 场景出现规模化渗透；稳定币发行方储备中美债占比系统性下降。</p>
+
+  <p><strong>若以下数据出现，命题坐实：</strong>稳定币单月结算量持续高于 ACH 且差距拉大；机器支付中 USDC 占比保持 90% 以上；Circle 等发行方收入结构维持 90%+ 准备金利息占比；非美货币在法币→稳定币净流入中占比继续高于 70%；更多国家跟进美国式"本币稳定币"立法（反向证明本币在防御美元化）。</p>
+
+  <h2>九、价值捕获：机器收银台的议价空间</h2>
+
+  <p>机器经济里的新增议价空间，可近似写成：</p>
+  <blockquote class="formula">新增议价空间 ≈ 结算笔数 × 单笔抽佣 × 结算资产掌控度 × 生态（Agent/开发者）依赖度</blockquote>
+
+  <p><strong>结算管道层（Stripe/OpenRouter/Coinbase）：</strong>每笔机器支付抽路由费+结算费——笔数爆发时是最确定的"收税位"（OpenRouter 71% 毛利率、x402 累计 1.9 亿笔即为早期证据）。<strong>资产层（Circle/USDC）：</strong>98.6% 占比意味着现在是最大受益者，但"96% 准备金收入"结构决定了它对利率和分销伙伴（Coinbase）的脆弱性——繁荣与脆弱并存。<strong>协议层（x402/MPP）：</strong>标准制定者的收益不在交易本身，而在"被所有玩家采纳"——Linux Foundation 基金会模式是典型的"卖水"生意。<strong>区域层（香港/OSL/碇点）：</strong>港元稳定币目前是"银行系谨慎参与"格局（首批获批率 6%、汇丰被动），OSL 选择做 AgentPay 基础设施而非发行商——<strong>亚洲的机器结算层还没有出现一个 Stripe 级别的整合者</strong>，这是最大的空白，也可能是最大的变数。</p>
+
+  <p>收尾反差：稳定币 2025 年全年结算约 46 万亿美元，AI Agent 链上支付约 7300 万美元——机器支付目前占稳定币真实结算量连万分之一都不到。如果 Agent 商务真走向麦肯锡预测的 2030 年 3—5 万亿美元，哪怕只有 1% 用稳定币结算，都是 300—500 亿美元的增量管道——<strong>"美元搬收银台"不是今天搬，是在为明天铺管道。</strong></p>
+
+  <h2>关键数据速览</h2>
+  <table>
+    <thead><tr><th>维度</th><th>关键事实</th><th>来源口径</th></tr></thead>
+    <tbody>
+      <tr><td>机器支付实测</td><td>Keyrock：1.76 亿笔/7300 万美元/USDC 占 98.6%</td><td>Keyrock 报告</td></tr>
+      <tr><td>储备锁定</td><td>GENIUS Act：100% 现金或 ≤93 天美债；Tether 约 80%、Circle 超 92% 是美债</td><td>GENIUS Act / 朱太辉·人大 IMI</td></tr>
+      <tr><td>收入结构</td><td>Circle 2025 财年 27.47 亿收入中准备金利息占 96%</td><td>Circle 10-K（2026-03-09）</td></tr>
+      <tr><td>OCC 牌照</td><td>Circle 2026.7 获国家信托银行最终批准；Tether USAT 2026.1 推出</td><td>OCC / 路透社</td></tr>
+      <tr><td>BIS 实证</td><td>&gt;70% 法币→稳定币流入来自非美元货币；1% 流入 → 平价偏差 +40bps</td><td>BIS WP No.1340（2026-03-25）</td></tr>
+      <tr><td>结算量</td><td>2026.2 稳定币月结算 7.2 万亿首超 ACH 6.8 万亿；TBAC 预测三年 8 倍</td><td>麦肯锡/Artemis / TBAC</td></tr>
+      <tr><td>x402</td><td>2026.7.14 Linux Foundation 运营；累计超 1.9 亿笔；Visa/万事达/Google/AWS 创始成员</td><td>Linux Foundation / agenteconomy.to</td></tr>
+      <tr><td>香港镜像</td><td>36 申请仅批 2 张（碇点/汇丰）；蚂蚁、京东被叫停；OSL 只做基础设施</td><td>港金管局 / Asia Times</td></tr>
+      <tr><td>远期盘子</td><td>麦肯锡：2030 Agentic Commerce 3—5 万亿美元</td><td>OSL AgentPay 引述</td></tr>
+      <tr><td>六万倍反差</td><td>2025 年稳定币结算 46 万亿 vs AI Agent 支付 7300 万美元</td><td>麦肯锡/Artemis / Keyrock</td></tr>
+    </tbody>
+  </table>
+
+  <h2>冷硬结尾</h2>
+  <p>去美元化的故事讲了很多年，稳定币的数据一次都没站到那边。</p>
+  <p>98.6% 的机器支付是美元，储备被法律锁死在美债上，96% 的收入来自美债利息，70% 的全球流入来自非美元货币——美元不是被绕过，是换了个接口，把收银台搬进了机器经济。<strong>机器钱包里躺着的 USDC，本质是美债的影子份额。</strong></p>
+  <p>真正值得争的不是"美元会不会倒"，而是这台机器收银台由谁来收：Stripe 们在抢管道，Circle 在守金库，香港 36 家申请只批了 2 张，还在犹豫要不要上桌。<strong>繁荣是真的，单点是真的，空白也是真的——三件事同时为真，才是这件事最值得写的地方。机器的钱会流向谁，不取决于谁的口号最响，取决于谁的收银台先落地。</strong></p>
+
+  <div class="disclaim">
+    <b>免责声明：</b>本文为产业机制研究，所有数据均引自公开来源（Keyrock 报告、GENIUS Act、Circle 10-K、BIS WP No.1340、麦肯锡/Artemis、港金管局、Asia Times、Linux Foundation 等），仅代表作者基于公开信息的分析观点，<b>不构成任何投资建议</b>。稳定币相关资产价格波动剧烈，引用数据存在统计口径差异（交易量 vs 支付量、市值 vs 结算量、DefiLlama 与 BIS 差异），请独立判断、谨慎决策。投资有风险，入市需谨慎。
+  </div>
+
+  <footer>© 2026 小K超爱研究 · 用作用力看产业 · 个人观点，仅供参考</footer>
+
+</div>
+<p style="margin-top:28px"><a href="articles.html" style="display:inline-block;padding:9px 18px;background:var(--accent);color:#fff;text-decoration:none;border-radius:6px;font-size:14px">← 返回文章列表</a></p>
+</body>
+</html>
