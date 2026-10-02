@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://xiaokaiyanjiu.cn/openai_deepseek_monetization.html">
+<title>OpenAI怕成本吞收入，DeepSeek怕影响力难变现</title>
+<meta name="description" content="一家担心钱赚得越来越多，仍然追不上不断扩大的成本；另一家担心全世界都在使用自己的技术，钱却被别人赚走。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "OpenAI怕成本吞收入，DeepSeek怕影响力难变现",
+  "author": {
+    "@type": "Person",
+    "name": "小K"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小K超爱研究",
+    "url": "https://xiaokaiyanjiu.cn"
+  },
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "description": "一家担心钱赚得越来越多，仍然追不上不断扩大的成本；另一家担心全世界都在使用自己的技术，钱却被别人赚走。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "OpenAI收入增长很快，为什么还会缺钱？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为年化收入不等于净利润。OpenAI每增加用户和模型调用，都需要支付云、芯片、机房、人才和销售成本。媒体取得的公司预测显示，2026年至2030年累计收入约8400亿美元，计算及相关基础设施支出约8560亿美元，预计现金缺口约2780亿美元。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "供应商同时投资OpenAI，是不是收入造假？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能这样判断。投资和采购属于不同合同，云、芯片和机房也真实交付。真正需要观察的是，最终消费者与企业付款能否长期覆盖产业内部的采购和投资循环。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek为什么持续开放模型和Harness？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "开放可以降低采用门槛，让第三方替DeepSeek完成部署、插件开发和场景验证。DeepSeek因此可能扩大开发者影响力，并让自己的模型与执行结构成为更多项目的默认选择。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DeepSeek Harness是不是DeepSeek版Codex？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能完全画等号。Codex已经是面向个人和企业的完整产品；DeepSeek Harness目前更接近可拆装、可更换模型的开放执行基础设施，而且仍处于开发者预览阶段。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OpenAI也开放Harness，两家公司还有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "关键是开放组件把用户带向哪里。OpenAI围绕自己的模型、账号和托管服务收费；DeepSeek Harness允许替换模型并自行部署，更强调技术结构本身的采用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么说DeepSeek先做大影响力，再把影响力变成钱？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DeepSeek先通过开放权重、低价接口和兼容性扩大采用，随后调整API价格、采用峰谷计费并推进融资。它正在测试开放带来的使用量，能否转成官方接口、企业支持和其他商业收入。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "OpenAI和DeepSeek谁的泡沫更大？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "两种泡沫不同。OpenAI的风险在于巨额基础设施投入能否被未来付费需求填满；DeepSeek的风险在于开放创造的价值有多少能够被公司保留。仅凭估值或年化收入无法直接判断谁更值得投资。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "以后判断两家公司应该看什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI要看客户收入能否覆盖模型运行和长期采购；DeepSeek要看开放采用能否转成官方API、企业支持与托管收入。一个看成本能否被收入覆盖，一个看影响力能否被公司保留。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#161b26; --muted:#5b6472; --line:#e6e9ef; --bg:#ffffff; --soft:#f6f8fb;
+  --blue:#2563eb; --red:#e11d48; --amber:#f59e0b; --green:#16a34a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:17px}
+.hero{position:relative;width:100%;height:48vh;min-height:340px;overflow:hidden;background:linear-gradient(135deg,#0b1020 0%,#13234d 60%,#2563eb 140%)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,20,.12),rgba(8,12,20,.85))}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:34px 6vw;color:#fff;z-index:2}
+.hero-text .kicker{font-size:13px;letter-spacing:3px;color:#9ec5ff;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.hero-text h1{font-size:33px;line-height:1.28;margin:0;font-weight:800;max-width:920px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.meta{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding:14px 6vw;border-bottom:1px solid var(--line);background:var(--soft)}
+.meta b{color:var(--ink)}
+.wrap{max-width:840px;margin:0 auto;padding:38px 24px 90px}
+h2{font-size:25px;margin:48px 0 14px;padding-left:14px;border-left:5px solid var(--blue)}
+h3{font-size:19px;margin:32px 0 10px;color:#0f1b33}
+p{margin:14px 0}
+.lead{font-size:19px;color:#0f1b33;background:linear-gradient(90deg,#eef4ff,#fff);border:1px solid #dbe7ff;border-radius:12px;padding:20px 22px;font-weight:600;line-height:1.7}
+.tag{display:inline-block;background:#eef2ff;color:#2742d6;border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600;margin-right:6px}
+.chart{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin:24px 0}
+.chart svg{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+th{background:#0f1b33;color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fafbfd}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h4{margin:0 0 6px;font-size:15px;color:var(--blue)}
+.card .big{font-size:23px;font-weight:800;color:var(--ink)}
+.qa{margin:16px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa .q{background:#0f1b33;color:#fff;padding:13px 16px;font-weight:600}
+.qa .a{padding:15px 18px;background:#fff}
+.note{background:#fff7ed;border-left:4px solid var(--amber);padding:13px 16px;border-radius:8px;margin:18px 0;font-size:15px}
+footer{background:#0f1b33;color:#aeb6c6;padding:32px 6vw;font-size:13px;line-height:1.8}
+.disclaimer{background:#fff7e6;border:1px solid #ffd591;color:#ad6800;padding:12px 16px;margin:0 0 18px;border-radius:8px;font-size:14px;line-height:1.6;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link{position:fixed;left:18px;bottom:18px;z-index:50;background:#1f6feb;color:#fff;padding:9px 16px;border-radius:24px;font-size:14px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link:hover{background:#155ec0}
+.src{font-size:13.5px;color:var(--muted);background:#eef1f7;border-radius:10px;padding:14px 16px;margin-top:24px}
+.src b{color:var(--ink)}
+@media(max-width:640px){.cards{grid-template-columns:1fr}.hero-text h1{font-size:25px}.wrap{padding:28px 16px 70px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  
+  <div class="hero-text">
+    <div class="kicker">AI实测</div>
+    <div class="disclaimer">个人观点，仅供参考。不做投资建议，投资需找专业机构。股市有风险投资需谨慎。</div>
+    <h1>OpenAI怕成本吞收入，DeepSeek怕影响力难变现</h1>
+  </div>
+</div>
+<div class="meta"><span>📅 <b>2026 年 10 月 08 日</b></span><span>⏱ 阅读约 <b>14</b> 分钟</span><span>🏷 AI实测</span></div>
+<div class="wrap">
+<div class="lead">一家担心钱赚得越来越多，仍然追不上不断扩大的成本；另一家担心全世界都在使用自己的技术，钱却被别人赚走。</div>
+<p style="margin:18px 0 0"><span class="tag">OpenAI</span><span class="tag">DeepSeek</span><span class="tag">商业模式</span><span class="tag">AI产业</span></p>
+<p>OpenAI最新的年化收入速度接近700亿美元，却预计2026年至2030年仍可能产生2780亿美元现金缺口。它的问题不是没人付钱，而是每增加一个用户、一次模型调用，都要继续购买云、芯片和机房。</p>
+<p>DeepSeek面对的是相反的难题。它开放模型权重——也就是允许别人下载训练完成后的模型参数，又开放DeepSeek Harness——也就是让模型调用工具、保存会话、安排子任务并持续完成工作的执行系统。模型和Harness可以进入越来越多第三方产品，但别人也能自行部署，甚至换成其他模型。影响力属于DeepSeek，利润却可能留在云服务商、软件集成商和应用公司手里。</p>
+<p>所以，两家公司争的已经不只是模型排名，而是谁来规定未来的AI怎样工作，以及谁能从每一次工作中收钱。</p>
+<h2>OpenAI争夺AI经济的收费入口，DeepSeek争夺AI世界的默认建造方式。</h2>
+<h2>第一点：两家公司最怕什么</h2>
+<table><thead><tr><th>公司</th><th>已经拥有的东西</th><th>最害怕什么</th><th>正在做什么</th><th>最终必须证明什么</th></tr></thead><tbody><tr><td>OpenAI</td><td>全球用户、订阅收入、企业客户、品牌和巨量计算资源</td><td>收入增长仍覆盖不了模型运行与长期基础设施投入</td><td>扩大企业业务、增加收费入口、锁定算力、自研芯片并准备上市</td><td>每个新用户带来的钱，能超过为其支付的全部成本</td></tr><tr><td>DeepSeek</td><td>开放模型影响力、成本效率和开发者采用</td><td>模型与Harness广泛使用，商业价值却被第三方获得</td><td>开放模型与Harness、兼容其他接口、调整价格并继续融资</td><td>开放带来的使用量，有足够比例回到官方接口和企业服务</td></tr></tbody></table>
+<p>OpenAI先建立收费入口，再用收入和融资扩大技术能力；DeepSeek先扩大技术影响力，再尝试把影响力变成收入。</p>
+<p>后面的业务、现金、开源和融资动作，都是这两种顺序的结果。</p>
+<h2>第二点：OpenAI怎样把技术变成钱</h2>
+<p>OpenAI已经不只是一家模型公司。它先用ChatGPT获得普通用户，再把能力拆成会员、企业席位、API、编程工具和行业服务出售。</p>
+<p>API（应用程序接口）可以理解成“模型批发入口”：企业不用自己训练模型，按调用量付费，把OpenAI能力接进客服、办公软件和内部系统。</p>
+<table><thead><tr><th>付钱的人</th><th>买什么</th><th>OpenAI怎样收钱</th><th>钱继续流向哪里</th></tr></thead><tbody><tr><td>普通消费者</td><td>ChatGPT会员</td><td>月费或更高等级订阅</td><td>模型运行、云服务、支付渠道</td></tr><tr><td>开发者和创业公司</td><td>API、图像、语音、代码能力</td><td>按输入输出量或调用量</td><td>微软、AWS、甲骨文、CoreWeave等计算资源</td></tr><tr><td>大中型企业</td><td>企业版、企业API、智能体</td><td>席位费、用量费、年度合同</td><td>云、销售、实施、安全与客户支持</td></tr><tr><td>软件公司和渠道</td><td>联合产品与模型能力</td><td>收入分成或商业协议</td><td>微软等渠道方参与分成</td></tr><tr><td>未来硬件用户</td><td>AI设备及后续服务</td><td>硬件、订阅和服务费</td><td>芯片、制造、供应链和销售渠道</td></tr></tbody></table>
+<p>官方披露，ChatGPT已经拥有超过9亿周活跃用户、超过5000万订阅用户，企业业务贡献超过40%的收入。Axios援引知情人士称，OpenAI的年化收入速度接近700亿美元。</p>
+<p>但年化收入不是今年已经收到的钱。它只是把近期收入速度外推12个月。公司材料对2026年全年收入的预测约为360亿美元，不能把两个不同口径直接相减。</p>
+<p>OpenAI的真正野心，是同时成为消费者入口、开发平台、企业服务商和未来硬件品牌。收入入口越多，云、芯片、销售和供应链支出也越多。</p>
+<h2>第三点：谁给OpenAI钱，它又把钱给了谁</h2>
+<p>OpenAI的进账必须分成两种：客户付款是经营收入；投资人付款是融资。融资让公司有钱继续扩张，却不能证明业务已经赚钱。</p>
+<table><thead><tr><th>钱的方向</th><th>对手方</th><th>公开规模</th><th>这笔钱是什么</th></tr></thead><tbody><tr><td>流入OpenAI</td><td>消费者、开发者和企业</td><td>最新年化收入速度接近700亿美元</td><td>产品与服务收入，不等于净利润或实际全年收入</td></tr><tr><td>流入OpenAI</td><td>2026年投资人</td><td>1220亿美元承诺资本</td><td>股权融资，投资人换取公司股份</td></tr><tr><td>可流入OpenAI</td><td>银行</td><td>47亿美元尚未动用额度</td><td>借款能力，使用后需要偿还并支付利息</td></tr><tr><td>OpenAI流出</td><td>微软Azure</td><td>新增2500亿美元采购承诺</td><td>多年云服务合同，另有持续到2030年的收入分成</td></tr><tr><td>OpenAI流出</td><td>亚马逊AWS</td><td>原380亿美元协议，再增加1000亿美元</td><td>多年云与芯片计算能力采购</td></tr><tr><td>OpenAI流出</td><td>甲骨文及相关项目</td><td>与甲骨文合作超过3000亿美元、5年</td><td>机房、云、电力和计算基础设施</td></tr><tr><td>双向</td><td>英伟达</td><td>至少10吉瓦系统规划；英伟达拟最高投资1000亿美元</td><td>吉瓦是衡量大型电力与计算设施规模的单位；英伟达投资OpenAI，OpenAI及合作伙伴购买其计算系统</td></tr></tbody></table>
+<p>Azure、AWS和甲骨文几项相对独立的多年采购承诺至少达到6880亿美元。这不等于OpenAI今天欠了6880亿美元，因为合同跨越多年并可能附带部署条件；它也不能再与存在重叠的“星际之门”5000亿美元重复相加。</p>
+<p>但6880亿美元足以说明：OpenAI融资不是为了填一个短期亏损，而是在提前锁定未来数年的计算资源。</p>
+<p>根据《金融时报》看到的公司材料，OpenAI预计2026年至2030年累计收入约8400亿美元，计算及相关基础设施支出约8560亿美元，并产生2780亿美元现金缺口。</p>
+<p>如果预测成立，仅计算账就比同期累计收入高约160亿美元，工资、研发、销售、法律和硬件投入还在外面。1220亿美元新融资只能静态覆盖2780亿美元预计缺口的约44%，仍差1560亿美元。</p>
+<p>这就是OpenAI最怕的事情：不是没有收入，而是技术越成功，需要预先投入的钱越多。</p>
+<h2>第四点：投资人为什么又是收款人</h2>
+<p>OpenAI周围最特别的关系，是同一家公司可以同时扮演投资人、供应商、渠道和竞争者。</p>
+<table><thead><tr><th>公司</th><th>与OpenAI的关系</th><th>双方各自想要什么</th><th>潜在冲突</th></tr></thead><tbody><tr><td>微软</td><td>股东、主要云伙伴、模型渠道、产品竞争者</td><td>微软要Azure和Copilot收入；OpenAI要资金、计算和企业客户</td><td>微软希望客户留在Azure，OpenAI希望多云并直接面对客户</td></tr><tr><td>亚马逊</td><td>投资人、AWS供应商、企业渠道，同时投资Anthropic</td><td>AWS获得计算订单，OpenAI获得资金和企业入口</td><td>亚马逊同时押注多家模型公司，不会只为OpenAI服务</td></tr><tr><td>英伟达</td><td>投资人、核心芯片供应商</td><td>英伟达扩大芯片需求，OpenAI获得先进计算能力</td><td>OpenAI联合博通自研芯片并引入AMD，降低单一供应商影响</td></tr><tr><td>软银</td><td>大股东、基础设施融资及机房合作方</td><td>软银分享AI资产升值，OpenAI获得长期资本</td><td>建设速度、融资成本和使用率决定资产会不会闲置</td></tr><tr><td>甲骨文</td><td>云和机房供应商、基础设施出资方</td><td>甲骨文获得长期大客户，OpenAI获得额外算力</td><td>OpenAI需求若低于预测，项目融资方会承担闲置压力</td></tr><tr><td>博通</td><td>自研芯片共同开发者</td><td>OpenAI降低运行成本，博通获得大型定制芯片客户</td><td>自研芯片进展会改变OpenAI与英伟达、AMD的议价关系</td></tr></tbody></table>
+<p>资金因此形成一条循环：</p>
+<p><strong>科技公司投资OpenAI → OpenAI用融资采购这些公司的云、芯片和机房 → 供应商获得收入并继续建设 → OpenAI获得更多计算能力 → 再用增长融资。</strong></p>
+<p>这不等于造假，芯片、机房和模型调用都真实存在。真正的问题是，循环中最终有多少现金来自普通消费者和企业，而不是来自产业内部的投资与采购。</p>
+<p>苹果商业秘密诉讼、xAI与OpenAI的争议、出版商版权诉讼和微软协议调整，也不是互不相关的八卦。苹果要保护硬件与人才，内容公司要给训练数据定价，微软要保护云和收入分成。IPO只是让这些原本可以长期争论的权利，必须更快地披露、谈判和定价。</p>
+<h2>第五点：DeepSeek先做大影响力，再把影响力变成钱</h2>
+<p>把DeepSeek只理解成低价模型，会漏掉它目前最重要的战略变化：它正在从“提供模型”，走向“提供一套开放的智能体基础设施”。</p>
+<table><thead><tr><th>DeepSeek正在做什么</th><th>战略目的</th><th>可能怎样产生收入或影响力</th></tr></thead><tbody><tr><td>推出V4-Pro和V4-Flash</td><td>用一强一快两个版本覆盖不同任务</td><td>官方API、企业使用和品牌影响力</td></tr><tr><td>提供100万词元上下文</td><td>词元是模型读取文字的基本单位；更长上下文可以容纳大型代码库、文件和任务记录</td><td>进入代码、文档和长期智能体场景</td></tr><tr><td>开放模型权重</td><td>允许第三方在自己的服务器运行</td><td>扩大采用，获得场景反馈和行业影响力</td></tr><tr><td>兼容OpenAI和Anthropic常见接口</td><td>降低企业替换模型的改造成本</td><td>把竞争者教育好的市场转成自己的调用量</td></tr><tr><td>适配华为昇腾（华为自研的AI芯片系列）等国产AI芯片</td><td>增加芯片与本地部署选择</td><td>进入强调本地基础设施和数据自主的企业</td></tr><tr><td>开放DeepSeek Harness</td><td>从开放“大脑”走向开放“工作系统”</td><td>争取插件、执行结构和开发者习惯</td></tr><tr><td>调整接口价格并采用峰谷计费</td><td>在有限计算能力下分配需求</td><td>测试客户愿意为能力和稳定性付多少钱</td></tr><tr><td>推进第二轮约500亿元融资</td><td>补充模型、算力和商业化所需资本</td><td>把技术影响力转成公司估值与扩张能力</td></tr></tbody></table>
+<p>这套动作的次序很重要。</p>
+<p>OpenAI先把用户留在ChatGPT和Codex，再向用户收费；DeepSeek先降低使用门槛，让模型进入第三方云、设备和应用，再寻找收费位置。</p>
+<p>DeepSeek支持OpenAI和Anthropic常见接口，看起来是在承认竞争者制定的规则，实际上是在借用已经成熟的开发者习惯。企业不用重写大量代码，就可以测试或替换DeepSeek模型。</p>
+<p>低价也不是永远不涨价。DeepSeek早期用低价换取试用，后来调整接口价格并引入峰谷计费——使用高峰更贵，空闲时段更便宜。提价以后仍然留下来的客户，才更接近可持续收入。</p>
+<h2>第六点：Harness为什么比再发一个模型更值得看</h2>
+<p>模型负责思考和生成，但要让AI连续工作，还需要记住任务、读取文件、调用工具、执行命令、申请授权、失败后恢复，并把任务分给多个子智能体。</p>
+<p>Harness就是模型的工作台。同一个模型装进不同Harness，实际完成任务的能力可能差很多。</p>
+<p>DeepSeek Harness采用“一切皆插件”的结构。模型、工具、会话、文件、网页、沙箱和子智能体都可以替换或扩展。它甚至允许接入其他模型提供商。</p>
+<p>这项设计表面上会帮助竞争者，却可能给DeepSeek带来四种长期回报：</p>
+<ul>
+<li>开发者入口：模型可以更换，项目结构、插件和团队习惯不会频繁重建；</li>
+<li>场景反馈：社区会暴露模型在代码、网页和长任务中的真实失败方式；</li>
+<li>外部研发：第三方替DeepSeek制作桌面端、行业插件和部署方案；</li>
+<li>标准影响：如果插件和会话结构被广泛采用，DeepSeek就会进入企业工程体系。</li>
+</ul>
+<p>风险也同样清楚：开发者可以只用Harness而不购买DeepSeek接口；第三方产品赚走大部分利润；开放插件可能带来安全问题；项目目前仍处于开发者预览阶段，接口可能发生不兼容变化。</p>
+<p>因此，Harness目前不能直接算成收入。它更像DeepSeek对未来的一次下注：模型会越来越容易替换，但执行结构、插件和工作习惯可能更稳定。</p>
+<h2>第七点：OpenAI也开放，但目的不同</h2>
+<p>把两家公司写成“DeepSeek开放、OpenAI封闭”并不准确。</p>
+<p>OpenAI已经开放Agents SDK、Codex CLI、AGENTS.md规范、部分模型权重和Codex Harness。2026年推出的Agents API，也建立在开放的Codex Harness之上。</p>
+<p>差别不在于代码有没有公开，而在开放组件把用户带向哪里。</p>
+<table><thead><tr><th>比较位置</th><th>OpenAI</th><th>DeepSeek</th></tr></thead><tbody><tr><td>基础模型</td><td>最强模型主要通过官方服务提供，也有部分开放权重模型</td><td>核心模型持续开放权重</td></tr><tr><td>智能体执行系统</td><td>开放部分代码，同时经营官方托管Agents API</td><td>Harness插件化，可自行部署并替换模型</td></tr><tr><td>消费者入口</td><td>ChatGPT拥有庞大用户和订阅体系</td><td>有网页和应用，但商业入口较少</td></tr><tr><td>开发者入口</td><td>Codex、API、SDK、CLI与企业合作</td><td>开放模型、Harness、兼容接口和低价API</td></tr><tr><td>企业路线</td><td>直接销售、托管、安全治理和合作伙伴体系</td><td>API、自建部署和第三方集成为主</td></tr><tr><td>计算路线</td><td>多云、多芯片、自研芯片，提前锁定巨量资源</td><td>强调效率、开放部署和国产芯片适配</td></tr><tr><td>收费位置</td><td>订阅、企业席位、接口、工具和托管服务</td><td>官方接口为主，企业服务仍在形成</td></tr></tbody></table>
+<p>OpenAI开放组件，是为了让外部世界更容易连接到自己的模型、托管环境、账号和收费服务；DeepSeek开放模型和Harness，而且允许中心模型被替换，是为了让技术结构进入更多第三方系统。</p>
+<p>可以把它概括为：</p>
+<h2>OpenAI开放外围，经营中心；DeepSeek开放中心，争取成为默认结构。</h2>
+<p>这不是谁更高尚，而是商业位置不同。OpenAI已经拥有大规模直接用户和企业销售能力，可以经营中心；DeepSeek直接商业入口较弱，开放可以帮助它绕过云平台、应用商店和庞大销售团队，把技术带入更多场景。</p>
+<h2>第八点：两条路线正在互相靠近</h2>
+<p>OpenAI正在变得更开放。它支持开放标准、开放部分模型和执行系统，并允许企业选择不同运行环境。因为如果什么都由OpenAI自己建设，扩张会变慢，客户也会担心被单一厂商绑定。</p>
+<p>DeepSeek正在变得更商业化。它调整接口价格、采用峰谷计费、募集巨额资本，并可能增加企业支持与托管服务。因为开放能够降低传播成本，却不能支付下一代模型、人才和计算资源的账单。</p>
+<p>两家公司最后都可能变成“开放组件+收费服务”的混合体，只是收费中心不同：</p>
+<ul>
+<li>OpenAI可能继续开放标准和工具，把用户、托管环境及最强模型留在中心；</li>
+<li>DeepSeek可能继续开放模型和Harness，把官方高质量接口、企业支持与安全部署变成收费项目。</li>
+</ul>
+<p>未来真正的分界，不是开源还是闭源，而是各自开放哪一部分、保留哪一个收费位置。</p>
+<h2>第九点：两种泡沫也不一样</h2>
+<p>DeepSeek第一轮约500亿元融资已经完成；第二轮目标同样约500亿元，截至10月2日仍在推进。媒体披露，其最新年化收入速度约10亿美元，目标估值约5000亿元人民币。</p>
+<table><thead><tr><th>维度</th><th>OpenAI</th><th>DeepSeek</th></tr></thead><tbody><tr><td>最新年化收入速度</td><td>接近700亿美元</td><td>约10亿美元</td></tr><tr><td>最新融资</td><td>1220亿美元，投后估值8520亿美元</td><td>第二轮目标约500亿元人民币，目标估值5000亿元人民币</td></tr><tr><td>粗略估值/年化收入</td><td>约12倍</td><td>按1美元约7元人民币粗算，约71倍</td></tr><tr><td>核心风险</td><td>长期采购承诺过大，收入增长仍追不上现金支出</td><td>开放带来的价值未必能被公司收入充分获得</td></tr></tbody></table>
+<p>估值除以年化收入不能直接判断谁值得投资，因为两家公司利润、增长、资本结构和收入质量并没有完整公开。它只能说明资本预支了多少未来。</p>
+<p>OpenAI的泡沫，压在今天建设的巨量基础设施未来能否被足够高的付费需求填满；DeepSeek的泡沫，压在开放带来的巨大影响力未来有多少能留在公司收入里。</p>
+<p>DeepSeek采用低成本路线，却仍然需要第二个500亿元，因为低成本解决的是“每次计算多少钱”，不能自动解决“总使用量增长多少”。用户、接口调用、人才和新模型训练同时扩张，总支出依然会上升。</p>
+<h2>第十点：OpenAI会上市，但上市不是终点</h2>
+<p>OpenAI最终成功上市的概率很高。它有全球品牌、9亿以上周活跃用户、5000万以上订阅用户、快速增长的企业收入，以及微软、亚马逊、英伟达和软银组成的资本与基础设施阵容。</p>
+<p>但要区分三个问题：能不能上市、能不能按管理层希望的时间和估值上市、上市后能不能给新股东带来与风险匹配的回报。</p>
+<p>OpenAI已经秘密提交S-1上市注册草案，但官方没有确定时间。上市最现实的作用，是增加一个大规模融资渠道，也让早期股东和员工获得流动性。</p>
+<p>私人阶段，巨额资金需求由少数战略投资者承担；上市以后，部分融资需求和估值波动将由公开市场接手。</p>
+<p>OpenAI需要证明的是：</p>
+<p><strong>更强模型 → 更多真实使用 → 更多客户付款 → 覆盖每次调用成本 → 覆盖长期基础设施投入 → 剩下可以自由支配的现金。</strong></p>
+<p>700亿美元年化收入说明它已经拥有真实需求；2780亿美元预计现金缺口说明，这条链还没有完全跑通。</p>
+<p>AI当然有泡沫，但泡沫不等于技术是假的。真正的泡沫是：资本按五年、十年后的统治力定价，模型优势却可能几个月就被追近；基础设施合同按多年签订，客户却可能随着下一次模型更新改变选择。</p>
+<p>OpenAI相信，模型能力最终会集中到由公司经营的完整产品体系；DeepSeek相信，模型与执行系统会越来越像公共技术，单一公司无法独占所有应用。</p>
+<p><strong>AI公司的长期价值，不只取决于模型有多聪明，而取决于模型普及以后，它还控制着哪一个别人不愿意反复更换的位置。</strong></p>
+<p>OpenAI试图保住用户、托管环境和支付入口；DeepSeek试图让自己的模型与执行结构成为默认选择。</p>
+<p>这才是两家公司真正的比较。</p>
+<h2>读者问答</h2>
+<h3>Q1：供应商同时投资OpenAI，是不是收入造假？</h3>
+<p>A：不能这样判断。投资和采购对应不同合同，芯片与云服务也真实交付。真正需要判断的是，终端客户付款能否长期支持整个资金循环。</p>
+<h3>Q2：DeepSeek Harness是不是DeepSeek版Codex？</h3>
+<p>A：不能完全画等号。Codex已经是面向个人和企业的完整产品；DeepSeek Harness目前更接近可拆装、可更换模型的开放执行基础设施，仍处于开发者预览阶段。</p>
+<h3>Q3：OpenAI也开放Harness，两家公司还有什么区别？</h3>
+<p>A：关键是开放组件把用户带向哪里。OpenAI围绕自己的模型、账号和托管服务收费；DeepSeek Harness允许替换模型并自行部署，更强调技术结构的采用。</p>
+<h3>Q4：DeepSeek是不是已经完成两轮各500亿元融资？</h3>
+<p>A：不是。第一轮约500亿元已经完成；第二轮目标约500亿元，截至2026年10月2日仍在推进。</p>
+<h3>Q5：以后判断两家公司应该看什么？</h3>
+<p>A：OpenAI要看客户收入能否覆盖模型运行和长期采购；DeepSeek要看开放采用能否转成官方接口、企业支持和托管收入。一个看成本能否被收入覆盖，一个看影响力能否被公司保留。</p>
+<h2>主要来源与口径说明</h2>
+<ul>
+<li>OpenAI，融资、用户、订阅及企业收入占比：https://openai.com/index/accelerating-the-next-phase-ai/</li>
+<li>OpenAI，秘密提交S-1：https://openai.com/index/openai-submits-confidential-s-1/</li>
+<li>OpenAI与微软合作条款：https://openai.com/index/next-phase-of-microsoft-partnership/</li>
+<li>微软公告，新增2500亿美元Azure采购承诺：https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-ex99_2.htm</li>
+<li>OpenAI与Amazon合作：https://openai.com/index/amazon-partnership/</li>
+<li>OpenAI，甲骨文、软银与星际之门基础设施规模：https://openai.com/index/five-new-stargate-sites/</li>
+<li>OpenAI与NVIDIA合作：https://openai.com/index/openai-nvidia-systems-partnership/</li>
+<li>Axios，OpenAI年化收入速度：https://www.axios.com/2026/09/29/scoop-openais-annual-recurring-revenue-nears-70b</li>
+<li>Financial Times报道经Investing转述，OpenAI未来收入、计算支出和现金缺口：https://www.investing.com/news/company-news/openai-expects-278-billion-cash-burn-through-2030--ft-4907996</li>
+<li>DeepSeek，V4系列、接口兼容和智能体方向：https://deepseek.com/en/news/v4-preview/</li>
+<li>DeepSeek，接口价格：https://www.deepseek.com/platform/</li>
+<li>DeepSeek Harness官方代码库：https://github.com/deepseek-ai/deepseek-harness</li>
+<li>Reuters转述The Information，DeepSeek年化收入与第二轮融资：https://www.streetinsider.com/Reuters/Chinas%2BDeepSeek%2Bannualised%2Brevenue%2Bhits%2B%241%2Bbillion%2C%2BThe%2BInformation%2Breports/27097932.html</li>
+<li>OpenAI，Agents API及开放Codex Harness：https://openai.com/index/introducing-the-agents-api/</li>
+<li>OpenAI，Agents SDK执行系统与沙箱：https://openai.com/index/the-next-evolution-of-the-agents-sdk/</li>
+</ul>
+<p>说明：文中的年化收入、未来收入、计算支出和现金缺口来自公司披露或媒体取得的公司材料，并非已审计年度财务报表；长期合同金额可能附带条件，且星际之门与部分供应商合同存在范围重叠，因此没有将所有数字简单相加。</p>
+<p>*本文只讨论公司与产业机制，不构成投资建议。*</p>
+
+
+<h2>读者问答（FAQ）</h2><div class="qa"><div class="q">Q：OpenAI收入增长很快，为什么还会缺钱？</div><div class="a">A：因为年化收入不等于净利润。OpenAI每增加用户和模型调用，都需要支付云、芯片、机房、人才和销售成本。媒体取得的公司预测显示，2026年至2030年累计收入约8400亿美元，计算及相关基础设施支出约8560亿美元，预计现金缺口约2780亿美元。</div></div><div class="qa"><div class="q">Q：供应商同时投资OpenAI，是不是收入造假？</div><div class="a">A：不能这样判断。投资和采购属于不同合同，云、芯片和机房也真实交付。真正需要观察的是，最终消费者与企业付款能否长期覆盖产业内部的采购和投资循环。</div></div><div class="qa"><div class="q">Q：DeepSeek为什么持续开放模型和Harness？</div><div class="a">A：开放可以降低采用门槛，让第三方替DeepSeek完成部署、插件开发和场景验证。DeepSeek因此可能扩大开发者影响力，并让自己的模型与执行结构成为更多项目的默认选择。</div></div><div class="qa"><div class="q">Q：DeepSeek Harness是不是DeepSeek版Codex？</div><div class="a">A：不能完全画等号。Codex已经是面向个人和企业的完整产品；DeepSeek Harness目前更接近可拆装、可更换模型的开放执行基础设施，而且仍处于开发者预览阶段。</div></div><div class="qa"><div class="q">Q：OpenAI也开放Harness，两家公司还有什么区别？</div><div class="a">A：关键是开放组件把用户带向哪里。OpenAI围绕自己的模型、账号和托管服务收费；DeepSeek Harness允许替换模型并自行部署，更强调技术结构本身的采用。</div></div><div class="qa"><div class="q">Q：为什么说DeepSeek先做大影响力，再把影响力变成钱？</div><div class="a">A：DeepSeek先通过开放权重、低价接口和兼容性扩大采用，随后调整API价格、采用峰谷计费并推进融资。它正在测试开放带来的使用量，能否转成官方接口、企业支持和其他商业收入。</div></div><div class="qa"><div class="q">Q：OpenAI和DeepSeek谁的泡沫更大？</div><div class="a">A：两种泡沫不同。OpenAI的风险在于巨额基础设施投入能否被未来付费需求填满；DeepSeek的风险在于开放创造的价值有多少能够被公司保留。仅凭估值或年化收入无法直接判断谁更值得投资。</div></div><div class="qa"><div class="q">Q：以后判断两家公司应该看什么？</div><div class="a">A：OpenAI要看客户收入能否覆盖模型运行和长期采购；DeepSeek要看开放采用能否转成官方API、企业支持与托管收入。一个看成本能否被收入覆盖，一个看影响力能否被公司保留。</div></div>
+<div class="src"><b>数据来源：</b>公开来源 + 小K超爱研究产业数据库（公司财报 / 行业媒体 / 当日产业巡检聚合）</div>
+</div>
+<footer>
+本文为产业机制拆解，仅解释已发生的产业现象，不预测涨跌、不构成任何投资建议。涉及 A 股标的仅作产业机制说明，不做个股方向判断。投资有风险，决策需独立。
+</footer>
+<a href="articles.html" class="back-link">← 返回文章列表</a>
+</body>
+</html>
