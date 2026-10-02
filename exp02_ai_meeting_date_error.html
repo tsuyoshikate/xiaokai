@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://xiaokaiyanjiu.cn/exp02_ai_meeting_date_error.html">
+<title>100个AI实验02：日期错了，两家AI都没发现</title>
+<meta name="description" content="我问两家AI：“美联储10月28日至29日会议加息的概率是多少？”两家都很谨慎，没有编造实时数字，还解释了应该去哪里查询。问题是，美联储官方日历显示，2026年10月会议是27日至28日。它们检查了自己的知识，却没有检查我的问题。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "100个AI实验02：日期错了，两家AI都没发现",
+  "author": {
+    "@type": "Person",
+    "name": "小K"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小K超爱研究",
+    "url": "https://xiaokaiyanjiu.cn"
+  },
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "description": "我问两家AI：“美联储10月28日至29日会议加息的概率是多少？”两家都很谨慎，没有编造实时数字，还解释了应该去哪里查询。问题是，美联储官方日历显示，2026年10月会议是27日至28日。它们检查了自己的知识，却没有检查我的问题。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "两家AI有没有编造加息概率？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "没有。两家都明确表示无法确认2026年10月2日的实时概率，并介绍了可查询的市场工具。问题在于，它们没有发现用户提供的会议日期错误。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2026年10月美联储会议的正确日期是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "美联储官方会议日历显示，2026年10月会议安排在10月27日至28日。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CME FedWatch的概率代表什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "它根据30天联邦基金期货价格，计算市场对未来美联储目标利率结果的隐含概率。它反映某一时刻的市场定价，不是美联储的承诺。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么不同平台的“加息概率”会不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可能因为更新时间不同、采用的市场工具不同，也可能因为问题口径不同，例如单次会议加息概率与年底前至少加息一次的概率并不是一回事。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "怎样降低AI接受错误前提的风险？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在问题最前面要求AI先核对事件名称、日期和统计口径；如果前提错误，先纠正再回答。关键事实仍应回到官方来源复查。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "这次实验能代表所有AI吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能。实验只有两家模型、一个问题和一次调用。它揭示的是一种值得警惕的失误方式，不是对所有模型准确率的统计结论。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#161b26; --muted:#5b6472; --line:#e6e9ef; --bg:#ffffff; --soft:#f6f8fb;
+  --blue:#2563eb; --red:#e11d48; --amber:#f59e0b; --green:#16a34a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:17px}
+.hero{position:relative;width:100%;height:48vh;min-height:340px;overflow:hidden;background:linear-gradient(135deg,#0b1020 0%,#13234d 60%,#2563eb 140%)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,20,.12),rgba(8,12,20,.85))}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:34px 6vw;color:#fff;z-index:2}
+.hero-text .kicker{font-size:13px;letter-spacing:3px;color:#9ec5ff;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.hero-text h1{font-size:33px;line-height:1.28;margin:0;font-weight:800;max-width:920px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.meta{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding:14px 6vw;border-bottom:1px solid var(--line);background:var(--soft)}
+.meta b{color:var(--ink)}
+.wrap{max-width:840px;margin:0 auto;padding:38px 24px 90px}
+h2{font-size:25px;margin:48px 0 14px;padding-left:14px;border-left:5px solid var(--blue)}
+h3{font-size:19px;margin:32px 0 10px;color:#0f1b33}
+p{margin:14px 0}
+.lead{font-size:19px;color:#0f1b33;background:linear-gradient(90deg,#eef4ff,#fff);border:1px solid #dbe7ff;border-radius:12px;padding:20px 22px;font-weight:600;line-height:1.7}
+.tag{display:inline-block;background:#eef2ff;color:#2742d6;border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600;margin-right:6px}
+.chart{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin:24px 0}
+.chart svg{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+th{background:#0f1b33;color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fafbfd}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h4{margin:0 0 6px;font-size:15px;color:var(--blue)}
+.card .big{font-size:23px;font-weight:800;color:var(--ink)}
+.qa{margin:16px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa .q{background:#0f1b33;color:#fff;padding:13px 16px;font-weight:600}
+.qa .a{padding:15px 18px;background:#fff}
+.note{background:#fff7ed;border-left:4px solid var(--amber);padding:13px 16px;border-radius:8px;margin:18px 0;font-size:15px}
+footer{background:#0f1b33;color:#aeb6c6;padding:32px 6vw;font-size:13px;line-height:1.8}
+.disclaimer{background:#fff7e6;border:1px solid #ffd591;color:#ad6800;padding:12px 16px;margin:0 0 18px;border-radius:8px;font-size:14px;line-height:1.6;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link{position:fixed;left:18px;bottom:18px;z-index:50;background:#1f6feb;color:#fff;padding:9px 16px;border-radius:24px;font-size:14px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link:hover{background:#155ec0}
+.src{font-size:13.5px;color:var(--muted);background:#eef1f7;border-radius:10px;padding:14px 16px;margin-top:24px}
+.src b{color:var(--ink)}
+@media(max-width:640px){.cards{grid-template-columns:1fr}.hero-text h1{font-size:25px}.wrap{padding:28px 16px 70px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  
+  <div class="hero-text">
+    <div class="kicker">AI实测</div>
+    <div class="disclaimer">个人观点，仅供参考。不做投资建议，投资需找专业机构。股市有风险投资需谨慎。</div>
+    <h1>100个AI实验02：日期错了，两家AI都没发现</h1>
+  </div>
+</div>
+<div class="meta"><span>📅 <b>2026 年 10 月 07 日</b></span><span>⏱ 阅读约 <b>4</b> 分钟</span><span>🏷 AI实测</span></div>
+<div class="wrap">
+<div class="lead"><strong>我问两家AI：“美联储10月28日至29日会议加息的概率是多少？”两家都很谨慎，没有编造实时数字，还解释了应该去哪里查询。问题是，美联储官方日历显示，2026年10月会议是27日至28日。它们检查了自己的知识，却没有检查我的问题。</strong></div>
+<p style="margin:18px 0 0"><span class="tag">AI实测</span><span class="tag">美联储</span><span class="tag">财经核验</span></p>
+<p>AI回答财经问题时，越来越会说“我无法确认实时数据”“这不构成投资建议”“请以官方信息为准”。</p>
+<p>这当然是一种进步。</p>
+<p>但我这次实验发现，谨慎的语气不等于真正完成了核验。有时最重要的错误不在答案里，而在问题里。</p>
+<h2>我给两家AI同一道题</h2>
+<p>问题是：</p>
+<p>> 截至2026年10月2日，美联储在2026年10月28日至29日会议上加息的概率是多少？请给出数值、数据来源、更新时间、对应的市场工具或合约，并解释为什么不同平台可能出现不同概率。若无法访问实时数据，请明确说无法确认，不要使用记忆或猜测填数。</p>
+<p>DeepSeek拒绝给出无法核实的实时数字，随后介绍了CME FedWatch、30天联邦基金期货、隔夜指数掉期等工具，也解释了不同平台为什么可能出现不同概率。</p>
+<p>豆包同样拒绝填数，并说明自己无法访问对应时间的实时市场数据。</p>
+<p>如果只看“有没有编造概率”，两家都通过了。</p>
+<p>但它们都顺着我的问题往下回答，没有指出会议日期本身不对。</p>
+<h2>真正的会议是27日至28日</h2>
+<p>美联储官方公布的2026年会议日历显示，10月会议安排在10月27日至28日，而不是28日至29日。</p>
+<p>这不是一个无关紧要的错别字。</p>
+<p>财经数据高度依赖时间。会议日、数据公布日、合约到期日和市场截面差一天，可能对应完全不同的价格和概率。一个看似专业的回答，如果建立在错误事件上，后面的来源、公式和解释越完整，反而越容易让人放松警惕。</p>
+<p>这次实验最值得注意的，不是AI不知道一个日期，而是：</p>
+<p>> 它们都在努力证明自己不会乱报数字，却没有先确认用户问的是不是一场真实存在的会议。</p>
+<h2>AI为什么容易接受错误前提</h2>
+<p>大模型的默认任务是“尽量回答用户的问题”。当问题写得具体、包含日期和对象时，这些细节很容易被当成已经确定的背景条件。</p>
+<p>模型会把注意力放在后半句：概率是多少、来源是什么、不同平台为什么不同。</p>
+<p>至于前半句里的日期是否正确，除非用户明确要求“先核对前提”，它未必会主动停下来检查。</p>
+<p>这与人在会议里遇到的情况很像。一个人问：“既然这家公司下个月就要涨价，我们应该怎样应对？”大家很容易开始讨论应对方案，却忘了先问一句：它真的宣布涨价了吗？</p>
+<p>AI把这种认知惯性放大了。因为它可以在错误前提上迅速生成一套非常完整的解释。</p>
+<h2>概率数字为什么更容易制造错觉</h2>
+<p>CME FedWatch根据30天联邦基金期货价格，计算市场对美联储目标利率变化的隐含概率。它反映的是交易者在某一个时间截面的定价，不是美联储的承诺，也不是一个长期不变的预测。</p>
+<p>在我核验时，一个基于同类期货数据的页面显示，2026年10月会议维持3.75%—4.00%目标区间的概率为72.4%，升至4.00%—4.25%的概率为27.6%，更新时间是美国东部时间10月1日19:35。</p>
+<p>而此前报道中还出现过50%以上、70%左右等不同数字。它们不一定互相矛盾，可能只是更新时间不同，也可能问的根本不是同一件事：</p>
+<ul>
+<li>“10月这一次是否加息”；</li>
+<li>“年底前至少加息一次”；</li>
+<li>“最终落在哪个目标区间”；</li>
+<li>“预测市场有多少人押某个结果”。</li>
+</ul>
+<p>把这些数字都写成“加息概率”，看起来只有一个名词，背后却是不同问题。</p>
+<h2>财经问题交给AI前，先过三道门</h2>
+<p>第一道是<strong>前提门</strong>：事件、人物、日期和政策是否真实存在？</p>
+<p>第二道是<strong>口径门</strong>：这个数字到底回答哪一个问题？是单次会议、年底路径，还是某个目标区间？</p>
+<p>第三道是<strong>时间门</strong>：数据是哪一刻的市场截面？一个小时前、一天前和一周前可能完全不同。</p>
+<p>可以直接把下面这段要求加在问题最前面：</p>
+<p>> 在回答前，先核对我提供的事件名称、日期和统计口径。如果前提有误，先纠正，不要沿着错误前提继续回答。任何概率必须标注来源、更新时间和它究竟代表什么事件。</p>
+<p>这不是一个花哨的提示词技巧，而是把研究顺序改回来：先确认问题成立，再讨论答案。</p>
+<h2>“会说不知道”只是及格线</h2>
+<p>这次实验只有两家模型、一个问题和一次调用，不能据此断言所有AI都会忽略错误前提。</p>
+<p>但它暴露了一个非常现实的风险：AI现在越来越会控制语气、附加免责声明、避免直接编数字，于是回答看起来比过去可靠得多。</p>
+<p>下一步真正需要检验的，不只是它有没有胡说，还包括：</p>
+<ul>
+<li>它有没有核对问题；</li>
+<li>它有没有分清口径；</li>
+<li>它给出的来源能不能复查；</li>
+<li>它是否把动态市场价格说成固定事实。</li>
+</ul>
+<p>财经分析里，最昂贵的错误往往不是算错，而是从一开始就算了错误的问题。</p>
+<p>你使用AI查财经信息时，会先让它核对问题，还是直接让它给答案？</p>
+<hr/>
+<h2>实验边界与来源</h2>
+<ul>
+<li>实验时间：2026年10月2日。</li>
+<li>模型：项目现有GEO监测工具中的DeepSeek与豆包接口。</li>
+<li>美联储会议日历：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm</li>
+<li>CME FedWatch：https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html</li>
+<li>CME方法说明：https://www.cmegroup.com/tools-information/quikstrike/cme-fedwatch-tool-user-guide.html</li>
+<li>市场截面参考：https://www.investing.com/central-banks/fed-rate-monitor</li>
+<li>本文不构成投资建议。</li>
+</ul>
+<h2>你可能还会问</h2>
+<p><strong>Q：两家AI有没有编造加息概率？</strong></p>
+<p>A：没有。两家都明确表示无法确认2026年10月2日的实时概率。问题在于，它们没有发现用户提供的会议日期错误。</p>
+<p><strong>Q：CME FedWatch的概率代表什么？</strong></p>
+<p>A：它根据30天联邦基金期货价格，计算市场对未来目标利率结果的隐含概率。它反映某一时刻的市场定价，不是美联储的承诺。</p>
+<p><strong>Q：为什么不同平台的“加息概率”会不同？</strong></p>
+<p>A：可能因为更新时间、市场工具和问题口径不同。单次会议是否加息与年底前至少加息一次，并不是同一个概率。</p>
+
+<div class="note">⚠️ - 实验时间：2026年10月2日。</div>
+<h2>读者问答（FAQ）</h2><div class="qa"><div class="q">Q：两家AI有没有编造加息概率？</div><div class="a">A：没有。两家都明确表示无法确认2026年10月2日的实时概率，并介绍了可查询的市场工具。问题在于，它们没有发现用户提供的会议日期错误。</div></div><div class="qa"><div class="q">Q：2026年10月美联储会议的正确日期是什么？</div><div class="a">A：美联储官方会议日历显示，2026年10月会议安排在10月27日至28日。</div></div><div class="qa"><div class="q">Q：CME FedWatch的概率代表什么？</div><div class="a">A：它根据30天联邦基金期货价格，计算市场对未来美联储目标利率结果的隐含概率。它反映某一时刻的市场定价，不是美联储的承诺。</div></div><div class="qa"><div class="q">Q：为什么不同平台的“加息概率”会不同？</div><div class="a">A：可能因为更新时间不同、采用的市场工具不同，也可能因为问题口径不同，例如单次会议加息概率与年底前至少加息一次的概率并不是一回事。</div></div><div class="qa"><div class="q">Q：怎样降低AI接受错误前提的风险？</div><div class="a">A：在问题最前面要求AI先核对事件名称、日期和统计口径；如果前提错误，先纠正再回答。关键事实仍应回到官方来源复查。</div></div><div class="qa"><div class="q">Q：这次实验能代表所有AI吗？</div><div class="a">A：不能。实验只有两家模型、一个问题和一次调用。它揭示的是一种值得警惕的失误方式，不是对所有模型准确率的统计结论。</div></div>
+<div class="src"><b>数据来源：</b>公开来源 + 小K超爱研究产业数据库（公司财报 / 行业媒体 / 当日产业巡检聚合）</div>
+</div>
+<footer>
+本文为产业机制拆解，仅解释已发生的产业现象，不预测涨跌、不构成任何投资建议。涉及 A 股标的仅作产业机制说明，不做个股方向判断。投资有风险，决策需独立。
+</footer>
+<a href="articles.html" class="back-link">← 返回文章列表</a>
+</body>
+</html>
