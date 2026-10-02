@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://xiaokaiyanjiu.cn/exp01_ai_travel_guide.html">
+<title>100个AI实验01：AI攻略最危险的不是路线</title>
+<meta name="description" content="我把同一份国庆亲子游需求交给两家AI。它们都先承认无法确认2026年的实时信息，随后又给出了精确到几十元的门票、具体预约规则和一份看起来可以直接照着走的行程。AI旅行规划真正的风险，不是它什么都不知道，而是它能把“旧信息”组织得非常像“新答案”。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "100个AI实验01：AI攻略最危险的不是路线",
+  "author": {
+    "@type": "Person",
+    "name": "小K"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "小K超爱研究",
+    "url": "https://xiaokaiyanjiu.cn"
+  },
+  "datePublished": "2026-10-06",
+  "dateModified": "2026-10-06",
+  "description": "我把同一份国庆亲子游需求交给两家AI。它们都先承认无法确认2026年的实时信息，随后又给出了精确到几十元的门票、具体预约规则和一份看起来可以直接照着走的行程。AI旅行规划真正的风险，不是它什么都不知道，而是它能把“旧信息”组织得非常像“新答案”。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "这次实验能证明AI旅行攻略都不可靠吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能。实验只覆盖两家模型、一个问题和一次调用。它证明的是一种具体风险：模型可以承认没有实时信息，同时继续给出足以影响预订的精确建议。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI既然已经提醒“请自行核验”，为什么仍然有问题？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为读者更容易记住完整路线和具体数字，而忽略免责声明。提醒没有替代核验，精确表达却会增强可信感。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "来源写着“官网”还不够吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不够。最低限度应当有可打开的页面、页面日期、查询时间，以及这条规则是否适用于你的出行日期。来源名称不能证明信息仍然有效。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "旅行攻略里最需要核验什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "门票和儿童规则、营业和闭馆安排、预约入口和放票时间、节假日交通与临时活动。这四类信息一旦错误，最容易导致超预算或整段行程失效。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "AI最适合负责旅行规划的哪一步？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "整理候选项、安排地理顺序、比较不同偏好和准备备选路线。付款、预约和当天能否执行，仍要回到官方渠道确认。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "怎样让AI的回答更容易核验？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "要求它把信息分成稳定信息、待复核信息和已核实信息三栏；已核实信息必须附可打开的官方链接、页面日期和查询时间。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#161b26; --muted:#5b6472; --line:#e6e9ef; --bg:#ffffff; --soft:#f6f8fb;
+  --blue:#2563eb; --red:#e11d48; --amber:#f59e0b; --green:#16a34a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-size:17px}
+.hero{position:relative;width:100%;height:48vh;min-height:340px;overflow:hidden;background:linear-gradient(135deg,#0b1020 0%,#13234d 60%,#2563eb 140%)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,20,.12),rgba(8,12,20,.85))}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:34px 6vw;color:#fff;z-index:2}
+.hero-text .kicker{font-size:13px;letter-spacing:3px;color:#9ec5ff;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.hero-text h1{font-size:33px;line-height:1.28;margin:0;font-weight:800;max-width:920px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.meta{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding:14px 6vw;border-bottom:1px solid var(--line);background:var(--soft)}
+.meta b{color:var(--ink)}
+.wrap{max-width:840px;margin:0 auto;padding:38px 24px 90px}
+h2{font-size:25px;margin:48px 0 14px;padding-left:14px;border-left:5px solid var(--blue)}
+h3{font-size:19px;margin:32px 0 10px;color:#0f1b33}
+p{margin:14px 0}
+.lead{font-size:19px;color:#0f1b33;background:linear-gradient(90deg,#eef4ff,#fff);border:1px solid #dbe7ff;border-radius:12px;padding:20px 22px;font-weight:600;line-height:1.7}
+.tag{display:inline-block;background:#eef2ff;color:#2742d6;border-radius:6px;padding:2px 9px;font-size:13px;font-weight:600;margin-right:6px}
+.chart{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px;margin:24px 0}
+.chart svg{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+th{background:#0f1b33;color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fafbfd}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card h4{margin:0 0 6px;font-size:15px;color:var(--blue)}
+.card .big{font-size:23px;font-weight:800;color:var(--ink)}
+.qa{margin:16px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa .q{background:#0f1b33;color:#fff;padding:13px 16px;font-weight:600}
+.qa .a{padding:15px 18px;background:#fff}
+.note{background:#fff7ed;border-left:4px solid var(--amber);padding:13px 16px;border-radius:8px;margin:18px 0;font-size:15px}
+footer{background:#0f1b33;color:#aeb6c6;padding:32px 6vw;font-size:13px;line-height:1.8}
+.disclaimer{background:#fff7e6;border:1px solid #ffd591;color:#ad6800;padding:12px 16px;margin:0 0 18px;border-radius:8px;font-size:14px;line-height:1.6;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link{position:fixed;left:18px;bottom:18px;z-index:50;background:#1f6feb;color:#fff;padding:9px 16px;border-radius:24px;font-size:14px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.back-link:hover{background:#155ec0}
+.src{font-size:13.5px;color:var(--muted);background:#eef1f7;border-radius:10px;padding:14px 16px;margin-top:24px}
+.src b{color:var(--ink)}
+@media(max-width:640px){.cards{grid-template-columns:1fr}.hero-text h1{font-size:25px}.wrap{padding:28px 16px 70px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  
+  <div class="hero-text">
+    <div class="kicker">AI实测</div>
+    <div class="disclaimer">个人观点，仅供参考。不做投资建议，投资需找专业机构。股市有风险投资需谨慎。</div>
+    <h1>100个AI实验01：AI攻略最危险的不是路线</h1>
+  </div>
+</div>
+<div class="meta"><span>📅 <b>2026 年 10 月 06 日</b></span><span>⏱ 阅读约 <b>4</b> 分钟</span><span>🏷 AI实测</span></div>
+<div class="wrap">
+<div class="lead"><strong>我把同一份国庆亲子游需求交给两家AI。它们都先承认无法确认2026年的实时信息，随后又给出了精确到几十元的门票、具体预约规则和一份看起来可以直接照着走的行程。AI旅行规划真正的风险，不是它什么都不知道，而是它能把“旧信息”组织得非常像“新答案”。</strong></div>
+<p style="margin:18px 0 0"><span class="tag">AI实测</span><span class="tag">旅行规划</span><span class="tag">信息核验</span></p>
+<p>假期里让AI规划行程，最大的吸引力不是它比人更懂杭州，而是它可以在几秒钟内把预算、孩子年龄、路线、吃饭和雨天安排拼在一起。</p>
+<p>问题是：一份看起来完整的计划，和一份真的能执行的计划，中间隔着多少核验？</p>
+<p>我做了一个很简单的实验。</p>
+<h2>同一道题，不给任何额外资料</h2>
+<p>我向DeepSeek和豆包提出完全相同的要求：上海三口之家，两位成人和一名8岁孩子，2026年10月6日至8日去杭州，预算6000元，不含往返大交通；必须给出每天路线、总预算、少排队办法和雨天备选。凡涉及价格、营业时间和预约规则，都要注明核验日期和来源；不能实时确认就明确说不能确认，不要猜。</p>
+<p>这道题故意把“好看”和“能用”分开了。</p>
+<p>普通攻略只要路线顺；真正能用于决策的攻略，还要保证价格没过期、场馆当天开放、预约入口仍然有效，孩子的票价条件也没有变化。</p>
+<h2>两家AI都说了实话，但只说了一半</h2>
+<p>DeepSeek先提醒：回答中的核验日期是2025年5月，2026年价格可能调整，所有信息都要在出行前重新确认。</p>
+<p>然后，它给出了一套总预算约5800元的方案：住宿约1600元、餐饮约1500元、门票和体验约1200元；手划船约180元一小时、岳王庙25元、飞来峰45元加灵隐寺香花券30元、宋城约320元一人，还列出了喷泉场次和多个预约要求。</p>
+<p>豆包更直接：它说明方案依据的是2024年10月15日核验的规则，2026年的价格、营业时间和预约要求无法确认。</p>
+<p>但紧接着，它仍然给出了总预算约5890元、提前7天预约、选择最早入园时段等具体安排。回答里出现了“官网”和“官方账号”等来源名称，却没有给出任何可以打开复查的页面。</p>
+<p>这不是在挑某一个票价究竟错了几元。更重要的问题是：<strong>当模型已经承认信息过期，为什么答案仍然精确得像刚刚查过？</strong></p>
+<h2>免责声明为什么没有真正解决问题</h2>
+<p>两家AI都比过去更谨慎。它们会主动说“无法实时确认”“出行前请复核”。单看这句话，似乎已经尽到了提醒义务。</p>
+<p>但人的注意力不会平均分配。</p>
+<p>读者真正会记住的，通常不是开头那句风险提示，而是后面那张完整路线和一连串具体数字。数字越精确，越容易制造“已经替我查好了”的感觉。</p>
+<p>这产生了一种新的错觉：</p>
+<p>> 模型没有直接撒谎，它只是把不确定性写在边上，把确定感写在正文里。</p>
+<p>从产品角度看，这也不难理解。用户要求的是一份可执行计划，如果模型只回答“请逐项查询官网”，就显得没有完成任务。于是它会用已有知识补齐路线，再加一句免责声明保护边界。</p>
+<p>模型满足了“交付一份攻略”的要求，却没有完成“替家庭做可靠决策”的责任。</p>
+<h2>真正需要核验的只有四类信息</h2>
+<p>旅行规划不必把每句话都查一遍。真正可能让一家人白跑、超预算或者临时改行程的，主要是四类：</p>
+<table><thead><tr><th>核验对象</th><th>为什么重要</th><th>最低要求</th></tr></thead><tbody><tr><td>门票与儿童规则</td><td>直接影响预算</td><td>官方页面、适用日期、儿童身高或年龄条件</td></tr><tr><td>营业与闭馆安排</td><td>可能让整段路线失效</td><td>当日开放时间、临时公告、最后入场时间</td></tr><tr><td>预约入口与放票时间</td><td>决定能不能进去</td><td>官方入口、提前几天、实名要求</td></tr><tr><td>节假日交通与活动</td><td>平时经验可能失效</td><td>假期公告、交通管制、活动是否取消</td></tr></tbody></table>
+<p>让AI重新回答时，可以直接要求它把信息分成三栏：</p>
+<ol>
+<li><strong>稳定信息</strong>：地理位置、景点之间的大致距离、适合孩子的活动类型；</li>
+<li><strong>需要复核的信息</strong>：价格、场次、营业时间、预约规则；</li>
+<li><strong>已经核实的信息</strong>：必须附可打开的官方链接、页面日期和查询时间。</li>
+</ol>
+<p>如果第三栏是空的，就把它当作路线草稿，而不是预订依据。</p>
+<h2>AI替你节省的是整理时间，不是核验责任</h2>
+<p>这次实验并不能证明所有AI都会给出同样的答案，也不能证明上面的每一项价格都错误。实验只有两家模型、一个问题、一次调用。</p>
+<p>它能证明的事情更具体：<strong>模型可以诚实承认自己没有实时数据，同时继续输出足够精确、足够像真的行动建议。</strong></p>
+<p>所以，判断一份AI攻略能不能直接使用，不要只问“路线合理吗”，还要问：</p>
+<ul>
+<li>数字对应哪一天？</li>
+<li>来源能不能打开？</li>
+<li>规则是否覆盖我的出行日期？</li>
+<li>如果信息错了，哪一步会让整个行程失效？</li>
+</ul>
+<p>AI已经很会规划。我们接下来真正需要学会的，是判断它到底查过了，还是只是写得像查过了。</p>
+<p>你更愿意让AI决定路线，还是只让它整理候选项？</p>
+<hr/>
+<h2>实验边界与来源</h2>
+<ul>
+<li>实验时间：2026年10月2日。</li>
+<li>模型：项目现有GEO监测工具中的DeepSeek与豆包接口。</li>
+<li>两家使用同一问题，均未获得额外网页材料。</li>
+<li>原始输出保存在同目录《实验记录》中。</li>
+<li>本文讨论信息核验方法，不构成消费或投资建议。</li>
+</ul>
+<h2>你可能还会问</h2>
+<p><strong>Q：这次实验能证明AI旅行攻略都不可靠吗？</strong></p>
+<p>A：不能。实验只覆盖两家模型、一个问题和一次调用。它证明的是一种具体风险：模型可以承认没有实时信息，同时继续给出足以影响预订的精确建议。</p>
+<p><strong>Q：来源写着“官网”还不够吗？</strong></p>
+<p>A：不够。最低限度应当有可打开的页面、页面日期、查询时间，以及这条规则是否适用于你的出行日期。来源名称不能证明信息仍然有效。</p>
+<p><strong>Q：AI最适合负责旅行规划的哪一步？</strong></p>
+<p>A：整理候选项、安排地理顺序、比较不同偏好和准备备选路线。付款、预约和当天能否执行，仍要回到官方渠道确认。</p>
+
+<div class="note">⚠️ - 实验时间：2026年10月2日。</div>
+<h2>读者问答（FAQ）</h2><div class="qa"><div class="q">Q：这次实验能证明AI旅行攻略都不可靠吗？</div><div class="a">A：不能。实验只覆盖两家模型、一个问题和一次调用。它证明的是一种具体风险：模型可以承认没有实时信息，同时继续给出足以影响预订的精确建议。</div></div><div class="qa"><div class="q">Q：AI既然已经提醒“请自行核验”，为什么仍然有问题？</div><div class="a">A：因为读者更容易记住完整路线和具体数字，而忽略免责声明。提醒没有替代核验，精确表达却会增强可信感。</div></div><div class="qa"><div class="q">Q：来源写着“官网”还不够吗？</div><div class="a">A：不够。最低限度应当有可打开的页面、页面日期、查询时间，以及这条规则是否适用于你的出行日期。来源名称不能证明信息仍然有效。</div></div><div class="qa"><div class="q">Q：旅行攻略里最需要核验什么？</div><div class="a">A：门票和儿童规则、营业和闭馆安排、预约入口和放票时间、节假日交通与临时活动。这四类信息一旦错误，最容易导致超预算或整段行程失效。</div></div><div class="qa"><div class="q">Q：AI最适合负责旅行规划的哪一步？</div><div class="a">A：整理候选项、安排地理顺序、比较不同偏好和准备备选路线。付款、预约和当天能否执行，仍要回到官方渠道确认。</div></div><div class="qa"><div class="q">Q：怎样让AI的回答更容易核验？</div><div class="a">A：要求它把信息分成稳定信息、待复核信息和已核实信息三栏；已核实信息必须附可打开的官方链接、页面日期和查询时间。</div></div>
+<div class="src"><b>数据来源：</b>公开来源 + 小K超爱研究产业数据库（公司财报 / 行业媒体 / 当日产业巡检聚合）</div>
+</div>
+<footer>
+本文为产业机制拆解，仅解释已发生的产业现象，不预测涨跌、不构成任何投资建议。涉及 A 股标的仅作产业机制说明，不做个股方向判断。投资有风险，决策需独立。
+</footer>
+<a href="articles.html" class="back-link">← 返回文章列表</a>
+</body>
+</html>
