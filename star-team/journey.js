@@ -91,5 +91,5 @@ export function createJourney(api){
  function change(target){if(target.dataset.journeyPick!==undefined&&state?.stage==='plan'){const i=Number(target.dataset.journeyPick);if(journeyGroups[i]?.includes(target.value)){state.plan[i]=target.value;save();}return true;}if(target.hasAttribute('data-journey-minutes')&&state?.stage==='plan'){const n=Number(target.value);if([2,3,4].includes(n)){state.minutes=n;save();}return true;}if(target.hasAttribute('data-rest-tempo')&&rest){rest.tempo=target.value;rest.phaseStart=rest.elapsed;renderRest();return true;}return false;}
  function hidden(){snapshot();if(rest&&screen!=='outside'){rest.paused=true;stopVoice();renderRest();}save();}
  function refresh(){if(screen==='station')station();else if(screen==='rest')renderRest();else if(screen==='outside'||screen==='finished'){const content=document.querySelector('main')?.outerHTML;if(content)api.show(content);}else if(screen==='records')records();else if(state&&screen==='journey')render();else return false;return true;}
- return {handle,change,homeCards,taskBanner,taskStarted,taskFinished,tick,leave,hidden,snapshot,refresh,isTask:()=>active&&state?.stage==='task'};
+ return {handle,change,homeCards,taskBanner,taskStarted,taskFinished,tick,leave,hidden,snapshot,refresh,isFinished:()=>['finished','records'].includes(screen),isTask:()=>active&&state?.stage==='task'};
 }
