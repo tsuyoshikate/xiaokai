@@ -39,6 +39,9 @@ export function createPets(api){const registry=rewardRegistry(api.games.map(g=>g
  function save(next){state=next;try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch{storageOK=false;}return state;}
  function wallet(blocked=false){state=read();return blocked?`<span class="wallet-button" aria-label="可用积分 ${balance(state)} 星星">✦ ${balance(state)}</span>`:`<button class="wallet-button" data-action="pet-open" aria-label="打开宠物与礼物，可用积分 ${balance(state)} 星星">✦ <span>${balance(state)}</span></button>`;}
  function gameProgress(id){state=read();const keys=Object.keys(registry).filter(key=>id==='robot'?key.startsWith('robot:'):key===id);return keys.reduce((sum,key)=>sum+(state.credits[key]||0),0)+' / '+keys.reduce((sum,key)=>sum+registry[key],0)+' 已收集';}
+ function selectCompanion(type){if(!['cat','dog'].includes(type))return false;state=read();save({...state,selected:type});return true;}
+ function companionArtwork(type){state=read();return petArtwork(type,state.pets[type]);}
+ function buddyHTML(mode){state=read();if(!state.selected)return '';return '<div class="selected-buddy">'+petArtwork(state.selected,state.pets[state.selected])+'<div><b>'+names[state.selected]+'陪你'+(mode==='rest'?'休息':'探索')+'</b><p>按自己的节奏，慢慢来就好。</p></div></div>';}
  function homeCard(){state=read();return `<section class="pet-entry"><button data-action="pet-open"><div class="pet-entry-avatar">${state.selected?petArtwork(state.selected,state.pets[state.selected]):'<span aria-hidden="true">🐱 🐶</span>'}</div><div><span class="eyebrow">MY LITTLE SPACE FRIEND</span><h2>${state.selected?'我的'+names[state.selected]+'伙伴':'选一位小伙伴，一起探索'}</h2><p>完成小游戏，收集星星，送一份小礼物。<br>帽子、领结、小点心，兑换后一直保留。</p></div><span class="pet-entry-points">✦ ${balance(state)}<small>可用星星</small></span></button></section>`;}
  function award(session){state=read();const result=awardPoints(state,registry,session);if(result.added)save(result.state);notice=result.added?`这次获得 ${result.added} 颗星星，已放进礼物口袋。`:'这个任务的星星已经收集过啦。重玩和使用帮助都不会扣分。';return result.added;}
  function noticeHTML(blocked=false){return notice?`<div class="points-notice" role="status"><span>✦ ${notice}</span>${blocked?'':'<button class="quiet" data-action="pet-open">去看看小伙伴 →</button>'}<button class="quiet" data-action="pet-dismiss" aria-label="收起积分提示">×</button></div>`:'';}
@@ -65,5 +68,5 @@ export function createPets(api){const registry=rewardRegistry(api.games.map(g=>g
  function refresh(){if(!active)return false;render();return true;}
  document.addEventListener('keydown',e=>{if(!active||!pending)return;if(e.key==='Escape'){e.preventDefault();handle('pet-buy-cancel');}if(e.key==='Tab'){const controls=[...document.querySelectorAll('.pet-confirm button')],i=controls.indexOf(document.activeElement);e.preventDefault();controls[(i+(e.shiftKey?-1:1)+controls.length)%controls.length]?.focus();}});
  window.addEventListener('storage',e=>{if(e.key===key||e.key===null){state=read();if(active)render();else api.refresh();}});
- return {wallet,gameProgress,homeCard,award,noticeHTML,handle,refresh,leave,clearNotice:()=>{notice='';}};
+ return {wallet,selectCompanion,companionArtwork,buddyHTML,gameProgress,homeCard,award,noticeHTML,handle,refresh,leave,clearNotice:()=>{notice='';}};
 }
