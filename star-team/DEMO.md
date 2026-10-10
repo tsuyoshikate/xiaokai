@@ -42,4 +42,5 @@ GitHub 同类作品只用于设计参考，本项目没有复制其源码或素�
 
 这是游戏练习与产品演示作品，未开展临床有效性验证，不提供诊断或能力评级。已进行 Chromium 自动检查与移动尺寸模拟；真实 iPad Safari、Android 手机等设备仍需试玩。记录属于当前浏览器，不跨设备同步。
 
-当前入口为本机 http://127.0.0.1:5188/，尚未上传或公开部署。后续可准备 GitHub Pages 静态发布，并在公开页面补充清晰的使用说明。
+在线演示：[打开星际小队](https://tsuyoshikate.github.io/xiaokai/star-team/)。源码：[GitHub 项目目录](https://github.com/tsuyoshikate/xiaokai/tree/main/star-team)。本地开发入口仍为 http://127.0.0.1:5188/。
+
