@@ -1,3 +1,4 @@
+import {purposeBlock,restPurposes} from './purpose.js';
 // A browser-local, child-led practice/rest flow. Timings are suggestions, not doses.
 export const journeyGroups=[['orbit','signal','pairs','search','route','cargo','tracking','sort'],['robot','traffic','reverse','wait','chain','hanoi','puzzle','pattern']];
 export const restOptions=[
@@ -13,6 +14,22 @@ const pendingKey='star-team-journey',historyKey='star-team-journey-history';
 const clone=value=>JSON.parse(JSON.stringify(value));
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time=seconds=>`${Math.floor(seconds/60)}分${Math.floor(seconds%60)}秒`;
+function panelPurpose(eyebrow,title){
+ const rest=restOptions.find(o=>o.name===title);
+ if(rest){const p=restPurposes[rest.id];return purposeBlock('这次休息的目的',p.need,p.goal);}
+ const goals={
+  'YOUR SAVED JOURNEY':['按原来的进度继续，或安心结束','保留的是游戏步骤。先看看孩子现在的状态，再决定要不要继续。'],
+  'BEFORE WE GO':['先听听孩子现在想练习，还是想休息','让孩子表达当下感受，按自己的状态选择。'],
+  'A LITTLE ADVENTURE':['安排一小轮练习，再留出休息','先选想练习的事情，第二项可以跳过；不用一次玩很多。'],
+  'YOUR CHOICE':['休息后，重新决定下一步','留意现在是否舒服，再决定继续、再休息或结束。'],
+  'A SOFT LANDING':['回顾感受，给这次活动一个结束','孩子可以表达现在的感觉，也可以暂时不说。'],
+  'SPACE REST STATION':['放慢节奏，松松身体，离开屏幕歇一会儿','呼吸、舒展、故事与离屏活动，提供一段没有任务压力的休息。'],
+  'BACK TO EARTH':[restPurposes.outside.need,restPurposes.outside.goal],
+  'JOURNEY FINISHED':['练习和休息告一段落，回到日常活动','这次做了多少都可以；不用为了积分再开一轮。'],
+  'PARENT JOURNEY LOG':['了解练习与休息是怎样穿插的','回顾任务、休息和孩子自己表达的感受，为下次安排提供参考，不作效果评估。']
+ };
+ const p=goals[eyebrow];return p?purposeBlock('这一步的目的',p[0],p[1]):'';
+}
 export function validJourney(s){return !!(s&&s.version===1&&['checkin','plan','task','rest','outside','choice','landing'].includes(s.stage)&&Array.isArray(s.plan)&&s.plan.length===2&&s.plan.every((id,i)=>journeyGroups[i].includes(id))&&[0,1].includes(s.index)&&Array.isArray(s.tasks)&&s.tasks.length<=2&&s.tasks.every(t=>t&&journeyGroups.flat().includes(t.id)&&typeof t.completed==='boolean'&&Number.isFinite(t.seconds)&&t.seconds>=0)&&[s.restSeconds,s.outsideSeconds,s.restVisits,s.outsideVisits].every(n=>Number.isFinite(n)&&n>=0)&&(!s.snapshot||(s.snapshot.session?.id===s.plan[s.index]&&s.snapshot.session?.journey===true&&Number.isFinite(s.snapshot.session.clock?.elapsed)&&Number.isFinite(s.snapshot.session.clock?.phaseElapsed))));}
 export function createJourney(api){
  let state=null,active=false,screen='',rest=null,autosave=0;
@@ -23,7 +40,7 @@ export function createJourney(api){
  function show(content){screen='journey';api.show(`<main class="journey-page"><button class="back" data-action="j-home">← 返回大厅 · 保留旅程进度</button>${content}</main>`);}
  const buttons=content=>`<div class="journey-actions">${content}</div>`;
  const button=(action,label,kind='secondary',value='')=>`<button class="${kind}" data-action="${action}" data-value="${value}">${label}</button>`;
- const panel=(eyebrow,title,content)=>`<section class="journey-panel"><div class="eyebrow">${eyebrow}</div><h1 tabindex="-1">${title}</h1>${content}</section>`;
+ const panel=(eyebrow,title,content)=>`<section class="journey-panel"><div class="eyebrow">${eyebrow}</div><h1 tabindex="-1">${title}</h1>${panelPurpose(eyebrow,title)}${content}</section>`;
  function snapshot(){if(active&&state?.stage==='task'){const current=api.snapshot();if(current?.session?.journey){state.snapshot=clone(current);save();}}}
  function leave(){snapshot();save();stopVoice();rest=null;active=false;screen='';}
  function newJourney(){state={version:1,date:new Date().toISOString(),stage:'checkin',plan:['orbit','robot'],index:0,tasks:[],snapshot:null,restSeconds:0,outsideSeconds:0,restVisits:0,outsideVisits:0,feelingBefore:null};active=true;save();render();}
@@ -43,7 +60,7 @@ export function createJourney(api){
  function prepareTask(){screen='game';api.prepare(state.plan[state.index]);save();}
  function open(){if(state){active=false;render();}else newJourney();}
  function goRest(){if(!state)return;const wasTask=state.stage==='task';snapshot();if(!wasTask)state.snapshot=null;state.stage='rest';active=true;save();station();}
- function station(){stopVoice();rest=null;screen='station';api.show(`<main class="journey-page"><button class="back" data-action="${active?'j-return':api.currentActivity?.()==='rest'?'entry':'j-home'}">← ${active?'返回旅程':api.currentActivity?.()==='rest'?'重新选择活动':'返回大厅'}</button>${active?progress():''}${panel('SPACE REST STATION','太空休息站',`<p>选一种让自己舒服的方式。可以随时停止，也可以直接离开屏幕休息。</p>${api.buddy?.()||''}<div class="rest-grid">${restOptions.map(o=>`<button class="rest-card" data-action="j-rest-pick" data-value="${o.id}"><span>${o.icon}</span><h2>${o.name}</h2><p>${o.detail}</p><span class="rest-arrow">↗</span></button>`).join('')}</div><p class="micro">先从约 1–2 分钟试起，无需坚持到计时结束。屏幕动画不能替代离屏休息；呼吸或身体活动不舒服时立即停止。</p>${active?buttons(button('j-outside','放下设备，活动一下','primary')+button('j-end','今天到这里','quiet')):''}`)}</main>`);}
+ function station(){stopVoice();rest=null;screen='station';api.show(`<main class="journey-page"><button class="back" data-action="${active?'j-return':api.currentActivity?.()==='rest'?'entry':'j-home'}">← ${active?'返回旅程':api.currentActivity?.()==='rest'?'重新选择活动':'返回大厅'}</button>${active?progress():''}${panel('SPACE REST STATION','太空休息站',`<p>累了、坐久了，或暂时不想做任务？选一种舒服的方式，让身体换个节奏；休息后再问孩子想不想继续。</p>${api.buddy?.()||''}<div class="rest-grid">${restOptions.map(o=>`<button class="rest-card" data-action="j-rest-pick" data-value="${o.id}"><span>${o.icon}</span><h2>${o.name}</h2><p>${o.detail}</p><span class="rest-purpose"><b>适合此刻</b>${restPurposes[o.id].need}</span><span class="rest-arrow">↗</span></button>`).join('')}</div><p class="micro">先从约 1–2 分钟试起，无需坚持到计时结束。屏幕动画不能替代离屏休息；呼吸或身体活动不舒服时立即停止。</p>${active?buttons(button('j-outside','放下设备，活动一下','primary')+button('j-end','今天到这里','quiet')):''}`)}</main>`);}
  function startRest(id){if(id==='outside'){if(active){state.stage='outside';save();}outside();return;}const option=restOptions.find(o=>o.id===id);if(!option)return;rest={id,elapsed:0,paused:false,tempo:'gentle'};if(active){state.restVisits++;save();}screen='rest';renderRest();}
  function restContent(){if(rest.id==='breath')return `<div class="breathing-scene"><div class="breath-orb" aria-hidden="true">✧</div><p class="breath-label" role="status">轻轻吸气</p><p>像闻花香一样轻轻吸气，再像吹凉汤一样缓慢呼气。<br>不用憋气，也不用吸得很深。按自己的舒适节奏来。</p><label>跟随节奏<select data-rest-tempo><option value="gentle" ${rest.tempo==='gentle'?'selected':''}>轻柔 · 吸气约 3 秒 / 呼气约 4 秒</option><option value="slow" ${rest.tempo==='slow'?'selected':''}>更慢 · 吸气约 4 秒 / 呼气约 6 秒</option><option value="own" ${rest.tempo==='own'?'selected':''}>自己呼吸 · 静止画面</option></select></label></div>`;
   if(rest.id==='body')return `<div class="rest-illustration">🙌</div><ol class="body-guide"><li>舒服地坐着或站着，让脚稳稳地放好。</li><li>轻轻握一下小手，再慢慢松开。</li><li>轻轻耸一下肩膀，再把它放下。</li><li>如果愿意，伸伸胳膊，然后回到舒服的位置。</li></ol><p>每一步都可以跳过。不用使劲，也不用做到标准姿势。</p>`;
