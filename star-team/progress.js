@@ -42,6 +42,7 @@ export function createProgress(api){
  }
  function totalStamps(){return Object.values(passport.counts).reduce((sum,n)=>sum+n,0);}
  function passportButton(){read();return `<button class="secondary" data-action="passport-open">星际护照 · ${totalStamps()} 枚探索章</button>`;}
+ function passportBadge(blocked=false){read();const label=`已获得 ${totalStamps()} 枚探索徽章`;const content=`<span aria-hidden="true">✺</span><span>${totalStamps()}</span>`;return blocked?`<span class="header-badges" aria-label="${label}">${content}</span>`:`<button class="header-badges" data-action="passport-open" aria-label="${label}，打开星际护照" title="探索徽章">${content}</button>`;}
  function passportCard(){read();return `<section class="passport-teaser"><div><b>重玩，也留下新的探索足迹</b><p>已经收集 ${totalStamps()} 枚探索章。每个分类每天第一次完成盖一枚，隔天重玩仍可积累。</p></div><button class="secondary" data-action="passport-open">打开星际护照 →</button></section>`;}
  function show(content){api.show(`<main class="progress-page"><button class="back" data-action="progress-home">← 返回文件夹</button>${content}</main>`);}
  function renderPassport(){show(`<section class="progress-panel"><span class="eyebrow">我的星际护照</span><h1 tabindex="-1">每次回来，都能留下足迹</h1><p>累计 ${totalStamps()} 枚探索章。隔几天再来，它们也一直在。</p><div class="passport-grid">${folders.map(f=>{const count=passport.counts[f.id],page=Math.floor(count/8)+1,filled=count%8;return `<article class="passport-category"><h2>${f.name}</h2><div class="passport-seal" style="--seal-color:${f.color}">✦<small>${count} 枚</small></div><p>已完成 ${Math.floor(count/8)} 页 · 第 ${page} 页</p><div class="passport-slots" aria-label="本页已有${filled}枚探索章，共8个位置">${Array.from({length:8},(_,i)=>`<span class="${i<filled?'filled':''}" aria-hidden="true">${i<filled?'✦':'·'}</span>`).join('')}</div></article>`;}).join('')}</div><p class="micro">完成任何游戏都记录回合；每个分类每天最多盖一枚章。每满 8 枚，永久保存一页星图，之后仍可继续积累。试玩和旅程也可以，休息不记成绩、不盖游戏章。</p><p class="micro">没有连续签到、补签或断签损失，也不要求一天玩完四类。想回来就回来，想休息就休息。印章不兑换实物，不代表能力。</p>${!passportOK?'<p role="status">当前浏览器无法保存，关闭后可能丢失这次印章。</p>':''}</section>`);}
@@ -65,5 +66,5 @@ export function createProgress(api){
   return true;
  }
  function change(target){const field=target.dataset.progressField;if(!active||screen!=='history'||!field)return false;if(field==='game'&&ids.includes(target.value)){game=target.value;group=null;}else if(field==='metric'&&Object.hasOwn(metrics,target.value))metric=target.value;else if(field==='group'){const keys=[...new Set(records.filter(r=>r.game===game).map(contextKey))];group=keys[Number(target.value)]||null;}render();return true;}
- return {complete,handle,change,passportCard,passportButton,leave:()=>{active=false;},refresh:()=>{if(!active)return false;render();return true;}};
+ return {complete,handle,change,passportCard,passportButton,passportBadge,leave:()=>{active=false;},refresh:()=>{if(!active)return false;render();return true;}};
 }
